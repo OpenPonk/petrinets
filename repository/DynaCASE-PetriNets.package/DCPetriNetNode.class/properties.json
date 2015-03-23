@@ -1,0 +1,15 @@
+{
+	"category" : "DynaCASE-PetriNets-Models",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"incoming",
+		"outgoing" ],
+	"name" : "DCPetriNetNode",
+	"pools" : [
+		 ],
+	"super" : "DCNamedElement",
+	"type" : "normal" }

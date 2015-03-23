@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Models",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetNormalArc",
+	"pools" : [
+		 ],
+	"super" : "DCPetriNetArc",
+	"type" : "normal" }

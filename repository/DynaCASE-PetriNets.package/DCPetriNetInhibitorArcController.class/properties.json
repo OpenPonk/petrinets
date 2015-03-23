@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Controllers",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetInhibitorArcController",
+	"pools" : [
+		 ],
+	"super" : "DCPetriNetArcController",
+	"type" : "normal" }

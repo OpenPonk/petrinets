@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Controllers",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetNodeController",
+	"pools" : [
+		 ],
+	"super" : "DCElementController",
+	"type" : "normal" }
