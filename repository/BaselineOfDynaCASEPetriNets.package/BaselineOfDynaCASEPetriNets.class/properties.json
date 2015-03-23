@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfDynaCASEPetriNets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfDynaCASEPetriNets",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
