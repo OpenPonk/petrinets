@@ -4,11 +4,6 @@ baseline: spec
 	spec
 		for: #common
 		do: [ 
-			[ 
-			spec
-				baseline: 'DynaCASE'
-				with: [ spec repository: 'gitfiletree:///C:/Users/Ruiner/Pharo/repo/dynacase-petrinets/repository' ] ]
-				on: Error
-				do: [ spec baseline: 'DynaCASE' with: [ spec repository: 'github://dynacase/dynacase/repository' ] ].
+			spec baseline: 'DynaCASE' with: [ spec repository: 'github://dynacase/dynacase/repository' ].
 			spec package: 'DynaCASE-PetriNets' with: [ spec requires: #('DynaCASE') ].
 			spec group: 'default' with: #('DynaCASE-PetriNets') ]
