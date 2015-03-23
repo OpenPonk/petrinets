@@ -1,1 +1,2 @@
-(name 'BaselineOfDynaCASEPetriNets-bliznjan.1' message 'added baseline of petri nets' id '0757427d-c90e-9c43-aa8f-c306f0d7bccb' date '23 March 2015' time '1:16:25.519391 pm' author 'bliznjan' ancestors () stepChildren ())
+(name 'BaselineOfDynaCASEPetriNets-bliznjan.2' message 'temporarily added possibility of local repo usage' id '5d6f6b39-3b28-ff4f-a0fa-dee5d6d6333a' date '23 March 2015' time '3:03:42.125499 pm' author 'bliznjan' ancestors ((name 'BaselineOfDynaCASEPetriNets-bliznjan.1' message 'added baseline of petri nets
+' id 'a714e412-aa7a-5f6b-80f4-b00d68d55157' date '23 March 2015' time '1:16:27 pm' author 'bliznjan' ancestors () stepChildren ())) stepChildren ())
