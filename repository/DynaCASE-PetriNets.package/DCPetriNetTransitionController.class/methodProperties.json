@@ -2,8 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"canBeSourceFor" : "bliznjan 3/19/2015 11:59",
-		"canBeTargetFor" : "bliznjan 3/19/2015 11:59",
-		"modelClass" : "bliznjan 3/18/2015 14:50:36",
-		"roassalShape" : "bliznjan 3/19/2015 21:02",
-		"sameKindAs:" : "bliznjan 3/18/2015 14:50:36" } }
+		"canBeSourceFor" : "bliznjan 3/23/2015 14:52:28",
+		"canBeTargetFor" : "bliznjan 3/23/2015 14:52:28",
+		"createRoassalShape" : "bliznjan 3/24/2015 08:25",
+		"modelClass" : "bliznjan 3/23/2015 14:52:28",
+		"sameKindAs:" : "bliznjan 3/23/2015 14:52:28" } }

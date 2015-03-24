@@ -1,4 +1,4 @@
 hooks
 refreshFigure
-	self tokenLabel: self model tokens asString.
+	self tokenShapeFrom: self model tokens.
 	super refreshFigure

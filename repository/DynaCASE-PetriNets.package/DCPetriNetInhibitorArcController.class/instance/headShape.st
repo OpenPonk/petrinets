@@ -1,0 +1,3 @@
+initialization
+headShape
+	^ DCRTEmptyCircle

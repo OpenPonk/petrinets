@@ -1,5 +1,5 @@
 hooks
 connectionFeedback
 	^ DCInteractiveLine new
-		lineBuilder: [ :fromFigure :toFigure | self roassalShape edgeFrom: fromFigure to: toFigure ];
+		lineBuilder: [ :fromFigure :toFigure | self createRoassalShape edgeFrom: fromFigure to: toFigure ];
 		from: source figure

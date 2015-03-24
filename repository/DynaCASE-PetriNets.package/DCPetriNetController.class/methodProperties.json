@@ -1,9 +1,9 @@
 {
 	"class" : {
-		"menuCommandOn:" : "bliznjan 3/23/2015 13:52" },
+		"menuCommandOn:" : "bliznjan 3/23/2015 14:52:28" },
 	"instance" : {
-		"canBeTargetFor:" : "bliznjan 3/18/2015 14:50:36",
-		"initialize" : "bliznjan 3/18/2015 14:50:36",
-		"initializePalette:" : "bliznjan 3/18/2015 14:50:36",
-		"modelClass" : "bliznjan 3/23/2015 14:08",
-		"rebuild" : "bliznjan 3/22/2015 21:24" } }
+		"canBeTargetFor:" : "bliznjan 3/23/2015 14:52:28",
+		"initialize" : "bliznjan 3/23/2015 14:52:28",
+		"initializePalette:" : "bliznjan 3/23/2015 14:52:28",
+		"modelClass" : "bliznjan 3/23/2015 14:52:28",
+		"rebuild" : "bliznjan 3/23/2015 14:52:28" } }

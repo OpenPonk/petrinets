@@ -1,3 +1,4 @@
 accessing
 tokenLabel: aString
-	self figure trachelShape shapes second shapes first text: aString
+	self figure shape allShapes second allShapes first text: aString.
+	self tokenLabel text: aString

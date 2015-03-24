@@ -2,12 +2,17 @@
 	"class" : {
 		 },
 	"instance" : {
-		"buildEditorForm:" : "bliznjan 3/23/2015 12:28",
-		"canBeSourceFor" : "bliznjan 3/19/2015 11:59",
-		"canBeTargetFor" : "bliznjan 3/19/2015 11:59",
-		"modelClass" : "bliznjan 3/18/2015 14:50:36",
-		"refreshFigure" : "bliznjan 3/23/2015 12:42",
-		"roassalShape" : "bliznjan 3/22/2015 22:09",
-		"sameKindAs:" : "bliznjan 3/18/2015 14:50:36",
-		"tokenLabel:" : "bliznjan 3/23/2015 12:42",
-		"tokenShape" : "bliznjan 3/23/2015 12:36" } }
+		"buildEditorForm:" : "bliznjan 3/24/2015 09:12",
+		"canBeSourceFor" : "bliznjan 3/23/2015 14:52:28",
+		"canBeTargetFor" : "bliznjan 3/23/2015 14:52:28",
+		"createRoassalShape" : "bliznjan 3/24/2015 08:25",
+		"createTokenShape" : "bliznjan 3/24/2015 09:14",
+		"modelClass" : "bliznjan 3/23/2015 14:52:28",
+		"refreshFigure" : "bliznjan 3/24/2015 08:49",
+		"roassalTokenShape" : "bliznjan 3/24/2015 09:04",
+		"sameKindAs:" : "bliznjan 3/23/2015 14:52:28",
+		"tokenCircle" : "bliznjan 3/24/2015 09:01",
+		"tokenLabel" : "bliznjan 3/24/2015 09:03",
+		"tokenLabel:" : "bliznjan 3/24/2015 09:13",
+		"tokenShape" : "bliznjan 3/24/2015 08:51",
+		"tokenShapeFrom:" : "bliznjan 3/24/2015 08:55" } }
