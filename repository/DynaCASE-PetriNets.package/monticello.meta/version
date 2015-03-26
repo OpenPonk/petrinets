@@ -1,3 +1,4 @@
-(name 'DynaCASE-PetriNets-bliznjan.3' message 'improved token visualisation' id '8a0dacc6-1e75-364c-b2db-b5f0b299d33c' date '24 March 2015' time '3:59:01.983156 pm' author 'bliznjan' ancestors ((name 'DynaCASE-PetriNets-bliznjan.2' message 'added dynamic diagram classes loading
+(name 'DynaCASE-PetriNets-bliznjan.4' message 'adapted example to new DCWorkbench example system' id '853f1978-7eb9-104b-9c37-78fdeceaf21c' date '26 March 2015' time '1:37:41.34305 pm' author 'bliznjan' ancestors ((name 'DynaCASE-PetriNets-bliznjan.3' message 'improved token visualisation
+' id '5874ea80-eb4b-5525-9f52-49f846418c1a' date '24 March 2015' time '3:59:09 pm' author 'bliznjan' ancestors ((name 'DynaCASE-PetriNets-bliznjan.2' message 'added dynamic diagram classes loading
 ' id 'f4e67024-0e5c-5098-9953-9624ec94f370' date '23 March 2015' time '2:52:28 pm' author 'bliznjan' ancestors ((name 'DynaCASE-PetriNets-bliznjan.1' message 'improved token handling
-' id '16479f51-f25a-5218-bf32-071db3e41c18' date '23 March 2015' time '1:09:44 pm' author 'bliznjan' ancestors () stepChildren ())) stepChildren ())) stepChildren ())
+' id '16479f51-f25a-5218-bf32-071db3e41c18' date '23 March 2015' time '1:09:44 pm' author 'bliznjan' ancestors () stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())

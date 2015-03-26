@@ -1,5 +1,6 @@
 *DynaCASE-PetriNets
 examplePetriNets
+	<example:'DynaCASE example Petri nets'>
 	| project pn place1 arc1 arc2 place2 place3 trans arc3 |
 	project := DCProject new projectName: 'Example Petri Net'.
 	pn := DCPetriNet new name: 'Petri Net Diagram'.
