@@ -5,4 +5,4 @@ createRoassalShape
 		size: 40;
 		color: Color transparent;
 		borderColor: self defaultColor.
-	^ basicShape + self createTokenShape
+	^ self createTokenShape + basicShape

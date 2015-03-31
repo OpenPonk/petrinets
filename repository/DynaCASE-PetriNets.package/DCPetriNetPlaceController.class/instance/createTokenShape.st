@@ -3,7 +3,7 @@ createTokenShape
 	| label circle |
 	label := RTLabel new
 		color: self defaultColor;
-		text: '0';
+		text: ' ';
 		yourself.
 	(circle := RTEllipse new)
 		size: 10;

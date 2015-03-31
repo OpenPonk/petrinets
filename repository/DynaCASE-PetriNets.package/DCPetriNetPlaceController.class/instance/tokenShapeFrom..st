@@ -8,5 +8,5 @@ tokenShapeFrom: aNumber
 	self
 		tokenLabel:
 			(aNumber < 2
-				ifTrue: [ '' ]
+				ifTrue: [ ' ' ]
 				ifFalse: [ aNumber asString ])
