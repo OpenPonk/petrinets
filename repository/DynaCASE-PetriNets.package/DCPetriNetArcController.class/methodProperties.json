@@ -2,7 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"connectionFeedback" : "bliznjan 3/26/2015 13:37:58",
-		"createEdgeFrom:to:" : "bliznjan 3/26/2015 13:37:58",
-		"isLinkedWithKind:" : "bliznjan 3/26/2015 13:37:58",
-		"refreshFigure" : "bliznjan 3/26/2015 13:37:58" } }
+		"buildEditorForm:" : "bliznjan 4/3/2015 16:23",
+		"edgeBuilder" : "bliznjan 4/3/2015 16:19",
+		"isLinkedWithKind:" : "bliznjan 3/31/2015 11:31:23",
+		"refreshFigure" : "bliznjan 4/3/2015 16:25",
+		"weightText" : "bliznjan 4/3/2015 16:21" } }

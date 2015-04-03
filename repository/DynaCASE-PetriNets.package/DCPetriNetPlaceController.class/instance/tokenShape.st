@@ -1,3 +1,3 @@
 accessing
 tokenShape
-	^ self figure trachelShape shapes first
+	^ self figure trachelShape shapes second

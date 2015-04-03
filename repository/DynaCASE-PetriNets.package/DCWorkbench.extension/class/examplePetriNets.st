@@ -16,7 +16,7 @@ examplePetriNets
 		add: trans.
 	arc1 := DCPetriNetNormalArc from: place1 to: trans.
 	arc2 := DCPetriNetInhibitorArc from: place2 to: trans.
-	arc3 := DCPetriNetNormalArc from: trans to: place3.
+	arc3 := DCPetriNetOutputArc from: trans to: place3.
 	pn
 		add: arc1;
 		add: arc2;

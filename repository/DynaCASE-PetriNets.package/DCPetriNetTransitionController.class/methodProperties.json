@@ -2,8 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
-		"canBeSourceFor" : "bliznjan 3/26/2015 13:37:58",
-		"canBeTargetFor" : "bliznjan 3/26/2015 13:37:58",
-		"createRoassalShape" : "bliznjan 3/26/2015 13:37:58",
-		"modelClass" : "bliznjan 3/26/2015 13:37:58",
-		"sameKindAs:" : "bliznjan 3/26/2015 13:37:58" } }
+		"createRoassalShape" : "bliznjan 3/31/2015 11:31:23",
+		"initialize" : "bliznjan 4/2/2015 15:53",
+		"modelClass" : "bliznjan 3/31/2015 11:31:23",
+		"sameKindAs:" : "bliznjan 3/31/2015 11:31:23" } }

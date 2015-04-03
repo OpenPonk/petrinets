@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		 ],
+		"possibleIncoming",
+		"possibleOutgoing" ],
 	"name" : "DCPetriNetNodeController",
 	"pools" : [
 		 ],

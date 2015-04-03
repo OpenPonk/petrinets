@@ -2,13 +2,10 @@ initialization
 createTokenShape
 	| label circle |
 	label := RTLabel new
-		color: self defaultColor;
+		color: Color white;
 		text: ' ';
 		yourself.
 	(circle := RTEllipse new)
-		size: 10;
+		size: 14;
 		color: self defaultColor.
-	^ (label + circle)
-		setAutomaticRelayout;
-		horizontal;
-		yourself
+	^ circle + label

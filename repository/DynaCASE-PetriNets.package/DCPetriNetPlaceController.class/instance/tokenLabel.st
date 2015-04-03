@@ -1,3 +1,3 @@
 accessing
 tokenLabel
-	^ self tokenShape shapes first
+	^ self tokenShape shapes second

@@ -1,3 +1,3 @@
 accessing
 tokenCircle
-	^ self tokenShape shapes second
+	^ self tokenShape shapes first

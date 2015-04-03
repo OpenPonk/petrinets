@@ -7,6 +7,8 @@ tokenShapeFrom: aNumber
 				ifFalse: [ self defaultColor ]).
 	self
 		tokenLabel:
-			(aNumber < 2
-				ifTrue: [ ' ' ]
-				ifFalse: [ aNumber asString ])
+			' '
+				,
+					(aNumber < 2
+						ifTrue: [ '' ]
+						ifFalse: [ aNumber asString ])
