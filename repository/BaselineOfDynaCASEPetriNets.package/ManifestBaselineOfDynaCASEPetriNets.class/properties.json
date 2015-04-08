@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfDynaCASEPetriNets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ManifestBaselineOfDynaCASEPetriNets",
+	"pools" : [
+		 ],
+	"super" : "PackageManifest",
+	"type" : "normal" }
