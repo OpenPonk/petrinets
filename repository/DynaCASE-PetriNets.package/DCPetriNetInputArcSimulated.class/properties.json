@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetInputArcSimulated",
 	"pools" : [
 		 ],
-	"super" : "DCPetriNetSimulatedElement",
+	"super" : "DCSimulatedEdge",
 	"type" : "normal" }

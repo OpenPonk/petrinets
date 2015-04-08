@@ -1,3 +1,3 @@
 removing
 removedFrom: aDiagram
-	super removedFrom: aDiagram do: [ self arcsDo: [ :each | aDiagram remove: each ] ]
+	self removedFrom: aDiagram do: [ self arcsDo: [ :each | aDiagram remove: each ] ]

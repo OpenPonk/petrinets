@@ -2,10 +2,11 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addAsSourceFor:" : "bliznjan 4/3/2015 16:44:35",
-		"addAsTargetFor:" : "bliznjan 4/3/2015 17:31",
-		"canBeSourceFor:" : "bliznjan 4/3/2015 16:44:35",
-		"canBeTargetFor:" : "bliznjan 4/3/2015 16:44:35",
-		"createFigure" : "bliznjan 4/3/2015 16:44:35",
-		"refreshFigure" : "bliznjan 4/3/2015 16:44:35",
-		"sameKindAs:" : "bliznjan 4/3/2015 16:44:35" } }
+		"addAsSourceFor:" : "bliznjan 4/3/2015 19:14:54",
+		"addAsTargetFor:" : "bliznjan 4/3/2015 19:14:54",
+		"canBeSourceFor:" : "bliznjan 4/3/2015 19:14:54",
+		"canBeTargetFor:" : "bliznjan 4/3/2015 19:14:54",
+		"createFigure" : "bliznjan 4/3/2015 19:14:54",
+		"createRoassalShape" : "bliznjan 4/7/2015 20:16",
+		"refreshFigure" : "bliznjan 4/3/2015 19:14:54",
+		"sameKindAs:" : "bliznjan 4/3/2015 19:14:54" } }

@@ -1,3 +1,3 @@
 actions
 fire
-	self source removeTokens: self weight
+	self source removeTokens: self model weight

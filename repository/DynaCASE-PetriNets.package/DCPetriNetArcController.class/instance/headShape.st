@@ -1,0 +1,3 @@
+initialization
+headShape
+	^ self subclassResponsibility

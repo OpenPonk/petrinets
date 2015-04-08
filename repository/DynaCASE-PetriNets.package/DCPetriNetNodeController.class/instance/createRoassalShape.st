@@ -1,0 +1,3 @@
+initialization
+createRoassalShape
+	^ self subclassResponsibility

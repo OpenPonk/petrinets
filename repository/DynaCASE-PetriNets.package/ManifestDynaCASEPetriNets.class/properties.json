@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ManifestDynaCASEPetriNets",
+	"pools" : [
+		 ],
+	"super" : "PackageManifest",
+	"type" : "normal" }

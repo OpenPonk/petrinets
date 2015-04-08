@@ -1,12 +1,12 @@
 {
 	"class" : {
-		"from:to:" : "bliznjan 4/3/2015 16:44:35" },
+		"from:to:" : "bliznjan 4/3/2015 19:14:54" },
 	"instance" : {
-		"initialize" : "bliznjan 4/3/2015 16:44:35",
-		"removedFrom:" : "bliznjan 4/3/2015 16:44:35",
-		"source" : "bliznjan 4/3/2015 16:44:35",
-		"source:" : "bliznjan 4/3/2015 16:44:35",
-		"target" : "bliznjan 4/3/2015 16:44:35",
-		"target:" : "bliznjan 4/3/2015 16:44:35",
-		"weight" : "bliznjan 4/3/2015 16:44:35",
-		"weight:" : "bliznjan 4/3/2015 16:44:35" } }
+		"initialize" : "bliznjan 4/3/2015 19:14:54",
+		"removedFrom:" : "bliznjan 4/7/2015 20:21",
+		"source" : "bliznjan 4/3/2015 19:14:54",
+		"source:" : "bliznjan 4/3/2015 19:14:54",
+		"target" : "bliznjan 4/3/2015 19:14:54",
+		"target:" : "bliznjan 4/3/2015 19:14:54",
+		"weight" : "bliznjan 4/3/2015 19:14:54",
+		"weight:" : "bliznjan 4/3/2015 19:14:54" } }

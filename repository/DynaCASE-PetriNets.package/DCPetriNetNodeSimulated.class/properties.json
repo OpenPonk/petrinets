@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetNodeSimulated",
 	"pools" : [
 		 ],
-	"super" : "DCPetriNetSimulatedElement",
+	"super" : "DCSimulatedElement",
 	"type" : "normal" }

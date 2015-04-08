@@ -1,6 +1,6 @@
 removing
 removedFrom: aDiagram
-	super
+	self
 		removedFrom: aDiagram
 		do: [ 
 			self source: nil.
