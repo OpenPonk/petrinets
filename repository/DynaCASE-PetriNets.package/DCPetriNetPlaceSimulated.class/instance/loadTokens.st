@@ -1,3 +1,3 @@
 creation
-createTokens
+loadTokens
 	model tokens timesRepeat: [ self addToken: DCPetriNetToken new ]

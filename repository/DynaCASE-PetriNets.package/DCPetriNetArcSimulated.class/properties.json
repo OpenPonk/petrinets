@@ -7,8 +7,8 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "DCPetriNetOutputArcSimulated",
+	"name" : "DCPetriNetArcSimulated",
 	"pools" : [
 		 ],
-	"super" : "DCPetriNetArcSimulated",
+	"super" : "DCSimulatedEdge",
 	"type" : "normal" }
