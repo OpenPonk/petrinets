@@ -1,0 +1,3 @@
+testing
+fireable
+	^ self subclassResponsibility

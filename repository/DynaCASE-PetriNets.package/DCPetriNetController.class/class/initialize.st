@@ -1,7 +1,7 @@
-initialization
+class initialization
 initialize
 	super initialize.
-	modelToControllerMapping
+	ModelToControllerMapping
 		at: DCPetriNetNormalArc put: DCPetriNetNormalArcController;
 		at: DCPetriNetOutputArc put: DCPetriNetOutputArcController;
 		at: DCPetriNetInhibitorArc put: DCPetriNetInhibitorArcController;

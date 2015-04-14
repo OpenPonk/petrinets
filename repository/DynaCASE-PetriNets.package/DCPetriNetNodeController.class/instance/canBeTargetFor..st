@@ -1,3 +1,3 @@
 testing
 canBeTargetFor: aController
-	^ possibleIncoming includes: aController class
+	^ self class isPossibleIncoming: aController class

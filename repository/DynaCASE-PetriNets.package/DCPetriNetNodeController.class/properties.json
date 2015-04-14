@@ -1,13 +1,13 @@
 {
 	"category" : "DynaCASE-PetriNets-Controllers",
 	"classinstvars" : [
-		 ],
+		"PossibleIncoming",
+		"PossibleOutgoing" ],
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"possibleIncoming",
-		"possibleOutgoing" ],
+		 ],
 	"name" : "DCPetriNetNodeController",
 	"pools" : [
 		 ],

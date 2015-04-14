@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetSimulation",
 	"pools" : [
 		 ],
-	"super" : "DCSimulation",
+	"super" : "DCDiagramSimulator",
 	"type" : "normal" }

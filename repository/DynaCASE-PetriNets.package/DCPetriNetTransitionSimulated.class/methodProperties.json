@@ -2,4 +2,8 @@
 	"class" : {
 		 },
 	"instance" : {
-		"action" : "bliznjan 4/8/2015 11:45:48" } }
+		"fire" : "bliznjan 4/13/2015 18:55",
+		"fireIncoming" : "bliznjan 4/14/2015 10:51",
+		"fireOutgoing" : "bliznjan 4/14/2015 10:51",
+		"fireable" : "bliznjan 4/13/2015 19:21",
+		"initialize" : "bliznjan 4/13/2015 19:00" } }

@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetArcSimulated",
 	"pools" : [
 		 ],
-	"super" : "DCSimulatedEdge",
+	"super" : "DCEdgeSimulator",
 	"type" : "normal" }

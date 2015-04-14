@@ -1,6 +1,6 @@
 adding
 addAsTargetFor: aController
-	| newModel newFigure |
+	| newModel |
 	self assert: (self canBeTargetFor: aController).
 	aController
 		target: self;
@@ -9,6 +9,4 @@ addAsTargetFor: aController
 	self diagramController model add: newModel.
 	aController model: newModel.
 	self diagramController controllers add: aController.
-	newFigure := aController figure.
-	newFigure view ifNil: [ self parent view add: newFigure ].
-	self diagramController figureAdded: newFigure
+	aController attach

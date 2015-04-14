@@ -1,3 +1,3 @@
-accesing
+testing
 isFinished
 	^ false

@@ -2,4 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
-		"loadTokens" : "bliznjan 4/9/2015 14:22" } }
+		"addTokenToModel:" : "bliznjan 4/13/2015 18:04",
+		"addTokensToModel:" : "bliznjan 4/13/2015 18:05",
+		"createTokens" : "bliznjan 4/13/2015 19:41",
+		"loadIntoSimulatedElements:" : "bliznjan 4/13/2015 19:10",
+		"loadState" : "bliznjan 4/13/2015 19:38",
+		"removeTokenFromModel:" : "bliznjan 4/13/2015 18:21" } }

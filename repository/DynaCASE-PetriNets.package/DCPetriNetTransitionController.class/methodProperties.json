@@ -1,7 +1,6 @@
 {
 	"class" : {
-		 },
+		"initialize" : "bliznjan 4/14/2015 10:39" },
 	"instance" : {
-		"createRoassalShape" : "bliznjan 4/8/2015 11:45:48",
-		"initialize" : "bliznjan 4/8/2015 11:45:48",
-		"modelClass" : "bliznjan 4/8/2015 11:45:48" } }
+		"createRoassalShape" : "bliznjan 4/9/2015 14:31:25",
+		"modelClass" : "bliznjan 4/9/2015 14:31:25" } }

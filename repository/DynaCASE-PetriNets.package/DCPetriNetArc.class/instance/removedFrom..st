@@ -3,5 +3,6 @@ removedFrom: aDiagram
 	self
 		removedFrom: aDiagram
 		do: [ 
-			self source: nil.
-			self target: nil ]
+			self
+				source: nil;
+				target: nil ]

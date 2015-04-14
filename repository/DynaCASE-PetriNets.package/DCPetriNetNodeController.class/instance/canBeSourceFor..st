@@ -1,3 +1,3 @@
 testing
 canBeSourceFor: aController
-	^ possibleOutgoing includes: aController class
+	^ self class isPossibleOutgoing: aController class

@@ -1,3 +1,3 @@
 testing
 fireable
-	^ self source tokens >= model weight
+	^ self source tokenCount >= model weight

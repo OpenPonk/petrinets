@@ -1,3 +1,3 @@
 testing
 fireable
-	^ self source tokens isZero
+	^ self source tokenCount isZero
