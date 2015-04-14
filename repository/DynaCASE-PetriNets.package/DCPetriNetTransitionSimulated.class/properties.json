@@ -6,6 +6,7 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
+		"tempTokens",
 		"firing" ],
 	"name" : "DCPetriNetTransitionSimulated",
 	"pools" : [

@@ -1,3 +1,6 @@
 actions
 moveTokens
-	self target addTokens: (self source removeTokens: self model weight)
+	| weight |
+	weight := self model weight.
+	self source removeTokensAmount: weight.
+	self target addTokensAmount: weight

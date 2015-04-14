@@ -4,5 +4,5 @@ fireOutgoing
 		ifFalse: [ ^ self ].
 	self
 		outgoingDo: [ :arc | arc copyTokens ];
-		removeAllTokens.
+		tokensAmount: 0.
 	firing := false

@@ -5,4 +5,4 @@ buildEditorForm: aForm
 		addTextInput: 'weight'
 		label: 'Weight'
 		value: self model weight asString
-		onChange: [ :newValue | self model weight: (newValue asInteger ifNil: [ 0 ]) ]
+		onChange: [ :newValue | self model weight: (newValue asInteger ifNil: [ 1 ]) ]
