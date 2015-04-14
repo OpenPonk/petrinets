@@ -1,3 +1,3 @@
-as yet unclassified
+integer tokens
 tokensAmount
 	^ self model tokens

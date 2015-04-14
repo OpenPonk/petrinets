@@ -2,4 +2,5 @@
 	"class" : {
 		 },
 	"instance" : {
-		"loadIntoSimulatedElements:" : "bliznjan 4/14/2015 11:52:44" } }
+		"isSimulable" : "bliznjan 4/14/2015 18:43",
+		"isSteppable" : "bliznjan 4/14/2015 18:43" } }

@@ -1,0 +1,3 @@
+testing
+isSteppable
+	^ self fireable

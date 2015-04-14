@@ -3,5 +3,5 @@ initialize
 	super initialize.
 	self
 		addAction: [ 
-			self simulatedElementsDo: [ :el | el fireIncoming ].
-			self simulatedElementsDo: [ :el | el fireOutgoing ] ]
+			self simulableElementsDo: [ :el | el fireIncoming ].
+			self simulableElementsDo: [ :el | el fireOutgoing ] ]
