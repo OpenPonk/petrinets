@@ -1,8 +1,7 @@
 initialization
 createRoassalShape
 	^ RTBox new
-		width: 50;
-		height: 10;
+		size: 30;
 		color: Color transparent;
 		borderColor: self defaultColor;
 		yourself

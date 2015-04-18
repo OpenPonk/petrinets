@@ -2,15 +2,13 @@ hooks
 createFigure
 	^ DCRTCallbackBuilder
 		block: [ :view | 
-			| aFigure |
-			aFigure := self createRoassalShape elementOn: ''.
-			aFigure
-				@
+			(self createRoassalShape elementOn: '')
+				addInteraction:
 						(RTLabelled new
 								view: view;
-								right;
+								below;
 								color: self defaultColor;
 								yourself);
-				@ RTDraggable;
-				@ DCRTFocusable.
-			aFigure ]
+				addInteraction: RTDraggable;
+				addInteraction: DCRTFocusable;
+				yourself ]

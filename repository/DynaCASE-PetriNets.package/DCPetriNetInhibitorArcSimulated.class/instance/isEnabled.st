@@ -1,3 +1,3 @@
 testing
-fireable
+isEnabled
 	^ self source tokensAmount isZero

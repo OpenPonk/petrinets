@@ -1,3 +1,3 @@
 testing
 isSteppable
-	^ self fireable
+	^ self isEnabled

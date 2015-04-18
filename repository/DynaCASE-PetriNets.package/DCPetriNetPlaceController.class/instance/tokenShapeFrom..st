@@ -2,7 +2,7 @@ accessing
 tokenShapeFrom: aNumber
 	self tokenCircle
 		color:
-			(aNumber = 0
+			(aNumber isZero
 				ifTrue: [ Color transparent ]
 				ifFalse: [ self defaultColor ]).
 	self
