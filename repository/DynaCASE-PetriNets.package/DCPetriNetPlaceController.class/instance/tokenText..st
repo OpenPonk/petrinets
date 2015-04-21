@@ -1,3 +1,3 @@
 accessing
-tokenLabel: aString
+tokenText: aString
 	self tokenLabel text: aString

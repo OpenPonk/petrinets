@@ -1,8 +1,8 @@
 initialization
 createRoassalShape
-	| basicShape |
-	(basicShape := RTEllipse new)
+	self createTokenElement.
+	^ RTEllipse new
 		size: 40;
 		color: Color transparent;
-		borderColor: self defaultColor.
-	^ basicShape + self createTokenShape
+		borderColor: self defaultColor;
+		yourself
