@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Simulation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetNormalArcSimulator",
+	"pools" : [
+		 ],
+	"super" : "DCPetriNetInputArcSimulator",
+	"type" : "normal" }

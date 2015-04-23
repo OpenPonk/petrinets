@@ -1,3 +1,3 @@
-accessing
+hooks
 modelClass
 	^ DCPetriNetTransition

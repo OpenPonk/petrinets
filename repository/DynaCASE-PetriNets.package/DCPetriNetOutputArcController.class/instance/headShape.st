@@ -1,3 +1,3 @@
-initialization
+hooks
 headShape
 	^ DCRTSimpleArrow

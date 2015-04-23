@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetNormalArc",
 	"pools" : [
 		 ],
-	"super" : "DCPetriNetArc",
+	"super" : "DCPetriNetWeightedArc",
 	"type" : "normal" }

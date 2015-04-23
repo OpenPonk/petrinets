@@ -1,4 +1,4 @@
-initialization
+hooks
 createRoassalShape
 	self createTokenElement.
 	^ RTEllipse new

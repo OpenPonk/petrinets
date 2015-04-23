@@ -1,4 +1,4 @@
-initialization
+hooks
 createRoassalShape
 	^ RTBox new
 		size: 30;

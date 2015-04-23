@@ -1,0 +1,15 @@
+{
+	"category" : "DynaCASE-PetriNets-Simulation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"tempTokens",
+		"firing" ],
+	"name" : "DCPetriNetTransitionSimulator",
+	"pools" : [
+		 ],
+	"super" : "DCPetriNetNodeSimulator",
+	"type" : "normal" }

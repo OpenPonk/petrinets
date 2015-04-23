@@ -1,4 +1,4 @@
-initialization
+hooks
 createTokenElement
 	tokenLabelInteraction := RTLabelled new
 		color: self defaultColor;

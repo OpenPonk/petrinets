@@ -1,8 +1,8 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 4/18/2015 15:33:56" },
+		"initialize" : "bliznjan 4/23/2015 10:53" },
 	"instance" : {
 		"canBeTargetFor:" : "bliznjan 4/18/2015 15:33:56",
-		"initializePalette:" : "bliznjan 4/18/2015 15:33:56",
+		"initializePalette:" : "bliznjan 4/23/2015 10:27",
 		"modelClass" : "bliznjan 4/18/2015 15:33:56",
 		"rebuild" : "bliznjan 4/18/2015 15:33:56" } }

@@ -1,5 +1,5 @@
 class initialization
 initialize
 	super initialize.
-	PossibleIncoming := #().
-	PossibleOutgoing := #()
+	PossibleIncoming := Set new.
+	PossibleOutgoing := Set new

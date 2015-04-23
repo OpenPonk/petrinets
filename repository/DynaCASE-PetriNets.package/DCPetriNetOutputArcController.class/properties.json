@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetOutputArcController",
 	"pools" : [
 		 ],
-	"super" : "DCPetriNetArcController",
+	"super" : "DCPetriNetWeightedArcController",
 	"type" : "normal" }

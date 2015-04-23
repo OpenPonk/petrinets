@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Simulation",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetArcSimulator",
+	"pools" : [
+		 ],
+	"super" : "DCEdgeSimulator",
+	"type" : "normal" }
