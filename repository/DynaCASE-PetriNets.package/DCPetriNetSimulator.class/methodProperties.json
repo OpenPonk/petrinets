@@ -1,6 +1,5 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 4/23/2015 10:36" },
+		"initialize" : "bliznjan 4/23/2015 11:04:17" },
 	"instance" : {
-		"initialize" : "bliznjan 4/18/2015 15:33:56",
-		"isFinished" : "bliznjan 4/18/2015 15:33:56" } }
+		"initializeStepping" : "bliznjan 4/25/2015 10:01" } }
