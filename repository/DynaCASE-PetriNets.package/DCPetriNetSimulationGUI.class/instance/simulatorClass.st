@@ -1,0 +1,3 @@
+private - hooks
+simulatorClass
+	^ DCPetriNetSimulator
