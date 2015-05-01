@@ -1,0 +1,1 @@
+DCPetriNetArc represents arc from a transition to a place

@@ -5,6 +5,6 @@ createTokenElement
 		left;
 		yourself.
 	tokenShape := RTEllipse new
-		size: 14;
+		size: 12;
 		color: self defaultColor;
 		elementOn: ''

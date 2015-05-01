@@ -2,11 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addedIncoming:" : "bliznjan 4/25/2015 10:38:08",
-		"addedOutgoing:" : "bliznjan 4/25/2015 10:38:08",
-		"arcs" : "bliznjan 4/25/2015 10:38:08",
-		"arcsDo:" : "bliznjan 4/25/2015 10:38:08",
-		"initialize" : "bliznjan 4/25/2015 10:38:08",
-		"removedFrom:" : "bliznjan 4/25/2015 10:38:08",
-		"removedIncoming:" : "bliznjan 4/25/2015 10:38:08",
-		"removedOutgoing:" : "bliznjan 4/25/2015 10:38:08" } }
+		"addedIncoming:" : "bliznjan 4/29/2015 13:14:28",
+		"addedOutgoing:" : "bliznjan 4/29/2015 13:14:28",
+		"arcsDo:" : "bliznjan 5/1/2015 09:50",
+		"initialize" : "bliznjan 4/29/2015 13:14:28",
+		"removedFrom:" : "bliznjan 4/29/2015 13:14:28",
+		"removedIncoming:" : "bliznjan 4/29/2015 13:14:28",
+		"removedOutgoing:" : "bliznjan 4/29/2015 13:14:28" } }

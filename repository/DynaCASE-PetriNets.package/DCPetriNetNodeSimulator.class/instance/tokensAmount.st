@@ -1,3 +1,3 @@
-hooks
-headShape
+integer tokens
+tokensAmount
 	^ self subclassResponsibility

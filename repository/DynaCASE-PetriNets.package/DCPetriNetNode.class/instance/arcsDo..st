@@ -1,3 +1,6 @@
-accessing
+private - accessing
 arcsDo: aBlock
-	self arcs do: aBlock
+	"all connected arcs do aBlock"
+
+	incoming do: aBlock.
+	outgoing do: aBlock

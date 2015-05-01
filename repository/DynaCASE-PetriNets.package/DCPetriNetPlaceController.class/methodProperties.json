@@ -1,13 +1,13 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 4/25/2015 10:38:08" },
+		"initialize" : "bliznjan 4/29/2015 13:14:28" },
 	"instance" : {
-		"buildEditorForm:" : "bliznjan 4/25/2015 10:38:08",
-		"createRoassalShape" : "bliznjan 4/25/2015 10:38:08",
-		"createTokenElement" : "bliznjan 4/25/2015 10:38:08",
-		"modelClass" : "bliznjan 4/25/2015 10:38:08",
-		"refreshFigure" : "bliznjan 4/25/2015 10:38:08",
-		"tokenLabel" : "bliznjan 4/25/2015 10:38:08",
-		"tokenShape" : "bliznjan 4/25/2015 10:38:08",
-		"tokenShapeFrom:" : "bliznjan 4/25/2015 10:38:08",
-		"tokenText:" : "bliznjan 4/25/2015 10:38:08" } }
+		"buildEditorForm:" : "bliznjan 4/29/2015 13:14:28",
+		"createRoassalShape" : "bliznjan 4/29/2015 13:14:28",
+		"createTokenElement" : "bliznjan 4/30/2015 15:07",
+		"modelClass" : "bliznjan 4/29/2015 13:14:28",
+		"refreshFigure" : "bliznjan 4/29/2015 13:14:28",
+		"tokenLabel" : "bliznjan 5/1/2015 10:00",
+		"tokenShape" : "bliznjan 4/29/2015 13:14:28",
+		"tokenShapeFrom:" : "bliznjan 5/1/2015 09:59",
+		"tokenText:" : "bliznjan 5/1/2015 10:00" } }

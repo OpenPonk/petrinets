@@ -1,6 +1,7 @@
 accessing
 tokens: aNumber
-	aNumber < 0
-		ifTrue: [ ^ self error: 'Amount of tokens cannot be negative' ].
+	"sets amount of tokens to aNumber"
+
+	self assert: aNumber >= 0 description: 'Amount of tokens cannot be negative'.
 	tokens := aNumber.
 	self changed
