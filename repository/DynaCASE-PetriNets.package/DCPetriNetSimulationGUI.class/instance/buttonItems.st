@@ -3,18 +3,27 @@ buttonItems
 	^ super buttonItems
 		add: [ :item | 
 					item
+						name: 'Step all';
+						description: 'Step all enabled elements once';
+						action: [ 
+									self simulator
+										setSteppingAll;
+										step;
+										setDefaultStepping ] ];
+		add: [ :item | 
+					item
 						name: 'Step';
-						description: 'Step once';
+						description: 'Step random element once';
 						action: [ self simulator step ] ];
 		add: [ :item | 
 					item
 						name: 'Run';
-						description: 'Step every second';
+						description: 'Step random element every second';
 						action: [ self simulator repeat ] ];
 		add: [ :item | 
 					item
 						name: 'Fast forward';
-						description: 'Keeps stepping without delay';
+						description: 'Keep stepping random element without delay';
 						action: [ self simulator repeatWithoutDelay ] ];
 		add: [ :item | 
 					item

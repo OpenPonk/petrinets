@@ -1,6 +1,6 @@
 initialization
-initializeStepping
+setDefaultStepping
 	"sets default stepping settings"
 
-	super initializeStepping.
+	super setDefaultStepping.
 	self actions: (OrderedCollection with: [ :item | item fireIncoming ] with: [ :item | item fireOutgoing ])

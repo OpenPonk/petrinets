@@ -1,5 +1,3 @@
 actions
 fire
-	self
-		fireIncoming;
-		fireOutgoing
+	self step

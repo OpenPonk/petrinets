@@ -1,14 +1,14 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 4/29/2015 13:14:28",
-		"isPossibleIncoming:" : "bliznjan 4/29/2015 13:14:28",
-		"isPossibleOutgoing:" : "bliznjan 4/29/2015 13:14:28" },
+		"initialize" : "bliznjan 5/1/2015 10:21:54",
+		"isPossibleIncoming:" : "bliznjan 5/1/2015 10:21:54",
+		"isPossibleOutgoing:" : "bliznjan 5/1/2015 10:21:54" },
 	"instance" : {
-		"addAsSourceFor:" : "bliznjan 4/29/2015 13:14:28",
-		"addAsTargetFor:" : "bliznjan 4/29/2015 13:14:28",
-		"canBeSourceFor:" : "bliznjan 4/29/2015 13:14:28",
-		"canBeTargetFor:" : "bliznjan 4/29/2015 13:14:28",
-		"createFigure" : "bliznjan 4/29/2015 13:14:28",
-		"createRoassalShape" : "bliznjan 4/29/2015 13:14:28",
-		"refreshFigure" : "bliznjan 4/29/2015 13:14:28",
-		"sameKindAs:" : "bliznjan 4/29/2015 13:14:28" } }
+		"addAsSourceFor:" : "bliznjan 5/1/2015 10:21:54",
+		"addAsTargetFor:" : "bliznjan 5/1/2015 10:21:54",
+		"canBeSourceFor:" : "bliznjan 5/1/2015 10:21:54",
+		"canBeTargetFor:" : "bliznjan 5/1/2015 10:21:54",
+		"createFigure" : "bliznjan 5/1/2015 10:21:54",
+		"createRoassalShape" : "bliznjan 5/1/2015 10:21:54",
+		"refreshFigure" : "bliznjan 5/1/2015 10:21:54",
+		"sameKindAs:" : "bliznjan 5/1/2015 10:21:54" } }

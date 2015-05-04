@@ -1,8 +1,9 @@
 {
 	"class" : {
-		"controllerClass" : "bliznjan 4/29/2015 13:14:28",
-		"initialize" : "bliznjan 4/29/2015 13:14:28",
-		"simulableControllerClasses" : "bliznjan 4/29/2015 13:14:28" },
+		"controllerClass" : "bliznjan 5/1/2015 10:21:54",
+		"initialize" : "bliznjan 5/1/2015 10:21:54",
+		"simulableControllerClasses" : "bliznjan 5/4/2015 11:52" },
 	"instance" : {
-		"buttonItems" : "bliznjan 5/1/2015 10:08",
-		"simulatorClass" : "bliznjan 4/29/2015 13:14:28" } }
+		"buttonItems" : "bliznjan 5/4/2015 13:10",
+		"loadController" : "bliznjan 5/4/2015 14:07",
+		"simulatorClass" : "bliznjan 5/1/2015 10:21:54" } }
