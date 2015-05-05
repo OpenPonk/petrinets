@@ -1,14 +1,14 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 5/1/2015 10:21:54",
-		"isPossibleIncoming:" : "bliznjan 5/1/2015 10:21:54",
-		"isPossibleOutgoing:" : "bliznjan 5/1/2015 10:21:54" },
+		"initialize" : "bliznjan 5/5/2015 13:24:40",
+		"isPossibleIncoming:" : "bliznjan 5/5/2015 13:24:40",
+		"isPossibleOutgoing:" : "bliznjan 5/5/2015 13:24:40" },
 	"instance" : {
-		"addAsSourceFor:" : "bliznjan 5/1/2015 10:21:54",
-		"addAsTargetFor:" : "bliznjan 5/1/2015 10:21:54",
-		"canBeSourceFor:" : "bliznjan 5/1/2015 10:21:54",
-		"canBeTargetFor:" : "bliznjan 5/1/2015 10:21:54",
-		"createFigure" : "bliznjan 5/1/2015 10:21:54",
-		"createRoassalShape" : "bliznjan 5/1/2015 10:21:54",
-		"refreshFigure" : "bliznjan 5/1/2015 10:21:54",
-		"sameKindAs:" : "bliznjan 5/1/2015 10:21:54" } }
+		"addAsSourceFor:" : "bliznjan 5/5/2015 13:24:40",
+		"addAsTargetFor:" : "bliznjan 5/5/2015 13:24:40",
+		"canBeSourceFor:" : "bliznjan 5/5/2015 13:24:40",
+		"canBeTargetFor:" : "bliznjan 5/5/2015 13:24:40",
+		"createFigure" : "bliznjan 5/5/2015 13:24:40",
+		"createRoassalShape" : "bliznjan 5/5/2015 13:24:40",
+		"refreshFigure" : "bliznjan 5/5/2015 13:24:40",
+		"sameKindAs:" : "bliznjan 5/5/2015 13:24:40" } }

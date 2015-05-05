@@ -22,11 +22,6 @@ buttonItems
 						action: [ self simulator repeat ] ];
 		add: [ :item | 
 					item
-						name: 'Fast forward';
-						description: 'Keep stepping random element without delay';
-						action: [ self simulator repeatWithoutDelay ] ];
-		add: [ :item | 
-					item
 						name: 'Stop';
 						description: 'Stop stepping';
 						action: [ self simulator stop ] ];
