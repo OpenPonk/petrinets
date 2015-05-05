@@ -1,6 +1,7 @@
 {
 	"class" : {
-		"initialize" : "bliznjan 5/1/2015 10:21:54" },
+		 },
 	"instance" : {
+		"initializeClassMapping" : "bliznjan 5/5/2015 11:34",
 		"setDefaultStepping" : "bliznjan 5/4/2015 14:03",
 		"setSteppingAll" : "bliznjan 5/4/2015 13:14" } }

@@ -1,6 +1,6 @@
-class initialization
-initialize
-	super initialize.
+initialization
+initializeClassMapping
+	super initializeClassMapping.
 	ClassMapping
 		at: DCPetriNetOutputArc put: DCPetriNetOutputArcSimulator;
 		at: DCPetriNetNormalArc put: DCPetriNetNormalArcSimulator;
