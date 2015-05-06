@@ -2,7 +2,5 @@ actions
 fireOutgoing
 	firing
 		ifFalse: [ ^ self ].
-	self
-		outgoingDo: [ :arc | arc copyTokens ];
-		tokensAmount: 0.
+	self outgoingDo: [ :arc | arc handleFire ].
 	firing := false

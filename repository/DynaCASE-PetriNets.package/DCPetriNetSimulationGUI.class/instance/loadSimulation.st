@@ -1,8 +1,8 @@
 private - hooks
-loadController
-	"creates simulator for current diagramController and sets visualisation of steping"
+loadSimulation
+	"prepares simulation - called with every reload"
 
-	super loadController.
+	super loadSimulation.
 	diagramSimulator
 		simulableElementsDo: [ :element | 
 			element

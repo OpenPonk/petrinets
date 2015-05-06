@@ -1,3 +1,3 @@
 actions
-moveTokens
+handleFire
 	self source tokensAmount: 0
