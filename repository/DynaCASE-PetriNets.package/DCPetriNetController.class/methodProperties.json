@@ -1,11 +1,11 @@
 {
 	"class" : {
-		"diagramIcon" : "bliznjan 5/6/2015 12:49",
-		"diagramName" : "bliznjan 5/6/2015 12:50",
-		"initializeModelToControllerMapping" : "bliznjan 5/6/2015 12:00",
-		"newDiagram" : "bliznjan 5/6/2015 12:51" },
+		"diagramIcon" : "bliznjan 5/6/2015 15:08:56",
+		"diagramName" : "bliznjan 5/6/2015 15:08:56",
+		"initializeModelToControllerMapping" : "bliznjan 5/6/2015 15:08:56",
+		"newDiagram" : "bliznjan 5/6/2015 15:08:56" },
 	"instance" : {
-		"canBeTargetFor:" : "bliznjan 5/5/2015 19:07:25",
-		"initializePalette:" : "bliznjan 5/5/2015 19:07:25",
-		"modelClass" : "bliznjan 5/5/2015 19:07:25",
-		"rebuild" : "bliznjan 5/5/2015 19:07:25" } }
+		"canBeTargetFor:" : "bliznjan 5/6/2015 15:08:56",
+		"initializePalette:" : "bliznjan 5/6/2015 15:08:56",
+		"modelClass" : "bliznjan 5/6/2015 15:08:56",
+		"rebuild" : "bliznjan 5/6/2015 15:08:56" } }

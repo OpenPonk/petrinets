@@ -6,7 +6,7 @@ buttonItems
 						name: 'Step all';
 						description: 'Step all enabled elements once';
 						action: [ 
-									self simulator
+									self diagramSimulator
 										setSteppingAll;
 										step;
 										setDefaultStepping ] ];
@@ -14,15 +14,15 @@ buttonItems
 					item
 						name: 'Step';
 						description: 'Step random element once';
-						action: [ self simulator step ] ];
+						action: [ self diagramSimulator step ] ];
 		add: [ :item | 
 					item
 						name: 'Run';
 						description: 'Step random element every second';
-						action: [ self simulator repeat ] ];
+						action: [ self diagramSimulator repeat ] ];
 		add: [ :item | 
 					item
 						name: 'Stop';
 						description: 'Stop stepping';
-						action: [ self simulator stop ] ];
+						action: [ self diagramSimulator stop ] ];
 		yourself
