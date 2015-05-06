@@ -14,6 +14,7 @@ loadController
 							controller := self controller controllerForModel: event simulator model.
 							prevColor := controller figure color.
 							controller figure color: Color lightBlue.
+							controller refreshFigure.
 							[ 
 							(Delay forMilliseconds: 200) wait.
 							controller figure color = prevColor

@@ -2,13 +2,13 @@
 	"class" : {
 		 },
 	"instance" : {
-		"fire" : "bliznjan 5/5/2015 13:24:40",
-		"fireIncoming" : "bliznjan 5/5/2015 13:24:40",
-		"fireOutgoing" : "bliznjan 5/5/2015 13:24:40",
-		"initialize" : "bliznjan 5/5/2015 13:24:40",
-		"isEnabled" : "bliznjan 5/5/2015 13:24:40",
-		"isSimulable" : "bliznjan 5/5/2015 13:24:40",
-		"isSteppable" : "bliznjan 5/5/2015 13:24:40",
-		"setDefaultStepping" : "bliznjan 5/5/2015 13:24:40",
-		"tokensAmount" : "bliznjan 5/5/2015 13:24:40",
-		"tokensAmount:" : "bliznjan 5/5/2015 13:24:40" } }
+		"fire" : "bliznjan 5/5/2015 19:07:25",
+		"fireIncoming" : "bliznjan 5/5/2015 19:07:25",
+		"fireOutgoing" : "bliznjan 5/5/2015 19:07:25",
+		"initialize" : "bliznjan 5/5/2015 19:07:25",
+		"isEnabled" : "bliznjan 5/5/2015 19:07:25",
+		"isSimulable" : "bliznjan 5/5/2015 19:07:25",
+		"isSteppable" : "bliznjan 5/5/2015 19:07:25",
+		"setDefaultStepping" : "bliznjan 5/5/2015 19:07:25",
+		"tokensAmount" : "bliznjan 5/5/2015 19:07:25",
+		"tokensAmount:" : "bliznjan 5/5/2015 19:07:25" } }

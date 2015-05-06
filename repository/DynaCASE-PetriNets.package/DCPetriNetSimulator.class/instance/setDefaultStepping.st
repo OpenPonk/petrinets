@@ -5,6 +5,6 @@ setDefaultStepping
 	super setDefaultStepping.
 	self
 		fromSteppableElements;
-		inRandomOrder;
+		orderRandomized;
 		selectFirst;
 		actions: (OrderedCollection with: [ :item | item doAction: 1 ] with: [ :item | item doAction: 2 ])

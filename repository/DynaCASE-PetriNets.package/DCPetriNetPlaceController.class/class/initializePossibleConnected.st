@@ -1,6 +1,5 @@
 class initialization
-initialize
-	super initialize.
+initializePossibleConnected
 	PossibleIncoming := Set with: DCPetriNetOutputArcController.
 	PossibleOutgoing := Set
 		with: DCPetriNetInhibitorArcController

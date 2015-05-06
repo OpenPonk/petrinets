@@ -5,5 +5,5 @@ setSteppingAll
 
 	self
 		setDefaultStepping;
-		inAnyOrder;
+		orderAny;
 		selectAll

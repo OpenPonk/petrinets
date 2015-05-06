@@ -1,0 +1,3 @@
+userinterface
+diagramIcon
+	^ nil
