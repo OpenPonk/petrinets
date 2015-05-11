@@ -18,12 +18,12 @@ Copy following code into Pharo, uncomment any of 4 lines with paths (even more o
 ```
 	| localPetriNetsPath localSimulationPath localDynacasePath localDynacaseModelPath |
 	localPetriNetsPath := localSimulationPath := localDynacasePath := localDynacaseModelPath := nil.
-	
-	
+
+
+" PART TO MODIFY "
+
   "for read-only usage without git: do not modify anything and just run it
-	
     ..OR..
-	  
    for using local git clone: uncomment any lines and write own path to repository (last part of path has to be /repository)
 	    you can choose each repository/line separately"
 	
@@ -32,7 +32,7 @@ Copy following code into Pharo, uncomment any of 4 lines with paths (even more o
 "dynacase:"  "localDynacasePath = 'C:/Users/User/Pharo/repo/dynacase/repository'."
 "dynacase-model:"  "localDynacaseModelPath = 'C:/Users/User/Pharo/repo/dynacase-model/repository'."
 		
-		
+" END OF PART TO MODIFY"		
 		
 	localPetriNetsPath notNil | localSimulationPath notNil | localDynacasePath notNil | localDynacaseModelPath notNil
 		ifTrue: [ 
