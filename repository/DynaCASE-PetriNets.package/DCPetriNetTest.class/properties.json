@@ -10,5 +10,5 @@
 	"name" : "DCPetriNetTest",
 	"pools" : [
 		 ],
-	"super" : "TestCase",
+	"super" : "DCDiagramTest",
 	"type" : "normal" }

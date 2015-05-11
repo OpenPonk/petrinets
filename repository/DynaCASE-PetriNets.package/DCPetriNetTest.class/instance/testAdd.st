@@ -1,6 +1,9 @@
 tests
 testAdd
 	| d first second t |
+	super testAdd.
+	self setUp.
+	
 	d := DCPetriNet new.
 	self assert: d elements isEmpty.
 
@@ -14,4 +17,4 @@ testAdd
 	t := DCPetriNetOutputArc from: d elements first to: d elements second.
 	d add: t.
 	self assert: d elements size = 3.
-	self assert: d elements third owner = d.
+	self assert: d elements third owner = d
