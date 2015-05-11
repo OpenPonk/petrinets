@@ -1,4 +1,4 @@
-as yet unclassified
+actions
 handleFire
 	"applies correct action when connected transition is fired"
 

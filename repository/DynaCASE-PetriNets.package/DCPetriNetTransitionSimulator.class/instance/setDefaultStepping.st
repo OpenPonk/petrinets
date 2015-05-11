@@ -4,5 +4,6 @@ setDefaultStepping
 
 	super setDefaultStepping.
 	self
+		resetActions;
 		addAction: [ :item | item fireIncoming ];
 		addAction: [ :item | item fireOutgoing ]

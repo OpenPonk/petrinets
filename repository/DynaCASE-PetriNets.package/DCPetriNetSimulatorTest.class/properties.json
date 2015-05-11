@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"simulator" ],
+	"name" : "DCPetriNetSimulatorTest",
+	"pools" : [
+		 ],
+	"super" : "DCTestCase",
+	"type" : "normal" }

@@ -1,4 +1,4 @@
-as yet unclassified
+tests
 testFigureRefresh
 	| text |
 	ctrl model: ctrl createModel.

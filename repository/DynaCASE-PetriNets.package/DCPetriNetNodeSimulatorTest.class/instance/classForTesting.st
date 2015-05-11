@@ -1,0 +1,3 @@
+hooks
+classForTesting
+	^ self subclassResponsibility

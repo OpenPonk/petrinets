@@ -1,0 +1,3 @@
+hooks
+exampleModel
+	^ DCPetriNetResetArc new

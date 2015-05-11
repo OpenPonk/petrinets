@@ -7,5 +7,5 @@ setDefaultStepping
 		fromSteppableElements;
 		orderRandomized;
 		selectFirst;
-		addAction: [ :item | item doAction: 1 ];
-		addAction: [ :item | item doAction: 2 ]
+		resetActions;
+		addAction: [ :item | item step ]
