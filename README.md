@@ -27,10 +27,14 @@ Copy following code into Pharo, uncomment any of 4 lines with paths (even more o
    for using local git clone: uncomment any lines and write own path to repository (last part of path has to be /repository)
 	    you can choose each repository/line separately"
 	
-"dynacase-petrinets:"  "localPetriNetsPath = 'C:/Users/User/Pharo/repo/dynacase-petrinets/repository'."
-"dynacase-simulation:"  "localSimulationPath = 'C:/Users/User/Pharo/repo/dynacase-simulation/repository'."
-"dynacase:"  "localDynacasePath = 'C:/Users/User/Pharo/repo/dynacase/repository'."
-"dynacase-model:"  "localDynacaseModelPath = 'C:/Users/User/Pharo/repo/dynacase-model/repository'."
+"dynacase-petrinets:"
+	"localPetriNetsPath := 'C:/Users/User/Pharo/repo/dynacase-petrinets/repository'."
+"dynacase-simulation:"
+	"localSimulationPath := 'C:/Users/User/Pharo/repo/dynacase-simulation/repository'."
+"dynacase:"
+	"localDynacasePath := 'C:/Users/User/Pharo/repo/dynacase/repository'."
+"dynacase-model:"
+	"localDynacaseModelPath := 'C:/Users/User/Pharo/repo/dynacase-model/repository'."
 		
 " END OF PART TO MODIFY"		
 		
