@@ -2,11 +2,11 @@
 	"class" : {
 		 },
 	"instance" : {
-		"fire" : "bliznjan 5/11/2015 16:28:42",
-		"fireIncoming" : "bliznjan 5/11/2015 16:28:42",
-		"fireOutgoing" : "bliznjan 5/11/2015 16:28:42",
-		"initialize" : "bliznjan 5/11/2015 16:28:42",
-		"isEnabled" : "bliznjan 5/11/2015 16:28:42",
-		"isSimulable" : "bliznjan 5/11/2015 16:28:42",
-		"isSteppable" : "bliznjan 5/11/2015 16:28:42",
-		"setDefaultStepping" : "bliznjan 5/11/2015 16:28:42" } }
+		"fire" : "bliznjan 5/11/2015 17:12:00",
+		"fireIncoming" : "bliznjan 5/11/2015 17:12:00",
+		"fireOutgoing" : "bliznjan 5/11/2015 17:12:00",
+		"initialize" : "bliznjan 5/11/2015 17:12:00",
+		"isEnabled" : "bliznjan 5/11/2015 17:12:00",
+		"isSimulable" : "bliznjan 5/11/2015 17:12:00",
+		"isSteppable" : "bliznjan 5/11/2015 17:12:00",
+		"setDefaultStepping" : "bliznjan 5/11/2015 17:12:00" } }
