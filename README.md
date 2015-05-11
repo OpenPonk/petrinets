@@ -75,5 +75,5 @@ Copy following code into Pharo, uncomment any of 4 lines with paths (even more o
 
 Windows note: Use forward slashes (/) even on Windows. For example
 ```
-    repository: 'gitfiletree:///C:/Users/Username/Pharo/dynacase/repository';
+    repository: 'gitfiletree:///C:/Users/Username/Pharo/dynacase-petrinets/repository';
 ```
