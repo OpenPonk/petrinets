@@ -1,4 +1,4 @@
-initialization
+stepping
 setDefaultStepping
 	"sets default stepping settings"
 
@@ -7,4 +7,5 @@ setDefaultStepping
 		fromSteppableElements;
 		orderRandomized;
 		selectFirst;
-		actions: (OrderedCollection with: [ :item | item doAction: 1 ] with: [ :item | item doAction: 2 ])
+		addAction: [ :item | item doAction: 1 ];
+		addAction: [ :item | item doAction: 2 ]

@@ -1,0 +1,3 @@
+hooks
+desiredHeadShape
+	^ self subclassResponsibility

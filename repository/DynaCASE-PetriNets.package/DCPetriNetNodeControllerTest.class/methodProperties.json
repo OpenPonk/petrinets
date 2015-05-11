@@ -1,0 +1,9 @@
+{
+	"class" : {
+		"isAbstract" : "bliznjan 5/11/2015 09:23" },
+	"instance" : {
+		"classForTesting" : "bliznjan 5/11/2015 08:41",
+		"desiredModelClass" : "bliznjan 5/11/2015 09:15",
+		"testCreateFigure" : "bliznjan 5/11/2015 09:18",
+		"testCreateModel" : "bliznjan 5/11/2015 09:19",
+		"testFigureRefresh" : "bliznjan 5/11/2015 09:35" } }

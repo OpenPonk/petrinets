@@ -5,11 +5,11 @@ examplePetriNets
 	project := DCProject new projectName: 'Example Petri Net'.
 	pn := DCPetriNet new name: 'Petri Net Diagram'.
 	project addDiagram: pn.
-	place1 := DCPetriNetPlace new tokens: 2.
-	place2 := DCPetriNetPlace new.
-	place3 := DCPetriNetPlace new.
-	place4 := DCPetriNetPlace new tokens: 8.
-	trans := DCPetriNetTransition new.
+	place1 := DCPetriNetPlace new name: 'P1'; tokens: 2; yourself.
+	place2 := DCPetriNetPlace new name: 'P2'; yourself.
+	place3 := DCPetriNetPlace new name: 'P3'; yourself.
+	place4 := DCPetriNetPlace new name: 'P4'; tokens: 8; yourself.
+	trans := DCPetriNetTransition new name: 'T'; yourself.
 	pn
 		add: place1;
 		add: place2;

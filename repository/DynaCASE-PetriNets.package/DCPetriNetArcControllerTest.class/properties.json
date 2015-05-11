@@ -1,0 +1,15 @@
+{
+	"category" : "DynaCASE-PetriNets-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"fromCtrl",
+		"toCtrl" ],
+	"name" : "DCPetriNetArcControllerTest",
+	"pools" : [
+		 ],
+	"super" : "DCControllerTest",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"isAbstract" : "bliznjan 5/11/2015 08:51" },
+	"instance" : {
+		"amountOfLabels" : "bliznjan 5/11/2015 09:06",
+		"classForTesting" : "bliznjan 5/11/2015 08:41",
+		"desiredHeadShape" : "bliznjan 5/11/2015 09:00",
+		"desiredModelClass" : "bliznjan 5/11/2015 09:12",
+		"fromClass" : "bliznjan 5/11/2015 08:43",
+		"setUp" : "bliznjan 5/11/2015 08:45",
+		"testCreateFigure" : "bliznjan 5/11/2015 09:06",
+		"testCreateModel" : "bliznjan 5/11/2015 09:12",
+		"testFigureRefresh" : "bliznjan 5/11/2015 09:35",
+		"toClass" : "bliznjan 5/11/2015 08:43" } }

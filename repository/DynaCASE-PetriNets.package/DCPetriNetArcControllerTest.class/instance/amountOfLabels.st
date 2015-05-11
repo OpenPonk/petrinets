@@ -1,0 +1,3 @@
+hooks
+amountOfLabels
+	^ 1
