@@ -1,14 +1,14 @@
 {
 	"class" : {
-		"isAbstract" : "bliznjan 5/11/2015 08:51" },
+		"isAbstract" : "bliznjan 5/11/2015 15:39:19" },
 	"instance" : {
-		"amountOfLabels" : "bliznjan 5/11/2015 09:06",
-		"classForTesting" : "bliznjan 5/11/2015 15:08",
-		"desiredHeadShape" : "bliznjan 5/11/2015 09:00",
-		"desiredModelClass" : "bliznjan 5/11/2015 09:12",
-		"fromClass" : "bliznjan 5/11/2015 08:43",
-		"setUp" : "bliznjan 5/11/2015 08:45",
-		"testCreateFigure" : "bliznjan 5/11/2015 09:06",
-		"testCreateModel" : "bliznjan 5/11/2015 09:12",
-		"testFigureRefresh" : "bliznjan 5/11/2015 09:35",
-		"toClass" : "bliznjan 5/11/2015 08:43" } }
+		"amountOfLabels" : "bliznjan 5/11/2015 15:39:19",
+		"classForTesting" : "bliznjan 5/11/2015 15:39:19",
+		"desiredHeadShape" : "bliznjan 5/11/2015 15:39:19",
+		"desiredModelClass" : "bliznjan 5/11/2015 15:39:19",
+		"fromClass" : "bliznjan 5/11/2015 15:39:19",
+		"setUp" : "bliznjan 5/11/2015 15:39:19",
+		"testCreateFigure" : "bliznjan 5/11/2015 15:39:19",
+		"testCreateModel" : "bliznjan 5/11/2015 15:39:19",
+		"testFigureRefresh" : "bliznjan 5/11/2015 15:39:19",
+		"toClass" : "bliznjan 5/11/2015 15:39:19" } }
