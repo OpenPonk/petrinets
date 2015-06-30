@@ -1,6 +1,3 @@
 removing
 dependentElements
-	^ OrderedCollection new
-		addAll: incoming;
-		addAll: outgoing;
-		yourself
+	^ self incoming union: self outgoing
