@@ -1,8 +1,9 @@
 hooks
 createRoassalShape
 	self createTokenElement.
-	^ RTEllipse new
-		size: 40;
+	^ DCRTBox new
+		size: 50;
+		borderRadius: 25;
 		color: Color transparent;
 		borderColor: Color black;
 		yourself
