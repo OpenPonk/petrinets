@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Examples",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetsExamples",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

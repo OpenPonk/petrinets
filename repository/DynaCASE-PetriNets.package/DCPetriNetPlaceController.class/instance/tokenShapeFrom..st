@@ -15,7 +15,7 @@ tokenShapeFrom: aNumber
 		color:
 			(aNumber isZero
 				ifTrue: [ Color transparent ]
-				ifFalse: [ self defaultColor ]).
+				ifFalse: [ Color black ]).
 	self
 		tokenText:
 			(aNumber < 2

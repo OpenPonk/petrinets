@@ -1,10 +1,10 @@
 hooks
 createTokenElement
 	tokenLabelInteraction := RTLabelled new
-		color: self defaultColor;
+		color: Color black;
 		left;
 		yourself.
 	tokenShape := RTEllipse new
 		size: 12;
-		color: self defaultColor;
+		color: Color black;
 		elementOn: ''

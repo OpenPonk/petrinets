@@ -4,5 +4,5 @@ createRoassalShape
 	^ RTEllipse new
 		size: 40;
 		color: Color transparent;
-		borderColor: self defaultColor;
+		borderColor: Color black;
 		yourself
