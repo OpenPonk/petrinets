@@ -1,7 +1,4 @@
 accessing
 childrenMapping
-	^ {
-	DCPetriNet -> #elements.
-	DCPetriNetArc -> #(#source #target).
-	DCPetriNetNode -> #().
-	}
+	^ {(DCPetriNet -> #nodes).
+	(DCPetriNetTransition -> #connected)}

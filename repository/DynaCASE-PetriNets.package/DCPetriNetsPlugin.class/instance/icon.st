@@ -1,3 +1,3 @@
 accessing
 icon
-	^ DCIcons current dcFsmDiagramIcon
+	^ DCPetriNetsIcons current petriNetIcon

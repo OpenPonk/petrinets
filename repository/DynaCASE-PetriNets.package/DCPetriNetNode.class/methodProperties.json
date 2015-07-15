@@ -2,7 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"incoming" : "bliznjan 7/13/2015 23:10",
-		"outgoing" : "bliznjan 7/13/2015 23:10",
+		"connected" : "bliznjan 7/15/2015 16:59",
+		"incoming" : "bliznjan 7/15/2015 14:36",
+		"isArc" : "bliznjan 7/15/2015 14:42",
+		"isNode" : "bliznjan 7/15/2015 14:43",
+		"isPlace" : "bliznjan 7/15/2015 14:43",
+		"isTransition" : "bliznjan 7/15/2015 14:43",
+		"outgoing" : "bliznjan 7/15/2015 14:45",
 		"relatedElements" : "bliznjan 7/13/2015 23:11",
 		"removedFrom:" : "bliznjan 7/13/2015 23:09" } }

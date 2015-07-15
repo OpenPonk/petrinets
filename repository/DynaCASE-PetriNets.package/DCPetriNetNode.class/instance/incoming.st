@@ -1,4 +1,4 @@
 accessing
 incoming
 	owner ifNil: [ ^ #() ].
-	^ owner transitions select: [ :each | each target = self ]
+	^ owner arcs select: [ :each | each target = self ]

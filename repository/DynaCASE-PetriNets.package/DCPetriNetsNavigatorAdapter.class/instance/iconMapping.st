@@ -1,8 +1,8 @@
 accessing
 iconMapping
-	^ {DCPetriNet -> DCIcons current dcFsmDiagramIcon.
-	DCPetriNetInhibitorArc -> DCIcons current dcFsmDiagramIcon.
-	DCPetriNetResetArc -> DCIcons current dcFsmDiagramIcon.
-	DCPetriNetWeightedArc -> DCIcons current dcFsmDiagramIcon.
-	DCPetriNetPlace -> DCIcons current dcFsmDiagramIcon.
-	DCPetriNetTransition -> DCIcons current dcFsmDiagramIcon}
+	^ {(DCPetriNet -> DCPetriNetsIcons current petriNetIcon).
+	(DCPetriNetInhibitorArc -> DCPetriNetsIcons current inhibitorArcIcon).
+	(DCPetriNetResetArc -> DCPetriNetsIcons current resetArcIcon).
+	(DCPetriNetWeightedArc -> DCPetriNetsIcons current arcIcon).
+	(DCPetriNetPlace -> DCPetriNetsIcons current placeIcon).
+	(DCPetriNetTransition -> DCPetriNetsIcons current transitionIcon)}

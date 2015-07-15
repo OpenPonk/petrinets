@@ -2,4 +2,7 @@
 	"class" : {
 		"from:to:" : "bliznjan 5/11/2015 17:12:00" },
 	"instance" : {
-		 } }
+		"isArc" : "bliznjan 7/15/2015 14:41",
+		"isNode" : "bliznjan 7/15/2015 14:41",
+		"isPlace" : "bliznjan 7/15/2015 14:41",
+		"isTransition" : "bliznjan 7/15/2015 14:41" } }

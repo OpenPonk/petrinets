@@ -1,0 +1,22 @@
+{
+	"class" : {
+		"current" : "bliznjan 7/15/2015 16:46" },
+	"instance" : {
+		"arcIcon" : "bliznjan 7/15/2015 16:49",
+		"arcIconContents" : "bliznjan 7/15/2015 16:49",
+		"gtInspectorIconsIn:" : "bliznjan 7/15/2015 16:46",
+		"iconSelectors" : "bliznjan 7/15/2015 16:46",
+		"inhibitorArcIcon" : "bliznjan 7/15/2015 16:49",
+		"inhibitorArcIconContents" : "bliznjan 7/15/2015 16:49",
+		"initialize" : "bliznjan 7/15/2015 16:46",
+		"initializeIcons" : "bliznjan 7/15/2015 16:46",
+		"petriNetIcon" : "bliznjan 7/15/2015 16:49",
+		"petriNetIconContents" : "bliznjan 7/15/2015 16:49",
+		"placeIcon" : "bliznjan 7/15/2015 16:49",
+		"placeIconContents" : "bliznjan 7/15/2015 16:49",
+		"placeWithTokenIcon" : "bliznjan 7/15/2015 16:49",
+		"placeWithTokenIconContents" : "bliznjan 7/15/2015 16:49",
+		"resetArcIcon" : "bliznjan 7/15/2015 16:49",
+		"resetArcIconContents" : "bliznjan 7/15/2015 16:49",
+		"transitionIcon" : "bliznjan 7/15/2015 16:49",
+		"transitionIconContents" : "bliznjan 7/15/2015 16:49" } }
