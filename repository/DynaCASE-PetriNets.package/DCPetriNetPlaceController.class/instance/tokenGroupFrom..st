@@ -1,6 +1,6 @@
 private
 tokenGroupFrom: aNumber
-	"updates token shape and label to represent aNumber amount of tokens"
+	"updates token shape and label to show aNumber amount of tokens"
 
 	self tokenCircle
 		color:
@@ -11,4 +11,5 @@ tokenGroupFrom: aNumber
 		tokenText:
 			(aNumber < 2
 				ifTrue: [ '' ]
-				ifFalse: [ aNumber asString ])
+				ifFalse: [ aNumber asString ]).
+	self tokenGroup translateBy: 0

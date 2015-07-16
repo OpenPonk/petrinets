@@ -8,7 +8,7 @@ initializePalette: aPalette
 		newSeparator;
 		newConnectionCreationTool: 'Output Arc'
 			factory: [ DCPetriNetOutputArcController new ]
-			icon: DCPetriNetsIcons current arcIcon;
+			icon: DCPetriNetsIcons current outputArcIcon;
 		newSeparator;
 		newConnectionCreationTool: 'Normal Arc'
 			factory: [ DCPetriNetNormalArcController new ]

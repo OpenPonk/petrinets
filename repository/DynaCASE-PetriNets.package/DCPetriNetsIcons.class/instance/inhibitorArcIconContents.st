@@ -1,7 +1,6 @@
 private - contents
 inhibitorArcIconContents
-	"Private - Method generated with the content of the file File @ C:\Users\Ruiner\Pharo\images\DC-2015-07-14\icons\inhibitorArc.png"
-	^ 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1B
-AACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABQSURBVDhPzZJBCgAgCAS1///ZhBWR
-KM2bc0lih62IRYQ6LFu/GSjUl2ZmDEgWgqY9gDkTYhrojtW9uAjdhuyVNB2PAD9rAO4gWQsH
-474G0QbYxTAKr1OVVwAAAABJRU5ErkJggg=='
+	"Private - Method generated with the content of the file File @ C:\Users\Ruiner\Pharo\images\DC-2015-07-15-roassal\icons\inhibitorArc.png"
+	^ 'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1B
+AACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVDhPYxgF9Af/kTDJAF0TSYbg
+UgwWBxHEYGwAlzgGoNgAEEBXTJJmGABpguFRAAYMDACr7hjoX3/kFQAAAABJRU5ErkJggg=='
