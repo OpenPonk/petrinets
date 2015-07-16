@@ -1,5 +1,5 @@
-accessing
+private
 tokenLabel
-	"returns label representing amount of tokens"
+	"returns label element representing amount of tokens"
 
-	^ tokenLabelInteraction lbl
+	^ self tokenGroup first

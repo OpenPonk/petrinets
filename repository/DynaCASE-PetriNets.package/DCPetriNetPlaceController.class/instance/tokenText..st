@@ -2,4 +2,4 @@ accessing
 tokenText: aString
 	"sets token amount label text"
 
-	self tokenLabel text: aString
+	self tokenLabel trachelShape text: aString

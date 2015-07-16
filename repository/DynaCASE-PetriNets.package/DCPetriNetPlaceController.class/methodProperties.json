@@ -2,12 +2,14 @@
 	"class" : {
 		"initializePossibleConnected" : "bliznjan 5/11/2015 17:12:00" },
 	"instance" : {
+		"applyTokenGroup" : "bliznjan 7/16/2015 13:56",
 		"buildEditorForm:" : "bliznjan 7/14/2015 20:50",
-		"createRoassalShape" : "bliznjan 7/15/2015 14:27",
-		"createTokenElement" : "bliznjan 7/14/2015 19:01",
+		"createRoassalShape" : "bliznjan 7/16/2015 13:52",
+		"createTokenGroup" : "bliznjan 7/16/2015 13:58",
 		"modelClass" : "bliznjan 5/11/2015 17:12:00",
-		"refreshFigure" : "bliznjan 5/11/2015 17:12:00",
-		"tokenLabel" : "bliznjan 5/11/2015 17:12:00",
-		"tokenShape" : "bliznjan 5/11/2015 17:12:00",
-		"tokenShapeFrom:" : "bliznjan 7/14/2015 19:02",
-		"tokenText:" : "bliznjan 5/11/2015 17:12:00" } }
+		"refreshFigure" : "bliznjan 7/16/2015 13:37",
+		"tokenCircle" : "bliznjan 7/16/2015 14:03",
+		"tokenGroup" : "bliznjan 7/16/2015 13:52",
+		"tokenGroupFrom:" : "bliznjan 7/16/2015 14:01",
+		"tokenLabel" : "bliznjan 7/16/2015 13:41",
+		"tokenText:" : "bliznjan 7/16/2015 13:41" } }
