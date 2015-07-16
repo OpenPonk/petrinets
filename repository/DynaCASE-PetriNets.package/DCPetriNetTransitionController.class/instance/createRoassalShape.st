@@ -1,7 +1,7 @@
 hooks
 createRoassalShape
 	^ RTBox new
-		size: 30;
+		size: 35;
 		color: Color transparent;
-		borderColor: self defaultColor;
+		borderColor: Color black;
 		yourself

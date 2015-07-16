@@ -7,7 +7,7 @@ createFigure
 						(RTLabelled new
 								view: view;
 								below;
-								color: self defaultColor;
+								color: Color black;
 								yourself);
 				addInteraction: RTDraggable;
 				addInteraction: DCRTFocusable;

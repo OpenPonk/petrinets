@@ -2,9 +2,12 @@
 	"class" : {
 		 },
 	"instance" : {
-		"addedIncoming:" : "bliznjan 5/11/2015 17:12:00",
-		"addedOutgoing:" : "bliznjan 5/11/2015 17:12:00",
-		"dependentElements" : "bliznjan 6/30/2015 12:43",
-		"initialize" : "bliznjan 5/11/2015 17:12:00",
-		"removedIncoming:" : "bliznjan 6/30/2015 12:33",
-		"removedOutgoing:" : "bliznjan 6/30/2015 12:33" } }
+		"connected" : "bliznjan 7/15/2015 16:59",
+		"incoming" : "bliznjan 7/15/2015 14:36",
+		"isArc" : "bliznjan 7/15/2015 14:42",
+		"isNode" : "bliznjan 7/15/2015 14:43",
+		"isPlace" : "bliznjan 7/15/2015 14:43",
+		"isTransition" : "bliznjan 7/15/2015 14:43",
+		"outgoing" : "bliznjan 7/15/2015 14:45",
+		"relatedElements" : "bliznjan 7/13/2015 23:11",
+		"removedFrom:" : "bliznjan 7/13/2015 23:09" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Adapters",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCPetriNetsPlugin",
+	"pools" : [
+		 ],
+	"super" : "DCPlugin",
+	"type" : "normal" }
