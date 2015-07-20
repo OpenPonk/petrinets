@@ -1,3 +1,3 @@
 hooks
 headShapeClass
-	^ RTFilledArrow
+	^ DCRTFilledDoubleArrow
