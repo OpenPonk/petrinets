@@ -1,3 +1,3 @@
 hooks
 headShapeClass
-	^ DCRTEmptyCircle
+	^ RTEmptyCircle

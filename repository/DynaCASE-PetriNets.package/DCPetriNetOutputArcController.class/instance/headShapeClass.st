@@ -1,3 +1,3 @@
 hooks
 headShapeClass
-	^ DCRTSimpleArrow
+	^ RTSimpleArrow

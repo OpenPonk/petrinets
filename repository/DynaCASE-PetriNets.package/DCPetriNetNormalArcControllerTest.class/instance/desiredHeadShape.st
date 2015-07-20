@@ -1,3 +1,3 @@
 hooks
 desiredHeadShape
-	^ DCRTSimpleArrow
+	^ RTSimpleArrow
