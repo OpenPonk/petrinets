@@ -1,0 +1,14 @@
+{
+	"category" : "DynaCASE-PetriNets-Shapes",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "DCTREmptyDoubleArrowHeadShape",
+	"pools" : [
+		 ],
+	"super" : "DCTRAbstractDoubleArrowHeadShape",
+	"type" : "normal" }
