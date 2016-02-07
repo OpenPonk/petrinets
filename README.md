@@ -23,23 +23,23 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
 
   "for read-only usage without git: do not modify anything and just run it
     ..OR..
-   for using local git clone: uncomment any of lines with paths and write own path to repository (last part of path has to be /repository)
+   for using local git clone: uncomment any lines and write own path to repository (last part of path has to be /repository)
         you can choose each repository/line separately"
 
 "dynacase-petrinets:"
-    localPetriNetsPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-petrinets/repository'.
+    localPetriNetsPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-petrinets/repository'.
 "dynacase-simulation:"
-    localSimulationPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-simulation/repository'.
+    localSimulationPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-simulation/repository'.
 "class-editor:"
-    localClassEditorPath := 'C:/Users/EXAMPLE/Pharo/repo/class-editor/repository'.
+    localClassEditorPath := 'C:/Users/Ruiner/Pharo/repo/class-editor/repository'.
 "borm-editor:"
-    localBormEditorPath := 'C:/Users/EXAMPLE/Pharo/repo/borm-editor/repository'.
+    localBormEditorPath := 'C:/Users/Ruiner/Pharo/repo/borm-editor/repository'.
 "borm-model:"
-    localBormModelPath := 'C:/Users/EXAMPLE/Pharo/repo/borm-model/repository'.
+    localBormModelPath := 'C:/Users/Ruiner/Pharo/repo/borm-model/repository'.
 "dynacase:"
-    localDynacasePath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase/repository'.
+    localDynacasePath := 'C:/Users/Ruiner/Pharo/repo/dynacase/repository'.
 "dynacase-model:"
-    localDynacaseModelPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-model/repository'.
+    localDynacaseModelPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-model/repository'.
 
 " END OF PART TO MODIFY"        
 
@@ -48,6 +48,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DynaCASEModel';
                 repository: 'filetree:///',localDynacaseModelPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -56,6 +57,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DynaCASE';
                 repository: 'filetree:///',localDynacasePath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -64,6 +66,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'BormModel';
                 repository: 'filetree:///',localBormModelPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -72,6 +75,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'BormEditor';
                 repository: 'filetree:///',localBormEditorPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -80,6 +84,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DCUmlClassEditor';
                 repository: 'filetree:///',localClassEditorPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -88,6 +93,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DynaCASESimulation';
                 repository: 'filetree:///',localSimulationPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -96,6 +102,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DynaCASESimulationGUI';
                 repository: 'filetree:///',localSimulationPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
@@ -104,6 +111,7 @@ Copy following code into Pharo, uncomment any of lines with paths (even more of 
             Metacello new
                 baseline: 'DynaCASEPetriNets';
                 repository: 'filetree:///',localPetriNetsPath;
+                onConflict: [ :ex | ex allow ];
                 onLock: [ :ex | ex disallow ];
                 lock;
                 load ].
