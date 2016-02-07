@@ -11,72 +11,105 @@ git clone git@github.com:bliznjan/dynacase-petrinets.git /my/path/to/dynacase-pe
 ```
 
 - 2)
-Copy following code into Pharo, uncomment any of 4 lines with paths (even more of them), modify paths of uncommented lines, then run whole code.
+Copy following code into Pharo, uncomment any of lines with paths (even more of them), modify paths of uncommented lines, then run whole code.
 
 ## Code for loading into Pharo
 ```
-	| localPetriNetsPath localSimulationPath localDynacasePath localDynacaseModelPath |
-	localPetriNetsPath := localSimulationPath := localDynacasePath := localDynacaseModelPath := nil.
+    | localPetriNetsPath localSimulationPath localClassEditorPath localBormEditorPath localBormModelPath localDynacasePath localDynacaseModelPath |
+    localPetriNetsPath := localSimulationPath := localClassEditorPath := localBormEditorPath := localBormModelPath := localDynacasePath := localDynacaseModelPath := nil.
 
 
 " PART TO MODIFY "
 
   "for read-only usage without git: do not modify anything and just run it
     ..OR..
-   for using local git clone: uncomment any lines and write own path to repository (last part of path has to be /repository)
-	    you can choose each repository/line separately"
-	
+   for using local git clone: uncomment any of lines with paths and write own path to repository (last part of path has to be /repository)
+        you can choose each repository/line separately"
+
 "dynacase-petrinets:"
-	"localPetriNetsPath := 'C:/Users/User/Pharo/repo/dynacase-petrinets/repository'."
+    localPetriNetsPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-petrinets/repository'.
 "dynacase-simulation:"
-	"localSimulationPath := 'C:/Users/User/Pharo/repo/dynacase-simulation/repository'."
+    localSimulationPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-simulation/repository'.
+"class-editor:"
+    localClassEditorPath := 'C:/Users/EXAMPLE/Pharo/repo/class-editor/repository'.
+"borm-editor:"
+    localBormEditorPath := 'C:/Users/EXAMPLE/Pharo/repo/borm-editor/repository'.
+"borm-model:"
+    localBormModelPath := 'C:/Users/EXAMPLE/Pharo/repo/borm-model/repository'.
 "dynacase:"
-	"localDynacasePath := 'C:/Users/User/Pharo/repo/dynacase/repository'."
+    localDynacasePath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase/repository'.
 "dynacase-model:"
-	"localDynacaseModelPath := 'C:/Users/User/Pharo/repo/dynacase-model/repository'."
-		
-" END OF PART TO MODIFY"		
-		
-	localPetriNetsPath notNil | localSimulationPath notNil | localDynacasePath notNil | localDynacaseModelPath notNil
-		ifTrue: [ 
-			Gofer new
-				url: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo40/main';
-				configurationOf: 'GitFileTree';
-				loadDevelopment ].
-	localDynacaseModelPath
-		ifNotNil: [ 
-			Metacello new
-				baseline: 'DynaCASEModel';
-				repository: 'gitfiletree:///',localDynacaseModelPath;
-				lock ].
-	localDynacasePath
-		ifNotNil: [ 
-			Metacello new
-				baseline: 'DynaCASE';
-				repository: 'gitfiletree:///',localDynacasePath;
-				lock ].
-	localSimulationPath
-		ifNotNil: [ 
-			Metacello new
-				baseline: 'DynaCASESimulation';
-				repository: 'gitfiletree:///',localSimulationPath;
-				lock ].
-	localSimulationPath
-		ifNotNil: [ 
-			Metacello new
-				baseline: 'DynaCASESimulationGUI';
-				repository: 'gitfiletree:///',localSimulationPath;
-				lock ].
-	Metacello new
-		baseline: 'DynaCASEPetriNets';
-		repository:
-				(localPetriNetsPath ifNotNil: [ 'gitfiletree:///',localPetriNetsPath ] ifNil: [ 'github://bliznjan/dynacase-petrinets/repository' ]);
-		onConflict: [ :ex | ex allow ];
-		onLock: [ :ex | ex disallow ];
-		load
+    localDynacaseModelPath := 'C:/Users/EXAMPLE/Pharo/repo/dynacase-model/repository'.
+
+" END OF PART TO MODIFY"        
+
+    localDynacaseModelPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DynaCASEModel';
+                repository: 'filetree:///',localDynacaseModelPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localDynacasePath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DynaCASE';
+                repository: 'filetree:///',localDynacasePath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localBormModelPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'BormModel';
+                repository: 'filetree:///',localBormModelPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localBormEditorPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'BormEditor';
+                repository: 'filetree:///',localBormEditorPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localClassEditorPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DCUmlClassEditor';
+                repository: 'filetree:///',localClassEditorPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localSimulationPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DynaCASESimulation';
+                repository: 'filetree:///',localSimulationPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localSimulationPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DynaCASESimulationGUI';
+                repository: 'filetree:///',localSimulationPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
+    localPetriNetsPath
+        ifNotNil: [ 
+            Metacello new
+                baseline: 'DynaCASEPetriNets';
+                repository: 'filetree:///',localPetriNetsPath;
+                onLock: [ :ex | ex disallow ];
+                lock;
+                load ].
 ```
 
 Windows note: Use forward slashes (/) even on Windows. For example
 ```
-    repository: 'gitfiletree:///C:/Users/Username/Pharo/dynacase-petrinets/repository';
+    repository: 'filetree:///C:/Users/EXAMPLE/Pharo/dynacase-petrinets/repository';
 ```
