@@ -2,7 +2,6 @@ private
 createTokenGroup
 	| label circle |
 	tokenGroup ifNotNil: [ ^ self ].
-
 	label := RTLabel new
 		color: Color black;
 		text: '';
@@ -12,4 +11,6 @@ createTokenGroup
 		color: Color black;
 		elementOn: ''.
 	tokenGroup := RTGroup with: label with: circle.
-	TRConstraint stick: label onTheLeftOf: circle
+	(RTConstraint movable: circle fix: label)
+		leftOf;
+		stick
