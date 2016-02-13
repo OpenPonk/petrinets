@@ -1,5 +1,6 @@
 actions
 handleFire
-	"moves weight amount of tokens from place into transition"
+	"moves weight amount of tokens between place and transition"
 
-	self source removeTokensAmount: self model weight
+	self source removeTokensAmount: self model weight.
+	self target addTokensAmount: self model weight.

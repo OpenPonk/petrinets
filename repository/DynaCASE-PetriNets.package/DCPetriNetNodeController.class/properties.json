@@ -1,7 +1,6 @@
 {
 	"category" : "DynaCASE-PetriNets-Controllers",
 	"classinstvars" : [
-		"PossibleIncoming",
 		"PossibleOutgoing" ],
 	"classvars" : [
 		 ],

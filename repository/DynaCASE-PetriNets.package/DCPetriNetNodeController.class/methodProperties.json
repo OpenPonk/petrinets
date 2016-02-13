@@ -1,13 +1,12 @@
 {
 	"class" : {
 		"initializePossibleConnected" : "bliznjan 5/11/2015 17:12:00",
-		"isPossibleIncoming:" : "bliznjan 5/11/2015 17:12:00",
 		"isPossibleOutgoing:" : "bliznjan 5/11/2015 17:12:00" },
 	"instance" : {
 		"addAsSourceFor:" : "bliznjan 5/11/2015 17:12:00",
 		"addAsTargetFor:" : "bliznjan 5/11/2015 17:12:00",
 		"canBeSourceFor:" : "bliznjan 5/11/2015 17:12:00",
-		"canBeTargetFor:" : "bliznjan 5/11/2015 17:12:00",
+		"canBeTargetFor:" : "bliznjan 2/13/2016 11:51",
 		"createFigure" : "bliznjan 7/14/2015 20:57",
 		"createRoassalShape" : "bliznjan 5/11/2015 17:12:00",
 		"refreshFigure" : "bliznjan 5/11/2015 17:12:00",

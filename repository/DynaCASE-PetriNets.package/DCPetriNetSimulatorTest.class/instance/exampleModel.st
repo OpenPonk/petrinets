@@ -31,9 +31,9 @@ exampleModel
 		add: trans2.
 	arc1 := DCPetriNetNormalArc from: place1 to: trans1.
 	arc2 := DCPetriNetInhibitorArc from: place2 to: trans1.
-	arc3 := DCPetriNetOutputArc from: trans1 to: place3.
+	arc3 := DCPetriNetNormalArc from: trans1 to: place3.
 	arc4 := DCPetriNetResetArc from: place4 to: trans1.
-	arc5 := DCPetriNetOutputArc from: trans2 to: place4.
+	arc5 := DCPetriNetNormalArc from: trans2 to: place4.
 	model
 		add: arc1;
 		add: arc2;

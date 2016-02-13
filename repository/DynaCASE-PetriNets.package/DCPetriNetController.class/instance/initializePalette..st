@@ -6,11 +6,7 @@ initializePalette: aPalette
 			factory: [ DCPetriNetTransitionController new ]
 			icon: DCPetriNetsIcons current transitionIcon;
 		newSeparator;
-		newConnectionCreationTool: 'Output Arc'
-			factory: [ DCPetriNetOutputArcController new ]
-			icon: DCPetriNetsIcons current outputArcIcon;
-		newSeparator;
-		newConnectionCreationTool: 'Normal Arc'
+		newConnectionCreationTool: 'Arc'
 			factory: [ DCPetriNetNormalArcController new ]
 			icon: DCPetriNetsIcons current arcIcon;
 		newConnectionCreationTool: 'Inhibitor Arc'

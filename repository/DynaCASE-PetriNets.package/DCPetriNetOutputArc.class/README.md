@@ -1,1 +1,0 @@
-I represent arc from a transition to a place

@@ -17,7 +17,7 @@ setUp
 			(DCPetriNetPlace new
 				tokens: 4;
 				yourself).
-	(DCPetriNetOutputArcSimulator model: DCPetriNetOutputArc new)
+	(DCPetriNetNormalArcSimulator model: DCPetriNetNormalArc new)
 		target: out;
 		source: simulator;
 		yourself

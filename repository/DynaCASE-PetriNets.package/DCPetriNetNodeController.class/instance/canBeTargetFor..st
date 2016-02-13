@@ -1,3 +1,3 @@
 testing
 canBeTargetFor: aController
-	^ self class isPossibleIncoming: aController class
+	^ self class ~= aController source class

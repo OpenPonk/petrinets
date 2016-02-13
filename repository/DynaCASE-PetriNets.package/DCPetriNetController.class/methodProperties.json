@@ -1,12 +1,9 @@
 {
 	"class" : {
-		"diagramIcon" : "bliznjan 5/11/2015 17:12:00",
-		"diagramName" : "bliznjan 5/11/2015 17:12:00",
-		"initializeModelToControllerMapping" : "bliznjan 5/11/2015 17:12:00",
-		"newDiagram" : "bliznjan 5/11/2015 17:12:00" },
+		 },
 	"instance" : {
 		"canBeTargetFor:" : "bliznjan 5/11/2015 17:12:00",
-		"initializePalette:" : "bliznjan 7/16/2015 23:27",
+		"initializePalette:" : "bliznjan 2/13/2016 11:32",
 		"modelClass" : "bliznjan 5/11/2015 17:12:00",
-		"modelToControllerMapping" : "bliznjan 7/14/2015 13:32",
+		"modelToControllerMapping" : "bliznjan 2/13/2016 11:33",
 		"rebuild" : "bliznjan 2/5/2016 12:54" } }
