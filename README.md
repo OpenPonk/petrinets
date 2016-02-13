@@ -11,113 +11,55 @@ git clone git@github.com:bliznjan/dynacase-petrinets.git /my/path/to/dynacase-pe
 ```
 
 - 2)
-Copy following code into Pharo, uncomment any of lines with paths (even more of them), modify paths of uncommented lines, then run whole code.
+Copy following code into Pharo, uncomment any of lines with paths, modify paths of uncommented lines, then run whole code.
 
 ## Code for loading into Pharo
 ```
-    | localPetriNetsPath localSimulationPath localClassEditorPath localBormEditorPath localBormModelPath localDynacasePath localDynacaseModelPath |
-    localPetriNetsPath := localSimulationPath := localClassEditorPath := localBormEditorPath := localBormModelPath := localDynacasePath := localDynacaseModelPath := nil.
-
+    | localPaths |
+    localPaths := Dictionary new.
+    localPaths at: #DynaCASE put: 'github://dynacase/dynacase/repository'.
 
 " PART TO MODIFY "
 
+  "comment lines with modules you do not want to load"
+    localPaths at: #BormEditor put: 'github://dynacase/borm-editor/repository'.
+    localPaths at: #DCUmlClassEditor put: 'github://dynacase/class-editor/repository'.
+    localPaths at: #DynaCASESimulationGUI put: 'github://bliznjan/dynacase-simulation/repository'.
+    localPaths at: #DynaCASEPetriNets put: 'github://bliznjan/dynacase-petrinets/repository'.
+
   "for read-only usage without git: do not modify anything and just run it
     ..OR..
-   for using local git clone: uncomment any lines and write own path to repository (last part of path has to be /repository)
-        you can choose each repository/line separately"
+   if you want to load local git clone: uncomment lines with modules you want to load from local git clone 
+   and write your correct path to local git repository (last part of path has to be /repository)"
+    "localPaths at: #DynaCASEModel put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-model/repository'."
+    "localPaths at: #DynaCASE put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase/repository'."
+    "localPaths at: #BormModel put: 'filetree:///' , 'C:/YOUR/OWN/PATH/borm-model/repository'."
+    "localPaths at: #BormEditor put: 'filetree:///' , 'C:/YOUR/OWN/PATH/borm-editor/repository'."
+    "localPaths at: #DCUmlClassEditor put: 'filetree:///' , 'C:/YOUR/OWN/PATH/class-editor/repository'."
+    "localPaths at: #DynaCASESimulation put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-simulation/repository'."
+    "localPaths at: #DynaCASESimulationGUI put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-simulation/repository'."
+    "localPaths at: #DynaCASEPetriNets put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-petrinets/repository'."
 
-"dynacase-petrinets:"
-    localPetriNetsPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-petrinets/repository'.
-"dynacase-simulation:"
-    localSimulationPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-simulation/repository'.
-"class-editor:"
-    localClassEditorPath := 'C:/Users/Ruiner/Pharo/repo/class-editor/repository'.
-"borm-editor:"
-    localBormEditorPath := 'C:/Users/Ruiner/Pharo/repo/borm-editor/repository'.
-"borm-model:"
-    localBormModelPath := 'C:/Users/Ruiner/Pharo/repo/borm-model/repository'.
-"dynacase:"
-    localDynacasePath := 'C:/Users/Ruiner/Pharo/repo/dynacase/repository'.
-"dynacase-model:"
-    localDynacaseModelPath := 'C:/Users/Ruiner/Pharo/repo/dynacase-model/repository'.
+" END OF PART TO MODIFY "        
 
-" END OF PART TO MODIFY"        
-
-    localDynacaseModelPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DynaCASEModel';
-                repository: 'filetree:///',localDynacaseModelPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localDynacasePath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DynaCASE';
-                repository: 'filetree:///',localDynacasePath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localBormModelPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'BormModel';
-                repository: 'filetree:///',localBormModelPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localBormEditorPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'BormEditor';
-                repository: 'filetree:///',localBormEditorPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localClassEditorPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DCUmlClassEditor';
-                repository: 'filetree:///',localClassEditorPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localSimulationPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DynaCASESimulation';
-                repository: 'filetree:///',localSimulationPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localSimulationPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DynaCASESimulationGUI';
-                repository: 'filetree:///',localSimulationPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
-    localPetriNetsPath
-        ifNotNil: [ 
-            Metacello new
-                baseline: 'DynaCASEPetriNets';
-                repository: 'filetree:///',localPetriNetsPath;
-                onConflict: [ :ex | ex allow ];
-                onLock: [ :ex | ex disallow ];
-                lock;
-                load ].
+    localPaths
+		keysAndValuesDo:
+				[ :eachName :eachPath | 
+			Metacello new
+				baseline: eachName;
+				repository: eachPath;
+				lock ];
+		keysAndValuesDo:
+				[ :eachName :eachPath | 
+			Metacello new
+				baseline: eachName;
+				repository: eachPath;
+				onConflict: [ :ex | ex allow ];
+				onLock: [ :ex | ex disallow ];
+				load ].
 ```
 
 Windows note: Use forward slashes (/) even on Windows. For example
 ```
-    repository: 'filetree:///C:/Users/EXAMPLE/Pharo/dynacase-petrinets/repository';
+    'C:/Users/EXAMPLE/dynacase-petrinets/repository'
 ```
