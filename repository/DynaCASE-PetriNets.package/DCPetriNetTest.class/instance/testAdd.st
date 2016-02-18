@@ -14,7 +14,7 @@ testAdd
 	self assert: d elements size = 2.
 	self assert: d elements first owner = d.
 
-	t := DCPetriNetOutputArc from: d elements first to: d elements second.
+	t := DCPetriNetNormalArc from: d elements first to: d elements second.
 	d add: t.
 	self assert: d elements size = 3.
 	self assert: d elements third owner = d
