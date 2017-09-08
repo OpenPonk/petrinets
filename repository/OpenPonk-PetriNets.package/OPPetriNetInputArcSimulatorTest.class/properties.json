@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "OPPetriNetArcSimulatorTest",
+	"category" : "OpenPonk-PetriNets-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetInputArcSimulatorTest",
+	"type" : "normal"
+}

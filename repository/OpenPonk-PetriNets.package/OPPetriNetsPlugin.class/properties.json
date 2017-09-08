@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPlugin",
+	"category" : "OpenPonk-PetriNets-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetsPlugin",
+	"type" : "normal"
+}

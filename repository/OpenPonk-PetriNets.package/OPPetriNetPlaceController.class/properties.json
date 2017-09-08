@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetNodeController",
+	"category" : "OpenPonk-PetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"tokenGroup"
+	],
+	"name" : "OPPetriNetPlaceController",
+	"type" : "normal"
+}

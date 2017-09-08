@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"tokens" : "bliznjan 2/18/2016 16:30:05",
+		"removeTokens:" : "bliznjan 2/18/2016 16:30:05",
+		"tokens:" : "bliznjan 2/18/2016 16:30:05",
+		"initialize" : "bliznjan 2/18/2016 16:30:05",
+		"addToken" : "bliznjan 2/18/2016 16:30:05",
+		"isPlace" : "bliznjan 2/18/2016 16:30:05",
+		"removeTokens" : "bliznjan 2/18/2016 16:30:05",
+		"addTokens:" : "bliznjan 2/18/2016 16:30:05",
+		"removeToken" : "bliznjan 2/18/2016 16:30:05"
+	},
+	"class" : { }
+}

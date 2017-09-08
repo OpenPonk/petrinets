@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPNavigatorAdapter",
+	"category" : "OpenPonk-PetriNets-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetsNavigatorAdapter",
+	"type" : "normal"
+}

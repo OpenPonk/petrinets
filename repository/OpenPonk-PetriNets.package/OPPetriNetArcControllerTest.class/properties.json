@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "OPControllerTest",
+	"category" : "OpenPonk-PetriNets-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"fromCtrl",
+		"toCtrl"
+	],
+	"name" : "OPPetriNetArcControllerTest",
+	"type" : "normal"
+}

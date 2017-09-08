@@ -1,0 +1,16 @@
+{
+	"instance" : {
+		"createFigure" : "JanBliznicenko 9/8/2017 23:34",
+		"addAsTargetFor:" : "bliznjan 2/18/2016 16:30:05",
+		"addAsSourceFor:" : "bliznjan 2/18/2016 16:30:05",
+		"canBeSourceFor:" : "bliznjan 2/18/2016 16:30:05",
+		"canBeTargetFor:" : "JanBliznicenko 9/8/2017 23:49",
+		"createRoassalShape" : "bliznjan 2/18/2016 16:30:05",
+		"sameKindAs:" : "bliznjan 2/18/2016 16:30:05",
+		"refreshFigure" : "bliznjan 2/18/2016 16:30:05"
+	},
+	"class" : {
+		"initializePossibleConnected" : "bliznjan 2/18/2016 16:30:05",
+		"isPossibleOutgoing:" : "bliznjan 2/18/2016 16:30:05"
+	}
+}

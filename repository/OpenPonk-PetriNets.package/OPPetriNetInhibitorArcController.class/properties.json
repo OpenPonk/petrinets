@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetArcController",
+	"category" : "OpenPonk-PetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetInhibitorArcController",
+	"type" : "normal"
+}

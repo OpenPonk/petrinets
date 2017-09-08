@@ -1,0 +1,1 @@
+DCPetriNet represents Petri net diagram

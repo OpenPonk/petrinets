@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "OPPetriNetNodeSimulatorTest",
+	"category" : "OpenPonk-PetriNets-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"inc",
+		"out"
+	],
+	"name" : "OPPetriNetTransitionSimulatorTest",
+	"type" : "normal"
+}

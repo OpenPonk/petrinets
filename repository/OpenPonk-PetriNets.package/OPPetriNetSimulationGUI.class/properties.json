@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "bliznjan 5/5/2015 18:47",
+	"super" : "OPSimulationGUI",
+	"category" : "OpenPonk-PetriNets-Simulation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetSimulationGUI",
+	"type" : "normal"
+}

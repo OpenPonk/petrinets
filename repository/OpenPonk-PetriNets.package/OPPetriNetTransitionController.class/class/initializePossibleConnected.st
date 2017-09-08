@@ -1,0 +1,3 @@
+class initialization
+initializePossibleConnected
+	PossibleOutgoing := Set with: OPPetriNetNormalArcController

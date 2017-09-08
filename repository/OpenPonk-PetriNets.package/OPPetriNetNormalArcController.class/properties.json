@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetWeightedArcController",
+	"category" : "OpenPonk-PetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetNormalArcController",
+	"type" : "normal"
+}

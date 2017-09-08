@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "bliznjan 5/5/2015 18:54",
+	"super" : "OPPetriNetNode",
+	"category" : "OpenPonk-PetriNets-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetTransition",
+	"type" : "normal"
+}

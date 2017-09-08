@@ -1,0 +1,3 @@
+hooks
+createRoassalShape
+	^ self subclassResponsibility

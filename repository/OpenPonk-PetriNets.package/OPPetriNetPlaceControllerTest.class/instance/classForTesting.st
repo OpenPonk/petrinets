@@ -1,0 +1,3 @@
+hooks
+classForTesting
+	^ OPPetriNetPlaceController

@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenPonk-PetriNets-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Current"
+	],
+	"instvars" : [
+		"icons"
+	],
+	"name" : "OPPetriNetsIcons",
+	"type" : "normal"
+}

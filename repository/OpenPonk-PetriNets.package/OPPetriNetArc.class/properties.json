@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "bliznjan 5/1/2015 10:18",
+	"super" : "OPEdge",
+	"category" : "OpenPonk-PetriNets-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"weight"
+	],
+	"name" : "OPPetriNetArc",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+hooks
+headShapeClass
+	^ RTEmptyCircle

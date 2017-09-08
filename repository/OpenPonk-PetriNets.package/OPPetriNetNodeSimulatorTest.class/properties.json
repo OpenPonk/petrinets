@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "OPTestCase",
+	"category" : "OpenPonk-PetriNets-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model",
+		"simulator"
+	],
+	"name" : "OPPetriNetNodeSimulatorTest",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPRelationshipController",
+	"category" : "OpenPonk-PetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetArcController",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+hooks
+desiredHeadShape
+	^ OPRTFilledDoubleArrow

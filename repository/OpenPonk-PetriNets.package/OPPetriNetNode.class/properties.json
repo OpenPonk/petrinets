@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "bliznjan 5/5/2015 18:54",
+	"super" : "OPNamedElement",
+	"category" : "OpenPonk-PetriNets-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetNode",
+	"type" : "normal"
+}

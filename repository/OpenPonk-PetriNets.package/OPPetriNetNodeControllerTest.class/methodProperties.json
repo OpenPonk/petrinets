@@ -1,0 +1,13 @@
+{
+	"instance" : {
+		"desiredModelClass" : "bliznjan 2/18/2016 16:30:05",
+		"testFigureRefresh" : "bliznjan 2/18/2016 16:30:05",
+		"testCreateFigure" : "bliznjan 2/18/2016 16:30:05",
+		"testCreateModel" : "bliznjan 2/18/2016 16:30:05",
+		"testCreateController" : "bliznjan 2/18/2016 16:30:05",
+		"classForTesting" : "bliznjan 2/18/2016 16:30:05"
+	},
+	"class" : {
+		"isAbstract" : "JanBliznicenko 9/8/2017 23:06"
+	}
+}

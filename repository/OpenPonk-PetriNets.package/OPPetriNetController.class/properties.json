@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPDiagramController",
+	"category" : "OpenPonk-PetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetController",
+	"type" : "normal"
+}
