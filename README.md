@@ -1,5 +1,5 @@
-# dynacase-petrinets
-Petri nets diagrams for DynaCASE tool
+# openponk-petrinets
+Petri nets diagrams for OpenPonk tool
 
 ## For read-only usage
 Copy code at the bottom into Pharo then run it without any modification.
@@ -7,7 +7,7 @@ Copy code at the bottom into Pharo then run it without any modification.
 - 1)
 You need GIT to clone local git repository with following line:
 ```
-git clone git@github.com:bliznjan/dynacase-petrinets.git /my/path/to/dynacase-petrinets
+git clone git@github.com:bliznjan/openponk-petrinets.git /YOUR/TARGET/PATH
 ```
 
 - 2)
@@ -17,49 +17,55 @@ Copy following code into Pharo, uncomment any of lines with paths, modify paths 
 ```
     | localPaths |
     localPaths := Dictionary new.
-    localPaths at: #DynaCASE put: 'github://dynacase/dynacase/repository'.
 
 " PART TO MODIFY "
 
   "comment lines with modules you do not want to load"
-    localPaths at: #BormEditor put: 'github://dynacase/borm-editor/repository'.
-    localPaths at: #DCUmlClassEditor put: 'github://dynacase/class-editor/repository'.
-    localPaths at: #DynaCASESimulationGUI put: 'github://bliznjan/dynacase-simulation/repository'.
-    localPaths at: #DynaCASEPetriNets put: 'github://bliznjan/dynacase-petrinets/repository'.
+    localPaths at: #BormEditor put: 'github://openponk/borm-editor/repository'.
+    localPaths at: #DemoEditor put: 'github://openponk/demo-editor/repository'.
+    localPaths at: #UmlClassEditor put: 'github://openponk/class-editor/repository'.
+    localPaths at: #OpenPonkSimulationGUI put: 'github://bliznjan/openponk-simulation/repository'.
+    localPaths at: #OpenPonkPetriNets put: 'github://bliznjan/openponk-petrinets/repository'.
 
   "for read-only usage without git: do not modify anything and just run it
     ..OR..
-   if you want to load local git clone: uncomment lines with modules you want to load from local git clone 
+   if you want to load local git clone: uncomment lines with modules you want to load from local git clone
    and write your correct path to local git repository (last part of path has to be /repository)"
-    "localPaths at: #DynaCASEModel put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-model/repository'."
-    "localPaths at: #DynaCASE put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase/repository'."
-    "localPaths at: #BormModel put: 'filetree:///' , 'C:/YOUR/OWN/PATH/borm-model/repository'."
-    "localPaths at: #BormEditor put: 'filetree:///' , 'C:/YOUR/OWN/PATH/borm-editor/repository'."
-    "localPaths at: #DCUmlClassEditor put: 'filetree:///' , 'C:/YOUR/OWN/PATH/class-editor/repository'."
-    "localPaths at: #DynaCASESimulation put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-simulation/repository'."
-    "localPaths at: #DynaCASESimulationGUI put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-simulation/repository'."
-    "localPaths at: #DynaCASEPetriNets put: 'filetree:///' , 'C:/YOUR/OWN/PATH/dynacase-petrinets/repository'."
+    "localPaths at: #OpenPonkModel put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-model/repository'."
+    "localPaths at: #OpenPonk put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk/repository'."
+    "localPaths at: #BormModel put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/borm-model/repository'."
+    "localPaths at: #BormEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/borm-editor/repository'."
+    "localPaths at: #DemoEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/demo-editor/repository'."
+    "localPaths at: #UmlClassEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/class-editor/repository'."
+    "localPaths at: #OpenPonkSimulation put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-simulation/repository'."
+    "localPaths at: #OpenPonkSimulationGUI put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-simulation/repository'."
+    "localPaths at: #OpenPonkPetriNets put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-petrinets/repository'."
 
-" END OF PART TO MODIFY "        
+" END OF PART TO MODIFY "
+    Metacello new
+        baseline: 'FileTree';
+        repository: 'github://dalehenrich/filetree:pharo' , SystemVersion
+        current dottedMajorMinor , '_dev/repository';
+        load: 'Git'.
 
     localPaths
-		keysAndValuesDo:
-				[ :eachName :eachPath | 
-			Metacello new
-				baseline: eachName;
-				repository: eachPath;
-				lock ];
-		keysAndValuesDo:
-				[ :eachName :eachPath | 
-			Metacello new
-				baseline: eachName;
-				repository: eachPath;
-				onConflict: [ :ex | ex allow ];
-				onLock: [ :ex | ex disallow ];
-				load ].
+        keysAndValuesDo:
+                [ :eachName :eachPath |
+            Metacello new
+                baseline: eachName;
+                repository: eachPath;
+                lock ];
+        keysAndValuesDo:
+                [ :eachName :eachPath |
+            Metacello new
+                baseline: eachName;
+                repository: eachPath;
+                onConflict: [ :ex | ex allow ];
+                onLock: [ :ex | ex disallow ];
+                load ].
 ```
 
 Windows note: Use forward slashes (/) even on Windows. For example
 ```
-    'C:/Users/EXAMPLE/dynacase-petrinets/repository'
+    '/C:/Users/EXAMPLE/openponk-petrinets/repository'
 ```
