@@ -1,11 +1,11 @@
 {
 	"instance" : {
-		"simulatorClass" : "JanBliznicenko 9/8/2017 23:06",
-		"buttonItems" : "bliznjan 2/18/2016 16:30:05",
-		"loadSimulation" : "JanBliznicenko 9/8/2017 23:04"
+		"simulatorClass" : "JanBliznicenko 9/9/2017 00:12:29",
+		"buttonItems" : "JanBliznicenko 9/9/2017 00:12:29",
+		"loadSimulation" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : {
-		"controllerClass" : "JanBliznicenko 9/8/2017 23:06",
-		"simulableControllerClasses" : "JanBliznicenko 9/8/2017 23:06"
+		"controllerClass" : "JanBliznicenko 9/9/2017 00:12:29",
+		"simulableControllerClasses" : "JanBliznicenko 9/9/2017 00:12:29"
 	}
 }

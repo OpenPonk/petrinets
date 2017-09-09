@@ -1,9 +1,9 @@
 {
 	"instance" : {
-		"createRoassalShape" : "bliznjan 2/18/2016 16:30:05",
-		"modelClass" : "JanBliznicenko 9/8/2017 23:06"
+		"createRoassalShape" : "JanBliznicenko 9/9/2017 00:12:29",
+		"modelClass" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : {
-		"initializePossibleConnected" : "JanBliznicenko 9/8/2017 23:06"
+		"initializePossibleConnected" : "JanBliznicenko 9/9/2017 00:12:29"
 	}
 }

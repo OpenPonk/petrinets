@@ -1,14 +1,14 @@
 {
 	"instance" : {
-		"isTransition" : "bliznjan 2/18/2016 16:30:05",
-		"incoming" : "bliznjan 2/18/2016 16:30:05",
-		"outgoing" : "bliznjan 2/18/2016 16:30:05",
-		"isNode" : "bliznjan 2/18/2016 16:30:05",
-		"connected" : "bliznjan 2/18/2016 16:30:05",
-		"isPlace" : "bliznjan 2/18/2016 16:30:05",
-		"isArc" : "bliznjan 2/18/2016 16:30:05",
-		"relatedElements" : "bliznjan 2/18/2016 16:30:05",
-		"removedFrom:" : "bliznjan 2/18/2016 16:30:05"
+		"isTransition" : "JanBliznicenko 9/9/2017 00:12:29",
+		"incoming" : "JanBliznicenko 9/9/2017 00:12:29",
+		"outgoing" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isNode" : "JanBliznicenko 9/9/2017 00:12:29",
+		"connected" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isPlace" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isArc" : "JanBliznicenko 9/9/2017 00:12:29",
+		"relatedElements" : "JanBliznicenko 9/9/2017 00:12:29",
+		"removedFrom:" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : { }
 }

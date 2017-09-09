@@ -1,16 +1,16 @@
 {
 	"instance" : {
-		"createFigure" : "JanBliznicenko 9/8/2017 23:34",
-		"addAsTargetFor:" : "bliznjan 2/18/2016 16:30:05",
-		"addAsSourceFor:" : "bliznjan 2/18/2016 16:30:05",
-		"canBeSourceFor:" : "bliznjan 2/18/2016 16:30:05",
-		"canBeTargetFor:" : "JanBliznicenko 9/8/2017 23:49",
-		"createRoassalShape" : "bliznjan 2/18/2016 16:30:05",
-		"sameKindAs:" : "bliznjan 2/18/2016 16:30:05",
-		"refreshFigure" : "bliznjan 2/18/2016 16:30:05"
+		"createFigure" : "JanBliznicenko 9/9/2017 12:02",
+		"addAsTargetFor:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"addAsSourceFor:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"canBeSourceFor:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"canBeTargetFor:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"createRoassalShape" : "JanBliznicenko 9/9/2017 00:12:29",
+		"sameKindAs:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"refreshFigure" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : {
-		"initializePossibleConnected" : "bliznjan 2/18/2016 16:30:05",
-		"isPossibleOutgoing:" : "bliznjan 2/18/2016 16:30:05"
+		"initializePossibleConnected" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isPossibleOutgoing:" : "JanBliznicenko 9/9/2017 00:12:29"
 	}
 }

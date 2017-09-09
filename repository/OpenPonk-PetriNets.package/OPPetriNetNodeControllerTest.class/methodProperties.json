@@ -1,13 +1,13 @@
 {
 	"instance" : {
-		"desiredModelClass" : "bliznjan 2/18/2016 16:30:05",
-		"testFigureRefresh" : "bliznjan 2/18/2016 16:30:05",
-		"testCreateFigure" : "bliznjan 2/18/2016 16:30:05",
-		"testCreateModel" : "bliznjan 2/18/2016 16:30:05",
-		"testCreateController" : "bliznjan 2/18/2016 16:30:05",
-		"classForTesting" : "bliznjan 2/18/2016 16:30:05"
+		"desiredModelClass" : "JanBliznicenko 9/9/2017 00:12:29",
+		"testFigureRefresh" : "JanBliznicenko 9/9/2017 00:12:29",
+		"testCreateFigure" : "JanBliznicenko 9/9/2017 00:12:29",
+		"testCreateModel" : "JanBliznicenko 9/9/2017 00:12:29",
+		"testCreateController" : "JanBliznicenko 9/9/2017 00:12:29",
+		"classForTesting" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : {
-		"isAbstract" : "JanBliznicenko 9/8/2017 23:06"
+		"isAbstract" : "JanBliznicenko 9/9/2017 00:12:29"
 	}
 }

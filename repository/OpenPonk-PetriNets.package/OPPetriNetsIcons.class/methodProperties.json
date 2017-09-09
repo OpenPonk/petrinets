@@ -1,25 +1,25 @@
 {
 	"instance" : {
-		"petriNetIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"resetArcIcon" : "bliznjan 2/18/2016 16:30:05",
-		"transitionIcon" : "bliznjan 2/18/2016 16:30:05",
-		"gtInspectorIconsIn:" : "bliznjan 2/18/2016 16:30:05",
-		"placeIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"arcIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"placeWithTokenIcon" : "bliznjan 2/18/2016 16:30:05",
-		"inhibitorArcIcon" : "bliznjan 2/18/2016 16:30:05",
-		"initialize" : "bliznjan 2/18/2016 16:30:05",
-		"inhibitorArcIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"placeIcon" : "bliznjan 2/18/2016 16:30:05",
-		"placeWithTokenIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"petriNetIcon" : "bliznjan 2/18/2016 16:30:05",
-		"iconSelectors" : "bliznjan 2/18/2016 16:30:05",
-		"initializeIcons" : "bliznjan 2/18/2016 16:30:05",
-		"resetArcIconContents" : "bliznjan 2/18/2016 16:30:05",
-		"arcIcon" : "bliznjan 2/18/2016 16:30:05",
-		"transitionIconContents" : "bliznjan 2/18/2016 16:30:05"
+		"petriNetIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"resetArcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"transitionIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"gtInspectorIconsIn:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"placeIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"arcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"placeWithTokenIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"inhibitorArcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"initialize" : "JanBliznicenko 9/9/2017 00:12:29",
+		"inhibitorArcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"placeIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"placeWithTokenIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"petriNetIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"iconSelectors" : "JanBliznicenko 9/9/2017 00:12:29",
+		"initializeIcons" : "JanBliznicenko 9/9/2017 00:12:29",
+		"resetArcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
+		"arcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
+		"transitionIconContents" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : {
-		"current" : "bliznjan 2/18/2016 16:30:05"
+		"current" : "JanBliznicenko 9/9/2017 00:12:29"
 	}
 }

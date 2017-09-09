@@ -1,13 +1,13 @@
 {
 	"instance" : {
-		"addTokensAmount:" : "bliznjan 2/18/2016 16:30:05",
-		"tokensAmount" : "bliznjan 2/18/2016 16:30:05",
-		"isSimulable" : "bliznjan 2/18/2016 16:30:05",
-		"removeTokensAmount:" : "bliznjan 2/18/2016 16:30:05",
-		"canSendTokens:" : "bliznjan 2/18/2016 16:30:05",
-		"isSteppable" : "bliznjan 2/18/2016 16:30:05",
-		"loadState" : "bliznjan 2/18/2016 16:30:05",
-		"tokensAmount:" : "bliznjan 2/18/2016 16:30:05"
+		"addTokensAmount:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"tokensAmount" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isSimulable" : "JanBliznicenko 9/9/2017 00:12:29",
+		"removeTokensAmount:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"canSendTokens:" : "JanBliznicenko 9/9/2017 00:12:29",
+		"isSteppable" : "JanBliznicenko 9/9/2017 00:12:29",
+		"loadState" : "JanBliznicenko 9/9/2017 00:12:29",
+		"tokensAmount:" : "JanBliznicenko 9/9/2017 00:12:29"
 	},
 	"class" : { }
 }
