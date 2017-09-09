@@ -1,1 +1,0 @@
-I represent non-edge element in Petri net

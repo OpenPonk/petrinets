@@ -1,3 +1,0 @@
-hooks
-fromClass
-	^ DCPetriNetPlaceController

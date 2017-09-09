@@ -1,1 +1,0 @@
-I'm simulator for non-edge elements.

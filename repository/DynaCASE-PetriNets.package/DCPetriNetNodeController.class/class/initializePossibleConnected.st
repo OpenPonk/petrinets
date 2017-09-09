@@ -1,3 +1,0 @@
-class initialization
-initializePossibleConnected
-	self subclassResponsibility

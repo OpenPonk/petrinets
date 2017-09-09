@@ -1,3 +1,0 @@
-class initialization
-initializePossibleConnected
-	PossibleOutgoing := Set with: DCPetriNetNormalArcController

@@ -1,3 +1,0 @@
-actions
-fire
-	self step

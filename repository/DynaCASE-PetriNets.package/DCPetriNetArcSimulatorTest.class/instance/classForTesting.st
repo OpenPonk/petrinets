@@ -1,3 +1,0 @@
-hooks
-classForTesting
-	^ self subclassResponsibility
