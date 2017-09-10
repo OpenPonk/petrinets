@@ -21,9 +21,10 @@ Copy following code into Pharo, uncomment any of lines with paths, modify paths 
 " PART TO MODIFY "
 
   "comment lines with modules you do not want to load"
+    localPaths at: #FsmEditor put: 'github://openponk/fsm-editor/repository'.
     localPaths at: #BormEditor put: 'github://openponk/borm-editor/repository'.
-    localPaths at: #DemoEditor put: 'github://openponk/demo-editor/repository'.
-    localPaths at: #UmlClassEditor put: 'github://openponk/class-editor/repository'.
+    "localPaths at: #DemoEditor put: 'github://openponk/demo-editor/repository'."
+    localPaths at: #ClassEditor put: 'github://openponk/class-editor/repository'.
     localPaths at: #OpenPonkSimulationGUI put: 'github://bliznjan/openponk-simulation/repository'.
     localPaths at: #OpenPonkPetriNets put: 'github://bliznjan/openponk-petrinets/repository'.
 
@@ -33,10 +34,11 @@ Copy following code into Pharo, uncomment any of lines with paths, modify paths 
    and write your correct path to local git repository (last part of path has to be /repository)"
     "localPaths at: #OpenPonkModel put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-model/repository'."
     "localPaths at: #OpenPonk put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk/repository'."
+    "localPaths at: #FsmEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/fsm-editor/repository'."
     "localPaths at: #BormModel put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/borm-model/repository'."
     "localPaths at: #BormEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/borm-editor/repository'."
     "localPaths at: #DemoEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/demo-editor/repository'."
-    "localPaths at: #UmlClassEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/class-editor/repository'."
+    "localPaths at: #ClassEditor put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/class-editor/repository'."
     "localPaths at: #OpenPonkSimulation put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-simulation/repository'."
     "localPaths at: #OpenPonkSimulationGUI put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-simulation/repository'."
     "localPaths at: #OpenPonkPetriNets put: 'gitfiletree://' , '/C:/YOUR/OWN/PATH/TO/openponk-petrinets/repository'."
