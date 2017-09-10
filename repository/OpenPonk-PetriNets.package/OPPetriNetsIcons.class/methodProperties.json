@@ -1,25 +1,25 @@
 {
 	"instance" : {
-		"petriNetIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"resetArcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"transitionIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"gtInspectorIconsIn:" : "JanBliznicenko 9/9/2017 00:12:29",
-		"placeIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"arcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"placeWithTokenIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"inhibitorArcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"initialize" : "JanBliznicenko 9/9/2017 00:12:29",
-		"inhibitorArcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"placeIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"placeWithTokenIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"petriNetIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"iconSelectors" : "JanBliznicenko 9/9/2017 00:12:29",
-		"initializeIcons" : "JanBliznicenko 9/9/2017 00:12:29",
-		"resetArcIconContents" : "JanBliznicenko 9/9/2017 00:12:29",
-		"arcIcon" : "JanBliznicenko 9/9/2017 00:12:29",
-		"transitionIconContents" : "JanBliznicenko 9/9/2017 00:12:29"
+		"petriNetIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"resetArcIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"transitionIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"gtInspectorIconsIn:" : "JanBliznicenko 9/9/2017 12:11:28",
+		"placeIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"arcIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"placeWithTokenIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"inhibitorArcIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"initialize" : "JanBliznicenko 9/9/2017 12:11:28",
+		"inhibitorArcIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"placeIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"placeWithTokenIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"petriNetIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"iconSelectors" : "JanBliznicenko 9/9/2017 12:11:28",
+		"initializeIcons" : "JanBliznicenko 9/9/2017 12:11:28",
+		"resetArcIconContents" : "JanBliznicenko 9/9/2017 12:11:28",
+		"arcIcon" : "JanBliznicenko 9/9/2017 12:11:28",
+		"transitionIconContents" : "JanBliznicenko 9/9/2017 12:11:28"
 	},
 	"class" : {
-		"current" : "JanBliznicenko 9/9/2017 00:12:29"
+		"current" : "JanBliznicenko 9/9/2017 12:11:28"
 	}
 }

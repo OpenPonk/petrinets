@@ -1,9 +1,9 @@
 {
 	"instance" : {
-		"setDefaultStepping" : "JanBliznicenko 9/9/2017 00:12:29",
-		"setSteppingAll" : "JanBliznicenko 9/9/2017 00:12:29"
+		"setDefaultStepping" : "JanBliznicenko 9/9/2017 12:11:28",
+		"setSteppingAll" : "JanBliznicenko 9/9/2017 12:11:28"
 	},
 	"class" : {
-		"initializeClassMapping" : "JanBliznicenko 9/9/2017 00:12:29"
+		"initialClassMapping" : "JanBliznicenko 9/10/2017 08:53"
 	}
 }

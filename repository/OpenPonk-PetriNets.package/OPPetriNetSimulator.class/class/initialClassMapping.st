@@ -1,9 +1,9 @@
 initialization
-initializeClassMapping
-	super initializeClassMapping.
-	ClassMapping
+initialClassMapping
+	^ super initialClassMapping
 		at: OPPetriNetNormalArc put: OPPetriNetNormalArcSimulator;
 		at: OPPetriNetInhibitorArc put: OPPetriNetInhibitorArcSimulator;
 		at: OPPetriNetResetArc put: OPPetriNetResetArcSimulator;
 		at: OPPetriNetPlace put: OPPetriNetPlaceSimulator;
-		at: OPPetriNetTransition put: OPPetriNetTransitionSimulator
+		at: OPPetriNetTransition put: OPPetriNetTransitionSimulator;
+		yourself

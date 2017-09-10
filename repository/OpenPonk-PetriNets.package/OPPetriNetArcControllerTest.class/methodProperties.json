@@ -1,18 +1,18 @@
 {
 	"instance" : {
-		"amountOfLabels" : "JanBliznicenko 9/9/2017 00:12:29",
-		"testCreateModel" : "JanBliznicenko 9/9/2017 00:12:29",
-		"fromClass" : "JanBliznicenko 9/9/2017 00:12:29",
-		"desiredModelClass" : "JanBliznicenko 9/9/2017 00:12:29",
-		"classForTesting" : "JanBliznicenko 9/9/2017 00:12:29",
-		"testCreateController" : "JanBliznicenko 9/9/2017 00:12:29",
-		"testFigureRefresh" : "JanBliznicenko 9/9/2017 00:12:29",
-		"testCreateFigure" : "JanBliznicenko 9/9/2017 00:12:29",
-		"desiredHeadShape" : "JanBliznicenko 9/9/2017 00:12:29",
-		"toClass" : "JanBliznicenko 9/9/2017 00:12:29",
-		"setUp" : "JanBliznicenko 9/9/2017 00:12:29"
+		"amountOfLabels" : "JanBliznicenko 9/9/2017 12:11:28",
+		"testCreateModel" : "JanBliznicenko 9/9/2017 12:11:28",
+		"fromClass" : "JanBliznicenko 9/9/2017 12:11:28",
+		"desiredModelClass" : "JanBliznicenko 9/9/2017 12:11:28",
+		"classForTesting" : "JanBliznicenko 9/9/2017 12:11:28",
+		"testCreateController" : "JanBliznicenko 9/9/2017 12:11:28",
+		"testFigureRefresh" : "JanBliznicenko 9/9/2017 12:11:28",
+		"testCreateFigure" : "JanBliznicenko 9/9/2017 12:11:28",
+		"desiredHeadShape" : "JanBliznicenko 9/9/2017 12:11:28",
+		"toClass" : "JanBliznicenko 9/9/2017 12:11:28",
+		"setUp" : "JanBliznicenko 9/9/2017 12:11:28"
 	},
 	"class" : {
-		"isAbstract" : "JanBliznicenko 9/9/2017 00:12:29"
+		"isAbstract" : "JanBliznicenko 9/9/2017 12:11:28"
 	}
 }

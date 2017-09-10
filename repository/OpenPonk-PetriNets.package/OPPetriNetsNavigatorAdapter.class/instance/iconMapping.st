@@ -1,4 +1,4 @@
-accessing
+widget API
 iconMapping
 	^ {(OPPetriNet -> OPPetriNetsIcons current petriNetIcon).
 	(OPPetriNetInhibitorArc -> OPPetriNetsIcons current inhibitorArcIcon).

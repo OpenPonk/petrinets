@@ -1,13 +1,12 @@
 menu
 menuCommandOn: aBuilder
 	<worldMenu>
-	(aBuilder item: #'OP Petri Nets')
+	(aBuilder item: #'Petri Nets')
 		icon: OPPetriNetsIcons current petriNetIcon;
 		parent: #MostUsedTools;
 		action: [ self exampleEmpty ];
-		with: [ 
-					(aBuilder item: #'OP Petri Nets Example')
-						parent: #'OP Petri Nets';
-						label: 'OP Petri Nets';
-						icon: OPPetriNetsIcons current petriNetIcon;
-						action: [ self examplePetriNets ] ]
+		with: [ (aBuilder item: #'Petri Nets Example')
+				parent: #'Petri Nets';
+				label: 'Petri Nets example';
+				icon: OPPetriNetsIcons current petriNetIcon;
+				action: [ self examplePetriNets ] ]

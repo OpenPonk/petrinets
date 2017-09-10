@@ -1,4 +1,4 @@
-accessing
+widget API
 displayMapping
 	^ {(OPPetriNet -> 'Diagram').
 	(OPPetriNetInhibitorArc -> 'Inhibitor Arc').

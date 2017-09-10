@@ -1,10 +1,10 @@
 {
 	"instance" : {
-		"modelToControllerMapping" : "JanBliznicenko 9/9/2017 00:12:29",
-		"canBeTargetFor:" : "JanBliznicenko 9/9/2017 00:12:29",
-		"initializePalette:" : "JanBliznicenko 9/9/2017 00:12:29",
-		"modelClass" : "JanBliznicenko 9/9/2017 00:12:29",
-		"rebuild" : "JanBliznicenko 9/9/2017 00:12:29"
+		"modelToControllerMapping" : "JanBliznicenko 9/9/2017 12:11:28",
+		"canBeTargetFor:" : "JanBliznicenko 9/9/2017 12:11:28",
+		"initializePalette:" : "JanBliznicenko 9/9/2017 12:11:28",
+		"modelClass" : "JanBliznicenko 9/9/2017 12:11:28",
+		"rebuild" : "JanBliznicenko 9/9/2017 12:11:28"
 	},
 	"class" : { }
 }
