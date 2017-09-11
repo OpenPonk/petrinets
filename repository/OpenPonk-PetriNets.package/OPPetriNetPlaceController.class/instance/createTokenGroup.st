@@ -1,14 +1,9 @@
 private
 createTokenGroup
-	| label circle |
+	| circle |
 	tokenGroup ifNotNil: [ ^ self ].
-	label := RTLabel new
-		color: Color black;
-		text: '';
-		element.
 	circle := RTEllipse new
 		size: 12;
 		color: Color black;
 		elementOn: ''.
-	tokenGroup := RTGroup with: label with: circle.
-	RTConstraint stick: label onTheLeftOf: circle
+	tokenGroup := RTGroup with: circle

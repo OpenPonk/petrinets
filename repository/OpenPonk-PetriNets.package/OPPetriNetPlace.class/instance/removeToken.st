@@ -1,5 +1,5 @@
-accessing
+removing
 removeToken
 	"removes one token"
 
-	self removeTokens: 1
+	self subclassResponsibility

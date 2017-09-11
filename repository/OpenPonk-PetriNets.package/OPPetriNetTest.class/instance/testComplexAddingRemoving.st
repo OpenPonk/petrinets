@@ -2,10 +2,10 @@ tests
 testComplexAddingRemoving
 	| place1 place2 place3 place4 trans arc1 arc2 arc3 arc4 |
 	diagram := OPPetriNet new name: 'Diagram'.
-	place1 := OPPetriNetPlace new tokens: 2.
-	place2 := OPPetriNetPlace new.
-	place3 := OPPetriNetPlace new.
-	place4 := OPPetriNetPlace new tokens: 8.
+	place1 := OPPetriNetPlaceWithTokens new tokens: 2.
+	place2 := OPPetriNetPlaceWithTokens new.
+	place3 := OPPetriNetPlaceWithTokens new.
+	place4 := OPPetriNetPlaceWithTokens new tokens: 8.
 	trans := OPPetriNetTransition new.
 	diagram
 		add: place1;

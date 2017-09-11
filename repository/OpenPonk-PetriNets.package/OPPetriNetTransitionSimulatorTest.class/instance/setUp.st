@@ -4,7 +4,7 @@ setUp
 
 	inc := OPPetriNetPlaceSimulator
 		model:
-			(OPPetriNetPlace new
+			(OPPetriNetPlaceWithTokens new
 				tokens: 4;
 				yourself).
 	(OPPetriNetNormalArcSimulator model: OPPetriNetNormalArc new)
@@ -14,7 +14,7 @@ setUp
 
 	out := OPPetriNetPlaceSimulator
 		model:
-			(OPPetriNetPlace new
+			(OPPetriNetPlaceWithTokens new
 				tokens: 4;
 				yourself).
 	(OPPetriNetNormalArcSimulator model: OPPetriNetNormalArc new)

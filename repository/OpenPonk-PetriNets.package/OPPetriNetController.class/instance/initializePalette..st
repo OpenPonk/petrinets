@@ -1,7 +1,7 @@
 initialization
 initializePalette: aPalette
 	aPalette
-		newCreationTool: 'Place' factory: [ OPPetriNetPlaceController new ] icon: OPPetriNetsIcons current placeIcon;
+		newCreationTool: 'Place' factory: [ OPPetriNetPlaceWithTokensController new ] icon: OPPetriNetsIcons current placeIcon;
 		newCreationTool: 'Transition'
 			factory: [ OPPetriNetTransitionController new ]
 			icon: OPPetriNetsIcons current transitionIcon;

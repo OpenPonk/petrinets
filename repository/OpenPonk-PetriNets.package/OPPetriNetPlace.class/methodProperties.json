@@ -1,14 +1,7 @@
 {
 	"instance" : {
-		"tokens" : "JanBliznicenko 9/9/2017 12:11:28",
-		"removeTokens:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokens:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"initialize" : "JanBliznicenko 9/9/2017 12:11:28",
-		"addToken" : "JanBliznicenko 9/9/2017 12:11:28",
-		"isPlace" : "JanBliznicenko 9/9/2017 12:11:28",
-		"removeTokens" : "JanBliznicenko 9/9/2017 12:11:28",
-		"addTokens:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"removeToken" : "JanBliznicenko 9/9/2017 12:11:28"
+		"isPlace" : "JanBliznicenko 9/10/2017 09:30:18",
+		"removeToken" : "JanBliznicenko 9/11/2017 23:35"
 	},
 	"class" : { }
 }

@@ -2,17 +2,17 @@ hooks
 exampleModel
 	| model place1 arc1 arc2 arc3 arc4 place2 place3 place4 trans1 trans2 arc5 |
 	model := OPPetriNet new name: 'Petri Net Diagram'.
-	place1 := OPPetriNetPlace new
+	place1 := OPPetriNetPlaceWithTokens new
 		name: 'P1';
 		tokens: 20;
 		yourself.
-	place2 := OPPetriNetPlace new
+	place2 := OPPetriNetPlaceWithTokens new
 		name: 'P2';
 		yourself.
-	place3 := OPPetriNetPlace new
+	place3 := OPPetriNetPlaceWithTokens new
 		name: 'P3';
 		yourself.
-	place4 := OPPetriNetPlace new
+	place4 := OPPetriNetPlaceWithTokens new
 		name: 'P4';
 		tokens: 1;
 		yourself.

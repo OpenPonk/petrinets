@@ -1,18 +1,13 @@
 {
 	"instance" : {
-		"createTokenGroup" : "JanBliznicenko 9/9/2017 12:11:28",
-		"buildEditorForm:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokenText:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"modelClass" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokenGroup" : "JanBliznicenko 9/9/2017 12:11:28",
-		"createRoassalShape" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokenCircle" : "JanBliznicenko 9/9/2017 12:11:28",
-		"applyTokenGroup" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokenGroupFrom:" : "JanBliznicenko 9/9/2017 12:11:28",
-		"tokenLabel" : "JanBliznicenko 9/9/2017 12:11:28",
-		"refreshFigure" : "JanBliznicenko 9/9/2017 12:11:28"
+		"createRoassalShape" : "JanBliznicenko 9/10/2017 09:30:18",
+		"tokenGroup" : "JanBliznicenko 9/10/2017 09:30:18",
+		"createTokenGroup" : "JanBliznicenko 9/12/2017 00:07",
+		"applyTokenGroup" : "JanBliznicenko 9/10/2017 09:30:18",
+		"tokenGroupFrom:" : "JanBliznicenko 9/12/2017 00:51",
+		"tokenCircle" : "JanBliznicenko 9/12/2017 01:02"
 	},
 	"class" : {
-		"initializePossibleConnected" : "JanBliznicenko 9/9/2017 12:11:28"
+		"initializePossibleConnected" : "JanBliznicenko 9/10/2017 09:30:18"
 	}
 }

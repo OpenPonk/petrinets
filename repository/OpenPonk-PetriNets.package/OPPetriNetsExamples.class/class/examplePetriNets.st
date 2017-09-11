@@ -4,12 +4,12 @@ examplePetriNets
 	project := OPProject named: 'Example Petri Net'.
 	model := OPPetriNet named: 'Petri Net Diagram'.
 	project addModel: model.
-	place1 := (OPPetriNetPlace named: 'P1')
+	place1 := (OPPetriNetPlaceWithTokens named: 'P1')
 		tokens: 20;
 		yourself.
-	place2 := OPPetriNetPlace named: 'P2'.
-	place3 := OPPetriNetPlace named: 'P3'.
-	place4 := (OPPetriNetPlace named: 'P4')
+	place2 := OPPetriNetPlaceWithTokens named: 'P2'.
+	place3 := OPPetriNetPlaceWithTokens named: 'P3'.
+	place4 := (OPPetriNetPlaceWithTokens named: 'P4')
 		tokens: 1;
 		yourself.
 	trans1 := OPPetriNetTransition named: 'T1'.

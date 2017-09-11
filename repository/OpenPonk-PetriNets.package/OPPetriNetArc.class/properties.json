@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"weight"
-	],
+	"instvars" : [ ],
 	"name" : "OPPetriNetArc",
 	"type" : "normal"
 }
