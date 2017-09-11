@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetArc",
+	"category" : "OpenPonk-BooleanColoredPetriNets-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetArcWithExpression",
+	"type" : "normal"
+}

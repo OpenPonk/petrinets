@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPNavigatorAdapter",
+	"category" : "OpenPonk-BooleanColoredPetriNets-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPBCPetriNetsNavigatorAdapter",
+	"type" : "normal"
+}

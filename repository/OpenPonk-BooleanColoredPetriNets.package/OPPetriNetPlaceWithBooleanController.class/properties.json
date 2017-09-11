@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetPlaceController",
+	"category" : "OpenPonk-BooleanColoredPetriNets-Controllers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OPPetriNetPlaceWithBooleanController",
+	"type" : "normal"
+}

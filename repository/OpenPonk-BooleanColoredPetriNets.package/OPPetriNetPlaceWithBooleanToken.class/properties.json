@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OPPetriNetPlace",
+	"category" : "OpenPonk-BooleanColoredPetriNets-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"token"
+	],
+	"name" : "OPPetriNetPlaceWithBooleanToken",
+	"type" : "normal"
+}
