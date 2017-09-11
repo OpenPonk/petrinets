@@ -1,14 +1,11 @@
 {
-	"category" : "BaselineOfOpenPonkPetriNets",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "BaselineOfOpenPonkPetriNets",
-	"pools" : [
-		 ],
 	"super" : "BaselineOf",
-	"type" : "normal" }
+	"category" : "BaselineOfOpenPonkPetriNets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfOpenPonkPetriNets",
+	"type" : "normal"
+}
