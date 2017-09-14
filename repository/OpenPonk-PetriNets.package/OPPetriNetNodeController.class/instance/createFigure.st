@@ -2,7 +2,7 @@ hooks
 createFigure
 	^ OPRTCallbackBuilder
 		block: [ :view | 
-			(self createRoassalShape elementOn: model)
+			(self createRoassalShape elementOn: '')
 				addInteraction:
 					(RTLabeled new
 						view: view;
