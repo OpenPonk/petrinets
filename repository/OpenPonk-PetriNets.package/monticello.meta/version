@@ -1,5 +1,0 @@
-(name 'OpenPonk-PetriNets-JanBliznicenko.5' message 'renamed tests' id '2a46c2b7-8515-0d00-9b88-8bf30ba4eb69' date '14 September 2017' time '12:45:55.034666 pm' author 'JanBliznicenko' ancestors ((name 'OpenPonk-PetriNets-JanBliznicenko.4' message 'made classes more general for PN variants
-' id 'c2558623-dfe0-50e7-ac98-1c65481ac9e5' date '12 September 2017' time '1:28:13 am' author 'JanBliznicenko' ancestors ((name 'OpenPonk-PetriNets-JanBliznicenko.3' message 'Petri nets simulation can now be randomly run
-' id 'd88aa760-2062-55ab-a405-8cc06184a9eb' date '10 September 2017' time '9:30:18 am' author 'JanBliznicenko' ancestors ((name 'OpenPonk-PetriNets-JanBliznicenko.2' message 'minor change
-' id '777de973-426e-5868-a084-b375cdac18e9' date '9 September 2017' time '12:11:28 pm' author 'JanBliznicenko' ancestors ((name 'OpenPonk-PetriNets-JanBliznicenko.1' message 'petri nets now appear correctly in OpenPonk
-' id 'ca135cec-139b-5cc6-864f-acb895eeebd2' date '9 September 2017' time '12:12:29 am' author 'JanBliznicenko' ancestors () stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())) stepChildren ())
