@@ -1,5 +1,7 @@
 # openponk-petrinets
-Petri nets diagrams for OpenPonk tool
+This repository adds Petri net diagrams to the OpenPonk tool. Petri nets could be simulated in a random or user-picked order.
+
+![example](http://www.mediafire.com/convkey/6324/fed28qgushayde6zg.jpg)
 
 ## Loading for usage
 
