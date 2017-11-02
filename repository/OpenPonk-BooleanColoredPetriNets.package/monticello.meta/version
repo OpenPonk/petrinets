@@ -1,2 +1,0 @@
-(name 'OpenPonk-BooleanColoredPetriNets-JanBliznicenko.2' message 'minor visual update' id '3a4704b5-8515-0d00-9b87-2fd20ba4eb69' date '14 September 2017' time '12:45:09.029666 pm' author 'JanBliznicenko' ancestors ((name 'OpenPonk-BooleanColoredPetriNets-JanBliznicenko.1' message 'initial commit of boolean colored petri nets
-' id '5ec3f79d-b6ee-528a-ab57-42176191a1c1' date '12 September 2017' time '1:35:47 am' author 'JanBliznicenko' ancestors () stepChildren ())) stepChildren ())
