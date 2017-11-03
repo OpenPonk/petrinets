@@ -1,4 +1,7 @@
 # OpenPonk: Petri nets
+
+![Travis build status](https://api.travis-ci.org/bliznjan/openponk-petrinets.svg)
+
 This repository adds Petri net diagrams to the OpenPonk tool. 
 
 It allows crating places with tokens, transitions and arcs. Created Petri nets could be simulated in a random or user-picked order. Petri nets metamodel is included in the repository.
