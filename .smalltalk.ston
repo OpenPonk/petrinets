@@ -1,0 +1,21 @@
+SmalltalkCISpec {
+	#loading : [
+		SCIMetacelloLoadSpec {
+			#platforms : [
+				#pharo
+			],
+			#baseline : 'PetriNets',
+			#directory : 'repository'
+		}
+	],
+	#testing : {
+		#coverage : {
+			#packages : [
+				'OpenPonk-PetriNets'
+			]
+		},
+		#packages : [
+			'OpenPonk-PetriNets'
+		]
+	}
+}
