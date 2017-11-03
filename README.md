@@ -1,6 +1,6 @@
 # OpenPonk: Petri nets
 
-![Travis build status](https://api.travis-ci.org/bliznjan/openponk-petrinets.svg)
+![Travis build status](https://api.travis-ci.org/bliznjan/openponk-petrinets.svg?branch=master)
 
 This repository adds Petri net diagrams to the OpenPonk tool. 
 
