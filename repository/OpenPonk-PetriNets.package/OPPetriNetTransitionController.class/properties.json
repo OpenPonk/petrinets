@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"adornments"
+	],
 	"name" : "OPPetriNetTransitionController",
 	"type" : "normal"
 }
