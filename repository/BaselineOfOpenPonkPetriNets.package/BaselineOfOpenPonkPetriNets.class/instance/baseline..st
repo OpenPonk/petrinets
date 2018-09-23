@@ -8,4 +8,5 @@ baseline: spec
 				with: [ spec repository: 'github://bliznjan/openponk-simulation/repository' ].
 			spec package: 'OpenPonk-PetriNets' with: [ spec requires: #('OpenPonkSimulationGUI') ].
 			spec package: 'OpenPonk-BooleanColoredPetriNets' with: [ spec requires: #('OpenPonk-PetriNets') ].
-			spec group: 'default' with: #('OpenPonk-PetriNets' 'OpenPonk-BooleanColoredPetriNets') ]
+			spec group: 'pn' with: #('OpenPonk-PetriNets').
+			spec group: 'default' with: #('pn' 'OpenPonk-BooleanColoredPetriNets') ]
