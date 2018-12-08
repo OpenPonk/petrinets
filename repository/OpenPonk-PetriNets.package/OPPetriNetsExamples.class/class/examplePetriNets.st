@@ -32,5 +32,4 @@ examplePetriNets
 		add: arc3;
 		add: arc4;
 		add: arc5.
-
-	OPWorkbench openProject: project
+	^ OPProject openOnModel: model

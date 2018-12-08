@@ -1,4 +1,4 @@
 hooks
 refreshFigure
-	self figureLabel: #name text: self model name.
-	super refreshFigure
+	super refreshFigure.
+	(figure labels at: #name) trachelShape text: self model name

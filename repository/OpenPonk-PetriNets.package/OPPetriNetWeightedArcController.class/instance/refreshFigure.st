@@ -1,4 +1,4 @@
 hooks
 refreshFigure
-	self figureLabel: #weight text: self weightText.
-	super refreshFigure
+	super refreshFigure.
+	(figure labels at: #weight) trachelShape text: self weightText

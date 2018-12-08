@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "OPTestCase",
+	"super" : "TestCase",
 	"category" : "OpenPonk-PetriNets-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],

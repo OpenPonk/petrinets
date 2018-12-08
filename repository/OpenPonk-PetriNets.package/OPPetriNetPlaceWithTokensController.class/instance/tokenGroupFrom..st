@@ -12,4 +12,6 @@ tokenGroupFrom: aNumber
 			(aNumber < 2
 				ifTrue: [ '' ]
 				ifFalse: [ aNumber asString ]).
-	self tokenGroup translateBy: 0
+	^ self tokenGroup
+		translateBy: 0;
+		yourself

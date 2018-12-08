@@ -1,12 +1,6 @@
 adding
 addAsTargetFor: aController
-	| newModel |
-	self assert: (self canBeTargetFor: aController).
-	aController
-		target: self;
-		diagramController: self diagramController.
-	newModel := aController createModel.
-	self diagramController model add: newModel.
-	aController model: newModel.
-	self diagramController controllers add: aController.
-	aController attach
+	(self canBeTargetFor: aController)
+		ifFalse: [ self error: self class asString , ' cannot be target for ' , aController class asString ].
+	aController targetController: self.
+	aController createModelIn: self model andShowInDiagram: self diagramController
