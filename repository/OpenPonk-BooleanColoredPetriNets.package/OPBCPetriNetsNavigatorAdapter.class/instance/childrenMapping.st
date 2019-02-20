@@ -1,4 +1,4 @@
 widget API
 childrenMapping
 	^ {(OPBCPetriNet -> #nodes).
-	(OPPetriNetTransition -> #connected)}
+	(OPPetriNetNode -> #connected)}
