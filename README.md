@@ -1,6 +1,6 @@
 # OpenPonk: Petri nets
 
-![Travis build status](https://api.travis-ci.org/bliznjan/openponk-petrinets.svg?branch=master)
+![Travis build status](https://api.travis-ci.org/JanBliznicenko/openponk-petrinets.svg?branch=master)
 
 This repository adds Petri net diagrams to the OpenPonk tool. 
 
@@ -16,7 +16,7 @@ Slow loading with any image without OpenPonk: In Playground, run following code:
 ```
 Metacello new
     baseline: 'OpenPonkPetriNets';
-    repository: 'github://bliznjan/openponk-petrinets/repository';
+    repository: 'github://JanBliznicenko/openponk-petrinets/repository';
     load
 ```
 Fast loading with OpenPonk image: Download OpenPonk 1.0.0 from https://openponk.org/, open it and in Playground, run following code:
@@ -24,7 +24,7 @@ Fast loading with OpenPonk image: Download OpenPonk 1.0.0 from https://openponk.
 	IceRepository reset.
 	Metacello new
 		baseline: 'OpenPonkPetriNets';
-		repository: 'github://bliznjan/openponk-petrinets/repository';
+		repository: 'github://JanBliznicenko/openponk-petrinets/repository';
 		onConflictUseLoaded;
 		onWarning: [ :warning | 
 			(warning isKindOf: MCMergeOrLoadWarning)
