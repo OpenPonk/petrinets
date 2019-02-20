@@ -10,20 +10,35 @@ It allows crating places with tokens, transitions and arcs. Created Petri nets c
 
 ## Installation for usage
 
-Requires Pharo 5 or greater.
+Requires Pharo 6.1.
 
-In Playground, run following code:
+Slow loading with any image without OpenPonk: In Playground, run following code:
 ```
 Metacello new
     baseline: 'OpenPonkPetriNets';
     repository: 'github://bliznjan/openponk-petrinets/repository';
     load
 ```
+Fast loading with OpenPonk image: Download OpenPonk 1.0.0 from https://openponk.org/, open it and in Playground, run following code:
+```
+	IceRepository reset.
+	Metacello new
+		baseline: 'OpenPonkPetriNets';
+		repository: 'github://bliznjan/openponk-petrinets/repository';
+		onConflictUseLoaded;
+		onWarning: [ :warning | 
+			(warning isKindOf: MCMergeOrLoadWarning)
+				ifTrue: [ warning load ]
+				ifFalse: [ (warning messageText beginsWith: 'This package depends on the following classes')
+						ifTrue: [ warning resume ]
+						ifFalse: [ warning pass ] ] ];
+		load
+ ```
 
 ## Installation for development
 
-Requires Pharo 6.1 - image 60158 or greater.
+Requires Pharo 6.1.
 
-1. Enable Iceberg Metacello integration in Iceberg settings
+1. Update Iceberg using script for Pharo 6.1 on https://github.com/pharo-vcs/iceberg
 1. Clone the repository via Iceberg
 1. Install default baseline BaselineOfOpenPonkPetriNets
