@@ -4,9 +4,9 @@ baseline: spec
 	spec
 		for: #common
 		do: [ spec
-				baseline: 'OpenPonkSimulationGUI'
+				baseline: 'OpenPonkSimulation'
 				with: [ spec repository: 'github://JanBliznicenko/openponk-simulation/repository' ].
-			spec package: 'OpenPonk-PetriNets' with: [ spec requires: #('OpenPonkSimulationGUI') ].
+			spec package: 'OpenPonk-PetriNets' with: [ spec requires: #('OpenPonkSimulation') ].
 			spec package: 'OpenPonk-BooleanColoredPetriNets' with: [ spec requires: #('OpenPonk-PetriNets') ].
-			spec group: 'pn' with: #('OpenPonk-PetriNets').
-			spec group: 'default' with: #('pn' 'OpenPonk-BooleanColoredPetriNets') ]
+			spec group: 'default' with: #('OpenPonk-PetriNets').
+			spec group: 'bcpn' with: #('OpenPonk-BooleanColoredPetriNets') ]
