@@ -1,3 +1,3 @@
 hooks
-classForTesting
+modelClass
 	^ self subclassResponsibility

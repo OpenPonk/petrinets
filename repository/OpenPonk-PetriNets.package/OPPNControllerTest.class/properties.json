@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "<historical>",
-	"super" : "OPPNControllerTest",
+	"commentStamp" : "",
+	"super" : "OPControllerTest",
 	"category" : "OpenPonk-PetriNets-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OPPetriNetNodeControllerTest",
+	"name" : "OPPNControllerTest",
 	"type" : "normal"
 }

@@ -6,5 +6,5 @@ SystemOrganization addCategory: 'OpenPonk-PetriNets-Models'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Shapes'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Simulation'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Tests'!
-ation'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Tests'!
+Tests'!

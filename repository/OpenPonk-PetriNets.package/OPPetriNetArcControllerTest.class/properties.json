@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "OPControllerTest",
+	"super" : "OPPNControllerTest",
 	"category" : "OpenPonk-PetriNets-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],

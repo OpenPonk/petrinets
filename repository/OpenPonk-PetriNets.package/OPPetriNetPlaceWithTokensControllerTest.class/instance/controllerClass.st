@@ -1,3 +1,3 @@
 hooks
-classForTesting
+controllerClass
 	^ OPPetriNetPlaceWithTokensController

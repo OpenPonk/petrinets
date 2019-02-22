@@ -1,3 +1,3 @@
 hooks
-desiredModelClass
+modelClass
 	^ OPPetriNetResetArc

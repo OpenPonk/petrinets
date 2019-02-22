@@ -2,6 +2,6 @@ running
 setUp
 	super setUp.
 	model := self exampleModel.
-	simulator := self classForTesting model: model.
+	simulator := self controllerClass model: model.
 	place := OPPetriNetPlaceSimulator model: (OPPetriNetPlaceWithTokens new tokens: 10).
 	trans := OPPetriNetTransitionSimulator model: OPPetriNetTransition new

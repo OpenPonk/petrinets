@@ -1,3 +1,6 @@
 tests
 testCreateModel
-	self assert: ctrl createModel class = self desiredModelClass
+	self
+		assert:
+			(controller createModelIn: diagramController model) class
+				= self modelClass

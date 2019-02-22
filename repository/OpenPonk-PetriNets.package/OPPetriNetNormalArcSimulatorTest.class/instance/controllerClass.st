@@ -1,5 +1,5 @@
 hooks
-classForTesting
+controllerClass
 	^ OPPetriNetNormalArcSimulator
 		model:
 			(OPPetriNetNormalArc new

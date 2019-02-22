@@ -1,3 +1,3 @@
 running
 setUp
-	simulator := self classForTesting model: self exampleModel
+	simulator := self controllerClass model: self exampleModel

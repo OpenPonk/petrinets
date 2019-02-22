@@ -1,11 +1,11 @@
 tests
 testFigureRefresh
 	| text |
-	ctrl model: ctrl createModel.
-	ctrl figure: self renderFigure.
-	self assert: (ctrl figure attributeAt: #RTLabelledLabel) text = ''.
-
-	ctrl model name: 'new name'.
-	ctrl refreshFigure.
-	text := (ctrl figure attributeAt: #RTLabelledLabel) text.
+	controller createModelIn: diagramController model.
+	diagramController addController: controller.
+	controller renderFigureIn: diagramController view.
+	self assert: (controller figure attributeAt: #RTLabelledLabel) text = ''.
+	controller model name: 'new name'.
+	controller refreshFigure.
+	text := (controller figure attributeAt: #RTLabelledLabel) text.
 	self assert: ((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
