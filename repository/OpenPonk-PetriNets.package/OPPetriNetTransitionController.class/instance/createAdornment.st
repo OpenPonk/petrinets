@@ -12,7 +12,8 @@ createAdornment
 		outer;
 		stick.
 	icon := RTSVGPath new
-		path: 'M-6,6 L-6,-6 L6,0 L-6,6';
+		path: 'M-5,6 L-5,-6 L5,0 L-5,6';
+		color: (Color red: 50 green: 190 blue: 30);
 		element.
 	(RTConstraint on: icon background: transitionHelper) stick.
 	transitionHelper
