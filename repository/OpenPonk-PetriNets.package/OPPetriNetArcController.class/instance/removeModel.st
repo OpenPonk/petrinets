@@ -1,5 +1,3 @@
 removing
 removeModel
-	| ownerModel |
-	ownerModel := self diagramController model.
-	ownerModel remove: self model
+	self diagramController model remove: self model

@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OPPNControllerTest",
+	"name" : "OPPetriNetsController",
 	"type" : "normal"
 }

@@ -1,6 +1,3 @@
 tests
 testCreateModel
-	self
-		assert:
-			(controller createModelIn: diagramController model) class
-				= self modelClass
+	self assert: (controller createModelIn: diagramController model) class = self modelClass

@@ -1,3 +1,3 @@
-as yet unclassified
+tests
 testCreateController
 	self assert: controller class = self controllerClass
