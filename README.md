@@ -11,15 +11,9 @@ It allows crating places with tokens, transitions and arcs. Created Petri nets c
 ## Installation for usage
 
 Requires Pharo 6.1.
+Loading requires running one of following scripts. Which one is it depends whether you alreade have OpenPonk image or OpenPonk loaded to your image:
 
-Slow loading with any image without OpenPonk: In Playground, run following code:
-```
-Metacello new
-    baseline: 'OpenPonkPetriNets';
-    repository: 'github://JanBliznicenko/openponk-petrinets/repository';
-    load
-```
-Fast loading with OpenPonk image: Download OpenPonk 1.0.0 from https://openponk.org/, open it and in Playground, run following code:
+If you have OpenPonk image (OpenPonk 1.x from https://openponk.org/) or OpenPonk loaded into your image:
 ```
 	IceRepository reset.
 	Metacello new
@@ -29,11 +23,18 @@ Fast loading with OpenPonk image: Download OpenPonk 1.0.0 from https://openponk.
 		onWarning: [ :warning | 
 			(warning isKindOf: MCMergeOrLoadWarning)
 				ifTrue: [ warning load ]
-				ifFalse: [ (warning messageText beginsWith: 'This package depends on the following classes')
+				ifFalse: [ (warning messageText beginsWith: 'This package depends')
 						ifTrue: [ warning resume ]
 						ifFalse: [ warning pass ] ] ];
 		load
  ```
+If you have (clean) image without OpenPonk (loading will take several minutes):
+```
+Metacello new
+    baseline: 'OpenPonkPetriNets';
+    repository: 'github://JanBliznicenko/openponk-petrinets/repository';
+    load
+```
 
 ## Installation for development
 
