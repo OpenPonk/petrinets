@@ -1,9 +1,17 @@
 hooks
 buildEditorForm: aForm
+	| tokensTextModel |
 	super buildEditorForm: aForm.
-	(aForm addTextInput: 'Tokens')
+	tokensTextModel := aForm addTextInput: 'Tokens'.
+	tokensTextModel
 		text: self model tokens asString;
-		whenTextIsAccepted: [ :newValue | self model tokens: (newValue asInteger ifNil: [ 0 ]) ].
+		whenTextIsAccepted: [ :newValue | 
+			[ self model tokens: (newValue asInteger ifNil: [ 0 ]) ]
+				on: OPPetriNetPlaceOverCapacity
+				do: [ :ex | 
+					(UIManager default confirm: 'Place would be over capacity. Continue?')
+						ifTrue: [ ex resume ]
+						ifFalse: [ tokensTextModel text: self model tokens asString ] ] ].
 	(aForm addTextInput: 'Capacity')
 		text:
 			(self model capacity isInfinite

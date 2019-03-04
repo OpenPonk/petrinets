@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "AssertionFailure",
+	"super" : "Warning",
 	"category" : "OpenPonk-PetriNets-Models",
 	"classinstvars" : [ ],
 	"pools" : [ ],
