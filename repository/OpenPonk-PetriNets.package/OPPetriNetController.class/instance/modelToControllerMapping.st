@@ -6,4 +6,4 @@ modelToControllerMapping
 			OPPetriNetResetArc -> OPPetriNetResetArcController.
 			OPPetriNetNormalArc -> OPPetriNetNormalArcController.
 			OPPetriNetTransition -> OPPetriNetTransitionController.
-			OPPetriNetPlaceWithTokens -> OPPetriNetPlaceWithTokensController}
+			OPPetriNetPTPlace -> OPPetriNetPTPlaceController}

@@ -1,6 +1,6 @@
 hooks
 exampleModel
-	^ OPPetriNetPlaceWithTokens new
+	^ OPPetriNetPTPlace new
 		name: 'P1';
 		tokens: 20;
 		yourself

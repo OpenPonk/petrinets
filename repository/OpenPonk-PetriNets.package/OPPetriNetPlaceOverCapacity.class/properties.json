@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "OPPetriNetPlace",
+	"super" : "AssertionFailure",
 	"category" : "OpenPonk-PetriNets-Models",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "OPPetriNetPlaceWithTokens",
+	"instvars" : [
+		"place"
+	],
+	"name" : "OPPetriNetPlaceOverCapacity",
 	"type" : "normal"
 }

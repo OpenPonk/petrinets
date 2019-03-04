@@ -4,5 +4,5 @@ displayMapping
 	(OPPetriNetInhibitorArc -> 'Inhibitor Arc').
 	(OPPetriNetResetArc -> 'Reset Arc').
 	(OPPetriNetWeightedArc -> 'Arc').
-	(OPPetriNetPlaceWithTokens -> 'Place').
+	(OPPetriNetPTPlace -> 'Place').
 	(OPPetriNetTransition -> 'Transition')}

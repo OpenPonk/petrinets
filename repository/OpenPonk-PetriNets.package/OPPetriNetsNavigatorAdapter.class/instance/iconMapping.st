@@ -4,5 +4,5 @@ iconMapping
 	(OPPetriNetInhibitorArc -> OPPetriNetsIcons current inhibitorArcIcon).
 	(OPPetriNetResetArc -> OPPetriNetsIcons current resetArcIcon).
 	(OPPetriNetWeightedArc -> OPPetriNetsIcons current arcIcon).
-	(OPPetriNetPlaceWithTokens -> OPPetriNetsIcons current placeIcon).
+	(OPPetriNetPTPlace -> OPPetriNetsIcons current placeIcon).
 	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}

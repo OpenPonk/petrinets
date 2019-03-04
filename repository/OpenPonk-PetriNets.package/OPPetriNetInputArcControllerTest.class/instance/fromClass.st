@@ -1,3 +1,3 @@
 hooks
 fromClass
-	^ OPPetriNetPlaceWithTokensController
+	^ OPPetriNetPTPlaceController

@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OPPetriNetPlaceWithTokensController",
+	"name" : "OPPetriNetPTPlaceController",
 	"type" : "normal"
 }

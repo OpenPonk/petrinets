@@ -9,7 +9,7 @@ testAdd
 
 	first := OPPetriNetTransition new name: '1'.
 	d add: first.
-	second := OPPetriNetPlaceWithTokens new name: '2'.
+	second := OPPetriNetPTPlace new name: '2'.
 	d add: second.
 	self assert: d elements size = 2.
 	self assert: d elements first owner = d.

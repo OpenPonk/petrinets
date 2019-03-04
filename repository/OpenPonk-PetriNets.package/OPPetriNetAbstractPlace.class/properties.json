@@ -8,6 +8,6 @@
 	"instvars" : [
 		"tokens"
 	],
-	"name" : "OPPetriNetPlace",
+	"name" : "OPPetriNetAbstractPlace",
 	"type" : "normal"
 }
