@@ -1,8 +1,8 @@
 # OpenPonk: Petri nets
 
-[![Build Status](https://travis-ci.org/JanBliznicenko/openponk-petrinets.svg?branch=master)](https://travis-ci.org/JanBliznicenko/openponk-petrinets)
+[![Build Status](https://travis-ci.org/OpenPonk/openponk-petrinets.svg?branch=master)](https://travis-ci.org/JanBliznicenko/openponk-petrinets)
 
-This is an unofficial extension of [OpenPonk tool](https://openponk.org) that adds Petri net diagrams. 
+This is an extension of [OpenPonk tool](https://openponk.org) that adds Petri net diagrams. 
 
 It allows crating places with tokens, transitions and arcs. Created Petri nets could be simulated in a random or user-picked order. Petri nets metamodel is included in the repository.
 
@@ -18,7 +18,7 @@ If you have OpenPonk image (OpenPonk 1.x from https://openponk.org/) or OpenPonk
 	IceRepository reset.
 	Metacello new
 		baseline: 'OpenPonkPetriNets';
-		repository: 'github://JanBliznicenko/openponk-petrinets/repository';
+		repository: 'github://OpenPonk/openponk-petrinets/repository';
 		onConflictUseLoaded;
 		onWarning: [ :warning | 
 			(warning isKindOf: MCMergeOrLoadWarning)
@@ -32,7 +32,7 @@ If you have (clean) image without OpenPonk (loading will take several minutes):
 ```
 Metacello new
     baseline: 'OpenPonkPetriNets';
-    repository: 'github://JanBliznicenko/openponk-petrinets/repository';
+    repository: 'github://OpenPonk/openponk-petrinets/repository';
     load
 ```
 
