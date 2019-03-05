@@ -1,6 +1,6 @@
 # OpenPonk: Petri nets
 
-[![Build Status](https://travis-ci.org/OpenPonk/openponk-petrinets.svg?branch=master)](https://travis-ci.org/JanBliznicenko/openponk-petrinets)
+[![Build Status](https://travis-ci.org/OpenPonk/openponk-petrinets.svg?branch=master)](https://travis-ci.org/OpenPonk/openponk-petrinets)
 
 This is an extension of [OpenPonk tool](https://openponk.org) that adds Petri net diagrams. 
 
