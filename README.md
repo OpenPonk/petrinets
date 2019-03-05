@@ -1,6 +1,6 @@
 # OpenPonk: Petri nets
 
-[![Build Status](https://travis-ci.org/OpenPonk/openponk-petrinets.svg?branch=master)](https://travis-ci.org/OpenPonk/openponk-petrinets)
+[![Build Status](https://travis-ci.org/OpenPonk/petrinets.svg?branch=master)](https://travis-ci.org/OpenPonk/petrinets)
 
 This is an extension of [OpenPonk tool](https://openponk.org) that adds Petri net diagrams. 
 
@@ -18,7 +18,7 @@ If you have OpenPonk image (OpenPonk 1.x from https://openponk.org/) or OpenPonk
 	IceRepository reset.
 	Metacello new
 		baseline: 'OpenPonkPetriNets';
-		repository: 'github://OpenPonk/openponk-petrinets/repository';
+		repository: 'github://OpenPonk/petrinets/repository';
 		onConflictUseLoaded;
 		onWarning: [ :warning | 
 			(warning isKindOf: MCMergeOrLoadWarning)
@@ -32,7 +32,7 @@ If you have (clean) image without OpenPonk (loading will take several minutes):
 ```
 Metacello new
     baseline: 'OpenPonkPetriNets';
-    repository: 'github://OpenPonk/openponk-petrinets/repository';
+    repository: 'github://OpenPonk/petrinets/repository';
     load
 ```
 
