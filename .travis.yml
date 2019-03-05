@@ -10,7 +10,6 @@ addons:
 env:
   global:
     - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
-    - KEY=.ssh/id_petrinets_travis
 
 smalltalk:
   - Pharo-6.1
@@ -20,10 +19,7 @@ cache:
     - $SMALLTALK_CI_BUILD_BASE/pharo-local/package-cache
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_3c7926c4e255_key -iv $encrypted_3c7926c4e255_iv -in $KEY.enc -out $KEY -d
-  - chmod 0400 $KEY
-  - eval $(ssh-agent -s)
-  - ssh-add $KEY
+  - source ./scripts/ssh.sh
 
 after_success:
   - ./scripts/copy-image.sh $SMALLTALK_CI_IMAGE $ARTIFACT_DIR/openponk

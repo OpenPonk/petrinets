@@ -13,7 +13,7 @@ readonly BUILD_ID="${TAG_VERSION:-"${BRANCH_NAME}-${CI_BUILD_ID}"}"
 # wherever you'll be ssh-ing into user@machine
 readonly TARGET_MACHINE="openponk@ccmi.fit.cvut.cz"
 # target dir on the target machine
-readonly UPLOAD_DIR="~/uploads/uml"
+readonly UPLOAD_DIR="~/uploads/petrinets"
 
 # customize the name of the Pharo image you will be deploying
 readonly PROJECT_NAME="openponk"
@@ -26,7 +26,7 @@ deploy-scp() {
 	zip -qr "$zip" "$directory"
 	scp -rp "$zip" "$TARGET_MACHINE:$UPLOAD_DIR"
 	# I have a server-side post-processing script that bundles VMs into the build
-	ssh "$TARGET_MACHINE" "~/scripts/process-uml-build.sh ${BUILD_ID}"
+	ssh "$TARGET_MACHINE" "~/scripts/process-petrinets-build.sh ${BUILD_ID}"
 }
 
 main() {
