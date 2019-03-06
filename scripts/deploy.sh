@@ -9,6 +9,7 @@ readonly TAG_NAME="${TRAVIS_TAG:-$_TAG_NAME}"
 readonly TAG_VERSION="${TAG_NAME#v}"
 readonly CI_BUILD_ID="${TRAVIS_BUILD_NUMBER:-$CI_JOB_ID}"
 readonly BUILD_ID="${TAG_VERSION:-"${BRANCH_NAME}-${CI_BUILD_ID}"}"
+readonly BITS_64_OR_NONE=$1
 
 # wherever you'll be ssh-ing into user@machine
 readonly TARGET_MACHINE="openponk@ccmi.fit.cvut.cz"
