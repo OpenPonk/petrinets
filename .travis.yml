@@ -11,6 +11,10 @@ smalltalk:
   - Pharo64-6.1
   - Pharo-6.1
 
+env:
+  global:
+    - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER-$TRAVIS_SMALLTALK_VERSION
+
 cache:
   directories:
     - $SMALLTALK_CI_BUILD_BASE/pharo-local/package-cache
@@ -19,9 +23,6 @@ before_install:
   - source ./scripts/ssh.sh
 
 after_success:
-  env:
-    global:
-      - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER-$TRAVIS_SMALLTALK_VERSION
   - ./scripts/copy-image.sh $SMALLTALK_CI_IMAGE $ARTIFACT_DIR/openponk
   - ./scripts/mark-image.sh $ARTIFACT_DIR/openponk
 
