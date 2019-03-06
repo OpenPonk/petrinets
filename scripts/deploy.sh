@@ -29,11 +29,11 @@ deploy-scp() {
 	scp -rp "$zip" "$TARGET_MACHINE:$UPLOAD_DIR"
 	# I have a server-side post-processing script that bundles VMs into the build
 	echo "Calling target machine script"
-	ssh "$TARGET_MACHINE" "~/scripts/process-petrinets-build.sh ${BUILD_ID} ${TRAVIS_SMALLTALK_VERSION}"
+	ssh "$TARGET_MACHINE" "~/scripts/process-petrinets-build.sh ${BUILD_ID} ${BITS_64_OR_NONE}"
 }
 
 main() {
-	local directory="${PROJECT_NAME}-${BUILD_ID}-${TRAVIS_SMALLTALK_VERSION}"
+	local directory="${PROJECT_NAME}-${BUILD_ID}"
 	mv $ARTIFACT_DIR $directory
 	echo "Deploying build ${BUILD_ID}."
 	deploy-scp $directory $ARTIFACT_ZIP
