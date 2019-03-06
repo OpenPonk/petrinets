@@ -19,7 +19,9 @@ before_install:
   - source ./scripts/ssh.sh
 
 after_success:
-  - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER-$TRAVIS_SMALLTALK_VERSION
+  env:
+    global:
+      - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER-$TRAVIS_SMALLTALK_VERSION
   - ./scripts/copy-image.sh $SMALLTALK_CI_IMAGE $ARTIFACT_DIR/openponk
   - ./scripts/mark-image.sh $ARTIFACT_DIR/openponk
 
