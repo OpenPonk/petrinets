@@ -12,9 +12,9 @@ readonly BUILD_ID="${TAG_VERSION:-"${BRANCH_NAME}-${CI_BUILD_ID}"}"
 readonly BITS_64_OR_NONE=$1
 
 if [ "${BITS_64_OR_NONE}" == "" ]; then
-	readonly ADD_64_OR_NONE=""
+	readonly SUFFIX_64_OR_NONE=""
 else
-	readonly ADD_64_OR_NONE="-${BITS_64_OR_NONE}b"
+	readonly SUFFIX_64_OR_NONE="-${BITS_64_OR_NONE}b"
 fi
 
 # wherever you'll be ssh-ing into user@machine
@@ -40,11 +40,11 @@ deploy-scp() {
 }
 
 main() {
-	local directory="${PROJECT_NAME}-${BUILD_ID}${ADD_64_OR_NONE}"
+	local directory="${PROJECT_NAME}-${BUILD_ID}${SUFFIX_64_OR_NONE}"
 	mv $ARTIFACT_DIR $directory
-	echo "Deploying build ${BUILD_ID}${ADD_64_OR_NONE}."
+	echo "Deploying build ${BUILD_ID}${SUFFIX_64_OR_NONE}."
 	deploy-scp $directory $ARTIFACT_ZIP
-	echo "Build ${BUILD_ID}${ADD_64_OR_NONE} deployed."
+	echo "Build ${BUILD_ID}${SUFFIX_64_OR_NONE} deployed."
 }
 
 if [ "$BRANCH_NAME" = "master" ] || [ -n "$TAG_NAME" ]; then
