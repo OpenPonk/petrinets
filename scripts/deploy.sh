@@ -15,6 +15,7 @@ if [ "${BITS_64_OR_NONE}" == "" ]; then
 	readonly ADD_64_OR_NONE=""
 else
 	readonly ADD_64_OR_NONE="-${BITS_64_OR_NONE}b"
+fi
 
 # wherever you'll be ssh-ing into user@machine
 readonly TARGET_MACHINE="openponk@ccmi.fit.cvut.cz"
