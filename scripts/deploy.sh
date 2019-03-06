@@ -30,7 +30,7 @@ deploy-scp() {
 }
 
 main() {
-	local directory="${PROJECT_NAME}-${BUILD_ID}"
+	local directory="${PROJECT_NAME}-${BUILD_ID}-${TRAVIS_SMALLTALK_VERSION}"
 	mv $ARTIFACT_DIR $directory
 	deploy-scp $directory $ARTIFACT_ZIP
 	echo "Build ${BUILD_ID} deployed."
