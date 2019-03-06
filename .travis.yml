@@ -13,7 +13,15 @@ smalltalk:
 
 env:
   global:
-    - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER-$TRAVIS_SMALLTALK_VERSION
+    - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
+    
+matrix:
+  include:
+    - smalltalk: Pharo64-6.1
+      env: 
+        global:
+          - BITS_64_OR_NONE = "64"
+    - smalltalk: Pharo32-6.1
 
 cache:
   directories:
