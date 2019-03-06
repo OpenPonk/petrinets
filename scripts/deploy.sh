@@ -9,6 +9,7 @@ readonly TAG_NAME="${TRAVIS_TAG:-$_TAG_NAME}"
 readonly TAG_VERSION="${TAG_NAME#v}"
 readonly CI_BUILD_ID="${TRAVIS_BUILD_NUMBER:-$CI_JOB_ID}"
 readonly BUILD_ID="${TAG_VERSION:-"${BRANCH_NAME}-${CI_BUILD_ID}"}"
+readonly BITS_64_OR_NONE=$1
 
 # wherever you'll be ssh-ing into user@machine
 readonly TARGET_MACHINE="openponk@ccmi.fit.cvut.cz"
@@ -17,21 +18,25 @@ readonly UPLOAD_DIR="~/uploads/petrinets"
 
 # customize the name of the Pharo image you will be deploying
 readonly PROJECT_NAME="openponk"
-readonly ARTIFACT_ZIP="${PROJECT_NAME}-image-${BUILD_ID}.zip"
+readonly ARTIFACT_ZIP="${PROJECT_NAME}-image${BITS_64_OR_NONE}-${BUILD_ID}.zip"
 
 # zip the image, and upload it to the server
 deploy-scp() {
 	local directory=$1
 	local zip=$2
+	echo "Running zip"
 	zip -qr "$zip" "$directory"
+	echo "Running scp"
 	scp -rp "$zip" "$TARGET_MACHINE:$UPLOAD_DIR"
 	# I have a server-side post-processing script that bundles VMs into the build
-	ssh "$TARGET_MACHINE" "~/scripts/process-petrinets-build.sh ${BUILD_ID}"
+	echo "Calling target machine script"
+	ssh "$TARGET_MACHINE" "~/scripts/process-petrinets-build.sh ${BUILD_ID} ${BITS_64_OR_NONE}"
 }
 
 main() {
 	local directory="${PROJECT_NAME}-${BUILD_ID}"
 	mv $ARTIFACT_DIR $directory
+	echo "Deploying build ${BUILD_ID}."
 	deploy-scp $directory $ARTIFACT_ZIP
 	echo "Build ${BUILD_ID} deployed."
 }

@@ -11,8 +11,9 @@ env:
   global:
     - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
 
-smalltalk:
-  - Pharo-6.1
+smalltalk: 
+  - Pharo32-6.1
+  - Pharo64-6.1
 
 cache:
   directories:
@@ -21,16 +22,30 @@ cache:
 before_install:
   - source ./scripts/ssh.sh
 
-after_success:
+before_deploy:
   - ./scripts/copy-image.sh $SMALLTALK_CI_IMAGE $ARTIFACT_DIR/openponk
   - ./scripts/mark-image.sh $ARTIFACT_DIR/openponk
 
 deploy:
   - provider: script
     skip_cleanup: true
-    script: scripts/deploy.sh
+    script: scripts/deploy.sh ""
+    on:
+      smalltalk: Pharo32-6.1
+  - provider: script
+    skip_cleanup: true
+    script: scripts/deploy.sh "64"
+    on:
+      smalltalk: Pharo64-6.1
   - provider: script
     on:
       tags: true
+      smalltalk: Pharo32-6.1
     skip_cleanup: true
-    script: scripts/deploy.sh
+    script: scripts/deploy.sh ""
+  - provider: script
+    on:
+      tags: true
+      smalltalk: Pharo64-6.1
+    skip_cleanup: true
+    script: scripts/deploy.sh "64"
