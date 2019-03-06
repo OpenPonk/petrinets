@@ -12,8 +12,8 @@ env:
     - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
 
 smalltalk:
-  - Pharo-6.1
   - Pharo64-6.1
+  - Pharo-6.1
 
 cache:
   directories:
