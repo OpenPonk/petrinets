@@ -9,7 +9,7 @@ addons:
 
 smalltalk:
   - Pharo64-6.1
-  - Pharo-6.1
+  - Pharo32-6.1
 
 env:
   global:
