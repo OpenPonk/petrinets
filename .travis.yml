@@ -10,15 +10,10 @@ addons:
 env:
   global:
     - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
-    
-matrix:
-  include:
-    - smalltalk: Pharo32-6.1
-      env:
-      - BITS_64_OR_NONE = ""
-    - smalltalk: Pharo64-6.1
-      env:
-      - BITS_64_OR_NONE = "64"
+
+smalltalk: 
+  - Pharo32-6.1
+  - Pharo64-6.1
 
 cache:
   directories:
@@ -34,9 +29,23 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: scripts/deploy.sh "${BITS_64_OR_NONE}"
+    script: scripts/deploy.sh ""
+    on:
+      smalltalk: Pharo32-6.1
+  - provider: script
+    skip_cleanup: true
+    script: scripts/deploy.sh "64"
+    on:
+      smalltalk: Pharo64-6.1
   - provider: script
     on:
       tags: true
+      smalltalk: Pharo32-6.1
     skip_cleanup: true
-    script: scripts/deploy.sh "${BITS_64_OR_NONE}"
+    script: scripts/deploy.sh ""
+  - provider: script
+    on:
+      tags: true
+      smalltalk: Pharo64-6.1
+    skip_cleanup: true
+    script: scripts/deploy.sh "64"
