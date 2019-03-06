@@ -18,7 +18,7 @@ readonly UPLOAD_DIR="~/uploads/petrinets"
 
 # customize the name of the Pharo image you will be deploying
 readonly PROJECT_NAME="openponk"
-readonly ARTIFACT_ZIP="${PROJECT_NAME}-image-${BUILD_ID}.zip"
+readonly ARTIFACT_ZIP="${PROJECT_NAME}-image${BITS_64_OR_NONE}-${BUILD_ID}.zip"
 
 # zip the image, and upload it to the server
 deploy-scp() {
