@@ -23,7 +23,9 @@ readonly ARTIFACT_ZIP="${PROJECT_NAME}-image-${BUILD_ID}.zip"
 deploy-scp() {
 	local directory=$1
 	local zip=$2
+	echo "Running zip"
 	zip -qr "$zip" "$directory"
+	echo "Running scp"
 	scp -rp "$zip" "$TARGET_MACHINE:$UPLOAD_DIR"
 	# I have a server-side post-processing script that bundles VMs into the build
 	echo "Calling target machine script"
