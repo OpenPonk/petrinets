@@ -34,9 +34,9 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: scripts/deploy.sh $BITS_64_OR_NONE
+    script: scripts/deploy.sh "${BITS_64_OR_NONE}"
   - provider: script
     on:
       tags: true
     skip_cleanup: true
-    script: scripts/deploy.sh $BITS_64_OR_NONE
+    script: scripts/deploy.sh "${BITS_64_OR_NONE}"
