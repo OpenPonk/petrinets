@@ -7,10 +7,6 @@ os:
 addons:
   ssh_known_hosts: ccmi.fit.cvut.cz
 
-smalltalk:
-  - Pharo64-6.1
-  - Pharo32-6.1
-
 env:
   global:
     - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
@@ -18,9 +14,8 @@ env:
 matrix:
   include:
     - smalltalk: Pharo64-6.1
-      env: 
-        global:
-          - BITS_64_OR_NONE = "64"
+      env:
+      - BITS_64_OR_NONE = "64"
     - smalltalk: Pharo32-6.1
 
 cache:
