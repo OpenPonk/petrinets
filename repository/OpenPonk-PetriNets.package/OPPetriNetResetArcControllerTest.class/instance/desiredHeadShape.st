@@ -1,3 +1,3 @@
 hooks
 desiredHeadShape
-	^ OPRTFilledDoubleArrow
+	^ OPRTEmptyDoubleArrow
