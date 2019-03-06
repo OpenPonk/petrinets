@@ -17,6 +17,8 @@ matrix:
       env:
       - BITS_64_OR_NONE = "64"
     - smalltalk: Pharo32-6.1
+      env:
+      - BITS_64_OR_NONE = ""
 
 cache:
   directories:
