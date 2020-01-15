@@ -46,7 +46,7 @@ deploy:
   - provider: script
     on:
       tags: true
-      smalltalk: Pharo64-7.0
+      smalltalk: Pharo32-7.0
     skip_cleanup: true
     script: scripts/deploy.sh ""
   - provider: script
