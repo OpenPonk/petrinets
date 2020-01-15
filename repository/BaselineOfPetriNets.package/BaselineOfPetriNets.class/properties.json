@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "BaselineOf",
-	"category" : "BaselineOfOpenPonkPetriNets",
+	"category" : "BaselineOfPetriNets",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BaselineOfOpenPonkPetriNets",
+	"name" : "BaselineOfPetriNets",
 	"type" : "normal"
 }
