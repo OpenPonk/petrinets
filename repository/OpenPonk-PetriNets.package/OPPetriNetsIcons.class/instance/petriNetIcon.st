@@ -1,6 +1,8 @@
 accessing - icons
 petriNetIcon
 	"Private - Generated method"
-	^icons 
-			at: #petriNetIcon
-			ifAbsentPut:[ Form fromBinaryStream: (Base64MimeConverter mimeDecodeToBytes: self petriNetIconContents readStream) ].
+
+	^ icons
+		at: #petriNetIcon
+		ifAbsentPut: [ Form
+				fromBinaryStream: self petriNetIconContents base64Decoded asByteArray readStream ]

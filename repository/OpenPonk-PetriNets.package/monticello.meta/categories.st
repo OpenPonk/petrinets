@@ -7,4 +7,3 @@ SystemOrganization addCategory: 'OpenPonk-PetriNets-Shapes'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Simulation'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Tests'!
 SystemOrganization addCategory: 'OpenPonk-PetriNets-Tests'!
-Tests'!

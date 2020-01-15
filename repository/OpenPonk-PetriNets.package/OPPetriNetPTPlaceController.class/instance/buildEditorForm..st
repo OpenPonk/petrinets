@@ -14,7 +14,9 @@ buildEditorForm: aForm
 						ifFalse: [ tokensTextModel text: self model tokens asString ] ] ].
 	(aForm addTextInput: 'Capacity')
 		text:
-			(self model capacity isInfinite
+			(self model capacity = SmallInteger maxVal
 				ifTrue: [ '' ]
 				ifFalse: [ self model capacity asString ]);
-		whenTextIsAccepted: [ :newValue | self model capacity: (newValue asInteger ifNil: [ Float infinity ]) ]
+		whenTextIsAccepted: [ :newValue | 
+			self model
+				capacity: (newValue asInteger ifNil: [ SmallInteger maxVal ]) ]

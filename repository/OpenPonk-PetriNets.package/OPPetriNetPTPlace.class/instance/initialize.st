@@ -1,5 +1,5 @@
 initialization
 initialize
 	super initialize.
-	capacity := Float infinity.
+	capacity := SmallInteger maxVal. "cannot use infinity, because it cannot be easily transformed to STON"
 	self removeTokens

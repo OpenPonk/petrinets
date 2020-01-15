@@ -1,6 +1,9 @@
 accessing - icons
 placeWithTokenIcon
 	"Private - Generated method"
-	^icons 
-			at: #placeWithTokenIcon
-			ifAbsentPut:[ Form fromBinaryStream: (Base64MimeConverter mimeDecodeToBytes: self placeWithTokenIconContents readStream) ].
+
+	^ icons
+		at: #placeWithTokenIcon
+		ifAbsentPut: [ Form
+				fromBinaryStream:
+					self placeWithTokenIconContents base64Decoded asByteArray readStream ]
