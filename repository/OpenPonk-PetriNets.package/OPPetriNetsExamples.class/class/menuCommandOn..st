@@ -3,8 +3,8 @@ menuCommandOn: aBuilder
 	<worldMenu>
 	(aBuilder item: #'Petri Nets')
 		icon: OPPetriNetsIcons current petriNetIcon;
-		parent: #MostUsedTools;
 		action: [ self exampleEmpty ];
+		order: 25.715;
 		with: [ (aBuilder item: #'Petri Nets Example')
 				parent: #'Petri Nets';
 				label: 'Petri Nets example';
