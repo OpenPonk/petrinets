@@ -1,3 +1,0 @@
-construction
-target
-	^ target
