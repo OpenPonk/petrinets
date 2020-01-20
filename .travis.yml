@@ -1,18 +1,41 @@
 language: smalltalk
-sudo: false
-
 os:
-  - linux
-
+- linux
 env:
   global:
-    - ARTIFACT_DIR=openponk-petrinets-image-$TRAVIS_BUILD_NUMBER
-
-smalltalk: 
-  - Pharo32-7.0
+  - PROJECT_NAME=petrinets
+  - secure: GqNcltNORBYrGHtwdLdoNZxLg37pKEQ2iIe5LU8+zNmww6Pse/hxldJJkJZ6K1/B3J79V/Cr9S/Bji+LrMDBLRRsdQg/ZtQuqdU1HfiCVSfTv7j7pmdxrl3BfOdi4VqmjmApE5IG4184mmj8SHLP8d+3eAKharNqOK/ivDbF//Di5XIDDgzvDbZY1hOkMVkqxAYz3cKnT9IIdCNmp+MuP3vA7mYSJyY3vphVxy6Mjbpx+6CmHt+6Pv1Xcl9w7JMWBF7tafPx4qFTaMP8ATXogZplnqP0h2UAXGwP88wgcvuq/L/7lwHFrShA3Aa0RtSxfCJ3gO3gJOmvhYq0uzoeEJwgBeuvZ4SD+O4qa/VkgC9FK2C0QzbWHVC8iP6a5aD7aUeTks2oTybskz5xdRh+/1VXty2JSPDl/aN9zCnq6yAZELMdAZ5cVsVzscbsPmuR/NjcllwGciFiAJNQGVn+1Goroag3ffTkJ3eEEUsra436G1KGjOVlB0t4UW81fSSur7oiuAErbnLNxmR/Y+cp5FOivD73n4hfMzKuU9MS2ebBCbG9rd6EpiBhIvaK7FCtKHzrab1ML7vUISJ0YmXtU0tdf07GUDzNxmYLZg8Y9LBa6JdqyG4Cw8+iSi16oy2Of562B6/6OGg++KXTFQRvfKk3iTSNsPt0cIRiMKCvbzY=
+smalltalk:
   - Pharo64-7.0
+    - PHARO_VERSION="Pharo7.0-64b"
+  - Pharo32-8.0
+    - PHARO_VERSION="Pharo8.0-32b"
   - Pharo64-8.0
-
+    - PHARO_VERSION="Pharo8.0-64b"
+  - Pharo64-9.0
+    - PHARO_VERSION="Pharo9.0-64b"
+before_install:
+  - echo $PROJECT_NAME
+  - echo $PHARO_VERSION
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_TAG
+  - echo $TRAVIS_BUILD_NUMBER
+  - echo $SMALLTALK_CI_BUILD_BASE
+  - echo $SMALLTALK_CI_HOME
+  - echo $SMALLTALK_CI_BUILD
+  - echo $SMALLTALK_CI_IMAGE
+  - echo $SMALLTALK_CI_CHANGES
+  - echo $SMALLTALK_CI_VMS
+  - echo $SMALLTALK_CI_VM
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: scripts/deploy.sh "openponk-$PROJECT_NAME-image-$PHARO_VERSION-build$TRAVIS_BUILD_NUMBER"
+  - provider: script
+    on:
+      tags: true
+    skip_cleanup: true
+    script: scripts/deploy.sh "openponk-$PROJECT_NAME-image-$PHARO_VERSION-build$TRAVIS_BUILD_NUMBER"
 cache:
   directories:
-    - $SMALLTALK_CI_BUILD_BASE/pharo-local/package-cache
+  - "$SMALLTALK_CI_BUILD_BASE/pharo-local/package-cache"
