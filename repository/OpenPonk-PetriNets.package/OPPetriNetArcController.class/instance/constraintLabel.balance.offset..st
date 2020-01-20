@@ -16,7 +16,7 @@ constraintLabel: labelName balance: aFloat offset: aNumber
 					figure labels removeKey: labelName.
 					label remove ]).
 	figure labels at: labelName put: label.
-	figure view add: label.
+	label renderIn: figure view.
 	OPRTEdgeAlongConstraint
 		stick: label
 		alongEdge: figure
@@ -24,4 +24,5 @@ constraintLabel: labelName balance: aFloat offset: aNumber
 		offset: aNumber.
 	OPRTElementsConstraint
 		whenDragging: label
-		drawLineToPoint: [ ((figure shape startingPointOf: figure) + figure) / 2 ]
+		drawLineToPoint: [ ((figure shape startingPointOf: figure)
+				+ (figure shape endingPointOf: figure)) / 2 ]

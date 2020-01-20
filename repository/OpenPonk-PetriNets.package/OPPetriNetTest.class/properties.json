@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "OPDiagramTest",
+	"super" : "OPModelObjectTest",
 	"category" : "OpenPonk-PetriNets-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
