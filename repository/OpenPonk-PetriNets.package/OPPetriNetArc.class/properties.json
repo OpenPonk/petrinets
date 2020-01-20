@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "bliznjan 5/1/2015 10:18",
-	"super" : "OPEdge",
+	"super" : "OPDirectedAssociation",
 	"category" : "OpenPonk-PetriNets-Models",
 	"classinstvars" : [ ],
 	"pools" : [ ],
