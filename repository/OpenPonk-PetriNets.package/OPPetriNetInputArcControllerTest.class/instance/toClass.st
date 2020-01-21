@@ -1,3 +1,0 @@
-hooks
-toClass
-	^ OPPetriNetTransitionController

@@ -1,3 +1,0 @@
-hooks
-exampleModel
-	^ OPPetriNetInhibitorArc new

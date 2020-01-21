@@ -1,3 +1,0 @@
-private
-tokenGroupFrom: aValue
-	self subclassResponsibility

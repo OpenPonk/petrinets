@@ -1,1 +1,0 @@
-I represent Petri net transition

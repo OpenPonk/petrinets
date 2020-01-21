@@ -1,3 +1,0 @@
-initialization
-initializePossibleConnected
-	PossibleOutgoing := Set with: OPPetriNetArcWithExpressionController

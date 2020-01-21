@@ -1,3 +1,0 @@
-hooks
-exampleModel
-	^ OPPetriNetResetArc new

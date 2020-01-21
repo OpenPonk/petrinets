@@ -1,3 +1,0 @@
-hooks
-createRoassalShape
-	^ self subclassResponsibility

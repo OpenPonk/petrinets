@@ -1,3 +1,0 @@
-testing
-isSteppable
-	^ self isEnabled

@@ -1,1 +1,0 @@
-I simulate inhibitor arc

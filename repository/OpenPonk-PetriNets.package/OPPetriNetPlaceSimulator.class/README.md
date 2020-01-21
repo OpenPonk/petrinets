@@ -1,1 +1,0 @@
-I simulate Petri net place element

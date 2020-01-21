@@ -1,1 +1,0 @@
-I'm simulator for Petri net diagram
