@@ -36,7 +36,7 @@ before_install:
 deploy:
   - provider: script
     on:
-      condition: $PHARO_VERSION="8.0"
+      condition: $PHARO_VERSION = 8.0
     skip_cleanup: true
     script: scripts/deploy.sh
 cache:
