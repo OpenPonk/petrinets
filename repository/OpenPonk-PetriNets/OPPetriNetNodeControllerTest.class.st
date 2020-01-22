@@ -4,7 +4,7 @@ A DCPetriNetNodeControllerTest is a test class for testing the behavior of DCPet
 Class {
 	#name : #OPPetriNetNodeControllerTest,
 	#superclass : #OPPetriNetsControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #testing }
@@ -25,12 +25,14 @@ OPPetriNetNodeControllerTest >> testCreateFigure [
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
 	controller renderFigureIn: diagramController view.
-	self assert: controller figure class = RTElement
+	self assert: controller figure class equals: RTElement
 ]
 
 { #category : #tests }
 OPPetriNetNodeControllerTest >> testCreateModel [
-	self assert: (controller createModelIn: diagramController model) class = self modelClass
+	self
+		assert: (controller createModelIn: diagramController model) class
+		equals: self modelClass
 ]
 
 { #category : #tests }
@@ -39,9 +41,12 @@ OPPetriNetNodeControllerTest >> testFigureRefresh [
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
 	controller renderFigureIn: diagramController view.
-	self assert: (controller figure attributeAt: #RTLabelledLabel) text = ''.
+	self
+		assert: (controller figure attributeAt: #RTLabelledLabel) text
+		equals: ''.
 	controller model name: 'new name'.
 	controller refreshFigure.
 	text := (controller figure attributeAt: #RTLabelledLabel) text.
-	self assert: ((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
+	self
+		assert: ((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
 ]

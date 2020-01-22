@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetArcController,
 	#superclass : #OPDirectionalRelationshipController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #rendering }
@@ -46,15 +46,6 @@ OPPetriNetArcController >> createEdgeFrom: fromElement to: toElement [
 		withBorderAttachPoint;
 		color: Color black;
 		edgeFrom: fromElement to: toElement
-]
-
-{ #category : #construction }
-OPPetriNetArcController >> createModelIn: aParentModel [
-	self model: self modelClass new.
-	model source: self source model.
-	model target: self target model.
-	self source diagramController model add: model.
-	^ model
 ]
 
 { #category : #hooks }
@@ -112,14 +103,4 @@ OPPetriNetArcController >> showInDiagram: aDiagramController [
 OPPetriNetArcController >> showSelectionFeedback [
 	self figure announce: OPTRFocused.
 	self figure view signalUpdate
-]
-
-{ #category : #accessing }
-OPPetriNetArcController >> sourceController: aController [
-	self source: aController
-]
-
-{ #category : #accessing }
-OPPetriNetArcController >> targetController: aController [
-	self target: aController
 ]

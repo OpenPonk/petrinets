@@ -4,7 +4,7 @@ Class {
 	#classInstVars : [
 		'PossibleOutgoing'
 	],
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #'class initialization' }
@@ -18,14 +18,6 @@ OPPetriNetNodeController class >> isPossibleOutgoing: aController [
 	^ PossibleOutgoing includes: aController
 ]
 
-{ #category : #adding }
-OPPetriNetNodeController >> addAsTargetFor: aController [
-	(self canBeTargetFor: aController)
-		ifFalse: [ self error: self class asString , ' cannot be target for ' , aController class asString ].
-	aController targetController: self.
-	aController createModelIn: self model andShowInDiagram: self diagramController
-]
-
 { #category : #testing }
 OPPetriNetNodeController >> canBeSourceFor: aController [
 	^ self class isPossibleOutgoing: aController class
@@ -34,13 +26,6 @@ OPPetriNetNodeController >> canBeSourceFor: aController [
 { #category : #testing }
 OPPetriNetNodeController >> canBeTargetFor: aController [
 	^ (aController isKindOf: OPPetriNetArcController) and: [ self class ~= aController source class ]
-]
-
-{ #category : #construction }
-OPPetriNetNodeController >> createModelIn: aParentModel [
-	self model: self modelClass new.
-	aParentModel add: model.
-	^ model
 ]
 
 { #category : #hooks }

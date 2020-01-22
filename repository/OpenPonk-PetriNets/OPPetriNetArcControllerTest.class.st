@@ -8,7 +8,7 @@ Class {
 		'fromCtrl',
 		'toCtrl'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #testing }
@@ -57,13 +57,15 @@ OPPetriNetArcControllerTest >> testCreateFigure [
 	diagramController addController: controller.
 	previousElementsSize := diagramController view elements size.
 	figure := controller renderFigureIn: diagramController view.
-	self assert: figure class = RTEdge.
-	self assert: figure from = fromCtrl figure.
-	self assert: figure to = toCtrl figure.
-	self assert: diagramController view elements size = (previousElementsSize + self amountOfLabels).
+	self assert: figure class equals: RTEdge.
+	self assert: figure from equals: fromCtrl figure.
+	self assert: figure to equals: toCtrl figure.
+	self
+		assert: diagramController view elements size
+		equals: previousElementsSize + self amountOfLabels.
 	self assert: (figure shape isKindOf: RTStyledMultiLine).
-	self assert: figure shape color = Color black.
-	self assert: figure shape head shape = self desiredHeadShape.
+	self assert: figure shape color equals: Color black.
+	self assert: figure shape head shape equals: self desiredHeadShape.
 	self assert: figure shape dashes isNil
 ]
 
@@ -75,9 +77,9 @@ OPPetriNetArcControllerTest >> testCreateModel [
 	fromCtrl createModelIn: diagramController model.
 	toCtrl createModelIn: diagramController model.
 	createdModel := controller createModelIn: diagramController model.
-	self assert: createdModel class = self modelClass.
-	self assert: createdModel source = fromCtrl model.
-	self assert: createdModel target = toCtrl model
+	self assert: createdModel class equals: self modelClass.
+	self assert: createdModel source equals: fromCtrl model.
+	self assert: createdModel target equals: toCtrl model
 ]
 
 { #category : #tests }
@@ -90,10 +92,10 @@ OPPetriNetArcControllerTest >> testFigureRefresh [
 	controller createModelIn: diagramController model.
 	controller renderFigureIn: diagramController view.
 	label := controller figure labels at: #name.
-	self assert: label trachelShape text = ''.
+	self assert: label trachelShape text equals: ''.
 	controller model name: 'new name'.
 	controller refreshFigure.
-	self assert: label trachelShape text = 'new name'
+	self assert: label trachelShape text equals: 'new name'
 ]
 
 { #category : #hooks }

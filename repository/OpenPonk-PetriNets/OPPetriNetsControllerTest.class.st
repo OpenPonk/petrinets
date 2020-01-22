@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetsControllerTest,
 	#superclass : #OPControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #testing }
@@ -34,7 +34,7 @@ OPPetriNetsControllerTest >> testClassSideModelClass [
 
 { #category : #tests }
 OPPetriNetsControllerTest >> testCreateController [
-	self assert: controller class = self controllerClass
+	self assert: controller class equals: self controllerClass
 ]
 
 { #category : #tests }

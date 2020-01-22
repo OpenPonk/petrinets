@@ -4,7 +4,7 @@ A DCPetriNetNormalArcControllerTest is a test class for testing the behavior of 
 Class {
 	#name : #OPPetriNetNormalArcControllerTest,
 	#superclass : #OPPetriNetInputArcControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #hooks }
@@ -31,11 +31,9 @@ OPPetriNetNormalArcControllerTest >> modelClass [
 OPPetriNetNormalArcControllerTest >> testFigureRefresh [
 	| label |
 	super testFigureRefresh.
-
 	label := controller figure labels at: #weight.
-	self assert: label trachelShape text = ''.
-
+	self assert: label trachelShape text equals: ''.
 	controller model weight: 10.
 	controller refreshFigure.
-	self assert: (label trachelShape text last: 2) = '10'
+	self assert: (label trachelShape text last: 2) equals: '10'
 ]
