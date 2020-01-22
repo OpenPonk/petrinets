@@ -95,7 +95,7 @@ deploy_windows() {
 
 deploy_image() {
 	
-	local platform="image"
+	local platform="pharo$PHARO_VERSION-image"
 
 	local full_platform=$platform$PHARO_BITS_NAME
 	local package_dir_name="openponk-$PROJECT_NAME-$full_platform"
@@ -118,8 +118,6 @@ main() {
 	deploy_linux
 	deploy_windows
 }
-
-export TRAVIS_BUILD_NUMBER=`printf "%04d\n" $TRAVIS_BUILD_NUMBER`
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
 	export BUILD_VERSION="latest"
