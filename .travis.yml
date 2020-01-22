@@ -39,12 +39,6 @@ deploy:
       condition: $PHARO_VERSION="8.0"
     skip_cleanup: true
     script: scripts/deploy.sh
-  - provider: script
-    on:
-      tags: true
-      condition: $PHARO_VERSION="8.0"
-    skip_cleanup: true
-    script: scripts/deploy.sh
 cache:
   directories:
   - "$SMALLTALK_CI_BUILD_BASE/pharo-local/package-cache"
