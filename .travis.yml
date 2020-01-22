@@ -15,9 +15,9 @@ smalltalk:
   - Pharo64-8.0
     - PHARO_VERSION="8.0"
     - PHARO_BITS="64"
- # - Pharo64-9.0
- #   - PHARO_VERSION="9.0"
- #   - PHARO_BITS="64"
+  - Pharo64-9.0
+    - PHARO_VERSION="9.0"
+    - PHARO_BITS="64"
 before_install:
   - echo $PROJECT_NAME
   - echo $FULL_PROJECT_NAME
