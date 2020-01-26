@@ -39,6 +39,11 @@ OPPetriNetNodeController >> internalSubscribeTo: aModel [
 	aModel when: OPElementRemoved do: [ :e | self removeController ]
 ]
 
+{ #category : #testing }
+OPPetriNetNodeController >> isHideable [
+	^ true
+]
+
 { #category : #figures }
 OPPetriNetNodeController >> refreshFigure [
 	(figure attributeAt: #RTLabelledLabel) text: self model name.

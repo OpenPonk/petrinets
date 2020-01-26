@@ -68,6 +68,11 @@ OPPetriNetArcController >> internalSubscribeTo: aModel [
 	aModel when: OPElementRemoved do: [ :e | self removeController ]
 ]
 
+{ #category : #testing }
+OPPetriNetArcController >> isHideable [
+	^ true
+]
+
 { #category : #hooks }
 OPPetriNetArcController >> refreshFigure [
 	super refreshFigure.

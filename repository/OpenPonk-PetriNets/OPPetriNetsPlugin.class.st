@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetsPlugin,
 	#superclass : #OPPlugin,
-	#category : 'OpenPonk-PetriNets-Adapters'
+	#category : #'OpenPonk-PetriNets-Adapters'
 }
 
 { #category : #accessing }
@@ -27,4 +27,9 @@ OPPetriNetsPlugin >> name [
 { #category : #accessing }
 OPPetriNetsPlugin >> serializerClass [
 	^ OPStonSerializer
+]
+
+{ #category : #'as yet unclassified' }
+OPPetriNetsPlugin >> supportsHidingElements [
+	^ true
 ]
