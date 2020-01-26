@@ -98,9 +98,10 @@ OPPetriNetArcController >> renderFigureIn: aView [
 { #category : #rendering }
 OPPetriNetArcController >> showInDiagram: aDiagramController [
 	source
-		ifNil: [ self source: (aDiagramController controllerForModel: model source) ].
+		ifNil:
+			[ self source: (aDiagramController showModelInDiagram: model source) ].
 	target
-		ifNil: [ self target: (aDiagramController controllerForModel: model target) ].
+		ifNil: [ self target: (aDiagramController showModelInDiagram: model target) ].
 	^ super showInDiagram: aDiagramController
 ]
 

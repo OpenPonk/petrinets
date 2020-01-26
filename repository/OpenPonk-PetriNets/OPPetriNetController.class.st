@@ -1,8 +1,15 @@
 Class {
 	#name : #OPPetriNetController,
 	#superclass : #OPDiagramController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
+
+{ #category : #'as yet unclassified' }
+OPPetriNetController >> allShowableElements [
+	"Should return all elements that could be directly hidden on diagram"
+
+	^ (Set with: model) , self model elements
+]
 
 { #category : #userinterface }
 OPPetriNetController >> applyDefaultLayout [

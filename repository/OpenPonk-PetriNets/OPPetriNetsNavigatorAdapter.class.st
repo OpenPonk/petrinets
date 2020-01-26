@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetsNavigatorAdapter,
 	#superclass : #OPNavigatorAdapter,
-	#category : 'OpenPonk-PetriNets-Adapters'
+	#category : #'OpenPonk-PetriNets-Adapters'
 }
 
 { #category : #'widget API' }
@@ -17,12 +17,19 @@ OPPetriNetsNavigatorAdapter >> contextMenuMapping [
 
 { #category : #'widget API' }
 OPPetriNetsNavigatorAdapter >> displayMapping [
-	^ {(OPPetriNet -> 'Diagram').
+	^ {(OPPetriNet -> 'Model').
 	(OPPetriNetInhibitorArc -> 'Inhibitor Arc').
 	(OPPetriNetResetArc -> 'Reset Arc').
 	(OPPetriNetWeightedArc -> 'Arc').
 	(OPPetriNetPTPlace -> 'Place').
 	(OPPetriNetTransition -> 'Transition')}
+]
+
+{ #category : #testing }
+OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject [
+	^ {OPPetriNet.
+	OPPetriNetArc.
+	OPPetriNetNode} anySatisfy: [ :any | anObject isKindOf: any ]
 ]
 
 { #category : #'widget API' }

@@ -1,14 +1,14 @@
 Class {
 	#name : #OPPetriNetsExamples,
 	#superclass : #Object,
-	#category : 'OpenPonk-PetriNets-Examples'
+	#category : #'OpenPonk-PetriNets-Examples'
 }
 
 { #category : #examples }
 OPPetriNetsExamples class >> exampleEmpty [
 	| project diagram |
 	project := OPProject named: 'New Petri Net'.
-	diagram := OPPetriNet new name: 'New Petri Net Diagram'.
+	diagram := OPPetriNet new name: 'New Petri Net'.
 	project addModel: diagram.
 	OPWorkbench openProject: project
 ]
@@ -17,7 +17,7 @@ OPPetriNetsExamples class >> exampleEmpty [
 OPPetriNetsExamples class >> examplePetriNets [
 	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
 	project := OPProject named: 'Example Petri Net'.
-	model := OPPetriNet named: 'Petri Net Diagram'.
+	model := OPPetriNet named: 'Petri Net'.
 	project addModel: model.
 	place1 := (OPPetriNetPTPlace named: 'P1')
 		tokens: 20;
