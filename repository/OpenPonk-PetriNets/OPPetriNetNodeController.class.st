@@ -33,6 +33,11 @@ OPPetriNetNodeController >> createRoassalShape [
 	^ self subclassResponsibility
 ]
 
+{ #category : #accessing }
+OPPetriNetNodeController >> dependentElements [
+	^ (model incoming , model outgoing) asSet
+]
+
 { #category : #announcements }
 OPPetriNetNodeController >> internalSubscribeTo: aModel [
 	super internalSubscribeTo: aModel.

@@ -4,11 +4,6 @@ Class {
 	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
-{ #category : #accessing }
-OPPetriNetController >> allOwnedElementsInModel [
-	^ model elements
-]
-
 { #category : #userinterface }
 OPPetriNetController >> applyDefaultLayout [
 	RTTreeLayout new
@@ -21,6 +16,11 @@ OPPetriNetController >> applyDefaultLayout [
 { #category : #testing }
 OPPetriNetController >> canBeTargetFor: aController [
 	^ aController isKindOf: OPPetriNetNodeController
+]
+
+{ #category : #accessing }
+OPPetriNetController >> elementsToShowInside [
+	^ model elements
 ]
 
 { #category : #initialization }

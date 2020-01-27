@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetPTPlaceController,
 	#superclass : #OPPetriNetPlaceController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #hooks }
@@ -55,6 +55,12 @@ OPPetriNetPTPlaceController >> refreshFigure [
 { #category : #construction }
 OPPetriNetPTPlaceController >> showInDiagram: aDiagramController [
 	super showInDiagram: aDiagramController.
+	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
+]
+
+{ #category : #construction }
+OPPetriNetPTPlaceController >> showWithDependentInDiagram: aDiagramController [
+	super showWithDependentInDiagram: aDiagramController.
 	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
 ]
 

@@ -99,9 +99,9 @@ OPPetriNetArcController >> renderFigureIn: aView [
 OPPetriNetArcController >> showInDiagram: aDiagramController [
 	source
 		ifNil:
-			[ self source: (aDiagramController showModelInDiagram: model source) ].
+			[ self source: (aDiagramController showInDiagramModel: model source) ].
 	target
-		ifNil: [ self target: (aDiagramController showModelInDiagram: model target) ].
+		ifNil: [ self target: (aDiagramController showInDiagramModel: model target) ].
 	^ super showInDiagram: aDiagramController
 ]
 
@@ -109,4 +109,13 @@ OPPetriNetArcController >> showInDiagram: aDiagramController [
 OPPetriNetArcController >> showSelectionFeedback [
 	self figure announce: OPTRFocused.
 	self figure view signalUpdate
+]
+
+{ #category : #rendering }
+OPPetriNetArcController >> showWithDependentInDiagram: aDiagramController [
+	source
+		ifNil: [ self source: (aDiagramController showInDiagramModel: model source) ].
+	target
+		ifNil: [ self target: (aDiagramController showInDiagramModel: model target) ].
+	^ super showWithDependentInDiagram: aDiagramController
 ]
