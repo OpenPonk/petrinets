@@ -4,11 +4,9 @@ Class {
 	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
-{ #category : #'as yet unclassified' }
-OPPetriNetController >> allShowableElements [
-	"Should return all elements that could be directly hidden on diagram"
-
-	^ (Set with: model) , self model elements
+{ #category : #accessing }
+OPPetriNetController >> allOwnedElementsInModel [
+	^ model elements
 ]
 
 { #category : #userinterface }
@@ -64,9 +62,4 @@ OPPetriNetController >> modelToControllerMapping [
 OPPetriNetController >> rebuild [
 	super rebuild.
 	self applyDefaultLayout
-]
-
-{ #category : #rebuilding }
-OPPetriNetController >> showAllElements [
-	model nodes , model arcs do: [ :each | self showModelInDiagram: each ]
 ]

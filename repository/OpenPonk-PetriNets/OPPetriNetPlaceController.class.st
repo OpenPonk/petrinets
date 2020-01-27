@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'tokenGroup'
 	],
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #'class initialization' }
@@ -21,10 +21,11 @@ OPPetriNetPlaceController >> applyTokenGroup [
 	tokenGroup view ifNotNil: [ ^ self ].
 	(RTConstraint on: tokenGroup background: self figure)
 		center;
-		stick.
+		stick;
+		move.
 	self figure view add: tokenGroup.
-	self figure addCallback: (TRRemoveCallback block: [ tokenGroup remove ])
-
+	self figure
+		addCallback: (TRRemoveCallback block: [ tokenGroup remove ])
 ]
 
 { #category : #hooks }
@@ -46,6 +47,12 @@ OPPetriNetPlaceController >> createTokenGroup [
 		color: Color black;
 		elementOn: ''.
 	tokenGroup := RTGroup with: circle
+]
+
+{ #category : #private }
+OPPetriNetPlaceController >> refreshFigure [
+	self tokenGroupFrom: self model tokens.
+	super refreshFigure
 ]
 
 { #category : #private }
