@@ -4,15 +4,6 @@ Class {
 	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
-{ #category : #userinterface }
-OPPetriNetController >> applyDefaultLayout [
-	RTTreeLayout new
-		doNotAttachPoint;
-		on: self view elements.
-	self updateView.
-	self view canvas camera focusOnCenter
-]
-
 { #category : #testing }
 OPPetriNetController >> canBeTargetFor: aController [
 	^ aController isKindOf: OPPetriNetNodeController
@@ -56,10 +47,4 @@ OPPetriNetController >> modelToControllerMapping [
 			OPPetriNetNormalArc -> OPPetriNetNormalArcController.
 			OPPetriNetTransition -> OPPetriNetTransitionController.
 			OPPetriNetPTPlace -> OPPetriNetPTPlaceController}
-]
-
-{ #category : #rebuilding }
-OPPetriNetController >> rebuild [
-	super rebuild.
-	self applyDefaultLayout
 ]

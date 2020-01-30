@@ -14,6 +14,11 @@ OPPetriNetsPlugin >> icon [
 	^ OPPetriNetsIcons current petriNetIcon
 ]
 
+{ #category : #'as yet unclassified' }
+OPPetriNetsPlugin >> layouterClass [
+	^ OPPetriNetLayouter
+]
+
 { #category : #accessing }
 OPPetriNetsPlugin >> modelClass [
 	^ OPPetriNet
