@@ -25,13 +25,13 @@ OPPetriNetsPlugin >> modelClass [
 ]
 
 { #category : #accessing }
-OPPetriNetsPlugin >> name [
-	^ 'Petri Net'
+OPPetriNetsPlugin >> modelSerializerClass [
+	^ OPStonModelSerializer
 ]
 
 { #category : #accessing }
-OPPetriNetsPlugin >> serializerClass [
-	^ OPStonSerializer
+OPPetriNetsPlugin >> name [
+	^ 'Petri Net'
 ]
 
 { #category : #'as yet unclassified' }
