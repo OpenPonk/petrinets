@@ -41,3 +41,10 @@ OPPetriNetsNavigatorAdapter >> iconMapping [
 	(OPPetriNetPTPlace -> OPPetriNetsIcons current placeIcon).
 	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}
 ]
+
+{ #category : #'widget API' }
+OPPetriNetsNavigatorAdapter >> typesByDependency [
+	^ {OPPetriNet.
+	OPPetriNetNode.
+	OPPetriNetArc}
+]
