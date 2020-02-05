@@ -59,8 +59,8 @@ OPPetriNetPTPlaceController >> showInDiagram: aDiagramController [
 ]
 
 { #category : #construction }
-OPPetriNetPTPlaceController >> showWithDependentInDiagram: aDiagramController [
-	super showWithDependentInDiagram: aDiagramController.
+OPPetriNetPTPlaceController >> showWithoutDependentInDiagram: aDiagramController [
+	super showWithoutDependentInDiagram: aDiagramController.
 	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
 ]
 
