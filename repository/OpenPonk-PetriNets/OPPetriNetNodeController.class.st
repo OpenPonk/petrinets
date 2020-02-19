@@ -49,6 +49,11 @@ OPPetriNetNodeController >> isHideable [
 	^ true
 ]
 
+{ #category : #connecting }
+OPPetriNetNodeController >> modelAsParent [
+	^ self model owner
+]
+
 { #category : #figures }
 OPPetriNetNodeController >> refreshFigure [
 	(figure attributeAt: #RTLabelledLabel) text: self model name.
