@@ -18,6 +18,15 @@ OPPetriNetNodeController class >> isPossibleOutgoing: aController [
 	^ PossibleOutgoing includes: aController
 ]
 
+{ #category : #forms }
+OPPetriNetNodeController >> buildEditorForm: aForm [
+	(aForm addText: 'Name')
+		text: self model name;
+		whenTextIsAccepted: [ :newValue | 
+			self model name: newValue asString.
+			self refreshFigure ]
+]
+
 { #category : #testing }
 OPPetriNetNodeController >> canBeSourceFor: aController [
 	^ self class isPossibleOutgoing: aController class
@@ -70,7 +79,7 @@ OPPetriNetNodeController >> renderFigureIn: aView [
 	figure := self createRoassalShape elementOn: self model.
 	figure
 		addInteraction:
-			(RTLabeled new
+			(OPRTMultilineLabeled new
 				view: aView;
 				below;
 				color: Color black;
