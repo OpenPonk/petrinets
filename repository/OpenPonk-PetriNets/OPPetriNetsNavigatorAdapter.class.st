@@ -11,11 +11,6 @@ OPPetriNetsNavigatorAdapter >> childrenMapping [
 ]
 
 { #category : #'widget API' }
-OPPetriNetsNavigatorAdapter >> contextMenuMapping [
-	^ {}
-]
-
-{ #category : #'widget API' }
 OPPetriNetsNavigatorAdapter >> displayMapping [
 	^ {(OPPetriNet -> 'Model').
 	(OPPetriNetInhibitorArc -> 'Inhibitor Arc').
