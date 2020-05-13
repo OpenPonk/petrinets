@@ -41,9 +41,8 @@ upload() {
 	local working_dir="$package_dir_name-$BUILD_VERSION"
 	local package_dir="$working_dir/$package_dir_name"
 	local zip_name="$package_dir_name-latest.zip"
-	local zip="${package_dir}/$zip_name"
+	local zip="${working_dir}/$zip_name"
 
-	cd $working_dir
 	zip -qr "$zip" "${package_dir}"
 
 	set +x
