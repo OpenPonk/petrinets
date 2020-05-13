@@ -119,7 +119,11 @@ prepare_version_info() {
 }
 
 upload_version_info() {
+	echo uploading version info
+	cat version-info.json
+	ls -al
 	set +x
+		echo "curl -v -T version-info.json -ujanbliznicenko:BINTRAY_KEY https://api.bintray.com/content/openponk/builds/packages/1/${PROJECT_NAME}/${BUILD_VERSION}/version-info.json?publish=1&override=1"
 		curl -v -T version-info.json -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info.json"?"publish=1&override=1"
 	set -x
 }
