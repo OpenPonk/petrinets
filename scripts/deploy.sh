@@ -22,10 +22,6 @@ download_vm() {
 	local platform=$1
 	local vm_dir=$2
 	local zip="$vm_dir/vm.zip"
-
-	if [ -d "$vm_dir" ]; then
-		return 0
-	fi
 	
 	mkdir -p "$vm_dir"
 
