@@ -23,11 +23,11 @@ download_vm() {
 	local vm_dir=$2
 	local zip="$vm_dir/vm.zip"
 
+	if [ -d "$vm_dir" ]; then
+		return 0
+	fi
+	
 	mkdir -p "$vm_dir"
-
-	ls -al .
-	echo "$(pwd)/$vm_dir"
-	ls -al "$vm_dir"
 
 	curl --location --compressed --output "$zip" "http://files.pharo.org/get-files/$PHARO_VERSION_SIMPLE/pharo${PHARO_BITS//32}-${platform}-stable.zip"
 	unzip "$zip" -d "$vm_dir"
@@ -43,7 +43,7 @@ upload() {
 	local zip_name="$package_dir_name-latest.zip"
 	local zip="${working_dir}/$zip_name"
 
-	zip -qr "$zip" "${package_dir}"
+	zip -qrj "$zip" "${package_dir}"
 
 	set +x
 		echo "curl -v -T $zip -ujanbliznicenko:BINTRAY_KEY https://api.bintray.com/content/openponk/builds/packages/1/${PROJECT_NAME}/$BUILD_VERSION/${zip_name}?publish=1&override=1"
@@ -62,11 +62,6 @@ deploy_linux() {
 
 	prepare_directory $platform
 #	download_vm "$platform-threaded" $vm_dir
-
-	ls -al .
-	echo "$(pwd)/$vm_dir"
-        ls -al "$working_dir" 
-	ls -al "$vm_dir"
 
 	rm $vm_dir/pharo
 	cat << EOF > $vm_dir/openponk-$PROJECT_NAME
@@ -123,11 +118,6 @@ prepare_version_info() {
 
 	download_vm "$platform-threaded" $vm_dir
 
-	ls -al .
-	echo "$(pwd)/$vm_dir"
-        ls -al "$working_dir" 
-	ls -al "$vm_dir"
-
 	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_timestamp\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
 	echo "${version_info}" > version-info.json
 	"${vm_dir}"/pharo --encoding utf8 -vm-display-null -vm-sound-null $SMALLTALK_CI_IMAGE eval --save "Transcript show: (NeoJSONReader fromString: '${version_info}') asString. OPVersion currentFromJSON: '${version_info}'"
@@ -165,4 +155,6 @@ if [[ -n "$TRAVIS_TAG" ]]; then
 	export BUILD_VERSION="$TRAVIS_TAG"
 	main
 fi
+
+return 0
 
