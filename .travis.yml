@@ -20,6 +20,7 @@ matrix:
     - smalltalk: Pharo64-9.0
       env: PHARO_VERSION="9.0" PHARO_BITS="64"
 before_install:
+  - echo $BUILD_TIMESTAMP
   - echo $PROJECT_NAME
   - echo $FULL_PROJECT_NAME
   - echo $PHARO_BITS
