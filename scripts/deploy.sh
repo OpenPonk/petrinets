@@ -39,16 +39,17 @@ upload() {
 	local platform=$1
 	local package_dir_name="openponk-$PROJECT_NAME-$platform"
 	local working_dir="$package_dir_name-$BUILD_VERSION"
-	local package_dir="$working_dir/$package_dir_name"
-	local zip_name="$package_dir_name-latest.zip"
-	local zip="${working_dir}/$zip_name"
+	local zip="$package_dir_name-latest.zip"
 
-	zip -qrj "$zip" "${package_dir}"
-
+	cd "$working_dir"
+	zip -qr "$zip" "${package_dir_name}"
+	
 	set +x
-		echo "curl -v -T $zip -ujanbliznicenko:BINTRAY_KEY https://api.bintray.com/content/openponk/builds/packages/1/${PROJECT_NAME}/$BUILD_VERSION/${zip_name}?publish=1&override=1"
-		curl -v -T $zip -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"${zip_name}"?"publish=1&override=1"
-	set -x
+		echo "curl -v -T $zip -ujanbliznicenko:BINTRAY_KEY https://api.bintray.com/content/openponk/builds/packages/1/${PROJECT_NAME}/$BUILD_VERSION/${zip}?publish=1&override=1"
+		curl -v -T $zip -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"${zip}"?"publish=1&override=1"
+	set -x	
+	
+	cd ..
 }
 
 deploy_linux() {
