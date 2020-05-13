@@ -58,8 +58,8 @@ deploy_linux() {
 	prepare_directory $platform
 #	download_vm "$platform-threaded" $vm_dir
 
-        ls -l "working_dir" 
-        ls -l "vm_dir"
+        ls -l "$working_dir" 
+        ls -l "$vm_dir"
 
 	rm $vm_dir/pharo
 	cat << EOF > $vm_dir/openponk-$PROJECT_NAME
@@ -116,8 +116,8 @@ prepare_version_info() {
 
 	download_vm "$platform-threaded" $vm_dir
 
-        ls -l "working_dir" 
-        ls -l "vm_dir"
+        ls -l "$working_dir" 
+        ls -l "$vm_dir"
 
 	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_timestamp\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
 	echo "${version_info}" > version-info.json
