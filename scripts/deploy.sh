@@ -103,12 +103,15 @@ deploy_image() {
 
 }
 
+prepare_version_info() {
+	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
+	echo "${version_info}" > version-info.json
+	"${vm_dir}"/pharo --encoding utf8 -vm-display-null -vm-sound-null $SMALLTALK_CI_IMAGE eval --save --quit "OPVersion currentFromJSON: '${version_info}'"
+}
+
 upload_version_info() {
 	set +x
-		echo "{\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"`date -Id`\"}" > version-info1.txt
-		curl -v -T version-info1.txt -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info1.txt"?"publish=1&override=1"
-		echo "{\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"${BUILD_TIMESTAMP}\"}" > version-info2.txt
-		curl -v -T version-info2.txt -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info2.txt"?"publish=1&override=1"
+		curl -v -T version-info.json -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info.json"?"publish=1&override=1"
 	set -x
 }
 
@@ -118,6 +121,7 @@ main() {
 	export PHARO_BITS_NAME="${PHARO_BITS}b"
 	export PHARO_FULL_VERSION="pharo$PHARO_VERSION-$PHARO_BITS_NAME"
 
+	prepare_version_info
 	deploy_image
 	deploy_linux
 	deploy_windows
