@@ -115,7 +115,7 @@ prepare_version_info() {
 
 	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
 	echo "${version_info}" > version-info.json
-	"${vm_dir}"/pharo --encoding utf8 -vm-display-null -vm-sound-null $SMALLTALK_CI_IMAGE eval --save "OPVersion currentFromJSON: '${version_info}'"
+	"${vm_dir}"/pharo --encoding utf8 -vm-display-null -vm-sound-null $SMALLTALK_CI_IMAGE eval --save "NeoJSONReader fromString: '${version_info}'. OPVersion currentFromJSON: '${version_info}'"
 }
 
 upload_version_info() {
