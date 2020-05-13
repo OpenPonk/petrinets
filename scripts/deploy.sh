@@ -25,6 +25,10 @@ download_vm() {
 
 	mkdir -p "$vm_dir"
 
+	ls -al .
+	echo "$(pwd)/$vm_dir"
+	ls -al "$vm_dir"
+
 	curl --location --compressed --output "$zip" "http://files.pharo.org/get-files/$PHARO_VERSION_SIMPLE/pharo${PHARO_BITS//32}-${platform}-stable.zip"
 	unzip "$zip" -d "$vm_dir"
 	rm "$zip"
@@ -58,8 +62,10 @@ deploy_linux() {
 	prepare_directory $platform
 #	download_vm "$platform-threaded" $vm_dir
 
-        ls -l "$working_dir" 
-        ls -l "$vm_dir"
+	ls -al .
+	echo "$(pwd)/$vm_dir"
+        ls -al "$working_dir" 
+	ls -al "$vm_dir"
 
 	rm $vm_dir/pharo
 	cat << EOF > $vm_dir/openponk-$PROJECT_NAME
@@ -116,8 +122,10 @@ prepare_version_info() {
 
 	download_vm "$platform-threaded" $vm_dir
 
-        ls -l "$working_dir" 
-        ls -l "$vm_dir"
+	ls -al .
+	echo "$(pwd)/$vm_dir"
+        ls -al "$working_dir" 
+	ls -al "$vm_dir"
 
 	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_timestamp\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
 	echo "${version_info}" > version-info.json
