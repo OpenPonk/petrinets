@@ -56,7 +56,7 @@ deploy_linux() {
 	local vm_dir="$package_dir"
 
 	prepare_directory $platform
-	download_vm "$platform-threaded" $vm_dir
+#	download_vm "$platform-threaded" $vm_dir
 
 	rm $vm_dir/pharo
 	cat << EOF > $vm_dir/openponk-$PROJECT_NAME
@@ -104,6 +104,15 @@ deploy_image() {
 }
 
 prepare_version_info() {
+	local platform="linux"
+
+	local package_dir_name="openponk-$PROJECT_NAME-$platform"
+	local working_dir="$package_dir_name-$BUILD_VERSION"
+	local package_dir="$working_dir/$package_dir_name"
+	local vm_dir="$package_dir"
+
+	download_vm "$platform-threaded" $vm_dir
+
 	local version_info="{\"version\":\"${BUILD_VERSION}\",\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"${BUILD_TIMESTAMP}\",\"project_name\":\"${PROJECT_NAME}\"}"
 	echo "${version_info}" > version-info.json
 	"${vm_dir}"/pharo --encoding utf8 -vm-display-null -vm-sound-null $SMALLTALK_CI_IMAGE eval --save --quit "OPVersion currentFromJSON: '${version_info}'"
