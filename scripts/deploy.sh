@@ -103,6 +103,15 @@ deploy_image() {
 
 }
 
+upload_version_info() {
+	set +x
+		echo "{\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"`date -Id`\"}" > version-info1.txt
+		curl -v -T version-info1.txt -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info1.txt"?"publish=1&override=1"
+		echo "{\"build_number\":${TRAVIS_BUILD_NUMBER},\"build_date\":\"${BUILD_TIMESTAMP}\"}" > version-info2.txt
+		curl -v -T version-info2.txt -ujanbliznicenko:"${BINTRAY_KEY}" https://api.bintray.com/content/openponk/builds/packages/1/"${PROJECT_NAME}"/"${BUILD_VERSION}"/"version-info2.txt"?"publish=1&override=1"
+	set -x
+}
+
 main() {
 
 	export PHARO_VERSION_SIMPLE="${PHARO_VERSION//.}"
@@ -112,6 +121,7 @@ main() {
 	deploy_image
 	deploy_linux
 	deploy_windows
+	upload_version_info
 }
 
 if [[ "$TRAVIS_BRANCH" == "master" ]]; then
