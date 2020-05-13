@@ -58,6 +58,9 @@ deploy_linux() {
 	prepare_directory $platform
 #	download_vm "$platform-threaded" $vm_dir
 
+        ls -l "working_dir" 
+        ls -l "vm_dir"
+
 	rm $vm_dir/pharo
 	cat << EOF > $vm_dir/openponk-$PROJECT_NAME
 #!/bin/bash
