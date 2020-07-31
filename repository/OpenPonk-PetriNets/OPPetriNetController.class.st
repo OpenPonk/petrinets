@@ -9,6 +9,11 @@ OPPetriNetController >> canBeTargetFor: aController [
 	^ aController isKindOf: OPPetriNetNodeController
 ]
 
+{ #category : #'as yet unclassified' }
+OPPetriNetController >> commonModelClassPrefix [
+	^ 'OPPetriNet'
+]
+
 { #category : #accessing }
 OPPetriNetController >> elementsToShowInside [
 	^ model elements
