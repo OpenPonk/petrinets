@@ -49,7 +49,7 @@ OPPetriNetPTPlaceController >> modelClass [
 { #category : #hooks }
 OPPetriNetPTPlaceController >> refreshFigure [
 	self tokenGroupFrom: self model tokens.
-	super refreshFigure
+	^ super refreshFigure
 ]
 
 { #category : #construction }

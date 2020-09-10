@@ -52,7 +52,7 @@ OPPetriNetPlaceController >> createTokenGroup [
 { #category : #private }
 OPPetriNetPlaceController >> refreshFigure [
 	self tokenGroupFrom: self model tokens.
-	super refreshFigure
+	^ super refreshFigure
 ]
 
 { #category : #private }

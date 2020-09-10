@@ -76,7 +76,8 @@ OPPetriNetArcController >> isHideable [
 { #category : #hooks }
 OPPetriNetArcController >> refreshFigure [
 	super refreshFigure.
-	(figure labels at: #name) trachelShape text: self model name
+	(figure labels at: #name) trachelShape text: self model name.
+	^ self figure
 ]
 
 { #category : #removing }
@@ -86,13 +87,13 @@ OPPetriNetArcController >> removeModel [
 
 { #category : #rendering }
 OPPetriNetArcController >> renderFigureIn: aView [
+	self diagramController addingFigureFor: self.
 	figure := self
 		createEdgeFrom: self source figure
 		to: self target figure.
 	figure renderIn: aView.
 	self addLabels.
-	self diagramController figureAdded: figure.
-	^ figure
+	^ self diagramController addedFigureFor: self
 ]
 
 { #category : #rendering }

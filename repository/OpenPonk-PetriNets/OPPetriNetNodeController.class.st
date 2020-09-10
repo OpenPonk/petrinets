@@ -66,7 +66,7 @@ OPPetriNetNodeController >> modelAsParent [
 { #category : #figures }
 OPPetriNetNodeController >> refreshFigure [
 	(figure attributeAt: #RTLabelledLabel) text: self model name.
-	super refreshFigure
+	^ super refreshFigure
 ]
 
 { #category : #removing }
@@ -76,6 +76,7 @@ OPPetriNetNodeController >> removeModel [
 
 { #category : #rendering }
 OPPetriNetNodeController >> renderFigureIn: aView [
+	self diagramController addingFigureFor: self.
 	figure := self createRoassalShape elementOn: self model.
 	figure
 		addInteraction:
@@ -87,8 +88,7 @@ OPPetriNetNodeController >> renderFigureIn: aView [
 	figure @ RTDraggable.
 	figure @ OPRTFocusable.
 	figure renderIn: aView.
-	self diagramController figureAdded: figure.
-	^ figure
+	^ self diagramController addedFigureFor: self
 ]
 
 { #category : #'canvas actions' }

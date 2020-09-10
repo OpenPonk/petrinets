@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'adornments'
 	],
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #'class initialization' }
@@ -68,5 +68,5 @@ OPPetriNetTransitionController >> modelClass [
 { #category : #hooks }
 OPPetriNetTransitionController >> refreshFigure [
 	adornments ifEmpty: [ adornments add: self createAdornment ].
-	super refreshFigure
+	^ super refreshFigure
 ]

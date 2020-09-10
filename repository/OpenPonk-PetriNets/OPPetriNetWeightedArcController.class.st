@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetWeightedArcController,
 	#superclass : #OPPetriNetArcController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
 { #category : #rendering }
@@ -23,7 +23,8 @@ OPPetriNetWeightedArcController >> buildEditorForm: aForm [
 { #category : #hooks }
 OPPetriNetWeightedArcController >> refreshFigure [
 	super refreshFigure.
-	(figure labels at: #weight) trachelShape text: self weightText
+	(figure labels at: #weight) trachelShape text: self weightText.
+	^ self figure
 ]
 
 { #category : #accessing }
