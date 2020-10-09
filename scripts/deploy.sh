@@ -35,7 +35,7 @@ upload() {
 	local platform=$1
 	local package_dir_name="openponk-$PROJECT_NAME-$platform"
 	local working_dir="$package_dir_name-$BUILD_VERSION"
-	local zip="$package_dir_name-latest.zip"
+	local zip="$package_dir_name-$BUILD_VERSION.zip"
 
 	cd "$working_dir"
 	zip -qr "$zip" "${package_dir_name}"
