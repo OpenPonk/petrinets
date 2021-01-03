@@ -6,7 +6,8 @@ Class {
 
 { #category : #testing }
 OPPetriNetController >> canBeTargetFor: aController [
-	^ aController isKindOf: OPPetriNetNodeController
+	^ (super canBeTargetFor: aController)
+		or: [ aController isKindOf: OPPetriNetNodeController ]
 ]
 
 { #category : #'as yet unclassified' }
