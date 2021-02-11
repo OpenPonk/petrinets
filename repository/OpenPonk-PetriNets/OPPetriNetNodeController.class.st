@@ -71,6 +71,7 @@ OPPetriNetNodeController >> refreshFigure [
 
 { #category : #removing }
 OPPetriNetNodeController >> removeModel [
+	self model announcer unsubscribe: self.
 	self diagramController model remove: self model
 ]
 
