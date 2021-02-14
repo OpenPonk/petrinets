@@ -16,6 +16,19 @@ OPPetriNetController >> commonModelClassPrefix [
 ]
 
 { #category : #accessing }
+OPPetriNetController >> controllerFactory [
+	^ super controllerFactory
+		register: OPPetriNetInhibitorArcController
+			forModel: OPPetriNetInhibitorArc;
+		register: OPPetriNetResetArcController forModel: OPPetriNetResetArc;
+		register: OPPetriNetNormalArcController
+			forModel: OPPetriNetNormalArc;
+		register: OPPetriNetTransitionController
+			forModel: OPPetriNetTransition;
+		register: OPPetriNetPTPlaceController forModel: OPPetriNetPTPlace
+]
+
+{ #category : #accessing }
 OPPetriNetController >> elementsToShowInside [
 	^ model elements
 ]
@@ -42,15 +55,4 @@ OPPetriNetController >> initializePalette: aPalette [
 { #category : #accessing }
 OPPetriNetController >> modelClass [
 	^ OPPetriNet
-]
-
-{ #category : #accessing }
-OPPetriNetController >> modelToControllerMapping [
-	^ Dictionary
-		newFrom:
-			{OPPetriNetInhibitorArc -> OPPetriNetInhibitorArcController.
-			OPPetriNetResetArc -> OPPetriNetResetArcController.
-			OPPetriNetNormalArc -> OPPetriNetNormalArcController.
-			OPPetriNetTransition -> OPPetriNetTransitionController.
-			OPPetriNetPTPlace -> OPPetriNetPTPlaceController}
 ]
