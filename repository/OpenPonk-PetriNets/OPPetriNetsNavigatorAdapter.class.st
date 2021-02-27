@@ -37,6 +37,13 @@ OPPetriNetsNavigatorAdapter >> iconMapping [
 	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}
 ]
 
+{ #category : #private }
+OPPetriNetsNavigatorAdapter >> sort: modelObjects [
+	^ modelObjects
+		sorted:
+			[ :a :b | a name isNotNil and: [ b name isNil or: [ a name < b name ] ] ]
+]
+
 { #category : #'widget API' }
 OPPetriNetsNavigatorAdapter >> typesByDependency [
 	^ {OPPetriNet.
