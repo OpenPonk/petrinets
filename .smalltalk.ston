@@ -9,16 +9,17 @@ SmalltalkCISpec {
 		}
 	],
 	#postLoading : [
-		'scripts/script.st'
+		'.github/scripts/script.st'
 	],
 	#testing : {
 		#coverage : {
 			#packages : [
-				'OpenPonk-PetriNets'
+				'OpenPonk-PetriNets*'
 			]
 		},
 		#packages : [
-			'OpenPonk-PetriNets'
+			'OpenPonk-PetriNets*',
+			'OP-*'
 		]
 	}
 }
