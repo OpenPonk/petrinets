@@ -6,12 +6,26 @@ Class {
 
 { #category : #testing }
 OPPetriNetController >> canBeTargetFor: aController [
-	^ aController isKindOf: OPPetriNetNodeController
+	^ (super canBeTargetFor: aController)
+		or: [ aController isKindOf: OPPetriNetNodeController ]
 ]
 
 { #category : #'as yet unclassified' }
 OPPetriNetController >> commonModelClassPrefix [
 	^ 'OPPetriNet'
+]
+
+{ #category : #accessing }
+OPPetriNetController >> controllerFactory [
+	^ super controllerFactory
+		register: OPPetriNetInhibitorArcController
+			forModel: OPPetriNetInhibitorArc;
+		register: OPPetriNetResetArcController forModel: OPPetriNetResetArc;
+		register: OPPetriNetNormalArcController
+			forModel: OPPetriNetNormalArc;
+		register: OPPetriNetTransitionController
+			forModel: OPPetriNetTransition;
+		register: OPPetriNetPTPlaceController forModel: OPPetriNetPTPlace
 ]
 
 { #category : #accessing }
@@ -41,15 +55,4 @@ OPPetriNetController >> initializePalette: aPalette [
 { #category : #accessing }
 OPPetriNetController >> modelClass [
 	^ OPPetriNet
-]
-
-{ #category : #accessing }
-OPPetriNetController >> modelToControllerMapping [
-	^ Dictionary
-		newFrom:
-			{OPPetriNetInhibitorArc -> OPPetriNetInhibitorArcController.
-			OPPetriNetResetArc -> OPPetriNetResetArcController.
-			OPPetriNetNormalArc -> OPPetriNetNormalArcController.
-			OPPetriNetTransition -> OPPetriNetTransitionController.
-			OPPetriNetPTPlace -> OPPetriNetPTPlaceController}
 ]
