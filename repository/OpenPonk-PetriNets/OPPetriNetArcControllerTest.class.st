@@ -62,11 +62,10 @@ OPPetriNetArcControllerTest >> testCreateFigure [
 	self assert: figure to equals: toCtrl figure.
 	self
 		assert: diagramController view elements size
-		equals: previousElementsSize + self amountOfLabels.
-	self assert: (figure shape isKindOf: RTStyledMultiLine).
+		equals: previousElementsSize + (self amountOfLabels * 2).
+	self assert: (figure shape isKindOf: RTAbstractLine).
 	self assert: figure shape color equals: Color black.
-	self assert: figure shape head shape equals: self desiredHeadShape.
-	self assert: figure shape dashes isNil
+	self assert: figure shape head shape equals: self desiredHeadShape
 ]
 
 { #category : #tests }
