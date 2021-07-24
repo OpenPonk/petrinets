@@ -9,6 +9,15 @@ OPPetriNetArcController >> addLabels [
 	self constraintLabel: #name balance: 0.4 offset: 12
 ]
 
+{ #category : #hooks }
+OPPetriNetArcController >> connectionFeedback [
+
+	^ OPInteractiveLine new
+		  lineBuilder: [ :fromFigure :toFigure | 
+			  self createStaticEdgeFrom: fromFigure to: toFigure ];
+		  from: source figure
+]
+
 { #category : #rendering }
 OPPetriNetArcController >> constraintLabel: labelName balance: aFloat offset: aNumber [
 	| label |
@@ -34,15 +43,22 @@ OPPetriNetArcController >> constraintLabel: labelName balance: aFloat offset: aN
 		element: label connection: figure
 ]
 
-{ #category : #rendering }
+{ #category : #hooks }
 OPPetriNetArcController >> createEdgeFrom: fromElement to: toElement [
-	^ (OPRTStyledConnection new
-		head: self headShapeClass;
-		attachPoint: OPRTMultilineBorderAttachPoint new;
-		color: Color black;
-		edgeFrom: fromElement to: toElement)
-		@ OPRTConnectionHandles;
-		yourself
+
+	^ (self createStaticEdgeFrom: fromElement to: toElement)
+		  @ OPRTConnectionHandles;
+		  yourself
+]
+
+{ #category : #rendering }
+OPPetriNetArcController >> createStaticEdgeFrom: fromElement to: toElement [
+
+	^ OPRTStyledConnection new
+		  head: self headShapeClass;
+		  attachPoint: OPRTMultilineBorderAttachPoint new;
+		  color: Color black;
+		  edgeFrom: fromElement to: toElement
 ]
 
 { #category : #hooks }
