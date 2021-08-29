@@ -15,7 +15,7 @@ BaselineOfPetriNets >> baseline: spec [
 			spec
 				baseline: 'OpenPonkSimulation'
 				with: [ spec
-						repository: 'github://JanBliznicenko/openponk-simulation:v2.1.x/repository';
+						repository: 'github://JanBliznicenko/openponk-simulation:v3.0.x/repository';
 						loads: 'plugin' ].
 			spec
 				package: 'OpenPonk-PetriNets'
