@@ -9,6 +9,15 @@ OPPetriNetArcController >> addLabels [
 	self constraintLabel: #name balance: 0.4 offset: 12
 ]
 
+{ #category : #hooks }
+OPPetriNetArcController >> connectionFeedback [
+
+	^ OPInteractiveLine new
+		  lineBuilder: [ :fromFigure :toFigure | 
+			  self createStaticEdgeFrom: fromFigure to: toFigure ];
+		  from: source figure
+]
+
 { #category : #rendering }
 OPPetriNetArcController >> constraintLabel: labelName balance: aFloat offset: aNumber [
 	| label |
@@ -16,9 +25,7 @@ OPPetriNetArcController >> constraintLabel: labelName balance: aFloat offset: aN
 		height: 10;
 		color: figure shape color;
 		text: self model name;
-		element)
-		@ RTDraggable;
-		yourself.
+		element) yourself.
 	label model: figure.
 	figure trachelShape
 		addCallback:
@@ -27,25 +34,31 @@ OPPetriNetArcController >> constraintLabel: labelName balance: aFloat offset: aN
 					figure labels removeKey: labelName.
 					label remove ]).
 	figure labels at: labelName put: label.
+	label @ RTDraggable.
 	label renderIn: figure view.
-	OPRTEdgeAlongConstraint
-		stick: label
-		alongEdge: figure
-		balance: aFloat
-		offset: aNumber.
-	OPRTElementsConstraint
-		whenDragging: label
-		drawLineToPoint: [ ((figure shape startingPointOf: figure)
-				+ (figure shape endingPointOf: figure)) / 2 ]
+	OPRTRailConstraint new
+		initialPosition: aFloat;
+		distance: aNumber;
+		noGripLine;
+		element: label connection: figure
+]
+
+{ #category : #hooks }
+OPPetriNetArcController >> createEdgeFrom: fromElement to: toElement [
+
+	^ (self createStaticEdgeFrom: fromElement to: toElement)
+		  @ OPRTConnectionHandles;
+		  yourself
 ]
 
 { #category : #rendering }
-OPPetriNetArcController >> createEdgeFrom: fromElement to: toElement [
-	^ OPRTStyledMultiLine new
-		head: self headShapeClass;
-		withBorderAttachPoint;
-		color: Color black;
-		edgeFrom: fromElement to: toElement
+OPPetriNetArcController >> createStaticEdgeFrom: fromElement to: toElement [
+
+	^ OPRTStyledConnection new
+		  head: self headShapeClass;
+		  attachPoint: OPRTMultilineBorderAttachPoint new;
+		  color: Color black;
+		  edgeFrom: fromElement to: toElement
 ]
 
 { #category : #hooks }
