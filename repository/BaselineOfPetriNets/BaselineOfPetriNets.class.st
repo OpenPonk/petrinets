@@ -11,7 +11,7 @@ BaselineOfPetriNets >> baseline: spec [
 		for: #common
 		do: [ spec
 				baseline: 'OpenPonk'
-				with: [ spec repository: 'github://openponk/openponk:v2.1.x/repository' ].
+				with: [ spec repository: 'github://openponk/openponk:v3.0.x/repository' ].
 			spec
 				baseline: 'OpenPonkSimulation'
 				with: [ spec
