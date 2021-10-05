@@ -26,7 +26,11 @@ cp $vm_dir/PharoConsole.exe $package_dir/Pharo
 echo `"Opening OpenPonk on path: `${openponk_path}`"
 Start-Process -FilePath `${openponk_path}Pharo\Pharo.exe `${openponk_path}image\$PROJECT_NAME.image" | set-content "$package_dir/$PROJECT_NAME.ps1"
 
-"powershell -File %~dp0$PROJECT_NAME.ps1" | set-content "$package_dir/$PROJECT_NAME.bat"
+"powershell -executionpolicy remotesigned -File %~dp0$PROJECT_NAME.ps1" | set-content "$package_dir/$PROJECT_NAME.bat"
+
+"Open using $PROJECT_NAME.bat or $PROJECT_NAME.ps1 (bat just executes the ps1 in powershell).
+
+OpenPonk does not work when executed from network drives (like \\example.com\home\Downloads), unless accessed via mapped letter drive (like X:\). There is a hardcoded fix only for cvut.cz student home directories." | set-content "$package_dir/README.txt"
 
 & $vm_dir/PharoConsole.exe -headless $package_dir/image/$PROJECT_NAME.image eval --save "OPVersion currentWithRunId: $RUN_ID projectName: '$REPOSITORY_NAME'"
 
