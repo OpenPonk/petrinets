@@ -30,9 +30,8 @@ OPPetriNetPlaceController >> applyTokenGroup [
 
 { #category : #hooks }
 OPPetriNetPlaceController >> createRoassalShape [
-	^ RTRoundedBox new
+	^ RTEllipse new
 		size: 40;
-		borderRadius: 20;
 		color: Color transparent;
 		borderColor: Color black;
 		yourself
