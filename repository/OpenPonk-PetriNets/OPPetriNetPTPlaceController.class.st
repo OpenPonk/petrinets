@@ -7,10 +7,10 @@ Class {
 { #category : #hooks }
 OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 
-	| tokensTextModel |
+	| tokensSpTextPresenter |
 	super buildEditorForm: aForm.
-	tokensTextModel := aForm addTextInput: 'Tokens'.
-	tokensTextModel
+	tokensSpTextPresenter := aForm addTextInput: 'Tokens'.
+	tokensSpTextPresenter
 		text: self model tokens asString;
 		whenTextIsAccepted: [ :newValue | 
 			[ self model tokens: (newValue asString asInteger ifNil: [ 0 ]) ]
@@ -19,7 +19,7 @@ OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 					(UIManager default confirm:
 							 'Place would be over capacity. Continue?')
 						ifTrue: [ ex resume ]
-						ifFalse: [ tokensTextModel text: self model tokens asString ] ] ].
+						ifFalse: [ tokensSpTextPresenter text: self model tokens asString ] ] ].
 	(aForm addTextInput: 'Capacity')
 		text: (self model capacity = SmallInteger maxVal
 				 ifTrue: [ '' ]
