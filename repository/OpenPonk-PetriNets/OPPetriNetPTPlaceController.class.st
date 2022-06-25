@@ -9,22 +9,23 @@ OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 
 	| tokensSpTextPresenter |
 	super buildEditorForm: aForm.
-	tokensSpTextPresenter := aForm addTextInput: 'Tokens'.
+	tokensSpTextPresenter := aForm addNumberInput: 'Tokens'.
 	tokensSpTextPresenter
 		text: self model tokens asString;
-		whenTextIsAccepted: [ :newValue | 
+		whenTextChangedDo: [ :newValue | 
 			[ self model tokens: (newValue asString asInteger ifNil: [ 0 ]) ]
 				on: OPPetriNetPlaceOverCapacity
 				do: [ :ex | 
 					(UIManager default confirm:
 							 'Place would be over capacity. Continue?')
 						ifTrue: [ ex resume ]
-						ifFalse: [ tokensSpTextPresenter text: self model tokens asString ] ] ].
+						ifFalse: [ 
+							tokensSpTextPresenter text: self model tokens asString ] ] ].
 	(aForm addTextInput: 'Capacity')
 		text: (self model capacity = SmallInteger maxVal
 				 ifTrue: [ '' ]
 				 ifFalse: [ self model capacity asString ]);
-		whenTextIsAccepted: [ :newValue | 
+		whenTextChangedDo: [ :newValue | 
 			self model capacity:
 					(newValue asString asInteger ifNil: [ SmallInteger maxVal ]) ]
 ]

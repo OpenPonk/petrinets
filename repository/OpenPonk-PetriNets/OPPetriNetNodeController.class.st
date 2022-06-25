@@ -20,9 +20,10 @@ OPPetriNetNodeController class >> isPossibleOutgoing: aController [
 
 { #category : #forms }
 OPPetriNetNodeController >> buildEditorForm: aForm [
+
 	(aForm addText: 'Name')
 		text: self model name;
-		whenTextIsAccepted: [ :newValue | 
+		whenTextChangedDo: [ :newValue | 
 			self model name: newValue asString.
 			self refreshFigure ]
 ]
