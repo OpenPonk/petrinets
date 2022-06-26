@@ -50,18 +50,28 @@ OPPetriNetPTPlaceController >> modelClass [
 
 { #category : #hooks }
 OPPetriNetPTPlaceController >> refreshFigure [
+
 	self tokenGroupFrom: self model tokens.
 	^ super refreshFigure
 ]
 
+{ #category : #removing }
+OPPetriNetPTPlaceController >> removeFigure [
+
+	super removeFigure.
+	model announcer unsubscribe: self
+]
+
 { #category : #construction }
 OPPetriNetPTPlaceController >> showInDiagram: aDiagramController [
+
 	super showInDiagram: aDiagramController.
 	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
 ]
 
 { #category : #construction }
 OPPetriNetPTPlaceController >> showWithoutDependentInDiagram: aDiagramController [
+
 	super showWithoutDependentInDiagram: aDiagramController.
 	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
 ]
