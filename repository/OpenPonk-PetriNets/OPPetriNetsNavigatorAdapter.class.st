@@ -29,12 +29,12 @@ OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject [
 
 { #category : #'widget API' }
 OPPetriNetsNavigatorAdapter >> iconMapping [
-	^ {(OPPetriNet -> OPPetriNetsIcons current petriNetIcon).
-	(OPPetriNetInhibitorArc -> OPPetriNetsIcons current inhibitorArcIcon).
-	(OPPetriNetResetArc -> OPPetriNetsIcons current resetArcIcon).
-	(OPPetriNetWeightedArc -> OPPetriNetsIcons current arcIcon).
-	(OPPetriNetPTPlace -> OPPetriNetsIcons current placeIcon).
-	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}
+	^ {(OPPetriNet -> OPPetriNetsIcons petriNetIcon).
+	(OPPetriNetInhibitorArc -> OPPetriNetsIcons inhibitorArcIcon).
+	(OPPetriNetResetArc -> OPPetriNetsIcons resetArcIcon).
+	(OPPetriNetWeightedArc -> OPPetriNetsIcons arcIcon).
+	(OPPetriNetPTPlace -> OPPetriNetsIcons placeIcon).
+	(OPPetriNetTransition -> OPPetriNetsIcons transitionIcon)}
 ]
 
 { #category : #private }

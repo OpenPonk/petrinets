@@ -11,7 +11,7 @@ OPPetriNetsPlugin >> diagramControllerClass [
 
 { #category : #accessing }
 OPPetriNetsPlugin >> icon [
-	^ OPPetriNetsIcons current petriNetIcon
+	^ OPPetriNetsIcons petriNetIcon
 ]
 
 { #category : #'as yet unclassified' }

@@ -36,20 +36,20 @@ OPPetriNetController >> elementsToShowInside [
 { #category : #initialization }
 OPPetriNetController >> initializePalette: aPalette [
 	aPalette
-		newCreationTool: 'Place' factory: [ OPPetriNetPTPlaceController new ] icon: OPPetriNetsIcons current placeIcon;
+		newCreationTool: 'Place' factory: [ OPPetriNetPTPlaceController new ] icon: OPPetriNetsIcons placeIcon;
 		newCreationTool: 'Transition'
 			factory: [ OPPetriNetTransitionController new ]
-			icon: OPPetriNetsIcons current transitionIcon;
+			icon: OPPetriNetsIcons transitionIcon;
 		newSeparator;
 		newConnectionCreationTool: 'Arc'
 			factory: [ OPPetriNetNormalArcController new ]
-			icon: OPPetriNetsIcons current arcIcon;
+			icon: OPPetriNetsIcons arcIcon;
 		newConnectionCreationTool: 'Inhibitor Arc'
 			factory: [ OPPetriNetInhibitorArcController new ]
-			icon: OPPetriNetsIcons current inhibitorArcIcon;
+			icon: OPPetriNetsIcons inhibitorArcIcon;
 		newConnectionCreationTool: 'Reset Arc'
 			factory: [ OPPetriNetResetArcController new ]
-			icon: OPPetriNetsIcons current resetArcIcon
+			icon: OPPetriNetsIcons resetArcIcon
 ]
 
 { #category : #accessing }
