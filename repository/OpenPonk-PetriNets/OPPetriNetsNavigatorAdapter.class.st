@@ -4,6 +4,12 @@ Class {
 	#category : #'OpenPonk-PetriNets-Adapters'
 }
 
+{ #category : #accessing }
+OPPetriNetsNavigatorAdapter class >> priority [
+
+	^ 10
+]
+
 { #category : #'widget API' }
 OPPetriNetsNavigatorAdapter >> childrenMapping [
 	^ {(OPPetriNet -> #nodes).
