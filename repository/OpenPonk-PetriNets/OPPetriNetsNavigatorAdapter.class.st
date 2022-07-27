@@ -27,10 +27,12 @@ OPPetriNetsNavigatorAdapter >> displayMapping [
 ]
 
 { #category : #testing }
-OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject [
-	^ {OPPetriNet.
-	OPPetriNetArc.
-	OPPetriNetNode} anySatisfy: [ :any | anObject isKindOf: any ]
+OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject in: aModel [
+
+	^ { 
+		  OPPetriNet.
+		  OPPetriNetArc.
+		  OPPetriNetNode } anySatisfy: [ :any | anObject isKindOf: any ]
 ]
 
 { #category : #'widget API' }
