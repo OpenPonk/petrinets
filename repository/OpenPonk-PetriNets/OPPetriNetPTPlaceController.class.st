@@ -13,7 +13,9 @@ OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 	tokensSpTextPresenter
 		text: self model tokens asString;
 		whenTextChangedDo: [ :newValue | 
-			[ self model tokens: (newValue asString asInteger ifNil: [ 0 ]) ]
+			[ 
+			self model tokens:
+					((newValue asString asInteger ifNil: [ 0 ]) max: 0) ]
 				on: OPPetriNetPlaceOverCapacity
 				do: [ :ex | 
 					(UIManager default confirm:
@@ -30,17 +32,10 @@ OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 					(newValue asString asInteger ifNil: [ SmallInteger maxVal ]) ]
 ]
 
-{ #category : #private }
-OPPetriNetPTPlaceController >> createTokenGroup [
-	| label |
-	tokenGroup ifNotNil: [ ^ self ].
-	super createTokenGroup.
-	label := RTLabel new
-		color: Color black;
-		text: '';
-		element.
-	tokenGroup := RTGroup with: label with: tokenGroup first.
-	RTConstraint stick: label onTheLeftOf: tokenGroup second
+{ #category : #construction }
+OPPetriNetPTPlaceController >> diagramElementClass [
+
+	^ OPPetriNetPTPlaceShape
 ]
 
 { #category : #hooks }
@@ -48,70 +43,9 @@ OPPetriNetPTPlaceController >> modelClass [
 	^ OPPetriNetPTPlace
 ]
 
-{ #category : #hooks }
-OPPetriNetPTPlaceController >> refreshFigure [
-
-	self tokenGroupFrom: self model tokens.
-	^ super refreshFigure
-]
-
-{ #category : #removing }
-OPPetriNetPTPlaceController >> removeFigure [
-
-	super removeFigure.
-	model announcer unsubscribe: self
-]
-
 { #category : #construction }
-OPPetriNetPTPlaceController >> showInDiagram: aDiagramController [
+OPPetriNetPTPlaceController >> renderDiagramElement [
 
-	super showInDiagram: aDiagramController.
-	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
-]
-
-{ #category : #construction }
-OPPetriNetPTPlaceController >> showWithoutDependentInDiagram: aDiagramController [
-
-	super showWithoutDependentInDiagram: aDiagramController.
-	model when: OPPlaceTokensChanged do: [ self refreshFigure ]
-]
-
-{ #category : #private }
-OPPetriNetPTPlaceController >> tokenCircle [
-	"returns circle element representing presence of token(s)"
-
-	^ self tokenGroup second
-]
-
-{ #category : #private }
-OPPetriNetPTPlaceController >> tokenGroupFrom: aNumber [
-	"updates token shape and label to show aNumber amount of tokens"
-
-	self tokenCircle
-		color:
-			(aNumber isZero
-				ifTrue: [ Color transparent ]
-				ifFalse: [ Color black ]).
-	self
-		tokenText:
-			(aNumber < 2
-				ifTrue: [ '' ]
-				ifFalse: [ aNumber asString ]).
-	^ self tokenGroup
-		translateBy: 0;
-		yourself
-]
-
-{ #category : #private }
-OPPetriNetPTPlaceController >> tokenLabel [
-	"returns label element representing amount of tokens"
-
-	^ self tokenGroup first
-]
-
-{ #category : #accessing }
-OPPetriNetPTPlaceController >> tokenText: aString [
-	"sets token amount label text"
-
-	self tokenLabel trachelShape text: aString
+	super renderDiagramElement.
+	model when: OPPlaceTokensChanged do: [ self diagramElement updateRenderFromModel ]
 ]

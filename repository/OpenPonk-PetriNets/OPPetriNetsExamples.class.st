@@ -6,27 +6,29 @@ Class {
 
 { #category : #examples }
 OPPetriNetsExamples class >> exampleEmpty [
-	| project diagram |
+
+	| project model |
 	project := OPProject named: 'New Petri Net'.
-	diagram := OPPetriNet new name: 'New Petri Net'.
-	project addModel: diagram.
+	model := OPPetriNet new name: 'New Petri Net'.
+	project addModel: model.
 	OPWorkbench openProject: project
 ]
 
 { #category : #examples }
 OPPetriNetsExamples class >> examplePetriNets [
-	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
+
+	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 workbench |
 	project := OPProject named: 'Example Petri Net'.
 	model := OPPetriNet named: 'Petri Net'.
 	project addModel: model.
 	place1 := (OPPetriNetPTPlace named: 'P1')
-		tokens: 20;
-		yourself.
+		          tokens: 20;
+		          yourself.
 	place2 := OPPetriNetPTPlace named: 'P2'.
 	place3 := OPPetriNetPTPlace named: 'P3'.
 	place4 := (OPPetriNetPTPlace named: 'P4')
-		tokens: 1;
-		yourself.
+		          tokens: 1;
+		          yourself.
 	trans1 := OPPetriNetTransition named: 'T1'.
 	trans2 := OPPetriNetTransition named: 'T2'.
 	model
@@ -47,7 +49,7 @@ OPPetriNetsExamples class >> examplePetriNets [
 		add: arc3;
 		add: arc4;
 		add: arc5.
-	^ OPProject openOnModel: model
+	(OPProject openOnModel: model) showAllElementsInAllDiagrams
 ]
 
 { #category : #menu }

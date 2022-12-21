@@ -22,7 +22,7 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
 	controller renderFigureIn: diagramController view.
-	controller tokenGroupFrom: 0.
+	controller updateTokenAmount: 0.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color transparent.
@@ -30,7 +30,7 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		assert:
 			controller tokenLabel trachelShape color = Color transparent
 				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 1.
+	controller updateTokenAmount: 1.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color black.
@@ -38,7 +38,7 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		assert:
 			controller tokenLabel trachelShape color = Color transparent
 				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 111.
+	controller updateTokenAmount: 111.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color black.
@@ -46,7 +46,7 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		assert: controller tokenLabel trachelShape color
 		equals: Color black.
 	self assert: controller tokenLabel trachelShape text equals: '111'.
-	controller tokenGroupFrom: 9.
+	controller updateTokenAmount: 9.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color black.
@@ -54,7 +54,7 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		assert: controller tokenLabel trachelShape color
 		equals: Color black.
 	self assert: controller tokenLabel trachelShape text equals: '9'.
-	controller tokenGroupFrom: 1.
+	controller updateTokenAmount: 1.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color black.
@@ -62,8 +62,8 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		assert:
 			controller tokenLabel trachelShape color = Color transparent
 				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 1.
-	controller tokenGroupFrom: 0.
+	controller updateTokenAmount: 1.
+	controller updateTokenAmount: 0.
 	self
 		assert: controller tokenCircle trachelShape color
 		equals: Color transparent.

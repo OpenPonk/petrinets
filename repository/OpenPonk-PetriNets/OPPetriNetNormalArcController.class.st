@@ -1,12 +1,13 @@
 Class {
 	#name : #OPPetriNetNormalArcController,
 	#superclass : #OPPetriNetWeightedArcController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#category : #'OpenPonk-PetriNets-Controllers'
 }
 
-{ #category : #hooks }
-OPPetriNetNormalArcController >> headShapeClass [
-	^ RTSimpleArrow
+{ #category : #construction }
+OPPetriNetNormalArcController >> diagramElementClass [
+
+	^ OPPetriNetNormalArcShape
 ]
 
 { #category : #accessing }

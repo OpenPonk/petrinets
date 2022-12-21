@@ -25,7 +25,7 @@ OPPetriNetNodeController >> buildEditorForm: aForm [
 		text: self model name;
 		whenTextChangedDo: [ :newValue | 
 			self model name: newValue asString.
-			self refreshFigure ]
+			self diagramElement updateRenderFromModel ]
 ]
 
 { #category : #testing }
@@ -38,14 +38,15 @@ OPPetriNetNodeController >> canBeTargetFor: aController [
 	^ (aController isKindOf: OPPetriNetArcController) and: [ self class ~= aController source class ]
 ]
 
-{ #category : #hooks }
-OPPetriNetNodeController >> createRoassalShape [
-	^ self subclassResponsibility
-]
-
 { #category : #accessing }
 OPPetriNetNodeController >> dependentElements [
 	^ (model incoming , model outgoing) asSet
+]
+
+{ #category : #rendering }
+OPPetriNetNodeController >> diagramElementClass [
+
+	^ OPPetriNetNodeShape
 ]
 
 { #category : #announcements }
@@ -64,37 +65,8 @@ OPPetriNetNodeController >> modelAsParent [
 	^ self model owner
 ]
 
-{ #category : #figures }
-OPPetriNetNodeController >> refreshFigure [
-	(figure attributeAt: #RTLabelledLabel) text: self model name.
-	^ super refreshFigure
-]
-
 { #category : #removing }
 OPPetriNetNodeController >> removeModel [
 	self model announcer unsubscribe: self.
 	self diagramController model remove: self model
-]
-
-{ #category : #rendering }
-OPPetriNetNodeController >> renderFigureIn: aView [
-	self diagramController addingFigureFor: self.
-	figure := self createRoassalShape elementOn: self model.
-	figure
-		addInteraction:
-			(OPRTMultilineLabeled new
-				view: aView;
-				below;
-				color: Color black;
-				yourself).
-	figure @ RTDraggable.
-	figure @ OPRTFocusable.
-	figure renderIn: aView.
-	^ self diagramController addedFigureFor: self
-]
-
-{ #category : #'canvas actions' }
-OPPetriNetNodeController >> showSelectionFeedback [
-	super showSelectionFeedback.
-	self figure view signalUpdate
 ]
