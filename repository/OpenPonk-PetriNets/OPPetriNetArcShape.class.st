@@ -27,7 +27,9 @@ OPPetriNetArcShape >> renderBasicShape [
 	roassalShape := OPRSPolyline new
 		                markerEnd: self headMarker;
 		                withBorderAttachPoint;
-		                controlPointsController: OPRSDraggableCPController new;
+		                controlPointsController:
+			                OPRSPolylineCPController new;
+		                addInteraction: OPRSPolylineHandles;
 		                color: Color black;
 		                from: self source roassalShape;
 		                to: self target roassalShape;
