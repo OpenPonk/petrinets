@@ -69,6 +69,7 @@ OPPetriNetPlaceShape >> tokenGroup [
 OPPetriNetPlaceShape >> updateRenderFromModel [
 
 	self updateTokenAmount: self modelElement tokens.
+	
 	super updateRenderFromModel
 ]
 

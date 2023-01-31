@@ -52,6 +52,9 @@ OPPetriNetNodeShape >> setupHighlight: aHighlightable [
 OPPetriNetNodeShape >> updateRenderFromModel [
 
 	(roassalShape propertyAt: #RSLabeled) text: self modelElement name.
+
+	super updateRenderFromModel.
+
 	roassalShape signalUpdate
 ]
 
