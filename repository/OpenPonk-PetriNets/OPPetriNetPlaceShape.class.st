@@ -7,14 +7,6 @@ Class {
 	#category : #'OpenPonk-PetriNets-DiagramElements'
 }
 
-{ #category : #'ston-core' }
-OPPetriNetPlaceShape class >> stonAllInstVarNames [
-
-	"Override to encode my instances using a custom set of instance variables or to define their order."
-
-	^ super stonAllInstVarNames copyWithoutAll: #( #tokenGroup )
-]
-
 { #category : #hooks }
 OPPetriNetPlaceShape >> createRoassalShape [
 	^ RSCircle new
