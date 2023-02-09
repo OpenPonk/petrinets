@@ -5,13 +5,13 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-OPPetriNetArcNameShape >> defaultBalance [
+OPPetriNetArcNameShape >> defaultAnchorConstraintPosition [
 
-	^ 0.4
+	^ OPRSAnchorConstraintBalancePosition balance: 0.4
 ]
 
 { #category : #accessing }
-OPPetriNetArcNameShape >> text [
+OPPetriNetArcNameShape >> defaultText [
 
 	^ self owningElement modelElement name
 ]

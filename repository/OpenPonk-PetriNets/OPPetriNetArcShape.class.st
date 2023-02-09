@@ -4,13 +4,10 @@ Class {
 	#category : #'OpenPonk-PetriNets-DiagramElements'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #creation }
 OPPetriNetArcShape >> createOwnedElementsWithoutController [
 
 	super createOwnedElementsWithoutController.
-	self ownedElements
-		detect: [ :any | any isKindOf: OPPetriNetArcNameShape ]
-		ifFound: [ ^ self ].
 	OPPetriNetArcNameShape in: self forModelElement: self modelElement
 ]
 

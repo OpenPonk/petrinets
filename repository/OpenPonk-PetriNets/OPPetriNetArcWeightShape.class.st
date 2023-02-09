@@ -5,13 +5,13 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-OPPetriNetArcWeightShape >> defaultBalance [
+OPPetriNetArcWeightShape >> defaultAnchorConstraintPosition [
 
-	^ 0.7
+	^ OPRSAnchorConstraintBalancePosition balance: 0.7
 ]
 
 { #category : #accessing }
-OPPetriNetArcWeightShape >> text [
+OPPetriNetArcWeightShape >> defaultText [
 
 	| weight |
 	weight := self owningElement modelElement weight.
