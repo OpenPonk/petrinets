@@ -9,7 +9,7 @@ OPPetriNetLayouter >> allEdges [
 
 	^ diagramController controllers
 		  select: [ :ctrl | ctrl isKindOf: OPPetriNetArcController ]
-		  thenCollect: #diagramElement
+		  thenCollect: #roassalShape
 ]
 
 { #category : #accessing }
@@ -17,7 +17,7 @@ OPPetriNetLayouter >> allNodes [
 
 	^ diagramController controllers
 		  select: [ :ctrl | ctrl isKindOf: OPPetriNetNodeController ]
-		  thenCollect: #diagramElement
+		  thenCollect: #roassalShape
 ]
 
 { #category : #layouts }
