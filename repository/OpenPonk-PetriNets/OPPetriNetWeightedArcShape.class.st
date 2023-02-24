@@ -8,5 +8,5 @@ Class {
 OPPetriNetWeightedArcShape >> createOwnedElementsWithoutController [
 
 	super createOwnedElementsWithoutController.
-	OPPetriNetArcWeightShape in: self forModelElement: self modelElement
+	OPPetriNetArcWeightShape in: self
 ]

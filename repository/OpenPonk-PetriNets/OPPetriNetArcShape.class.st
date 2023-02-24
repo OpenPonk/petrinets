@@ -8,7 +8,7 @@ Class {
 OPPetriNetArcShape >> createOwnedElementsWithoutController [
 
 	super createOwnedElementsWithoutController.
-	OPPetriNetArcNameShape in: self forModelElement: self modelElement
+	OPPetriNetArcNameShape in: self
 ]
 
 { #category : #hooks }
