@@ -12,5 +12,5 @@ OPPetriNetWeightedArcController >> buildEditorForm: aForm [
 		text: self model weight asString;
 		whenTextChangedDo: [ :newValue | 
 			self model weight: (newValue asString asInteger ifNil: [ 1 ]).
-			self diagramElement updateRenderFromModel ]
+			self diagramElement modelChanged ]
 ]

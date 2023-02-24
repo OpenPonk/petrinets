@@ -24,7 +24,7 @@ OPPetriNetNodeShape >> createRoassalShape [
 { #category : #rendering }
 OPPetriNetNodeShape >> renderBasicShape [
 
-	roassalShape := self createRoassalShape model: self
+	^ self createRoassalShape model: self
 ]
 
 { #category : #rendering }
@@ -36,7 +36,7 @@ OPPetriNetNodeShape >> renderShapeDetails [
 	label shapeBuilder labelShape color: Color black.
 	roassalShape addInteraction: label.
 
-	roassalShape @ OPRSSelectionDraggable.
+	roassalShape @ OPRSSelectionDraggable thatDoesNotDragInnerShapes.
 	selectable := OPRSSelectable new.
 	self setupHighlight: selectable.
 	roassalShape @ selectable

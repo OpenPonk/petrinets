@@ -25,7 +25,7 @@ OPPetriNetNodeController >> buildEditorForm: aForm [
 		text: self model name;
 		whenTextChangedDo: [ :newValue | 
 			self model name: newValue asString.
-			self diagramElement updateRenderFromModel ]
+			self diagramElement modelChanged ]
 ]
 
 { #category : #testing }

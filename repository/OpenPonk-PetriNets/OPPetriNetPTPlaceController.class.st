@@ -47,5 +47,5 @@ OPPetriNetPTPlaceController >> modelClass [
 OPPetriNetPTPlaceController >> renderDiagramElement [
 
 	super renderDiagramElement.
-	model when: OPPlaceTokensChanged do: [ self diagramElement updateRenderFromModel ]
+	model when: OPPlaceTokensChanged do: [ self diagramElement modelChanged ]
 ]
