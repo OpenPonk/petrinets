@@ -7,7 +7,7 @@ Class {
 { #category : #'as yet unclassified' }
 OPPetriNetArcWeightShape >> defaultAnchorConstraintPosition [
 
-	^ OPRSAnchorConstraintBalancePosition balance: 0.7
+	^ OPRSAnchorConstraintBalanceReference balance: 0.7
 ]
 
 { #category : #accessing }
