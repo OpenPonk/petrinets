@@ -14,7 +14,7 @@ OPPetriNetArcWeightShape >> defaultAnchorConstraintPosition [
 OPPetriNetArcWeightShape >> defaultText [
 
 	| weight |
-	weight := self owningElement modelElement weight.
+	weight := self modelElement weight.
 	^ weight = 1
 		  ifTrue: [ '' ]
 		  ifFalse: [ 'weight: ' , weight asString ]

@@ -13,5 +13,5 @@ OPPetriNetArcNameShape >> defaultAnchorConstraintPosition [
 { #category : #accessing }
 OPPetriNetArcNameShape >> defaultText [
 
-	^ self owningElement modelElement name
+	^ self modelElement name
 ]

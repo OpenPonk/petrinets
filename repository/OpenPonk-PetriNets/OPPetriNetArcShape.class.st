@@ -21,22 +21,15 @@ OPPetriNetArcShape >> headMarker [
 { #category : #rendering }
 OPPetriNetArcShape >> renderBasicShape [
 
-	^ OPRSPolyline new
+	^ (self source = self target
+		   ifTrue: [ OPRSBezier ]
+		   ifFalse: [ OPRSPolyline ]) new
 		  markerEnd: self headMarker;
 		  withBorderAttachPoint;
-		  controlPointsController: OPRSPolylineCPController new;
-		  addInteraction: OPRSPolylineHandles;
+		  controlPointsController: OPRSDraggableCPController new;
+		  addInteraction: OPRSDraggableControlPoints;
 		  color: Color black;
 		  from: self source roassalShape;
 		  to: self target roassalShape;
 		  yourself
-]
-
-{ #category : #rendering }
-OPPetriNetArcShape >> renderShapeDetails [
-
-	| selectable |
-	selectable := OPRSSelectable new.
-	selectable highlightColor: Color blue.
-	roassalShape @ selectable
 ]
