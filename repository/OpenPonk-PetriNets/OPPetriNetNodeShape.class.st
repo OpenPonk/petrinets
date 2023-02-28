@@ -16,17 +16,6 @@ OPPetriNetNodeShape >> color: aColor [
 	^ self stylePropertyNamed: #fillColor put: aColor
 ]
 
-{ #category : #hooks }
-OPPetriNetNodeShape >> createRoassalShape [
-	^ self subclassResponsibility
-]
-
-{ #category : #rendering }
-OPPetriNetNodeShape >> renderBasicShape [
-
-	^ self createRoassalShape model: self
-]
-
 { #category : #rendering }
 OPPetriNetNodeShape >> renderShapeDetails [
 

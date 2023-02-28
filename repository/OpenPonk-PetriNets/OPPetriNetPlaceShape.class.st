@@ -7,14 +7,6 @@ Class {
 	#category : #'OpenPonk-PetriNets-DiagramElements'
 }
 
-{ #category : #hooks }
-OPPetriNetPlaceShape >> createRoassalShape [
-	^ RSCircle new
-		size: 40;
-		borderColor: Color black;
-		yourself
-]
-
 { #category : #private }
 OPPetriNetPlaceShape >> createTokenGroup [
 
@@ -24,6 +16,15 @@ OPPetriNetPlaceShape >> createTokenGroup [
 		          color: Color black;
 		          yourself.
 	^ tokenGroup := RSGroup with: circle
+]
+
+{ #category : #hooks }
+OPPetriNetPlaceShape >> renderBasicShape [
+
+	^ RSCircle new
+		  size: 40;
+		  borderColor: Color black;
+		  yourself
 ]
 
 { #category : #rendering }

@@ -8,14 +8,6 @@ Class {
 }
 
 { #category : #hooks }
-OPPetriNetTransitionShape >> createRoassalShape [
-	^ RSBox new
-		size: 35;
-		borderColor: Color black;
-		yourself
-]
-
-{ #category : #hooks }
 OPPetriNetTransitionShape >> initialize [
 
 	super initialize.
@@ -26,6 +18,15 @@ OPPetriNetTransitionShape >> initialize [
 OPPetriNetTransitionShape >> playClicked [
 
 	playClickedBlock value
+]
+
+{ #category : #hooks }
+OPPetriNetTransitionShape >> renderBasicShape [
+
+	^ RSBox new
+		  size: 35;
+		  borderColor: Color black;
+		  yourself
 ]
 
 { #category : #hooks }
