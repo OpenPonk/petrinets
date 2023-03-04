@@ -25,7 +25,7 @@ OPPetriNetNodeShape >> renderShapeDetails [
 	label shapeBuilder labelShape color: Color black.
 	roassalShape addInteraction: label.
 
-	roassalShape @ OPRSSelectionDraggable thatDoesNotDragInnerShapes.
+	roassalShape @ OPRSSelectionDraggable.
 	selectable := OPRSSelectable new.
 	self setupHighlight: selectable.
 	roassalShape @ selectable
