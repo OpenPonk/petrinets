@@ -38,9 +38,14 @@ OPPetriNetPTPlaceShape >> tokenLabel [
 
 { #category : #accessing }
 OPPetriNetPTPlaceShape >> tokenText: aString [
+
 	"sets token amount label text"
 
-	self tokenLabel text: aString
+	self tokenLabel text: aString.
+	self tokenCircle announce: (RSPositionChangedEvent new
+			 oldPosition: self tokenCircle position;
+			 newPosition: self tokenCircle position;
+			 yourself)
 ]
 
 { #category : #private }

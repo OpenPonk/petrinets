@@ -68,12 +68,12 @@ OPPetriNetSimulationGUI >> loadSimulation [
 					              event simulator model.
 				prevColor := controller roassalShape color.
 				controller roassalShape color: Color lightBlue.
-				controller refreshFigure.
+				controller diagramElement modelChanged.
 				[ 
 				(Delay forMilliseconds: 200) wait.
 				controller roassalShape color = prevColor ifFalse: [ 
 					controller roassalShape color: Color transparent.
-					controller refreshFigure ] ] fork ] ] ]
+					controller diagramElement modelChanged ] ] fork ] ] ]
 ]
 
 { #category : #'private - hooks' }

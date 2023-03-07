@@ -35,9 +35,8 @@ OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
 	| icon transitionHelper removal |
 	super setupHighlight: aHighlightable.
 	transitionHelper := RSBox new
-		                    size: 20;
-		                    color: Color white;
-		                    borderColor: Color veryVeryLightGray;
+		                    size: 18;
+		                    color: Color transparent;
 		                    yourself.
 	RSLocation new
 		bottom;
