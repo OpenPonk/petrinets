@@ -22,10 +22,13 @@ OPPetriNetNodeControllerTest >> testClassSideModelClass [
 
 { #category : #tests }
 OPPetriNetNodeControllerTest >> testCreateFigure [
+
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
-	controller renderFigureIn: diagramController view.
-	self assert: controller figure class equals: RTElement
+	controller
+		createDiagramElement;
+		renderDiagramElement.
+	self assert: (controller roassalShape isKindOf: RSBoundingShape)
 ]
 
 { #category : #tests }
@@ -37,16 +40,19 @@ OPPetriNetNodeControllerTest >> testCreateModel [
 
 { #category : #tests }
 OPPetriNetNodeControllerTest >> testFigureRefresh [
+
 	| text |
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
-	controller renderFigureIn: diagramController view.
+	controller
+		createDiagramElement;
+		renderDiagramElement.
 	self
-		assert: (controller figure attributeAt: #RTLabelledLabel) text
+		assert: (controller roassalShape propertyAt: #RSLabeled) text
 		equals: ''.
 	controller model name: 'new name'.
-	controller refreshFigure.
-	text := (controller figure attributeAt: #RTLabelledLabel) text.
-	self
-		assert: ((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
+	controller diagramElement modelChanged.
+	text := (controller roassalShape propertyAt: #RSLabeled) text.
+	self assert:
+		((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
 ]

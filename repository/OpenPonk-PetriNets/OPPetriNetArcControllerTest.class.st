@@ -36,36 +36,43 @@ OPPetriNetArcControllerTest >> fromClass [
 
 { #category : #running }
 OPPetriNetArcControllerTest >> setUp [
+
 	super setUp.
 	fromCtrl := self fromClass new.
 	diagramController addController: fromCtrl.
 	fromCtrl createModelIn: diagramController model.
-	fromCtrl renderFigureIn: diagramController view.
+	fromCtrl
+		createDiagramElement;
+		renderDiagramElement.
 	toCtrl := self toClass new.
 	diagramController addController: toCtrl.
 	toCtrl createModelIn: diagramController model.
-	toCtrl renderFigureIn: diagramController view
+	toCtrl
+		createDiagramElement;
+		renderDiagramElement
 ]
 
 { #category : #tests }
 OPPetriNetArcControllerTest >> testCreateFigure [
+
 	| figure previousElementsSize |
 	controller
 		source: fromCtrl;
 		target: toCtrl;
 		model: model.
 	diagramController addController: controller.
-	previousElementsSize := diagramController view elements size.
-	figure := controller renderFigureIn: diagramController view.
-	self assert: figure class equals: RTEdge.
-	self assert: figure from equals: fromCtrl figure.
-	self assert: figure to equals: toCtrl figure.
+	previousElementsSize := diagramController canvas nodes size.
+	figure := controller
+		          createDiagramElement;
+		          renderDiagramElement.
+	self assert: figure class equals: OPRSPolyline.
+	self assert: figure from equals: fromCtrl roassalShape.
+	self assert: figure to equals: toCtrl roassalShape.
 	self
-		assert: diagramController view elements size
-		equals: previousElementsSize + (self amountOfLabels * 2).
-	self assert: (figure shape isKindOf: RTAbstractLine).
+		assert: diagramController canvas nodes size
+		equals: previousElementsSize + self amountOfLabels.
 	self assert: figure shape color equals: Color black.
-	self assert: figure shape head shape equals: self desiredHeadShape
+	self assert: figure shape markerEnd isNotNil
 ]
 
 { #category : #tests }
@@ -83,18 +90,21 @@ OPPetriNetArcControllerTest >> testCreateModel [
 
 { #category : #tests }
 OPPetriNetArcControllerTest >> testFigureRefresh [
+
 	| label |
 	controller
 		source: fromCtrl;
 		target: toCtrl.
 	diagramController addController: controller.
 	controller createModelIn: diagramController model.
-	controller renderFigureIn: diagramController view.
-	label := controller figure labels at: #name.
-	self assert: label trachelShape text equals: ''.
+	controller
+		createDiagramElement;
+		renderDiagramElement.
+	label := controller diagramElement ownedElements first.
+	self assert: label roassalShape text equals: ''.
 	controller model name: 'new name'.
-	controller refreshFigure.
-	self assert: label trachelShape text equals: 'new name'
+	controller diagramElement modelChanged.
+	self assert: label roassalShape text equals: 'new name'
 ]
 
 { #category : #hooks }

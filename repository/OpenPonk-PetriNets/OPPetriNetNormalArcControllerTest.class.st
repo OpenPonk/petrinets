@@ -29,11 +29,12 @@ OPPetriNetNormalArcControllerTest >> modelClass [
 
 { #category : #tests }
 OPPetriNetNormalArcControllerTest >> testFigureRefresh [
+
 	| label |
 	super testFigureRefresh.
-	label := controller figure labels at: #weight.
-	self assert: label trachelShape text equals: ''.
+	label := controller diagramElement ownedElements second.
+	self assert: label roassalShape text equals: ''.
 	controller model weight: 10.
-	controller refreshFigure.
-	self assert: (label trachelShape text last: 2) equals: '10'
+	controller diagramElement modelChanged.
+	self assert: (label roassalShape text last: 2) equals: '10'
 ]

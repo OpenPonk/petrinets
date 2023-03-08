@@ -19,56 +19,55 @@ OPPetriNetPlaceWithTokensControllerTest >> modelClass [
 
 { #category : #tests }
 OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
+
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
-	controller renderFigureIn: diagramController view.
-	controller updateTokenAmount: 0.
+	controller
+		createDiagramElement;
+		renderDiagramElement.
+	controller model tokens: 0.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color transparent.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 1.
 	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller updateTokenAmount: 1.
+		assert: controller diagramElement tokenCircle color
+		equals: Color black.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 111.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
 	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller updateTokenAmount: 111.
+		assert: controller diagramElement tokenLabel color
+		equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: '111'.
+	controller model tokens: 9.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
 	self
-		assert: controller tokenLabel trachelShape color
+		assert: controller diagramElement tokenLabel color
 		equals: Color black.
-	self assert: controller tokenLabel trachelShape text equals: '111'.
-	controller updateTokenAmount: 9.
+	self assert: controller diagramElement tokenLabel text equals: '9'.
+	controller model tokens: 1.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 1.
+	controller model tokens: 0.
 	self
-		assert: controller tokenLabel trachelShape color
-		equals: Color black.
-	self assert: controller tokenLabel trachelShape text equals: '9'.
-	controller updateTokenAmount: 1.
-	self
-		assert: controller tokenCircle trachelShape color
-		equals: Color black.
-	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller updateTokenAmount: 1.
-	controller updateTokenAmount: 0.
-	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color transparent.
-	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '')
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '')
 ]

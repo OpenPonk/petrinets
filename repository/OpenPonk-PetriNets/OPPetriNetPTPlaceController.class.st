@@ -47,5 +47,8 @@ OPPetriNetPTPlaceController >> modelClass [
 OPPetriNetPTPlaceController >> renderDiagramElement [
 
 	super renderDiagramElement.
-	model when: OPPlaceTokensChanged do: [ self diagramElement modelChanged ]
+	model
+		when: OPPlaceTokensChanged
+		do: [ self diagramElement modelChanged ].
+	^ self roassalShape
 ]
