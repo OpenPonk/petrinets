@@ -46,7 +46,7 @@ OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
 		stick: transitionHelper on: roassalShape.
 	icon := RSSVGPath new
 		        svgPath: 'M-5,6 L-5,-6 L5,0 L-5,6';
-		        color: (Color red: 50 green: 190 blue: 30);
+		        color: (Color r: 0.2 g: 0.75 b: 0.1);
 		        yourself.
 	RSLocation new stick: icon on: transitionHelper.
 	transitionHelper when: RSMouseLeftClick do: [ self playClicked ].
