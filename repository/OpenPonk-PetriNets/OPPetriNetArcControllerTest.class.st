@@ -53,6 +53,16 @@ OPPetriNetArcControllerTest >> setUp [
 ]
 
 { #category : #tests }
+OPPetriNetArcControllerTest >> testCreateDiagramElement [
+
+	controller model: model.
+	controller model source: fromCtrl model.
+	controller model target: toCtrl model.
+
+	super testCreateDiagramElement
+]
+
+{ #category : #tests }
 OPPetriNetArcControllerTest >> testCreateFigure [
 
 	| figure previousElementsSize |

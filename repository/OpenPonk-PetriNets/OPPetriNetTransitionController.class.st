@@ -15,15 +15,16 @@ OPPetriNetTransitionController >> diagramElementClass [
 	^ OPPetriNetTransitionShape
 ]
 
+{ #category : #rendering }
+OPPetriNetTransitionController >> hookDiagramElement [
+
+	super hookDiagramElement.
+
+	diagramElement whenPlayClickedDo: [ 
+		OPPetriNetSimulationGUI stepSimulatorOfController: self ]
+]
+
 { #category : #hooks }
 OPPetriNetTransitionController >> modelClass [
 	^ OPPetriNetTransition
-]
-
-{ #category : #rendering }
-OPPetriNetTransitionController >> renderDiagramElement [
-
-	super renderDiagramElement.
-	diagramElement whenPlayClickedDo: [ 
-		OPPetriNetSimulationGUI stepSimulatorOfController: self ]
 ]

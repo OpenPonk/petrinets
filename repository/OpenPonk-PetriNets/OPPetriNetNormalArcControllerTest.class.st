@@ -22,6 +22,12 @@ OPPetriNetNormalArcControllerTest >> desiredHeadShape [
 	^ RTSimpleArrow
 ]
 
+{ #category : #construction }
+OPPetriNetNormalArcControllerTest >> diagramElementClass [
+
+	^ OPPetriNetNormalArcShape
+]
+
 { #category : #hooks }
 OPPetriNetNormalArcControllerTest >> modelClass [
 	^ OPPetriNetNormalArc

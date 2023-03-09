@@ -16,11 +16,6 @@ OPPetriNetNodeControllerTest class >> isAbstract [
 ]
 
 { #category : #tests }
-OPPetriNetNodeControllerTest >> testClassSideModelClass [
-	self assert: self controllerClass modelClass equals: self modelClass
-]
-
-{ #category : #tests }
 OPPetriNetNodeControllerTest >> testCreateFigure [
 
 	controller createModelIn: diagramController model.

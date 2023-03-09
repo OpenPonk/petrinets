@@ -4,7 +4,7 @@ A DCPetriNetResetArcControllerTest is a test class for testing the behavior of D
 Class {
 	#name : #OPPetriNetResetArcControllerTest,
 	#superclass : #OPPetriNetInputArcControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #hooks }
@@ -16,6 +16,12 @@ OPPetriNetResetArcControllerTest >> controllerClass [
 OPPetriNetResetArcControllerTest >> desiredHeadShape [
 	^ OPRTEmptyDoubleArrow
 
+]
+
+{ #category : #construction }
+OPPetriNetResetArcControllerTest >> diagramElementClass [
+
+	^ OPPetriNetResetArcShape
 ]
 
 { #category : #hooks }

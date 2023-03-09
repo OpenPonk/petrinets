@@ -51,8 +51,3 @@ OPPetriNetController >> initializePalette: aPalette [
 			factory: [ OPPetriNetResetArcController new ]
 			icon: OPPetriNetsIcons resetArcIcon
 ]
-
-{ #category : #accessing }
-OPPetriNetController >> modelClass [
-	^ OPPetriNet
-]

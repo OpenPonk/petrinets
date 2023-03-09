@@ -1,6 +1,6 @@
 Class {
 	#name : #OPPetriNetsControllerTest,
-	#superclass : #OPControllerTest,
+	#superclass : #OPElementControllerTest,
 	#category : #'OpenPonk-PetriNets-Tests'
 }
 
@@ -18,6 +18,12 @@ OPPetriNetsControllerTest >> controllerClass [
 ]
 
 { #category : #accessing }
+OPPetriNetsControllerTest >> diagramControllerClass [
+
+	^ OPPetriNetController
+]
+
+{ #category : #accessing }
 OPPetriNetsControllerTest >> diagramModelClass [
 	^ OPPetriNet
 ]
@@ -25,11 +31,6 @@ OPPetriNetsControllerTest >> diagramModelClass [
 { #category : #hooks }
 OPPetriNetsControllerTest >> modelClass [
 	^ self subclassResponsibility
-]
-
-{ #category : #tests }
-OPPetriNetsControllerTest >> testClassSideModelClass [
-	self assert: self controllerClass modelClass equals: self modelClass
 ]
 
 { #category : #tests }

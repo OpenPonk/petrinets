@@ -4,12 +4,18 @@ A DCPetriNetTransitionControllerTest is a test class for testing the behavior of
 Class {
 	#name : #OPPetriNetTransitionControllerTest,
 	#superclass : #OPPetriNetNodeControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #hooks }
 OPPetriNetTransitionControllerTest >> controllerClass [
 	^ OPPetriNetTransitionController
+]
+
+{ #category : #construction }
+OPPetriNetTransitionControllerTest >> diagramElementClass [
+
+	^ OPPetriNetTransitionShape
 ]
 
 { #category : #hooks }

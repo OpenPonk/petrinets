@@ -12,6 +12,12 @@ OPPetriNetPlaceWithTokensControllerTest >> controllerClass [
 	^ OPPetriNetPTPlaceController
 ]
 
+{ #category : #construction }
+OPPetriNetPlaceWithTokensControllerTest >> diagramElementClass [
+
+	^ OPPetriNetPTPlaceShape
+]
+
 { #category : #hooks }
 OPPetriNetPlaceWithTokensControllerTest >> modelClass [
 	^ OPPetriNetPTPlace

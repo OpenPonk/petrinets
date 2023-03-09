@@ -4,7 +4,7 @@ A DCPetriNetInhibitorArcControllerTest is a test class for testing the behavior 
 Class {
 	#name : #OPPetriNetInhibitorArcControllerTest,
 	#superclass : #OPPetriNetInputArcControllerTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #hooks }
@@ -15,6 +15,12 @@ OPPetriNetInhibitorArcControllerTest >> controllerClass [
 { #category : #hooks }
 OPPetriNetInhibitorArcControllerTest >> desiredHeadShape [
 	^ RTEmptyCircle
+]
+
+{ #category : #construction }
+OPPetriNetInhibitorArcControllerTest >> diagramElementClass [
+
+	^ OPPetriNetInhibitorArcShape
 ]
 
 { #category : #hooks }
