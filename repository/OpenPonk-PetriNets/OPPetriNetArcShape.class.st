@@ -7,7 +7,7 @@ Class {
 { #category : #creation }
 OPPetriNetArcShape >> createOwnedElementsWithoutController [
 
-	super createOwnedElementsWithoutController.
+	self ownedElements ifNotEmpty: [ ^ self ].
 	OPPetriNetArcNameShape in: self
 ]
 
