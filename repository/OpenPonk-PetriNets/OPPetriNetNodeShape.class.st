@@ -20,9 +20,9 @@ OPPetriNetNodeShape >> color: aColor [
 OPPetriNetNodeShape >> renderShapeDetails [
 
 	| label selectable |
-	label := RSLabeled new.
+	label := OPRSLabeled new.
 	label location below.
-	label shapeBuilder labelShape color: Color black.
+	label color: Color black.
 	roassalShape addInteraction: label.
 
 	roassalShape @ OPRSSelectionDraggable.
