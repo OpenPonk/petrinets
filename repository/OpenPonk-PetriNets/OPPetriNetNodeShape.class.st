@@ -48,9 +48,10 @@ OPPetriNetNodeShape >> updateRenderFromModel [
 ]
 
 { #category : #'as yet unclassified' }
-OPPetriNetNodeShape >> updateRenderFromSelf [
+OPPetriNetNodeShape >> updateRenderFromStyles [
 
 	self isRendered ifFalse: [ ^ self ].
 	roassalShape color: self color.
-	super updateRenderFromSelf
+	super updateRenderFromStyles.
+	self roassalShape signalUpdate
 ]
