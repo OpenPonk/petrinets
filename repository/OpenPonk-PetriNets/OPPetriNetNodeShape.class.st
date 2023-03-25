@@ -1,20 +1,10 @@
 Class {
 	#name : #OPPetriNetNodeShape,
 	#superclass : #OPShape,
+	#traits : 'OPTDIColoredAsFill',
+	#classTraits : 'OPTDIColoredAsFill classTrait',
 	#category : #'OpenPonk-PetriNets-DiagramElements'
 }
-
-{ #category : #'as yet unclassified' }
-OPPetriNetNodeShape >> color [
-
-	^ self stylePropertyNamed: #fillColor ifAbsent: [ Color transparent ]
-]
-
-{ #category : #'as yet unclassified' }
-OPPetriNetNodeShape >> color: aColor [
-
-	^ self stylePropertyNamed: #fillColor put: aColor
-]
 
 { #category : #rendering }
 OPPetriNetNodeShape >> renderShapeDetails [
@@ -45,13 +35,4 @@ OPPetriNetNodeShape >> updateRenderFromModel [
 	super updateRenderFromModel.
 
 	roassalShape signalUpdate
-]
-
-{ #category : #'as yet unclassified' }
-OPPetriNetNodeShape >> updateRenderFromStyles [
-
-	self isRendered ifFalse: [ ^ self ].
-	roassalShape color: self color.
-	super updateRenderFromStyles.
-	self roassalShape signalUpdate
 ]
