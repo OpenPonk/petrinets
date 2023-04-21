@@ -24,7 +24,7 @@ OPPetriNetTransitionShape >> playClicked [
 OPPetriNetTransitionShape >> renderBasicShape [
 
 	^ RSBox new
-		  size: 35;
+		  size: 40;
 		  borderColor: Color black;
 		  yourself
 ]
