@@ -8,13 +8,13 @@ Class {
 BaselineOfPetriNets >> baseline: spec [
 
 	<baseline>
-	spec for: #common do: [ 
+	spec for: #common do: [
 		spec
 			baseline: 'OpenPonk'
-			with: [ spec repository: 'github://openponk/openponk:dev-roassal3' ].
-		spec baseline: 'OpenPonkSimulation' with: [ 
+			with: [ spec repository: 'github://openponk/openponk' ].
+		spec baseline: 'OpenPonkSimulation' with: [
 			spec
-				repository: 'github://JanBliznicenko/openponk-simulation:dev-roassal3';
+				repository: 'github://JanBliznicenko/openponk-simulation';
 				loads: 'plugin' ].
 		spec
 			package: 'OpenPonk-PetriNets'
