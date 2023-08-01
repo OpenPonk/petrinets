@@ -49,16 +49,22 @@ OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
 		        color: (Color r: 0.2 g: 0.75 b: 0.1);
 		        yourself.
 	RSLocation new stick: icon on: transitionHelper.
-	transitionHelper when: RSMouseLeftClick do: [ self playClicked ].
-	aHighlightable when: RSHighlightEvent do: [ 
-		roassalShape canvas
-			add: transitionHelper;
-			add: icon ].
-	removal := [ 
+	transitionHelper
+		when: RSMouseLeftClick
+		do: [ self playClicked ]
+		for: self.
+	aHighlightable
+		when: RSHighlightEvent
+		do: [
+			roassalShape canvas
+				add: transitionHelper;
+				add: icon ]
+		for: self.
+	removal := [
 	           transitionHelper remove.
 	           icon remove ].
-	aHighlightable when: RSUnHighlightEvent do: removal.
-	roassalShape when: RSShapeRemovedEvent do: removal
+	aHighlightable when: RSUnHighlightEvent do: removal for: self.
+	roassalShape when: RSShapeRemovedEvent do: removal for: self
 ]
 
 { #category : #hooks }

@@ -33,9 +33,12 @@ OPPetriNetPlaceShape >> renderShapeDetails [
 	super renderShapeDetails.
 	self canvas addAll: self createTokenGroup.
 	RSLocation new stick: self tokenCircle on: self roassalShape.
-	self roassalShape when: RSShapeRemovedEvent do: [ 
-		tokenGroup do: #remove.
-		tokenGroup := nil ]
+	self roassalShape
+		when: RSShapeRemovedEvent
+		do: [
+			tokenGroup do: #remove.
+			tokenGroup := nil ]
+		for: self
 ]
 
 { #category : #private }
