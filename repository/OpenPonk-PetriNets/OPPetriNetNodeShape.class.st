@@ -9,22 +9,23 @@ Class {
 { #category : #rendering }
 OPPetriNetNodeShape >> renderShapeDetails [
 
-	| label selectable |
+	| label |
 	label := OPRSLabeled new.
 	label location below.
 	label color: Color black.
-	roassalShape addInteraction: label.
-
-	roassalShape @ OPRSSelectionDraggable.
-	selectable := OPRSSelectable new.
-	self setupHighlight: selectable.
-	roassalShape @ selectable
+	roassalShape addInteraction: label
 ]
 
 { #category : #hooks }
-OPPetriNetNodeShape >> setupHighlight: aHighlightable [
+OPPetriNetNodeShape >> selectableInteraction [
 
-	aHighlightable highlightBorderColor: Color blue
+	^ OPRSSelectable highlightBorderColorBlue
+]
+
+{ #category : #rendering }
+OPPetriNetNodeShape >> shouldBePositionableByUser [
+
+	^ true
 ]
 
 { #category : #rendering }

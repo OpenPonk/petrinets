@@ -30,10 +30,10 @@ OPPetriNetTransitionShape >> renderBasicShape [
 ]
 
 { #category : #hooks }
-OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
+OPPetriNetTransitionShape >> selectableInteraction [
 
-	| icon transitionHelper removal |
-	super setupHighlight: aHighlightable.
+	| selectableInteraction icon transitionHelper removal |
+	selectableInteraction := super selectableInteraction.
 	transitionHelper := RSBox new
 		                    size: 18;
 		                    color: Color transparent;
@@ -53,7 +53,7 @@ OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
 		when: RSMouseLeftClick
 		do: [ self playClicked ]
 		for: self.
-	aHighlightable
+	selectableInteraction
 		when: RSHighlightEvent
 		do: [
 			roassalShape canvas
@@ -63,8 +63,9 @@ OPPetriNetTransitionShape >> setupHighlight: aHighlightable [
 	removal := [
 	           transitionHelper remove.
 	           icon remove ].
-	aHighlightable when: RSUnHighlightEvent do: removal for: self.
-	roassalShape when: RSShapeRemovedEvent do: removal for: self
+	selectableInteraction when: RSUnHighlightEvent do: removal for: self.
+	roassalShape when: RSShapeRemovedEvent do: removal for: self.
+	^ selectableInteraction
 ]
 
 { #category : #hooks }

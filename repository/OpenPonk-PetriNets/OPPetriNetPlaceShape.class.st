@@ -7,6 +7,13 @@ Class {
 	#category : #'OpenPonk-PetriNets-DiagramElements'
 }
 
+{ #category : #rendering }
+OPPetriNetPlaceShape >> addInteractions [
+
+	super addInteractions.
+	self addEventForwardingFrom: self tokenCircle to: self roassalShape
+]
+
 { #category : #private }
 OPPetriNetPlaceShape >> createTokenGroup [
 
