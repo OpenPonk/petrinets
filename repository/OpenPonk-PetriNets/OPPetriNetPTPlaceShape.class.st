@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetPTPlaceShape,
 	#superclass : #OPPetriNetPlaceShape,
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #private }

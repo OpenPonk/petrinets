@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetResetArcShape,
 	#superclass : #OPPetriNetArcShape,
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #hooks }

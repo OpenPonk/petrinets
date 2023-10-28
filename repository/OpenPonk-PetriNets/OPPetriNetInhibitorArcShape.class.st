@@ -1,7 +1,7 @@
 Class {
 	#name : #OPPetriNetInhibitorArcShape,
 	#superclass : #OPPetriNetArcShape,
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #hooks }

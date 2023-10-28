@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'tokenGroup'
 	],
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #rendering }

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'playClickedBlock'
 	],
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #hooks }

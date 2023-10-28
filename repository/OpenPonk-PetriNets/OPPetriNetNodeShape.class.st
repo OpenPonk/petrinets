@@ -1,9 +1,9 @@
 Class {
 	#name : #OPPetriNetNodeShape,
-	#superclass : #OPShape,
-	#traits : 'OPTDIColoredAsFill',
-	#classTraits : 'OPTDIColoredAsFill classTrait',
-	#category : #'OpenPonk-PetriNets-DiagramElements'
+	#superclass : #OPBoundNode,
+	#traits : 'OPTColoredAsFill',
+	#classTraits : 'OPTColoredAsFill classTrait',
+	#category : #'OpenPonk-PetriNets-Shapes'
 }
 
 { #category : #rendering }
