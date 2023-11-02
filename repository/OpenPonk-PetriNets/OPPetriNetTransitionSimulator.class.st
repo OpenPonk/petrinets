@@ -15,16 +15,16 @@ Class {
 	#instVars : [
 		'firing'
 	],
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#category : #'OpenPonk-PetriNets-Simulation'
 }
 
 { #category : #testing }
-OPPetriNetTransitionSimulator >> canReceiveTokens: anAmount [
+OPPetriNetTransitionSimulator >> canReceivePetriNetTokens: anAmount [
 	^ true
 ]
 
 { #category : #testing }
-OPPetriNetTransitionSimulator >> canSendTokens: anAmount [
+OPPetriNetTransitionSimulator >> canSendPetriNetTokens: anAmount [
 	^ true
 ]
 

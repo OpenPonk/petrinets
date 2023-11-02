@@ -4,22 +4,22 @@ I simulate Petri net place element
 Class {
 	#name : #OPPetriNetPlaceSimulator,
 	#superclass : #OPPetriNetNodeSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#category : #'OpenPonk-PetriNets-Simulation'
 }
 
 { #category : #'integer tokens' }
-OPPetriNetPlaceSimulator >> addTokensAmount: anInteger [
-	self tokensAmount: self tokensAmount + anInteger
+OPPetriNetPlaceSimulator >> addPetriNetTokens: anInteger [
+	self petriNetTokens: self petriNetTokens + anInteger
 ]
 
 { #category : #testing }
-OPPetriNetPlaceSimulator >> canReceiveTokens: anAmount [
-	^ self tokensAmount + anAmount <= self capacity
+OPPetriNetPlaceSimulator >> canReceivePetriNetTokens: anAmount [
+	^ self petriNetTokens + anAmount <= self capacity
 ]
 
 { #category : #testing }
-OPPetriNetPlaceSimulator >> canSendTokens: anAmount [
-	^ self tokensAmount >= anAmount
+OPPetriNetPlaceSimulator >> canSendPetriNetTokens: anAmount [
+	^ self petriNetTokens >= anAmount
 ]
 
 { #category : #'integer tokens' }
@@ -46,16 +46,16 @@ OPPetriNetPlaceSimulator >> loadState [
 ]
 
 { #category : #'integer tokens' }
-OPPetriNetPlaceSimulator >> removeTokensAmount: anInteger [
-	self tokensAmount: self tokensAmount - anInteger
-]
-
-{ #category : #'integer tokens' }
-OPPetriNetPlaceSimulator >> tokensAmount [
+OPPetriNetPlaceSimulator >> petriNetTokens [
 	^ self model tokens
 ]
 
 { #category : #'integer tokens' }
-OPPetriNetPlaceSimulator >> tokensAmount: anInteger [
+OPPetriNetPlaceSimulator >> petriNetTokens: anInteger [
 	self model tokens: anInteger
+]
+
+{ #category : #'integer tokens' }
+OPPetriNetPlaceSimulator >> removePetriNetTokens: anInteger [
+	self petriNetTokens: self petriNetTokens - anInteger
 ]

@@ -8,7 +8,7 @@ Class {
 		'inc',
 		'out'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : #'OpenPonk-PetriNets-Tests'
 }
 
 { #category : #hooks }
@@ -50,23 +50,24 @@ OPPetriNetTransitionSimulatorTest >> setUp [
 
 { #category : #tests }
 OPPetriNetTransitionSimulatorTest >> testFiring [
-	self assert: inc tokensAmount = 4.
-	self assert: out tokensAmount = 4.
+
+	self assert: inc petriNetTokens equals: 4.
+	self assert: out petriNetTokens equals: 4.
 	simulator fireIncoming.
-	self assert: inc tokensAmount = 3.
-	self assert: out tokensAmount = 4.
+	self assert: inc petriNetTokens equals: 3.
+	self assert: out petriNetTokens equals: 4.
 	simulator fireOutgoing.
-	self assert: inc tokensAmount = 3.
-	self assert: out tokensAmount = 5.
+	self assert: inc petriNetTokens equals: 3.
+	self assert: out petriNetTokens equals: 5.
 	simulator doAction: 1.
-	self assert: inc tokensAmount = 2.
-	self assert: out tokensAmount = 5.
+	self assert: inc petriNetTokens equals: 2.
+	self assert: out petriNetTokens equals: 5.
 	simulator doAction: 2.
-	self assert: inc tokensAmount = 2.
-	self assert: out tokensAmount = 6.
+	self assert: inc petriNetTokens equals: 2.
+	self assert: out petriNetTokens equals: 6.
 	simulator step.
-	self assert: inc tokensAmount = 1.
-	self assert: out tokensAmount = 7
+	self assert: inc petriNetTokens equals: 1.
+	self assert: out petriNetTokens equals: 7
 ]
 
 { #category : #tests }

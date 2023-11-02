@@ -4,12 +4,12 @@ I simulate reset arc
 Class {
 	#name : #OPPetriNetResetArcSimulator,
 	#superclass : #OPPetriNetInputArcSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#category : #'OpenPonk-PetriNets-Simulation'
 }
 
 { #category : #actions }
 OPPetriNetResetArcSimulator >> handleFire [
-	self source tokensAmount: 0
+	self source petriNetTokens: 0
 ]
 
 { #category : #testing }

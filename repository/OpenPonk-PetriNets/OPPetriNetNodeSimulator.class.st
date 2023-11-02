@@ -4,28 +4,28 @@ I'm simulator for non-edge elements.
 Class {
 	#name : #OPPetriNetNodeSimulator,
 	#superclass : #OPElementSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#category : #'OpenPonk-PetriNets-Simulation'
 }
 
 { #category : #'integer tokens' }
-OPPetriNetNodeSimulator >> addTokensAmount: anInteger [
+OPPetriNetNodeSimulator >> addPetriNetTokens: anInteger [
 	"do nothing"
 
 	
 ]
 
 { #category : #testing }
-OPPetriNetNodeSimulator >> canReceiveTokens: anAmount [
+OPPetriNetNodeSimulator >> canReceivePetriNetTokens: anAmount [
 	self subclassResponsibility
 ]
 
 { #category : #testing }
-OPPetriNetNodeSimulator >> canSendTokens: anAmount [
+OPPetriNetNodeSimulator >> canSendPetriNetTokens: anAmount [
 	self subclassResponsibility
 ]
 
 { #category : #'integer tokens' }
-OPPetriNetNodeSimulator >> removeTokensAmount: anInteger [
+OPPetriNetNodeSimulator >> removePetriNetTokens: anInteger [
 	"do nothing"
 
 	
