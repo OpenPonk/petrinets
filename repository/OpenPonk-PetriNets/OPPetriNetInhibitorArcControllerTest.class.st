@@ -12,11 +12,6 @@ OPPetriNetInhibitorArcControllerTest >> controllerClass [
 	^ OPPetriNetInhibitorArcController
 ]
 
-{ #category : #hooks }
-OPPetriNetInhibitorArcControllerTest >> desiredHeadShape [
-	^ RTEmptyCircle
-]
-
 { #category : #construction }
 OPPetriNetInhibitorArcControllerTest >> diagramElementClass [
 

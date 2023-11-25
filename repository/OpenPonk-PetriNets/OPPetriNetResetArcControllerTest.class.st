@@ -12,12 +12,6 @@ OPPetriNetResetArcControllerTest >> controllerClass [
 	^ OPPetriNetResetArcController
 ]
 
-{ #category : #hooks }
-OPPetriNetResetArcControllerTest >> desiredHeadShape [
-	^ OPRTEmptyDoubleArrow
-
-]
-
 { #category : #construction }
 OPPetriNetResetArcControllerTest >> diagramElementClass [
 

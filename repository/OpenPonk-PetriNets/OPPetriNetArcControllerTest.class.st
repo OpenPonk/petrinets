@@ -25,11 +25,6 @@ OPPetriNetArcControllerTest >> amountOfLabels [
 ]
 
 { #category : #hooks }
-OPPetriNetArcControllerTest >> desiredHeadShape [
-	^ self subclassResponsibility
-]
-
-{ #category : #hooks }
 OPPetriNetArcControllerTest >> fromClass [
 	^ self subclassResponsibility
 ]
