@@ -1,21 +1,23 @@
 Class {
-	#name : #OPPetriNetTransitionController,
-	#superclass : #OPPetriNetNodeController,
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetTransitionController',
+	#superclass : 'OPPetriNetNodeController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OPPetriNetTransitionController class >> initializePossibleConnected [
 	PossibleOutgoing := Set with: OPPetriNetNormalArcController
 ]
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetTransitionController >> diagramElementClass [
 
 	^ OPPetriNetTransitionShape
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetTransitionController >> hookDiagramElement [
 
 	super hookDiagramElement.
@@ -24,7 +26,7 @@ OPPetriNetTransitionController >> hookDiagramElement [
 		OPPetriNetSimulationGUI stepSimulatorOfController: self ]
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionController >> modelClass [
 	^ OPPetriNetTransition
 ]

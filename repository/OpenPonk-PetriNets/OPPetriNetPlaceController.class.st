@@ -1,13 +1,15 @@
 Class {
-	#name : #OPPetriNetPlaceController,
-	#superclass : #OPPetriNetNodeController,
+	#name : 'OPPetriNetPlaceController',
+	#superclass : 'OPPetriNetNodeController',
 	#instVars : [
 		'tokenGroup'
 	],
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OPPetriNetPlaceController class >> initializePossibleConnected [
 	PossibleOutgoing := Set
 		with: OPPetriNetInhibitorArcController

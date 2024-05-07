@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetsExamples,
-	#superclass : #Object,
-	#category : #'OpenPonk-PetriNets-Examples'
+	#name : 'OPPetriNetsExamples',
+	#superclass : 'Object',
+	#category : 'OpenPonk-PetriNets-Examples',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Examples'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 OPPetriNetsExamples class >> exampleEmpty [
 
 	| project model |
@@ -14,7 +16,7 @@ OPPetriNetsExamples class >> exampleEmpty [
 	OPWorkbench openProject: project
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 OPPetriNetsExamples class >> examplePetriNets [
 
 	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 workbench |
@@ -52,7 +54,7 @@ OPPetriNetsExamples class >> examplePetriNets [
 	(OPProject openOnModel: model) showAllElementsInAllDiagrams
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 OPPetriNetsExamples class >> menuCommandOn: aBuilder [
 
 	<worldMenu>

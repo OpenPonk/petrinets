@@ -2,23 +2,25 @@
 A DCPetriNetInhibitorArcControllerTest is a test class for testing the behavior of DCPetriNetInhibitorArcController
 "
 Class {
-	#name : #OPPetriNetInhibitorArcControllerTest,
-	#superclass : #OPPetriNetInputArcControllerTest,
-	#category : #'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetInhibitorArcControllerTest',
+	#superclass : 'OPPetriNetInputArcControllerTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetInhibitorArcControllerTest >> controllerClass [
 	^ OPPetriNetInhibitorArcController
 ]
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetInhibitorArcControllerTest >> diagramElementClass [
 
 	^ OPPetriNetInhibitorArcShape
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetInhibitorArcControllerTest >> modelClass [
 	^ OPPetriNetInhibitorArc
 ]

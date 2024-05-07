@@ -2,31 +2,33 @@
 A DCPetriNetNodeSimulatorTest is a test class for testing the behavior of DCPetriNetNodeSimulator
 "
 Class {
-	#name : #OPPetriNetNodeSimulatorTest,
-	#superclass : #TestCase,
+	#name : 'OPPetriNetNodeSimulatorTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'model',
 		'simulator'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeSimulatorTest class >> isAbstract [
 	^ self == OPPetriNetNodeSimulatorTest
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNodeSimulatorTest >> controllerClass [
 	^ self subclassResponsibility
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNodeSimulatorTest >> exampleModel [
 	^ self subclassResponsibility
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetNodeSimulatorTest >> setUp [
 	super setUp.
 	model := self exampleModel.

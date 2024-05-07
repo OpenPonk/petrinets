@@ -2,20 +2,22 @@
 A DCPetriNetSimulatorTest is a test class for testing the behavior of DCPetriNetSimulator
 "
 Class {
-	#name : #OPPetriNetSimulatorTest,
-	#superclass : #TestCase,
+	#name : 'OPPetriNetSimulatorTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'simulator'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetSimulatorTest >> controllerClass [
 	^ OPPetriNetSimulator
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetSimulatorTest >> exampleModel [
 	| model place1 arc1 arc2 arc3 arc4 place2 place3 place4 trans1 trans2 arc5 |
 	model := OPPetriNet new name: 'Petri Net Diagram'.
@@ -60,12 +62,12 @@ OPPetriNetSimulatorTest >> exampleModel [
 	^ model
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetSimulatorTest >> setUp [
 	simulator := self controllerClass model: self exampleModel
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testDefaultStepping [
 	| items item stepped didAction |
 	simulator setDefaultStepping.
@@ -86,7 +88,7 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 	self assert: didAction size = 2
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testSteppingAll [
 	| items stepped didAction |
 	simulator setSteppingAll.

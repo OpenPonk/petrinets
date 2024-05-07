@@ -1,26 +1,28 @@
 Class {
-	#name : #OPPetriNetTransitionShape,
-	#superclass : #OPPetriNetNodeShape,
+	#name : 'OPPetriNetTransitionShape',
+	#superclass : 'OPPetriNetNodeShape',
 	#instVars : [
 		'playClickedBlock'
 	],
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionShape >> initialize [
 
 	super initialize.
 	playClickedBlock := [  ]
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionShape >> playClicked [
 
 	playClickedBlock value
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionShape >> renderBasicShape [
 
 	^ RSBox new
@@ -29,7 +31,7 @@ OPPetriNetTransitionShape >> renderBasicShape [
 		  yourself
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionShape >> selectableInteraction [
 
 	| selectableInteraction icon transitionHelper removal |
@@ -68,7 +70,7 @@ OPPetriNetTransitionShape >> selectableInteraction [
 	^ selectableInteraction
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionShape >> whenPlayClickedDo: aBlock [
 
 	playClickedBlock := aBlock

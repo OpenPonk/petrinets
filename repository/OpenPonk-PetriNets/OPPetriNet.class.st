@@ -2,27 +2,29 @@
 DCPetriNet represents Petri net diagram
 "
 Class {
-	#name : #OPPetriNet,
-	#superclass : #OPModelObject,
-	#category : 'OpenPonk-PetriNets-Models'
+	#name : 'OPPetriNet',
+	#superclass : 'OPModelObject',
+	#category : 'OpenPonk-PetriNets-Models',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNet >> arcs [
 	^ elements select: #isArc
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNet >> nodes [
 	^ elements select: #isNode
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNet >> places [
 	^ elements select: #isPlace
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNet >> transitions [
 	^ elements select: #isTransition
 ]

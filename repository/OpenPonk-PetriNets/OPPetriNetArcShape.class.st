@@ -1,24 +1,26 @@
 Class {
-	#name : #OPPetriNetArcShape,
-	#superclass : #OPEdge,
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#name : 'OPPetriNetArcShape',
+	#superclass : 'OPEdge',
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #creation }
+{ #category : 'creation' }
 OPPetriNetArcShape >> createOwnedElementsWithoutController [
 
 	self ownedElements ifNotEmpty: [ ^ self ].
 	OPPetriNetArcNameShape in: self
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcShape >> headMarker [
 	"line decoration shape used as head marker"
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetArcShape >> renderBasicShape [
 
 	^ (self source = self target

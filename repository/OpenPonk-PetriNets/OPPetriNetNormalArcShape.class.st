@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetNormalArcShape,
-	#superclass : #OPPetriNetWeightedArcShape,
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#name : 'OPPetriNetNormalArcShape',
+	#superclass : 'OPPetriNetWeightedArcShape',
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNormalArcShape >> headMarker [
 
 	^ OPRSMarkerBuilder arrow

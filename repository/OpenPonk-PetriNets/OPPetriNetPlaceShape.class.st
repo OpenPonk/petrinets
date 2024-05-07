@@ -1,20 +1,22 @@
 Class {
-	#name : #OPPetriNetPlaceShape,
-	#superclass : #OPPetriNetNodeShape,
+	#name : 'OPPetriNetPlaceShape',
+	#superclass : 'OPPetriNetNodeShape',
 	#instVars : [
 		'tokenGroup'
 	],
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetPlaceShape >> addInteractions [
 
 	super addInteractions.
 	self addEventForwardingFrom: self tokenCircle to: self roassalShape
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceShape >> createTokenGroup [
 
 	| circle |
@@ -25,7 +27,7 @@ OPPetriNetPlaceShape >> createTokenGroup [
 	^ tokenGroup := RSGroup with: circle
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceShape >> renderBasicShape [
 
 	^ RSCircle new
@@ -34,7 +36,7 @@ OPPetriNetPlaceShape >> renderBasicShape [
 		  yourself
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetPlaceShape >> renderShapeDetails [
 
 	super renderShapeDetails.
@@ -48,14 +50,14 @@ OPPetriNetPlaceShape >> renderShapeDetails [
 		for: self
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceShape >> tokenCircle [
 	"returns circle element representing presence of token(s)"
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceShape >> tokenGroup [
 
 	tokenGroup ifNotNil: [ ^ tokenGroup ].
@@ -68,7 +70,7 @@ OPPetriNetPlaceShape >> tokenGroup [
 	^ tokenGroup
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceShape >> updateRenderFromModel [
 
 	self updateTokenAmount: self modelElement tokens.
@@ -76,7 +78,7 @@ OPPetriNetPlaceShape >> updateRenderFromModel [
 	super updateRenderFromModel
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceShape >> updateTokenAmount: aValue [
 	self subclassResponsibility
 ]

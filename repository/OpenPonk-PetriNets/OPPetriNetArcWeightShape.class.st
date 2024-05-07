@@ -1,16 +1,18 @@
 Class {
-	#name : #OPPetriNetArcWeightShape,
-	#superclass : #OPPetriNetArcLabel,
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#name : 'OPPetriNetArcWeightShape',
+	#superclass : 'OPPetriNetArcLabel',
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OPPetriNetArcWeightShape >> defaultAnchorConstraintPosition [
 
 	^ OPRSAnchorConstraintBalanceReference balance: 0.7
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetArcWeightShape >> defaultText [
 
 	| weight |

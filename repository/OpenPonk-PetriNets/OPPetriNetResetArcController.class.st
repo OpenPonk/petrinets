@@ -1,16 +1,18 @@
 Class {
-	#name : #OPPetriNetResetArcController,
-	#superclass : #OPPetriNetArcController,
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetResetArcController',
+	#superclass : 'OPPetriNetArcController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetResetArcController >> diagramElementClass [
 
 	^ OPPetriNetResetArcShape
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetResetArcController >> modelClass [
 	^ OPPetriNetResetArc
 ]

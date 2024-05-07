@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetPTPlaceController,
-	#superclass : #OPPetriNetPlaceController,
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetPTPlaceController',
+	#superclass : 'OPPetriNetPlaceController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 
 	| tokensSpTextPresenter |
@@ -32,23 +34,24 @@ OPPetriNetPTPlaceController >> buildEditorForm: aForm [
 					(newValue asString asInteger ifNil: [ SmallInteger maxVal ]) ]
 ]
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetPTPlaceController >> diagramElementClass [
 
 	^ OPPetriNetPTPlaceShape
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPTPlaceController >> modelClass [
 	^ OPPetriNetPTPlace
 ]
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetPTPlaceController >> renderDiagramElement [
 
 	super renderDiagramElement.
 	model
 		when: OPPlaceTokensChanged
-		do: [ self diagramElement modelChanged ].
+		do: [ self diagramElement modelChanged ]
+		for: self.
 	^ self roassalShape
 ]

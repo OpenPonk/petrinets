@@ -2,28 +2,30 @@
 A DCPetriNetPlaceControllerTest is a test class for testing the behavior of DCPetriNetPlaceController
 "
 Class {
-	#name : #OPPetriNetPlaceWithTokensControllerTest,
-	#superclass : #OPPetriNetNodeControllerTest,
-	#category : #'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetPlaceWithTokensControllerTest',
+	#superclass : 'OPPetriNetNodeControllerTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceWithTokensControllerTest >> controllerClass [
 	^ OPPetriNetPTPlaceController
 ]
 
-{ #category : #construction }
+{ #category : 'construction' }
 OPPetriNetPlaceWithTokensControllerTest >> diagramElementClass [
 
 	^ OPPetriNetPTPlaceShape
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceWithTokensControllerTest >> modelClass [
 	^ OPPetriNetPTPlace
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 
 	controller createModelIn: diagramController model.

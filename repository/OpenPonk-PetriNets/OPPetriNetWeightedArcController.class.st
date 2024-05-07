@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetWeightedArcController,
-	#superclass : #OPPetriNetArcController,
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetWeightedArcController',
+	#superclass : 'OPPetriNetArcController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #forms }
+{ #category : 'forms' }
 OPPetriNetWeightedArcController >> buildEditorForm: aForm [
 
 	super buildEditorForm: aForm.

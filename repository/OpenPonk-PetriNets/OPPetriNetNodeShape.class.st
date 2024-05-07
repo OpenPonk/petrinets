@@ -1,12 +1,14 @@
 Class {
-	#name : #OPPetriNetNodeShape,
-	#superclass : #OPBoundNode,
+	#name : 'OPPetriNetNodeShape',
+	#superclass : 'OPBoundNode',
 	#traits : 'OPTColoredAsFill',
 	#classTraits : 'OPTColoredAsFill classTrait',
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetNodeShape >> renderShapeDetails [
 
 	| label |
@@ -16,19 +18,19 @@ OPPetriNetNodeShape >> renderShapeDetails [
 	roassalShape addInteraction: label
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNodeShape >> selectableInteraction [
 
 	^ OPRSSelectable highlightBorderColorBlue
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetNodeShape >> shouldBePositionableByUser [
 
 	^ true
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetNodeShape >> updateRenderFromModel [
 
 	(roassalShape propertyAt: #RSLabeled) text: self modelElement name.

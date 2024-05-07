@@ -2,28 +2,30 @@
 A DCPetriNetTransitionSimulatorTest is a test class for testing the behavior of DCPetriNetTransitionSimulator
 "
 Class {
-	#name : #OPPetriNetTransitionSimulatorTest,
-	#superclass : #OPPetriNetNodeSimulatorTest,
+	#name : 'OPPetriNetTransitionSimulatorTest',
+	#superclass : 'OPPetriNetNodeSimulatorTest',
 	#instVars : [
 		'inc',
 		'out'
 	],
-	#category : #'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionSimulatorTest >> controllerClass [
 	^ OPPetriNetTransitionSimulator
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionSimulatorTest >> exampleModel [
 	^ OPPetriNetTransition new
 		name: 'T1';
 		yourself
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetTransitionSimulatorTest >> setUp [
 	super setUp.
 
@@ -48,7 +50,7 @@ OPPetriNetTransitionSimulatorTest >> setUp [
 		yourself
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testFiring [
 
 	self assert: inc petriNetTokens equals: 4.
@@ -70,7 +72,7 @@ OPPetriNetTransitionSimulatorTest >> testFiring [
 	self assert: out petriNetTokens equals: 7
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testSteppable [
 	self assert: simulator isSimulable.
 	self assert: simulator isSteppable.

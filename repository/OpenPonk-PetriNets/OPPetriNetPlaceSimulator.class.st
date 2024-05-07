@@ -2,42 +2,44 @@
 I simulate Petri net place element
 "
 Class {
-	#name : #OPPetriNetPlaceSimulator,
-	#superclass : #OPPetriNetNodeSimulator,
-	#category : #'OpenPonk-PetriNets-Simulation'
+	#name : 'OPPetriNetPlaceSimulator',
+	#superclass : 'OPPetriNetNodeSimulator',
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #'integer tokens' }
+{ #category : 'integer tokens' }
 OPPetriNetPlaceSimulator >> addPetriNetTokens: anInteger [
 	self petriNetTokens: self petriNetTokens + anInteger
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetPlaceSimulator >> canReceivePetriNetTokens: anAmount [
 	^ self petriNetTokens + anAmount <= self capacity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetPlaceSimulator >> canSendPetriNetTokens: anAmount [
 	^ self petriNetTokens >= anAmount
 ]
 
-{ #category : #'integer tokens' }
+{ #category : 'integer tokens' }
 OPPetriNetPlaceSimulator >> capacity [
 	^ self model capacity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetPlaceSimulator >> isSimulable [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetPlaceSimulator >> isSteppable [
 	^ false
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetPlaceSimulator >> loadState [
 	"loads state of model into simulator"
 
@@ -45,17 +47,17 @@ OPPetriNetPlaceSimulator >> loadState [
 	model tokens: startingModel tokens
 ]
 
-{ #category : #'integer tokens' }
+{ #category : 'integer tokens' }
 OPPetriNetPlaceSimulator >> petriNetTokens [
 	^ self model tokens
 ]
 
-{ #category : #'integer tokens' }
+{ #category : 'integer tokens' }
 OPPetriNetPlaceSimulator >> petriNetTokens: anInteger [
 	self model tokens: anInteger
 ]
 
-{ #category : #'integer tokens' }
+{ #category : 'integer tokens' }
 OPPetriNetPlaceSimulator >> removePetriNetTokens: anInteger [
 	self petriNetTokens: self petriNetTokens - anInteger
 ]

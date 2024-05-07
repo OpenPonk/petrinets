@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetPTPlaceShape,
-	#superclass : #OPPetriNetPlaceShape,
-	#category : #'OpenPonk-PetriNets-Shapes'
+	#name : 'OPPetriNetPTPlaceShape',
+	#superclass : 'OPPetriNetPlaceShape',
+	#category : 'OpenPonk-PetriNets-Shapes',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Shapes'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPTPlaceShape >> createTokenGroup [
 
 	| label |
@@ -22,21 +24,21 @@ OPPetriNetPTPlaceShape >> createTokenGroup [
 	^ tokenGroup
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPTPlaceShape >> tokenCircle [
 	"returns circle element representing presence of token(s)"
 
 	^ self tokenGroup first
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPTPlaceShape >> tokenLabel [
 	"returns label element representing amount of tokens"
 
 	^ self tokenGroup second
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlaceShape >> tokenText: aString [
 
 	"sets token amount label text"
@@ -48,7 +50,7 @@ OPPetriNetPTPlaceShape >> tokenText: aString [
 			 yourself)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPTPlaceShape >> updateTokenAmount: aNumber [
 
 	"updates token shape and label to show aNumber amount of tokens"

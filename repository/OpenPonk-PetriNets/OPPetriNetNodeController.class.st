@@ -1,24 +1,26 @@
 Class {
-	#name : #OPPetriNetNodeController,
-	#superclass : #OPElementController,
+	#name : 'OPPetriNetNodeController',
+	#superclass : 'OPElementController',
 	#classInstVars : [
 		'PossibleOutgoing'
 	],
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 OPPetriNetNodeController class >> initializePossibleConnected [
 	self subclassResponsibility
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeController class >> isPossibleOutgoing: aController [
 	PossibleOutgoing ifNil: [ self initializePossibleConnected ].
 	^ PossibleOutgoing includes: aController
 ]
 
-{ #category : #forms }
+{ #category : 'forms' }
 OPPetriNetNodeController >> buildEditorForm: aForm [
 
 	(aForm addText: 'Name')
@@ -28,44 +30,45 @@ OPPetriNetNodeController >> buildEditorForm: aForm [
 			self diagramElement modelChanged ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeController >> canBeSourceFor: aController [
 	^ self class isPossibleOutgoing: aController class
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeController >> canBeTargetFor: aController [
 	^ (aController isKindOf: OPPetriNetArcController) and: [ self class ~= aController source class ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetNodeController >> dependentElements [
 	^ (model incoming , model outgoing) asSet
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetNodeController >> diagramElementClass [
 
 	^ OPPetriNetNodeShape
 ]
 
-{ #category : #announcements }
+{ #category : 'announcements' }
 OPPetriNetNodeController >> internalSubscribeTo: aModel [
+
 	super internalSubscribeTo: aModel.
-	aModel when: OPElementRemoved do: [ :e | self removeController ]
+	aModel when: OPElementRemoved send: #removeController to: self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeController >> isHideable [
 	^ true
 ]
 
-{ #category : #connecting }
+{ #category : 'connecting' }
 OPPetriNetNodeController >> modelAsParent [
 	^ self model owner
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 OPPetriNetNodeController >> removeModel [
 	self model announcer unsubscribe: self.
 	self diagramController model remove: self model

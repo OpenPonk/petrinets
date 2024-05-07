@@ -2,12 +2,14 @@
 A DCPetriNetNormalArcSimulatorTest is a test class for testing the behavior of DCPetriNetNormalArcSimulator
 "
 Class {
-	#name : #OPPetriNetNormalArcSimulatorTest,
-	#superclass : #OPPetriNetInputArcSimulatorTest,
-	#category : #'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetNormalArcSimulatorTest',
+	#superclass : 'OPPetriNetInputArcSimulatorTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNormalArcSimulatorTest >> controllerClass [
 	^ OPPetriNetNormalArcSimulator
 		model:
@@ -16,14 +18,14 @@ OPPetriNetNormalArcSimulatorTest >> controllerClass [
 				yourself)
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNormalArcSimulatorTest >> exampleModel [
 	^ OPPetriNetNormalArc new
 		weight: 2;
 		yourself
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNormalArcSimulatorTest >> testHandleFire [
 
 	self assert: place petriNetTokens equals: 10.
@@ -31,7 +33,7 @@ OPPetriNetNormalArcSimulatorTest >> testHandleFire [
 	self assert: place petriNetTokens equals: 8
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNormalArcSimulatorTest >> testIsEnabled [
 	self assert: simulator isEnabled.
 	place petriNetTokens: 0.

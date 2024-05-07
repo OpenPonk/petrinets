@@ -2,12 +2,14 @@
 I'm DCSimulationGUI for Petri nets
 "
 Class {
-	#name : #OPPetriNetSimulationGUI,
-	#superclass : #OPSimulationGUI,
-	#category : #'OpenPonk-PetriNets-Simulation'
+	#name : 'OPPetriNetSimulationGUI',
+	#superclass : 'OPSimulationGUI',
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetSimulationGUI class >> simulableControllerClasses [
 	"collection of element controllers whose single simulators can be fired independently
 	for example: in Petri nets, only transitions are simulable = one specific transition can be fired"
@@ -15,13 +17,13 @@ OPPetriNetSimulationGUI class >> simulableControllerClasses [
 	^ OrderedCollection with: OPPetriNetTransitionController
 ]
 
-{ #category : #toolbar }
+{ #category : 'toolbar' }
 OPPetriNetSimulationGUI class >> toolbarMenu: aBuilder [
 	<opEditorToolbarMenu: #OPPetriNetsPlugin>
 	self toolbarMenuItemFor: aBuilder
 ]
 
-{ #category : #'private - hooks' }
+{ #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> buttonItems [
 	^ super buttonItems
 		add:
@@ -54,7 +56,7 @@ OPPetriNetSimulationGUI >> buttonItems [
 		yourself
 ]
 
-{ #category : #'private - hooks' }
+{ #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> loadSimulation [
 
 	"prepares simulation - called with every reload"
@@ -76,7 +78,7 @@ OPPetriNetSimulationGUI >> loadSimulation [
 					controller roassalShape signalUpdate ] ] fork ] ] ]
 ]
 
-{ #category : #'private - hooks' }
+{ #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> simulatorClass [
 	^ OPPetriNetSimulator
 ]

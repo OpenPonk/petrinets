@@ -2,12 +2,14 @@
 DCPetriNetArc represents arc between a place and a transition
 "
 Class {
-	#name : #OPPetriNetArc,
-	#superclass : #OPDirectedAssociation,
-	#category : 'OpenPonk-PetriNets-Models'
+	#name : 'OPPetriNetArc',
+	#superclass : 'OPDirectedAssociation',
+	#category : 'OpenPonk-PetriNets-Models',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 OPPetriNetArc class >> from: aSource to: aTarget [
 	^ self new
 		source: aSource;
@@ -15,22 +17,22 @@ OPPetriNetArc class >> from: aSource to: aTarget [
 		yourself
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArc >> isArc [
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArc >> isNode [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArc >> isPlace [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArc >> isTransition [
 	^ false
 ]

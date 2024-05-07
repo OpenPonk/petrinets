@@ -1,10 +1,12 @@
 Class {
-	#name : #OPPetriNetArcController,
-	#superclass : #OPDirectionalRelationshipController,
-	#category : #'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetArcController',
+	#superclass : 'OPDirectionalRelationshipController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetArcController >> ensureSourceAndTargetIn: aDiagramController [
 
 	source ifNil: [ 
@@ -17,31 +19,32 @@ OPPetriNetArcController >> ensureSourceAndTargetIn: aDiagramController [
 				 model target) ]
 ]
 
-{ #category : #announcements }
+{ #category : 'announcements' }
 OPPetriNetArcController >> internalSubscribeTo: aModel [
+
 	super internalSubscribeTo: aModel.
-	aModel when: OPElementRemoved do: [ :e | self removeController ]
+	aModel when: OPElementRemoved send: #removeController to: self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArcController >> isHideable [
 	^ true
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 OPPetriNetArcController >> removeModel [
 	self model announcer unsubscribe: self.
 	self diagramController model remove: self model
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetArcController >> showInDiagram: aDiagramController [
 
 	self ensureSourceAndTargetIn: aDiagramController.
 	^ super showInDiagram: aDiagramController
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 OPPetriNetArcController >> showWithoutDependentInDiagram: aDiagramController [
 
 	self ensureSourceAndTargetIn: aDiagramController.

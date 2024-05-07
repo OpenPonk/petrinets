@@ -2,16 +2,18 @@
 A DCPetriNetArcControllerTest is a test class for testing the behavior of DCPetriNetArcController
 "
 Class {
-	#name : #OPPetriNetArcControllerTest,
-	#superclass : #OPPetriNetsControllerTest,
+	#name : 'OPPetriNetArcControllerTest',
+	#superclass : 'OPPetriNetsControllerTest',
 	#instVars : [
 		'fromCtrl',
 		'toCtrl'
 	],
-	#category : #'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArcControllerTest class >> isAbstract [
 	"Override to true if a TestCase subclass is Abstract and should not have
 	TestCase instances built from it"
@@ -19,17 +21,17 @@ OPPetriNetArcControllerTest class >> isAbstract [
 	^ self = OPPetriNetArcControllerTest
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcControllerTest >> amountOfLabels [
 	^ 1
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcControllerTest >> fromClass [
 	^ self subclassResponsibility
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetArcControllerTest >> setUp [
 
 	super setUp.
@@ -47,7 +49,7 @@ OPPetriNetArcControllerTest >> setUp [
 		renderDiagramElement
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetArcControllerTest >> testCreateDiagramElement [
 
 	controller model: model.
@@ -57,7 +59,7 @@ OPPetriNetArcControllerTest >> testCreateDiagramElement [
 	super testCreateDiagramElement
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetArcControllerTest >> testCreateFigure [
 
 	| figure previousElementsSize |
@@ -80,7 +82,7 @@ OPPetriNetArcControllerTest >> testCreateFigure [
 	self assert: figure shape markerEnd isNotNil
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetArcControllerTest >> testCreateModel [
 	| createdModel |
 	controller source: fromCtrl.
@@ -93,7 +95,7 @@ OPPetriNetArcControllerTest >> testCreateModel [
 	self assert: createdModel target equals: toCtrl model
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetArcControllerTest >> testFigureRefresh [
 
 	| label |
@@ -112,7 +114,7 @@ OPPetriNetArcControllerTest >> testFigureRefresh [
 	self assert: label roassalShape text equals: 'new name'
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcControllerTest >> toClass [
 	^ self subclassResponsibility
 ]

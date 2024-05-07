@@ -2,17 +2,19 @@
 A DCPetriNetInputArcSimulatorTest is a test class for testing the behavior of DCPetriNetInputArcSimulator
 "
 Class {
-	#name : #OPPetriNetInputArcSimulatorTest,
-	#superclass : #OPPetriNetArcSimulatorTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetInputArcSimulatorTest',
+	#superclass : 'OPPetriNetArcSimulatorTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetInputArcSimulatorTest class >> isAbstract [
 	^ self == OPPetriNetInputArcSimulatorTest
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetInputArcSimulatorTest >> setUp [
 	super setUp.
 	simulator

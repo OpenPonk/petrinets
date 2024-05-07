@@ -2,12 +2,14 @@
 A DCPetriNetNodeControllerTest is a test class for testing the behavior of DCPetriNetNodeController
 "
 Class {
-	#name : #OPPetriNetNodeControllerTest,
-	#superclass : #OPPetriNetsControllerTest,
-	#category : #'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetNodeControllerTest',
+	#superclass : 'OPPetriNetsControllerTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetNodeControllerTest class >> isAbstract [
 	"Override to true if a TestCase subclass is Abstract and should not have
 	TestCase instances built from it"
@@ -15,7 +17,7 @@ OPPetriNetNodeControllerTest class >> isAbstract [
 	^ self name = #OPPetriNetNodeControllerTest
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNodeControllerTest >> testCreateFigure [
 
 	controller createModelIn: diagramController model.
@@ -26,14 +28,14 @@ OPPetriNetNodeControllerTest >> testCreateFigure [
 	self assert: (controller roassalShape isKindOf: RSBoundingShape)
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNodeControllerTest >> testCreateModel [
 	self
 		assert: (controller createModelIn: diagramController model) class
 		equals: self modelClass
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNodeControllerTest >> testFigureRefresh [
 
 	| text |
