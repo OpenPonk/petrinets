@@ -73,7 +73,7 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 	simulator setDefaultStepping.
 
 	items := simulator itemsForAction.
-	self assert: items size = 1.
+	self assert: items size equals: 1.
 	item := items first.
 	self assert: item isSimulable.
 	self assert: item isSteppable.
@@ -81,11 +81,11 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
-	simulator simulableElementsDo: [ :each | each when: OPSimulatorStepped do: [ :event | stepped add: event ] ].
-	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] ].
+	simulator simulableElementsDo: [ :each | each when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
+	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
-	self assert: stepped size = 1.
-	self assert: didAction size = 2
+	self assert: stepped size equals: 1.
+	self assert: didAction size equals: 2
 ]
 
 { #category : 'tests' }
@@ -94,16 +94,16 @@ OPPetriNetSimulatorTest >> testSteppingAll [
 	simulator setSteppingAll.
 	
 	items := simulator itemsForAction.
-	self assert: items size = 2.
+	self assert: items size equals: 2.
 	self assert: (items allSatisfy: [ :item | item isSimulable ]).
 	self assert: (items allSatisfy: [ :item | item isSteppable ]).
 	self assert: (items allSatisfy: [ :item | item isKindOf: OPPetriNetTransitionSimulator ]).
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
-	items do: [ :item | item when: OPSimulatorStepped do: [ :event | stepped add: event ] ].
-	items do: [ :item | item when: OPSimulatorDidAction do: [ :event | didAction add: event ] ].
+	items do: [ :item | item when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
+	items do: [ :item | item when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
-	self assert: stepped size = 2.
-	self assert: didAction size = 4
+	self assert: stepped size equals: 2.
+	self assert: didAction size equals: 4
 ]
