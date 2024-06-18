@@ -1,10 +1,12 @@
 Class {
-	#name : #OPBCPetriNetNoToken,
-	#superclass : #OPBCPetriNetToken,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Models'
+	#name : 'OPBCPetriNetNoToken',
+	#superclass : 'OPBCPetriNetToken',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Models',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPBCPetriNetNoToken >> isNoToken [
 	^ true
 ]

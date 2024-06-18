@@ -1,21 +1,23 @@
 Class {
-	#name : #OPBCPetriNetsNavigatorAdapter,
-	#superclass : #OPNavigatorAdapter,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Adapters'
+	#name : 'OPBCPetriNetsNavigatorAdapter',
+	#superclass : 'OPNavigatorAdapter',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Adapters',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Adapters'
 }
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPBCPetriNetsNavigatorAdapter >> childrenMapping [
 	^ {(OPBCPetriNet -> #nodes).
 	(OPPetriNetNode -> #connected)}
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPBCPetriNetsNavigatorAdapter >> contextMenuMapping [
 	^ {}
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPBCPetriNetsNavigatorAdapter >> displayMapping [
 	^ {(OPBCPetriNet -> 'Diagram').
 	(OPPetriNetArcWithExpression -> 'Arc').
@@ -23,7 +25,7 @@ OPBCPetriNetsNavigatorAdapter >> displayMapping [
 	(OPPetriNetTransition -> 'Transition')}
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPBCPetriNetsNavigatorAdapter >> iconMapping [
 	^ {(OPBCPetriNet -> OPPetriNetsIcons current petriNetIcon).
 	(OPPetriNetArcWithExpression -> OPPetriNetsIcons current arcIcon).

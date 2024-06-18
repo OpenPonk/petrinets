@@ -1,1 +1,1 @@
-Package { #name : #'OpenPonk-BooleanColoredPetriNets' }
+Package { #name : 'OpenPonk-BooleanColoredPetriNets' }

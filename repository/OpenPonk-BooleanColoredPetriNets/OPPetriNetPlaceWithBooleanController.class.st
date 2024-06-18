@@ -1,15 +1,17 @@
 Class {
-	#name : #OPPetriNetPlaceWithBooleanController,
-	#superclass : #OPPetriNetPlaceController,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers'
+	#name : 'OPPetriNetPlaceWithBooleanController',
+	#superclass : 'OPPetriNetPlaceController',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetPlaceWithBooleanController class >> initializePossibleConnected [
 	PossibleOutgoing := Set with: OPPetriNetArcWithExpressionController
 ]
 
-{ #category : #forms }
+{ #category : 'forms' }
 OPPetriNetPlaceWithBooleanController >> buildEditorForm: aForm [
 	| existenceBox valueBox |
 	super buildEditorForm: aForm.
@@ -30,20 +32,20 @@ OPPetriNetPlaceWithBooleanController >> buildEditorForm: aForm [
 			existenceBox state: true ]
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceWithBooleanController >> refreshFigure [
 	self tokenGroupFrom: self model token.
 	super refreshFigure
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceWithBooleanController >> tokenCircle [
 	"returns circle element representing presence of token(s)"
 
 	^ self tokenGroup first
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetPlaceWithBooleanController >> tokenGroupFrom: aValue [
 	self tokenCircle
 		color:

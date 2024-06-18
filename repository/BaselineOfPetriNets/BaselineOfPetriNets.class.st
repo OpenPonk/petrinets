@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfPetriNets,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfPetriNets
+	#name : 'BaselineOfPetriNets',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfPetriNets',
+	#package : 'BaselineOfPetriNets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BaselineOfPetriNets >> baseline: spec [
 
 	<baseline>

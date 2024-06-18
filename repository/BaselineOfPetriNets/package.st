@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfPetriNets }
+Package { #name : 'BaselineOfPetriNets' }

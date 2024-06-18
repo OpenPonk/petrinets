@@ -1,17 +1,19 @@
 Class {
-	#name : #OPPetriNetArcWithExpressionController,
-	#superclass : #OPPetriNetArcController,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers'
+	#name : 'OPPetriNetArcWithExpressionController',
+	#superclass : 'OPPetriNetArcController',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #forms }
+{ #category : 'forms' }
 OPPetriNetArcWithExpressionController >> buildEditorForm: aForm [
 	(aForm addTextInput: 'Expression')
 		text: self model expression;
 		whenTextIsAccepted: [ :newValue | self model expression: newValue ]
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcWithExpressionController >> headShapeClass [
 	^ RTSimpleArrow
 ]

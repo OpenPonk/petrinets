@@ -1,10 +1,12 @@
 Class {
-	#name : #OPBCPetriNetController,
-	#superclass : #OPPetriNetController,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers'
+	#name : 'OPBCPetriNetController',
+	#superclass : 'OPPetriNetController',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Controllers',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPBCPetriNetController >> initializePalette: aPalette [
 	aPalette
 		newCreationTool: 'Place'
@@ -19,12 +21,12 @@ OPBCPetriNetController >> initializePalette: aPalette [
 			icon: OPPetriNetsIcons current arcIcon
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPBCPetriNetController >> modelClass [
 	^ OPBCPetriNet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPBCPetriNetController >> modelToControllerMapping [
 	^ Dictionary
 		newFrom:

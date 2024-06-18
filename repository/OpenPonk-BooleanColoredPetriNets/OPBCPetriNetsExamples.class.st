@@ -1,10 +1,12 @@
 Class {
-	#name : #OPBCPetriNetsExamples,
-	#superclass : #Object,
-	#category : 'OpenPonk-BooleanColoredPetriNets-Examples'
+	#name : 'OPBCPetriNetsExamples',
+	#superclass : 'Object',
+	#category : 'OpenPonk-BooleanColoredPetriNets-Examples',
+	#package : 'OpenPonk-BooleanColoredPetriNets',
+	#tag : 'Examples'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 OPBCPetriNetsExamples class >> exampleEmpty [
 	| project diagram |
 	project := OPProject named: 'New BC Petri Net'.
@@ -13,7 +15,7 @@ OPBCPetriNetsExamples class >> exampleEmpty [
 	OPWorkbench openProject: project
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 OPBCPetriNetsExamples class >> examplePetriNets [
 	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
 	project := OPProject named: 'Example BC Petri Net'.
@@ -51,7 +53,7 @@ OPBCPetriNetsExamples class >> examplePetriNets [
 	OPWorkbench openProject: project
 ]
 
-{ #category : #'world menu' }
+{ #category : 'world menu' }
 OPBCPetriNetsExamples class >> menuCommandOn: aBuilder [
 	<worldMenu>
 	(aBuilder item: #'BC Petri Nets')
