@@ -3,7 +3,7 @@ A DCPetriNetNodeControllerTest is a test class for testing the behavior of DCPet
 "
 Class {
 	#name : 'OPPetriNetNodeControllerTest',
-	#superclass : 'OPPetriNetsControllerTest',
+	#superclass : 'OPAbstractElementControllerTest',
 	#category : 'OpenPonk-PetriNets-Tests',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Tests'
@@ -15,6 +15,17 @@ OPPetriNetNodeControllerTest class >> isAbstract [
 	TestCase instances built from it"
 
 	^ self name = #OPPetriNetNodeControllerTest
+]
+
+{ #category : 'accessing' }
+OPPetriNetNodeControllerTest >> diagramControllerClass [
+
+	^ OPPetriNetController
+]
+
+{ #category : 'accessing' }
+OPPetriNetNodeControllerTest >> diagramModelClass [
+	^ OPPetriNet
 ]
 
 { #category : 'tests' }
