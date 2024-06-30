@@ -63,11 +63,6 @@ OPPetriNetNodeController >> isHideable [
 	^ true
 ]
 
-{ #category : 'connecting' }
-OPPetriNetNodeController >> modelAsParent [
-	^ self model owner
-]
-
 { #category : 'removing' }
 OPPetriNetNodeController >> removeModel [
 	self model announcer unsubscribe: self.

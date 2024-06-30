@@ -18,11 +18,25 @@ OPPetriNetInputArcControllerTest class >> isAbstract [
 ]
 
 { #category : 'hooks' }
-OPPetriNetInputArcControllerTest >> fromClass [
+OPPetriNetInputArcControllerTest >> sourceControllerClass [
+
 	^ OPPetriNetPTPlaceController
 ]
 
 { #category : 'hooks' }
-OPPetriNetInputArcControllerTest >> toClass [
+OPPetriNetInputArcControllerTest >> sourceModelClass [
+
+	^ OPPetriNetPTPlace
+]
+
+{ #category : 'hooks' }
+OPPetriNetInputArcControllerTest >> targetControllerClass [
+
 	^ OPPetriNetTransitionController
+]
+
+{ #category : 'hooks' }
+OPPetriNetInputArcControllerTest >> targetModelClass [
+
+	^ OPPetriNetTransition
 ]
