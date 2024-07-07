@@ -63,8 +63,10 @@ OPPetriNetNodeController >> isHideable [
 	^ true
 ]
 
-{ #category : 'removing' }
+{ #category : 'destruction' }
 OPPetriNetNodeController >> removeModel [
+
 	self model announcer unsubscribe: self.
-	self diagramController model remove: self model
+	self diagramController model remove: self model.
+	super removeModel
 ]
