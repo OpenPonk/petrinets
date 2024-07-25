@@ -7,22 +7,20 @@ Class {
 }
 
 { #category : 'examples' }
-OPPetriNetsExamples class >> exampleEmpty [
+OPPetriNetsExamples class >> emptyModel [
 
-	| project model |
-	project := OPProject named: 'New Petri Net'.
-	model := OPPetriNet new name: 'New Petri Net'.
-	project addModel: model.
-	OPWorkbench openProject: project
+	<script: 'self emptyModel inspect'>
+	^ OPPetriNet new
+		  name: 'New Petri Net';
+		  yourself
 ]
 
 { #category : 'examples' }
-OPPetriNetsExamples class >> examplePetriNets [
+OPPetriNetsExamples class >> examplePetriNet [
 
-	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 workbench |
-	project := OPProject named: 'Example Petri Net'.
+	<script: 'self examplePetriNet inspect'>
+	| model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
 	model := OPPetriNet named: 'Petri Net'.
-	project addModel: model.
 	place1 := (OPPetriNetPTPlace named: 'P1')
 		          tokens: 20;
 		          yourself.
@@ -51,7 +49,7 @@ OPPetriNetsExamples class >> examplePetriNets [
 		add: arc3;
 		add: arc4;
 		add: arc5.
-	(OPProject openOnModel: model) showAllElementsInAllDiagrams
+	^ model
 ]
 
 { #category : 'menu' }
@@ -60,12 +58,35 @@ OPPetriNetsExamples class >> menuCommandOn: aBuilder [
 	<worldMenu>
 	(aBuilder item: #'Petri Nets')
 		icon: OPPetriNetsIcons petriNetIcon;
-		action: [ self exampleEmpty ];
+		action: [ self openExampleEmptyModel ];
 		order: 215;
 		with: [ 
 			(aBuilder item: #'Petri Nets Example')
 				parent: #'Petri Nets';
 				label: 'Petri Nets example';
 				icon: OPPetriNetsIcons petriNetIcon;
-				action: [ self examplePetriNets ] ]
+				action: [ self openExamplePetriNet ] ]
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExample: aModel [
+
+	| project |
+	project := OPProject named: 'FSM Example'.
+	project addModel: aModel.
+	^ (OPWorkbench openProject: project) showAllElementsInAllDiagrams
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExampleEmptyModel [
+
+	<example>
+	self openExample: self emptyModel
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExamplePetriNet [
+
+	<example>
+	self openExample: self examplePetriNet
 ]
