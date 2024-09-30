@@ -1,16 +1,24 @@
 Class {
-	#name : #OPPetriNetsNavigatorAdapter,
-	#superclass : #OPNavigatorAdapter,
-	#category : #'OpenPonk-PetriNets-Adapters'
+	#name : 'OPPetriNetsNavigatorAdapter',
+	#superclass : 'OPNavigatorAdapter',
+	#category : 'OpenPonk-PetriNets-Adapters',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Adapters'
 }
 
-{ #category : #'widget API' }
+{ #category : 'accessing' }
+OPPetriNetsNavigatorAdapter class >> priority [
+
+	^ 10
+]
+
+{ #category : 'widget API' }
 OPPetriNetsNavigatorAdapter >> childrenMapping [
 	^ {(OPPetriNet -> #nodes).
 	(OPPetriNetNode -> #connected)}
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPPetriNetsNavigatorAdapter >> displayMapping [
 	^ {(OPPetriNet -> 'Model').
 	(OPPetriNetInhibitorArc -> 'Inhibitor Arc').
@@ -20,31 +28,33 @@ OPPetriNetsNavigatorAdapter >> displayMapping [
 	(OPPetriNetTransition -> 'Transition')}
 ]
 
-{ #category : #testing }
-OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject [
-	^ {OPPetriNet.
-	OPPetriNetArc.
-	OPPetriNetNode} anySatisfy: [ :any | anObject isKindOf: any ]
+{ #category : 'testing' }
+OPPetriNetsNavigatorAdapter >> hasMappingFor: anObject in: aModel [
+
+	^ { 
+		  OPPetriNet.
+		  OPPetriNetArc.
+		  OPPetriNetNode } anySatisfy: [ :any | anObject isKindOf: any ]
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPPetriNetsNavigatorAdapter >> iconMapping [
-	^ {(OPPetriNet -> OPPetriNetsIcons current petriNetIcon).
-	(OPPetriNetInhibitorArc -> OPPetriNetsIcons current inhibitorArcIcon).
-	(OPPetriNetResetArc -> OPPetriNetsIcons current resetArcIcon).
-	(OPPetriNetWeightedArc -> OPPetriNetsIcons current arcIcon).
-	(OPPetriNetPTPlace -> OPPetriNetsIcons current placeIcon).
-	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}
+	^ {(OPPetriNet -> OPPetriNetsIcons petriNetIcon).
+	(OPPetriNetInhibitorArc -> OPPetriNetsIcons inhibitorArcIcon).
+	(OPPetriNetResetArc -> OPPetriNetsIcons resetArcIcon).
+	(OPPetriNetWeightedArc -> OPPetriNetsIcons arcIcon).
+	(OPPetriNetPTPlace -> OPPetriNetsIcons placeIcon).
+	(OPPetriNetTransition -> OPPetriNetsIcons transitionIcon)}
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 OPPetriNetsNavigatorAdapter >> sort: modelObjects [
 	^ modelObjects
 		sorted:
 			[ :a :b | a name isNotNil and: [ b name isNil or: [ a name < b name ] ] ]
 ]
 
-{ #category : #'widget API' }
+{ #category : 'widget API' }
 OPPetriNetsNavigatorAdapter >> typesByDependency [
 	^ {OPPetriNet.
 	OPPetriNetNode.

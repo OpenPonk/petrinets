@@ -1,15 +1,18 @@
 Class {
-	#name : #OPPetriNetNormalArcController,
-	#superclass : #OPPetriNetWeightedArcController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetNormalArcController',
+	#superclass : 'OPPetriNetWeightedArcController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #hooks }
-OPPetriNetNormalArcController >> headShapeClass [
-	^ RTSimpleArrow
+{ #category : 'construction' }
+OPPetriNetNormalArcController >> diagramElementClass [
+
+	^ OPPetriNetNormalArcShape
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetNormalArcController >> modelClass [
 	^ OPPetriNetNormalArc
 ]

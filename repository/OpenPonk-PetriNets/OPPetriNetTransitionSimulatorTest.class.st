@@ -2,28 +2,30 @@
 A DCPetriNetTransitionSimulatorTest is a test class for testing the behavior of DCPetriNetTransitionSimulator
 "
 Class {
-	#name : #OPPetriNetTransitionSimulatorTest,
-	#superclass : #OPPetriNetNodeSimulatorTest,
+	#name : 'OPPetriNetTransitionSimulatorTest',
+	#superclass : 'OPPetriNetNodeSimulatorTest',
 	#instVars : [
 		'inc',
 		'out'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionSimulatorTest >> controllerClass [
 	^ OPPetriNetTransitionSimulator
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetTransitionSimulatorTest >> exampleModel [
 	^ OPPetriNetTransition new
 		name: 'T1';
 		yourself
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetTransitionSimulatorTest >> setUp [
 	super setUp.
 
@@ -48,28 +50,29 @@ OPPetriNetTransitionSimulatorTest >> setUp [
 		yourself
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testFiring [
-	self assert: inc tokensAmount = 4.
-	self assert: out tokensAmount = 4.
+
+	self assert: inc petriNetTokens equals: 4.
+	self assert: out petriNetTokens equals: 4.
 	simulator fireIncoming.
-	self assert: inc tokensAmount = 3.
-	self assert: out tokensAmount = 4.
+	self assert: inc petriNetTokens equals: 3.
+	self assert: out petriNetTokens equals: 4.
 	simulator fireOutgoing.
-	self assert: inc tokensAmount = 3.
-	self assert: out tokensAmount = 5.
+	self assert: inc petriNetTokens equals: 3.
+	self assert: out petriNetTokens equals: 5.
 	simulator doAction: 1.
-	self assert: inc tokensAmount = 2.
-	self assert: out tokensAmount = 5.
+	self assert: inc petriNetTokens equals: 2.
+	self assert: out petriNetTokens equals: 5.
 	simulator doAction: 2.
-	self assert: inc tokensAmount = 2.
-	self assert: out tokensAmount = 6.
+	self assert: inc petriNetTokens equals: 2.
+	self assert: out petriNetTokens equals: 6.
 	simulator step.
-	self assert: inc tokensAmount = 1.
-	self assert: out tokensAmount = 7
+	self assert: inc petriNetTokens equals: 1.
+	self assert: out petriNetTokens equals: 7
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testSteppable [
 	self assert: simulator isSimulable.
 	self assert: simulator isSteppable.

@@ -1,5 +1,7 @@
 Class {
-	#name : #OPPlaceTokensChanged,
-	#superclass : #OPElementChanged,
-	#category : 'OpenPonk-PetriNets-Announcements'
+	#name : 'OPPlaceTokensChanged',
+	#superclass : 'OPElementChanged',
+	#category : 'OpenPonk-PetriNets-Announcements',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Announcements'
 }

@@ -2,12 +2,14 @@
 I simulate inhibitor arc
 "
 Class {
-	#name : #OPPetriNetInhibitorArcSimulator,
-	#superclass : #OPPetriNetInputArcSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#name : 'OPPetriNetInhibitorArcSimulator',
+	#superclass : 'OPPetriNetInputArcSimulator',
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetInhibitorArcSimulator >> handleFire [
 	"inhibitor arc does nothing with tokens, it just acts as firing condition"
 
@@ -16,9 +18,9 @@ OPPetriNetInhibitorArcSimulator >> handleFire [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetInhibitorArcSimulator >> isEnabled [
 	"are conditions for firing met on this arc? - are there no tokens in place?"
 
-	^ self source tokensAmount isZero
+	^ self source petriNetTokens isZero
 ]

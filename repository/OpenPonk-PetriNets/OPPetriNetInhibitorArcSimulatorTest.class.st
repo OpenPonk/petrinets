@@ -2,33 +2,36 @@
 A DCPetriNetInhibitorArcSimulatorTest is a test class for testing the behavior of DCPetriNetInhibitorArcSimulator
 "
 Class {
-	#name : #OPPetriNetInhibitorArcSimulatorTest,
-	#superclass : #OPPetriNetInputArcSimulatorTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetInhibitorArcSimulatorTest',
+	#superclass : 'OPPetriNetInputArcSimulatorTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetInhibitorArcSimulatorTest >> controllerClass [
 	^ OPPetriNetInhibitorArcSimulator
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetInhibitorArcSimulatorTest >> exampleModel [
 	^ OPPetriNetInhibitorArc new
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetInhibitorArcSimulatorTest >> testHandleFire [
-	self assert: place tokensAmount = 10.
+
+	self assert: place petriNetTokens equals: 10.
 	simulator handleFire.
-	self assert: place tokensAmount = 10
+	self assert: place petriNetTokens equals: 10
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetInhibitorArcSimulatorTest >> testIsEnabled [
 	self assert: simulator isEnabled not.
-	place tokensAmount: 0.
+	place petriNetTokens: 0.
 	self assert: simulator isEnabled.
-	place tokensAmount: 1000.
+	place petriNetTokens: 1000.
 	self assert: simulator isEnabled not
 ]

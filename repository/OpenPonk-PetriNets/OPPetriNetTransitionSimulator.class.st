@@ -10,30 +10,32 @@ First I tell incoming arcs to move tokens from their input places to me and then
 	tempTokens:		tokens temporarily saved her while firing
 "
 Class {
-	#name : #OPPetriNetTransitionSimulator,
-	#superclass : #OPPetriNetNodeSimulator,
+	#name : 'OPPetriNetTransitionSimulator',
+	#superclass : 'OPPetriNetNodeSimulator',
 	#instVars : [
 		'firing'
 	],
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #testing }
-OPPetriNetTransitionSimulator >> canReceiveTokens: anAmount [
+{ #category : 'testing' }
+OPPetriNetTransitionSimulator >> canReceivePetriNetTokens: anAmount [
 	^ true
 ]
 
-{ #category : #testing }
-OPPetriNetTransitionSimulator >> canSendTokens: anAmount [
+{ #category : 'testing' }
+OPPetriNetTransitionSimulator >> canSendPetriNetTokens: anAmount [
 	^ true
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetTransitionSimulator >> fire [
 	self step
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetTransitionSimulator >> fireIncoming [
 	self isEnabled
 		ifFalse: [ ^ self ].
@@ -41,7 +43,7 @@ OPPetriNetTransitionSimulator >> fireIncoming [
 	self incomingDo: [ :arc | arc handleFire ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetTransitionSimulator >> fireOutgoing [
 	firing
 		ifFalse: [ ^ self ].
@@ -49,30 +51,30 @@ OPPetriNetTransitionSimulator >> fireOutgoing [
 	firing := false
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetTransitionSimulator >> initialize [
 	super initialize.
 	firing := false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetTransitionSimulator >> isEnabled [
 	"can be fired?"
 
 	^ (incoming allSatisfy: [ :arc | arc isEnabled ]) and: [ outgoing allSatisfy: [ :arc | arc isEnabled ] ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetTransitionSimulator >> isSimulable [
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetTransitionSimulator >> isSteppable [
 	^ self isEnabled
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetTransitionSimulator >> setDefaultStepping [
 	"sets default stepping settings"
 

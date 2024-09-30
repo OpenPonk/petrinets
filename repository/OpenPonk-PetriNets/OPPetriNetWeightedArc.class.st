@@ -2,28 +2,30 @@
 I represent an arc with weight
 "
 Class {
-	#name : #OPPetriNetWeightedArc,
-	#superclass : #OPPetriNetArc,
+	#name : 'OPPetriNetWeightedArc',
+	#superclass : 'OPPetriNetArc',
 	#instVars : [
 		'weight'
 	],
-	#category : 'OpenPonk-PetriNets-Models'
+	#category : 'OpenPonk-PetriNets-Models',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetWeightedArc >> initialize [
 	super initialize.
 	weight := 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetWeightedArc >> weight [
 	"amount of tokens moved when fired"
 
 	^ weight
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetWeightedArc >> weight: anInteger [
 	"amount of tokens moved when fired"
 

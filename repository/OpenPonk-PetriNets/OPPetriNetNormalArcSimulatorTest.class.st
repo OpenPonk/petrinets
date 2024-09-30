@@ -2,12 +2,14 @@
 A DCPetriNetNormalArcSimulatorTest is a test class for testing the behavior of DCPetriNetNormalArcSimulator
 "
 Class {
-	#name : #OPPetriNetNormalArcSimulatorTest,
-	#superclass : #OPPetriNetInputArcSimulatorTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetNormalArcSimulatorTest',
+	#superclass : 'OPPetriNetInputArcSimulatorTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNormalArcSimulatorTest >> controllerClass [
 	^ OPPetriNetNormalArcSimulator
 		model:
@@ -16,25 +18,26 @@ OPPetriNetNormalArcSimulatorTest >> controllerClass [
 				yourself)
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetNormalArcSimulatorTest >> exampleModel [
 	^ OPPetriNetNormalArc new
 		weight: 2;
 		yourself
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNormalArcSimulatorTest >> testHandleFire [
-	self assert: place tokensAmount = 10.
+
+	self assert: place petriNetTokens equals: 10.
 	simulator handleFire.
-	self assert: place tokensAmount = 8
+	self assert: place petriNetTokens equals: 8
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetNormalArcSimulatorTest >> testIsEnabled [
 	self assert: simulator isEnabled.
-	place tokensAmount: 0.
+	place petriNetTokens: 0.
 	self assert: simulator isEnabled not.
-	place tokensAmount: 1000.
+	place petriNetTokens: 1000.
 	self assert: simulator isEnabled
 ]

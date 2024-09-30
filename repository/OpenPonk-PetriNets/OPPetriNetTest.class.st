@@ -2,12 +2,14 @@
 A DCPetriNetTest is a test class for testing the behavior of DCPetriNet
 "
 Class {
-	#name : #OPPetriNetTest,
-	#superclass : #OPModelObjectTest,
-	#category : 'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetTest',
+	#superclass : 'OPModelObjectTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTest >> testAdd [
 	| d first second t |
 	super testAdd.
@@ -29,7 +31,7 @@ OPPetriNetTest >> testAdd [
 	self assert: d elements third owner = d
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetTest >> testComplexAddingRemoving [
 	| place1 place2 place3 place4 trans arc1 arc2 arc3 arc4 |
 	diagram := OPPetriNet new name: 'Diagram'.

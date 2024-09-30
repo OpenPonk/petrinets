@@ -2,73 +2,80 @@
 A DCPetriNetPlaceControllerTest is a test class for testing the behavior of DCPetriNetPlaceController
 "
 Class {
-	#name : #OPPetriNetPlaceWithTokensControllerTest,
-	#superclass : #OPPetriNetNodeControllerTest,
-	#category : #'OpenPonk-PetriNets-Tests'
+	#name : 'OPPetriNetPlaceWithTokensControllerTest',
+	#superclass : 'OPPetriNetNodeControllerTest',
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetPlaceWithTokensControllerTest >> controllerClass [
 	^ OPPetriNetPTPlaceController
 ]
 
-{ #category : #hooks }
+{ #category : 'construction' }
+OPPetriNetPlaceWithTokensControllerTest >> diagramElementClass [
+
+	^ OPPetriNetPTPlaceShape
+]
+
+{ #category : 'hooks' }
 OPPetriNetPlaceWithTokensControllerTest >> modelClass [
 	^ OPPetriNetPTPlace
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
+
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
-	controller renderFigureIn: diagramController view.
-	controller tokenGroupFrom: 0.
+	controller
+		createDiagramElement;
+		renderDiagramElement.
+	controller model tokens: 0.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color transparent.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 1.
 	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 1.
+		assert: controller diagramElement tokenCircle color
+		equals: Color black.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 111.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
 	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 111.
+		assert: controller diagramElement tokenLabel color
+		equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: '111'.
+	controller model tokens: 9.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
 	self
-		assert: controller tokenLabel trachelShape color
+		assert: controller diagramElement tokenLabel color
 		equals: Color black.
-	self assert: controller tokenLabel trachelShape text equals: '111'.
-	controller tokenGroupFrom: 9.
+	self assert: controller diagramElement tokenLabel text equals: '9'.
+	controller model tokens: 1.
 	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color black.
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '').
+	controller model tokens: 1.
+	controller model tokens: 0.
 	self
-		assert: controller tokenLabel trachelShape color
-		equals: Color black.
-	self assert: controller tokenLabel trachelShape text equals: '9'.
-	controller tokenGroupFrom: 1.
-	self
-		assert: controller tokenCircle trachelShape color
-		equals: Color black.
-	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '').
-	controller tokenGroupFrom: 1.
-	controller tokenGroupFrom: 0.
-	self
-		assert: controller tokenCircle trachelShape color
+		assert: controller diagramElement tokenCircle color
 		equals: Color transparent.
-	self
-		assert:
-			controller tokenLabel trachelShape color = Color transparent
-				| (controller tokenLabel trachelShape text = '')
+	self assert:
+		controller diagramElement tokenLabel color = Color transparent
+		| (controller diagramElement tokenLabel text = '')
 ]

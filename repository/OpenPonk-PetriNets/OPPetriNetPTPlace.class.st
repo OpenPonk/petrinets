@@ -1,77 +1,79 @@
 Class {
-	#name : #OPPetriNetPTPlace,
-	#superclass : #OPPetriNetAbstractPlace,
+	#name : 'OPPetriNetPTPlace',
+	#superclass : 'OPPetriNetAbstractPlace',
 	#instVars : [
 		'capacity'
 	],
-	#category : 'OpenPonk-PetriNets-Models'
+	#category : 'OpenPonk-PetriNets-Models',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> addToken [
 	"adds one token"
 
 	self addTokens: 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> addTokens: aNumber [
 	"adds aNumber amount of tokens"
 
 	self tokens: tokens + aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> capacity [
 	^ capacity
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> capacity: aNumber [
 	capacity := aNumber
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetPTPlace >> initialize [
 	super initialize.
 	capacity := SmallInteger maxVal. "cannot use infinity, because it cannot be easily transformed to STON"
 	self removeTokens
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> noCapacity [
 	self capacity: SmallInteger maxVal "cannot use infinity, because it cannot be easily transformed to STON"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> removeToken [
 	"removes one token"
 
 	self removeTokens: 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> removeTokens [
 	"removes all tokens"
 
 	self tokens: 0
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> removeTokens: aNumber [
 	"removes aNumber amount of tokens"
 
 	self tokens: tokens - aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> tokens [
 	"amount of tokens"
 
 	^ tokens
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetPTPlace >> tokens: aNumber [
 	"sets amount of tokens to aNumber"
 

@@ -2,12 +2,14 @@
 I'm simulator for Petri net diagram
 "
 Class {
-	#name : #OPPetriNetSimulator,
-	#superclass : #OPDiagramSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#name : 'OPPetriNetSimulator',
+	#superclass : 'OPDiagramSimulator',
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 OPPetriNetSimulator class >> initialClassMapping [
 	^ super initialClassMapping
 		at: OPPetriNetNormalArc put: OPPetriNetNormalArcSimulator;
@@ -18,7 +20,7 @@ OPPetriNetSimulator class >> initialClassMapping [
 		yourself
 ]
 
-{ #category : #stepping }
+{ #category : 'stepping' }
 OPPetriNetSimulator >> setDefaultStepping [
 	"sets default stepping settings"
 
@@ -31,7 +33,7 @@ OPPetriNetSimulator >> setDefaultStepping [
 		addAction: [ :item | item step ]
 ]
 
-{ #category : #stepping }
+{ #category : 'stepping' }
 OPPetriNetSimulator >> setSteppingAll [
 	"sets stepping of all elements
 	first removes tokens from all elements then places tokens to all elements"

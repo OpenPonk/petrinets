@@ -2,20 +2,22 @@
 A DCPetriNetSimulatorTest is a test class for testing the behavior of DCPetriNetSimulator
 "
 Class {
-	#name : #OPPetriNetSimulatorTest,
-	#superclass : #TestCase,
+	#name : 'OPPetriNetSimulatorTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'simulator'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetSimulatorTest >> controllerClass [
 	^ OPPetriNetSimulator
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetSimulatorTest >> exampleModel [
 	| model place1 arc1 arc2 arc3 arc4 place2 place3 place4 trans1 trans2 arc5 |
 	model := OPPetriNet new name: 'Petri Net Diagram'.
@@ -60,18 +62,18 @@ OPPetriNetSimulatorTest >> exampleModel [
 	^ model
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetSimulatorTest >> setUp [
 	simulator := self controllerClass model: self exampleModel
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testDefaultStepping [
 	| items item stepped didAction |
 	simulator setDefaultStepping.
 
 	items := simulator itemsForAction.
-	self assert: items size = 1.
+	self assert: items size equals: 1.
 	item := items first.
 	self assert: item isSimulable.
 	self assert: item isSteppable.
@@ -79,29 +81,29 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
-	simulator simulableElementsDo: [ :each | each when: OPSimulatorStepped do: [ :event | stepped add: event ] ].
-	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] ].
+	simulator simulableElementsDo: [ :each | each when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
+	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
-	self assert: stepped size = 1.
-	self assert: didAction size = 2
+	self assert: stepped size equals: 1.
+	self assert: didAction size equals: 2
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testSteppingAll [
 	| items stepped didAction |
 	simulator setSteppingAll.
 	
 	items := simulator itemsForAction.
-	self assert: items size = 2.
+	self assert: items size equals: 2.
 	self assert: (items allSatisfy: [ :item | item isSimulable ]).
 	self assert: (items allSatisfy: [ :item | item isSteppable ]).
 	self assert: (items allSatisfy: [ :item | item isKindOf: OPPetriNetTransitionSimulator ]).
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
-	items do: [ :item | item when: OPSimulatorStepped do: [ :event | stepped add: event ] ].
-	items do: [ :item | item when: OPSimulatorDidAction do: [ :event | didAction add: event ] ].
+	items do: [ :item | item when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
+	items do: [ :item | item when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
-	self assert: stepped size = 2.
-	self assert: didAction size = 4
+	self assert: stepped size equals: 2.
+	self assert: didAction size equals: 4
 ]

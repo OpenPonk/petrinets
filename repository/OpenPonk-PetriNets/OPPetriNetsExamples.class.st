@@ -1,32 +1,34 @@
 Class {
-	#name : #OPPetriNetsExamples,
-	#superclass : #Object,
-	#category : #'OpenPonk-PetriNets-Examples'
+	#name : 'OPPetriNetsExamples',
+	#superclass : 'Object',
+	#category : 'OpenPonk-PetriNets-Examples',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Examples'
 }
 
-{ #category : #examples }
-OPPetriNetsExamples class >> exampleEmpty [
-	| project diagram |
-	project := OPProject named: 'New Petri Net'.
-	diagram := OPPetriNet new name: 'New Petri Net'.
-	project addModel: diagram.
-	OPWorkbench openProject: project
+{ #category : 'examples' }
+OPPetriNetsExamples class >> emptyModel [
+
+	<script: 'self emptyModel inspect'>
+	^ OPPetriNet new
+		  name: 'New Petri Net';
+		  yourself
 ]
 
-{ #category : #examples }
-OPPetriNetsExamples class >> examplePetriNets [
-	| project model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
-	project := OPProject named: 'Example Petri Net'.
+{ #category : 'examples' }
+OPPetriNetsExamples class >> examplePetriNet [
+
+	<script: 'self examplePetriNet inspect'>
+	| model place1 arc1 arc2 arc3 arc4 arc5 place2 place3 place4 trans1 trans2 |
 	model := OPPetriNet named: 'Petri Net'.
-	project addModel: model.
 	place1 := (OPPetriNetPTPlace named: 'P1')
-		tokens: 20;
-		yourself.
+		          tokens: 20;
+		          yourself.
 	place2 := OPPetriNetPTPlace named: 'P2'.
 	place3 := OPPetriNetPTPlace named: 'P3'.
 	place4 := (OPPetriNetPTPlace named: 'P4')
-		tokens: 1;
-		yourself.
+		          tokens: 1;
+		          yourself.
 	trans1 := OPPetriNetTransition named: 'T1'.
 	trans2 := OPPetriNetTransition named: 'T2'.
 	model
@@ -47,21 +49,44 @@ OPPetriNetsExamples class >> examplePetriNets [
 		add: arc3;
 		add: arc4;
 		add: arc5.
-	^ OPProject openOnModel: model
+	^ model
 ]
 
-{ #category : #menu }
+{ #category : 'menu' }
 OPPetriNetsExamples class >> menuCommandOn: aBuilder [
 
 	<worldMenu>
 	(aBuilder item: #'Petri Nets')
-		icon: OPPetriNetsIcons current petriNetIcon;
-		action: [ self exampleEmpty ];
+		icon: OPPetriNetsIcons petriNetIcon;
+		action: [ self openExampleEmptyModel ];
 		order: 215;
 		with: [ 
 			(aBuilder item: #'Petri Nets Example')
 				parent: #'Petri Nets';
 				label: 'Petri Nets example';
-				icon: OPPetriNetsIcons current petriNetIcon;
-				action: [ self examplePetriNets ] ]
+				icon: OPPetriNetsIcons petriNetIcon;
+				action: [ self openExamplePetriNet ] ]
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExample: aModel [
+
+	| project |
+	project := OPProject named: 'FSM Example'.
+	project addModel: aModel.
+	^ (OPWorkbench openProject: project) showAllElementsInAllDiagrams
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExampleEmptyModel [
+
+	<example>
+	self openExample: self emptyModel
+]
+
+{ #category : 'examples' }
+OPPetriNetsExamples class >> openExamplePetriNet [
+
+	<example>
+	self openExample: self examplePetriNet
 ]

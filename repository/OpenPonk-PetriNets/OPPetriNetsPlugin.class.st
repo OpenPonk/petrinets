@@ -1,40 +1,42 @@
 Class {
-	#name : #OPPetriNetsPlugin,
-	#superclass : #OPPlugin,
-	#category : #'OpenPonk-PetriNets-Adapters'
+	#name : 'OPPetriNetsPlugin',
+	#superclass : 'OPPlugin',
+	#category : 'OpenPonk-PetriNets-Adapters',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> diagramControllerClass [
 	^ OPPetriNetController
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> icon [
-	^ OPPetriNetsIcons current petriNetIcon
+	^ OPPetriNetsIcons petriNetIcon
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OPPetriNetsPlugin >> layouterClass [
 	^ OPPetriNetLayouter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> modelClass [
 	^ OPPetriNet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> modelSerializerClass [
 	^ OPStonModelSerializer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> name [
 	^ 'Petri Net'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 OPPetriNetsPlugin >> supportsHidingElements [
 	^ true
 ]

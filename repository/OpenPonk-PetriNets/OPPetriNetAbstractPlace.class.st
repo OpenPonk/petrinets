@@ -2,20 +2,22 @@
 I represent Petri net place
 "
 Class {
-	#name : #OPPetriNetAbstractPlace,
-	#superclass : #OPPetriNetNode,
+	#name : 'OPPetriNetAbstractPlace',
+	#superclass : 'OPPetriNetNode',
 	#instVars : [
 		'tokens'
 	],
-	#category : 'OpenPonk-PetriNets-Models'
+	#category : 'OpenPonk-PetriNets-Models',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Models'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetAbstractPlace >> isPlace [
 	^ true
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 OPPetriNetAbstractPlace >> removeToken [
 	"removes one token"
 

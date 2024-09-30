@@ -1,15 +1,18 @@
 Class {
-	#name : #OPPetriNetInhibitorArcController,
-	#superclass : #OPPetriNetArcController,
-	#category : 'OpenPonk-PetriNets-Controllers'
+	#name : 'OPPetriNetInhibitorArcController',
+	#superclass : 'OPPetriNetArcController',
+	#category : 'OpenPonk-PetriNets-Controllers',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Controllers'
 }
 
-{ #category : #hooks }
-OPPetriNetInhibitorArcController >> headShapeClass [
-	^ RTEmptyCircle
+{ #category : 'construction' }
+OPPetriNetInhibitorArcController >> diagramElementClass [
+
+	^ OPPetriNetInhibitorArcShape
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 OPPetriNetInhibitorArcController >> modelClass [
 	^ OPPetriNetInhibitorArc
 ]

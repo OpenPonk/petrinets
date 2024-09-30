@@ -2,33 +2,35 @@
 A DCPetriNetArcSimulatorTest is a test class for testing the behavior of DCPetriNetArcSimulator
 "
 Class {
-	#name : #OPPetriNetArcSimulatorTest,
-	#superclass : #TestCase,
+	#name : 'OPPetriNetArcSimulatorTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'simulator',
 		'place',
 		'trans',
 		'model'
 	],
-	#category : 'OpenPonk-PetriNets-Tests'
+	#category : 'OpenPonk-PetriNets-Tests',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Tests'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetArcSimulatorTest class >> isAbstract [
 	^ self == OPPetriNetArcSimulatorTest
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcSimulatorTest >> controllerClass [
 	^ self subclassResponsibility
 ]
 
-{ #category : #hooks }
+{ #category : 'hooks' }
 OPPetriNetArcSimulatorTest >> exampleModel [
 	^ self subclassResponsibility
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 OPPetriNetArcSimulatorTest >> setUp [
 	super setUp.
 	model := self exampleModel.

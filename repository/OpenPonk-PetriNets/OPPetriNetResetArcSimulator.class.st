@@ -2,17 +2,19 @@
 I simulate reset arc
 "
 Class {
-	#name : #OPPetriNetResetArcSimulator,
-	#superclass : #OPPetriNetInputArcSimulator,
-	#category : 'OpenPonk-PetriNets-Simulation'
+	#name : 'OPPetriNetResetArcSimulator',
+	#superclass : 'OPPetriNetInputArcSimulator',
+	#category : 'OpenPonk-PetriNets-Simulation',
+	#package : 'OpenPonk-PetriNets',
+	#tag : 'Simulation'
 }
 
-{ #category : #actions }
+{ #category : 'actions' }
 OPPetriNetResetArcSimulator >> handleFire [
-	self source tokensAmount: 0
+	self source petriNetTokens: 0
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 OPPetriNetResetArcSimulator >> isEnabled [
 	"are conditions for firing met on this arc? - reset arc does not act as firing condition"
 
