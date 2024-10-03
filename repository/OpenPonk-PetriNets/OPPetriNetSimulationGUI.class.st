@@ -57,25 +57,32 @@ OPPetriNetSimulationGUI >> buttonItems [
 ]
 
 { #category : 'private - hooks' }
-OPPetriNetSimulationGUI >> loadSimulation [
+OPPetriNetSimulationGUI >> displayEvent: anActionEvent [
 
+	| controller prevColor |
+	anActionEvent index = 2 ifFalse: [ ^ self ].
+	controller := self diagramController controllerForModel:
+		              anActionEvent simulator model.
+	prevColor := controller roassalShape color.
+	controller roassalShape color: Color lightOrange lighter.
+	controller roassalShape signalUpdate.
+	[
+	(Delay forMilliseconds: 200) wait.
+	controller roassalShape color = prevColor ifFalse: [
+		controller roassalShape color: prevColor.
+		controller roassalShape signalUpdate ] ] fork
+]
+
+{ #category : 'private - hooks' }
+OPPetriNetSimulationGUI >> loadSimulation [
 	"prepares simulation - called with every reload"
 
 	super loadSimulation.
-	diagramSimulator simulableElementsDo: [ :element | 
-		element when: OPSimulatorDidAction do: [ :event | 
-			event index = 2 ifTrue: [ 
-				| controller prevColor |
-				controller := self diagramController controllerForModel:
-					              event simulator model.
-				prevColor := controller roassalShape color.
-				controller roassalShape color: Color lightOrange lighter.
-				controller roassalShape signalUpdate.
-				[ 
-				(Delay forMilliseconds: 200) wait.
-				controller roassalShape color = prevColor ifFalse: [ 
-					controller roassalShape color: prevColor.
-					controller roassalShape signalUpdate ] ] fork ] ] ]
+	diagramSimulator simulableElementsDo: [ :element |
+		element
+			when: OPSimulatorDidAction
+			do: [ :event | self displayEvent: event ]
+			for: self ]
 ]
 
 { #category : 'private - hooks' }
