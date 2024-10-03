@@ -60,13 +60,6 @@ OPPetriNetPlaceShape >> tokenCircle [
 { #category : 'private' }
 OPPetriNetPlaceShape >> tokenGroup [
 
-	tokenGroup ifNotNil: [ ^ tokenGroup ].
-
-	self canvas addAll: self createTokenGroup.
-	RSLocation new stick: self tokenCircle on: self roassalShape.
-	self roassalShape
-		when: RSShapeRemovedEvent
-		do: [ tokenGroup do: #remove ].
 	^ tokenGroup
 ]
 
