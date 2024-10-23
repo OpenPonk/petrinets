@@ -44,7 +44,7 @@ OPPetriNetPTPlaceController >> diagramElementClass [
 OPPetriNetPTPlaceController >> internalSubscribeTo: aModel [
 
 	super internalSubscribeTo: aModel.
-	aModel when: OPPlaceTokensChanged send: #modelChanged to: self
+	aModel weakWhen: OPPlaceTokensChanged send: #modelChanged to: self
 ]
 
 { #category : 'hooks' }
