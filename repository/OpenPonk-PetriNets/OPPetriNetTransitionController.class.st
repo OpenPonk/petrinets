@@ -22,11 +22,24 @@ OPPetriNetTransitionController >> hookDiagramElement [
 
 	super hookDiagramElement.
 
-	diagramElement whenPlayClickedDo: [ 
-		OPPetriNetSimulationGUI stepSimulatorOfController: self ]
+	self diagramElement whenPlayClickedSend: #playClicked to: self
 ]
 
 { #category : 'hooks' }
 OPPetriNetTransitionController >> modelClass [
 	^ OPPetriNetTransition
+]
+
+{ #category : 'rendering' }
+OPPetriNetTransitionController >> playClicked [
+
+	OPPetriNetSimulationGUI stepSimulatorOfController: self
+]
+
+{ #category : 'rendering' }
+OPPetriNetTransitionController >> unhookDiagramElement [
+
+	super unhookDiagramElement.
+
+	self diagramElement unsubscribe: self
 ]

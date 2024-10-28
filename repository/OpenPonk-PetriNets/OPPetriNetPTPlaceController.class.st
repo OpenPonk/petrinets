@@ -40,18 +40,14 @@ OPPetriNetPTPlaceController >> diagramElementClass [
 	^ OPPetriNetPTPlaceShape
 ]
 
+{ #category : 'construction' }
+OPPetriNetPTPlaceController >> internalSubscribeTo: aModel [
+
+	super internalSubscribeTo: aModel.
+	aModel weakWhen: OPPlaceTokensChanged send: #modelChanged to: self
+]
+
 { #category : 'hooks' }
 OPPetriNetPTPlaceController >> modelClass [
 	^ OPPetriNetPTPlace
-]
-
-{ #category : 'construction' }
-OPPetriNetPTPlaceController >> renderDiagramElement [
-
-	super renderDiagramElement.
-	model
-		when: OPPlaceTokensChanged
-		do: [ self diagramElement modelChanged ]
-		for: self.
-	^ self roassalShape
 ]

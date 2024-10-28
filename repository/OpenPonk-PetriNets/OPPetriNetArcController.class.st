@@ -10,7 +10,7 @@ Class {
 OPPetriNetArcController >> internalSubscribeTo: aModel [
 
 	super internalSubscribeTo: aModel.
-	aModel when: OPElementRemoved send: #removeController to: self
+	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
 ]
 
 { #category : 'testing' }
@@ -21,7 +21,6 @@ OPPetriNetArcController >> isHideable [
 { #category : 'destruction' }
 OPPetriNetArcController >> removeModel [
 
-	self model announcer unsubscribe: self.
 	self diagramController model remove: self model.
 	super removeModel
 ]

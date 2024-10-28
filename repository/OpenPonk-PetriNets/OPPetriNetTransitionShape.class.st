@@ -2,24 +2,23 @@ Class {
 	#name : 'OPPetriNetTransitionShape',
 	#superclass : 'OPPetriNetNodeShape',
 	#instVars : [
-		'playClickedBlock'
+		'announcer'
 	],
 	#category : 'OpenPonk-PetriNets-Shapes',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Shapes'
 }
 
-{ #category : 'hooks' }
-OPPetriNetTransitionShape >> initialize [
+{ #category : 'accessing' }
+OPPetriNetTransitionShape >> announcer [
 
-	super initialize.
-	playClickedBlock := [  ]
+	^ announcer ifNil: [ announcer := Announcer new ]
 ]
 
 { #category : 'hooks' }
 OPPetriNetTransitionShape >> playClicked [
 
-	playClickedBlock value
+	self announcer announce: OPPetriNetPlayClicked
 ]
 
 { #category : 'hooks' }
@@ -70,8 +69,17 @@ OPPetriNetTransitionShape >> selectableInteraction [
 	^ selectableInteraction
 ]
 
-{ #category : 'hooks' }
-OPPetriNetTransitionShape >> whenPlayClickedDo: aBlock [
+{ #category : 'subscription' }
+OPPetriNetTransitionShape >> unsubscribe: aReceiver [
 
-	playClickedBlock := aBlock
+	^ self announcer unsubscribe: aReceiver
+]
+
+{ #category : 'hooks' }
+OPPetriNetTransitionShape >> whenPlayClickedSend: aSelector to: anObject [
+
+	^ self announcer
+		  when: OPPetriNetPlayClicked
+		  send: aSelector
+		  to: anObject
 ]
