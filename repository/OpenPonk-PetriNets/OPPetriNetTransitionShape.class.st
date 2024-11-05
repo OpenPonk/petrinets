@@ -2,7 +2,9 @@ Class {
 	#name : 'OPPetriNetTransitionShape',
 	#superclass : 'OPPetriNetNodeShape',
 	#instVars : [
-		'announcer'
+		'announcer',
+		'transitionHelper',
+		'icon'
 	],
 	#category : 'OpenPonk-PetriNets-Shapes',
 	#package : 'OpenPonk-PetriNets',
@@ -15,10 +17,26 @@ OPPetriNetTransitionShape >> announcer [
 	^ announcer ifNil: [ announcer := Announcer new ]
 ]
 
+{ #category : 'accessing' }
+OPPetriNetTransitionShape >> attachedShapes [
+
+	^ super attachedShapes , {
+		  icon.
+		  transitionHelper }
+]
+
 { #category : 'hooks' }
 OPPetriNetTransitionShape >> playClicked [
 
 	self announcer announce: OPPetriNetPlayClicked
+]
+
+{ #category : 'removing' }
+OPPetriNetTransitionShape >> removeRender [
+
+	super removeRender.
+	icon := nil.
+	transitionHelper := nil
 ]
 
 { #category : 'hooks' }
@@ -33,7 +51,7 @@ OPPetriNetTransitionShape >> renderBasicShape [
 { #category : 'hooks' }
 OPPetriNetTransitionShape >> selectableInteraction [
 
-	| selectableInteraction icon transitionHelper removal |
+	| selectableInteraction removal |
 	selectableInteraction := super selectableInteraction.
 	transitionHelper := RSBox new
 		                    size: 18;
@@ -65,7 +83,6 @@ OPPetriNetTransitionShape >> selectableInteraction [
 	           transitionHelper remove.
 	           icon remove ].
 	selectableInteraction when: RSUnHighlightEvent do: removal for: self.
-	roassalShape when: RSShapeRemovedEvent do: removal for: self.
 	^ selectableInteraction
 ]
 

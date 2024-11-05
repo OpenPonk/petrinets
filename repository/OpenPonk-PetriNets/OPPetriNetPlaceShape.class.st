@@ -16,6 +16,12 @@ OPPetriNetPlaceShape >> addInteractions [
 	self addEventForwardingFrom: self tokenCircle to: self roassalShape
 ]
 
+{ #category : 'accessing' }
+OPPetriNetPlaceShape >> attachedShapes [
+
+	^ super attachedShapes , { tokenGroup }
+]
+
 { #category : 'private' }
 OPPetriNetPlaceShape >> createTokenGroup [
 
@@ -25,6 +31,13 @@ OPPetriNetPlaceShape >> createTokenGroup [
 		          color: Color black;
 		          yourself.
 	^ tokenGroup := RSGroup with: circle
+]
+
+{ #category : 'removing' }
+OPPetriNetPlaceShape >> removeRender [
+
+	super removeRender.
+	tokenGroup := nil
 ]
 
 { #category : 'hooks' }
@@ -41,13 +54,7 @@ OPPetriNetPlaceShape >> renderShapeDetails [
 
 	super renderShapeDetails.
 	self canvas addAll: self createTokenGroup.
-	RSLocation new stick: self tokenCircle on: self roassalShape.
-	self roassalShape
-		when: RSShapeRemovedEvent
-		do: [
-			tokenGroup do: #remove.
-			tokenGroup := nil ]
-		for: self
+	RSLocation new stick: self tokenCircle on: self roassalShape
 ]
 
 { #category : 'private' }

@@ -42,7 +42,8 @@ OPPetriNetNodeController >> canBeTargetFor: aController [
 
 { #category : 'accessing' }
 OPPetriNetNodeController >> dependentElements [
-	^ (model incoming , model outgoing) asSet
+
+	^ (self model incoming , self model outgoing) asSet
 ]
 
 { #category : 'rendering' }

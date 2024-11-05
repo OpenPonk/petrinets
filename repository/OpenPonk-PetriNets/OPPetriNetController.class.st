@@ -32,7 +32,8 @@ OPPetriNetController >> controllerFactory [
 
 { #category : 'accessing' }
 OPPetriNetController >> elementsToShowInside [
-	^ model elements
+
+	^ self model elements
 ]
 
 { #category : 'initialization' }
