@@ -59,11 +59,6 @@ OPPetriNetNodeController >> internalSubscribeTo: aModel [
 	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
 ]
 
-{ #category : 'testing' }
-OPPetriNetNodeController >> isHideable [
-	^ true
-]
-
 { #category : 'destruction' }
 OPPetriNetNodeController >> removeModel [
 

@@ -13,11 +13,6 @@ OPPetriNetArcController >> internalSubscribeTo: aModel [
 	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
 ]
 
-{ #category : 'testing' }
-OPPetriNetArcController >> isHideable [
-	^ true
-]
-
 { #category : 'destruction' }
 OPPetriNetArcController >> removeModel [
 
