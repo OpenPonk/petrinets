@@ -18,6 +18,6 @@ SmalltalkCISpec {
 			#packages : [
 				'OpenPonk-PetriNets*'
 			]
-		},
+		}
 	}
 }
