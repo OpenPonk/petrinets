@@ -12,10 +12,10 @@ BaselineOfOpenPonkPetriNets >> baseline: spec [
 	spec for: #common do: [
 		spec
 			baseline: 'OpenPonk'
-			with: [ spec repository: 'github://openponk/openponk' ].
+			with: [ spec repository: 'github://openponk/openponk:v4.1.x' ].
 		spec baseline: 'OpenPonkSimulation' with: [
 			spec
-				repository: 'github://JanBliznicenko/openponk-simulation';
+				repository: 'github://JanBliznicenko/openponk-simulation:v4.1.x';
 				loads: 'plugin' ].
 		spec
 			package: 'OpenPonk-PetriNets'
