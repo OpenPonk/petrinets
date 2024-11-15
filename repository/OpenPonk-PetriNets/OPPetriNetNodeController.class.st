@@ -42,7 +42,8 @@ OPPetriNetNodeController >> canBeTargetFor: aController [
 
 { #category : 'accessing' }
 OPPetriNetNodeController >> dependentElements [
-	^ (model incoming , model outgoing) asSet
+
+	^ (self model incoming , self model outgoing) asSet
 ]
 
 { #category : 'rendering' }
@@ -56,11 +57,6 @@ OPPetriNetNodeController >> internalSubscribeTo: aModel [
 
 	super internalSubscribeTo: aModel.
 	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
-]
-
-{ #category : 'testing' }
-OPPetriNetNodeController >> isHideable [
-	^ true
 ]
 
 { #category : 'destruction' }
