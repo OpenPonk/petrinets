@@ -38,6 +38,6 @@ OPPetriNetNormalArcControllerTest >> testFigureRefresh [
 	label := controller diagramElement ownedElements second.
 	self assert: label roassalShape text equals: ''.
 	controller model weight: 10.
-	controller diagramElement modelChanged.
+	controller modelChanged.
 	self assert: (label roassalShape text last: 2) equals: '10'
 ]
