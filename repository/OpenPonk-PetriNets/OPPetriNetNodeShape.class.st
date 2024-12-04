@@ -3,9 +3,9 @@ Class {
 	#superclass : 'OPBoundNode',
 	#traits : 'OPTColoredAsFill',
 	#classTraits : 'OPTColoredAsFill classTrait',
-	#category : 'OpenPonk-PetriNets-Shapes',
+	#category : 'OpenPonk-PetriNets-DiagramElements',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Shapes'
+	#tag : 'DiagramElements'
 }
 
 { #category : 'rendering' }
