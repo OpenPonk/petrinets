@@ -1,9 +1,9 @@
 Class {
 	#name : 'OPPetriNetArcShape',
 	#superclass : 'OPEdge',
-	#category : 'OpenPonk-PetriNets-Shapes',
+	#category : 'OpenPonk-PetriNets-DiagramElements',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Shapes'
+	#tag : 'DiagramElements'
 }
 
 { #category : 'creation' }

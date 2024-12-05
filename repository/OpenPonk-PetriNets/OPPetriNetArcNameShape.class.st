@@ -1,9 +1,9 @@
 Class {
 	#name : 'OPPetriNetArcNameShape',
 	#superclass : 'OPPetriNetArcLabel',
-	#category : 'OpenPonk-PetriNets-Shapes',
+	#category : 'OpenPonk-PetriNets-DiagramElements',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Shapes'
+	#tag : 'DiagramElements'
 }
 
 { #category : 'as yet unclassified' }
