@@ -10,12 +10,12 @@ It allows crating places with tokens, transitions and arcs. Created Petri nets c
 
 ## Installation
 
-Requires Pharo 7 or 8 image - clean or with loaded OpenPonk.
+Requires Pharo 12 image - clean or with loaded OpenPonk.
 
 In Playground, execute following script:
 ```
 Metacello new
-    baseline: 'PetriNets';
+    baseline: 'OpenPonkPetriNets';
     repository: 'github://OpenPonk/petrinets/repository';
     load
 ```
