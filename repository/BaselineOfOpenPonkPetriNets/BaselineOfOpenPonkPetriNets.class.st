@@ -5,7 +5,7 @@ Class {
 	#package : 'BaselineOfOpenPonkPetriNets'
 }
 
-{ #category : 'accessing' }
+{ #category : 'baselines' }
 BaselineOfOpenPonkPetriNets >> baseline: spec [
 
 	<baseline>
@@ -15,7 +15,7 @@ BaselineOfOpenPonkPetriNets >> baseline: spec [
 			with: [ spec repository: 'github://openponk/openponk' ].
 		spec baseline: 'OpenPonkSimulation' with: [
 			spec
-				repository: 'github://JanBliznicenko/openponk-simulation';
+				repository: 'github://openponk/simulation';
 				loads: 'plugin' ].
 		spec
 			package: 'OpenPonk-PetriNets'
