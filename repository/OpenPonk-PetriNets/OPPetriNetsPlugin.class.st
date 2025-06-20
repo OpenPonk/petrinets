@@ -16,7 +16,7 @@ OPPetriNetsPlugin >> icon [
 	^ OPPetriNetsIcons petriNetIcon
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> layouterClass [
 	^ OPPetriNetLayouter
 ]
@@ -36,7 +36,7 @@ OPPetriNetsPlugin >> name [
 	^ 'Petri Net'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 OPPetriNetsPlugin >> supportsHidingElements [
 	^ true
 ]
