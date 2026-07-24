@@ -30,12 +30,12 @@ OPPetriNetNodeController >> buildEditorForm: aForm [
 			self modelChanged ]
 ]
 
-{ #category : 'testing' }
+{ #category : 'connecting' }
 OPPetriNetNodeController >> canBeSourceFor: aController [
 	^ self class isPossibleOutgoing: aController class
 ]
 
-{ #category : 'testing' }
+{ #category : 'connecting' }
 OPPetriNetNodeController >> canBeTargetFor: aController [
 	^ (aController isKindOf: OPPetriNetArcController) and: [ self class ~= aController source class ]
 ]
@@ -46,7 +46,7 @@ OPPetriNetNodeController >> dependentElements [
 	^ (self model incoming , self model outgoing) asSet
 ]
 
-{ #category : 'rendering' }
+{ #category : 'construction' }
 OPPetriNetNodeController >> diagramElementClass [
 
 	^ OPPetriNetNodeShape

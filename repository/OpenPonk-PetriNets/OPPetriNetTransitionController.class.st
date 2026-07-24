@@ -17,7 +17,7 @@ OPPetriNetTransitionController >> diagramElementClass [
 	^ OPPetriNetTransitionShape
 ]
 
-{ #category : 'rendering' }
+{ #category : 'construction' }
 OPPetriNetTransitionController >> hookDiagramElement [
 
 	super hookDiagramElement.
@@ -25,18 +25,18 @@ OPPetriNetTransitionController >> hookDiagramElement [
 	self diagramElement whenPlayClickedSend: #playClicked to: self
 ]
 
-{ #category : 'hooks' }
+{ #category : 'accessing' }
 OPPetriNetTransitionController >> modelClass [
 	^ OPPetriNetTransition
 ]
 
-{ #category : 'rendering' }
+{ #category : 'hooks' }
 OPPetriNetTransitionController >> playClicked [
 
 	OPPetriNetSimulationGUI stepSimulatorOfController: self
 ]
 
-{ #category : 'rendering' }
+{ #category : 'diagram elements' }
 OPPetriNetTransitionController >> unhookDiagramElement [
 
 	super unhookDiagramElement.

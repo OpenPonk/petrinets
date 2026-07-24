@@ -10,9 +10,10 @@ Class {
 OPPetriNetWeightedArcController >> buildEditorForm: aForm [
 
 	super buildEditorForm: aForm.
-	(aForm addTextInput: 'Weight')
+	(aForm addNumberInput: 'Weight')
 		text: self model weight asString;
+		minimum: 1;
 		whenTextChangedDo: [ :newValue |
-			self model weight: (newValue asString asInteger ifNil: [ 1 ]).
-			self modelChanged ]
+				self model weight: ((newValue asInteger ifNil: [ 1 ]) max: 1).
+				self modelChanged ]
 ]
