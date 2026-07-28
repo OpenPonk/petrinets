@@ -25,12 +25,6 @@ OPPetriNetNodeShape >> selectableInteraction [
 ]
 
 { #category : 'rendering' }
-OPPetriNetNodeShape >> shouldBePositionableByUser [
-
-	^ true
-]
-
-{ #category : 'rendering' }
 OPPetriNetNodeShape >> updateRenderFromModel [
 
 	(roassalShape propertyAt: #RSLabeled) text: self modelElement name.
