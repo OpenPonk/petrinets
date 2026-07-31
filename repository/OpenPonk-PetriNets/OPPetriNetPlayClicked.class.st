@@ -1,6 +1,6 @@
 Class {
 	#name : 'OPPetriNetPlayClicked',
-	#superclass : 'Announcement',
+	#superclass : 'OPDiagramElementAnnouncement',
 	#category : 'OpenPonk-PetriNets-Announcements',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Announcements'
