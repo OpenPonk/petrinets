@@ -1,3 +1,6 @@
+"
+Metacello baseline for the OpenPonk Petri Nets plugin, defining its package dependencies and load configurations.
+"
 Class {
 	#name : 'BaselineOfOpenPonkPetriNets',
 	#superclass : 'BaselineOf',

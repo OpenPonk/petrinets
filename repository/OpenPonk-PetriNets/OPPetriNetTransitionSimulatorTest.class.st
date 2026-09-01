@@ -27,27 +27,22 @@ OPPetriNetTransitionSimulatorTest >> exampleModel [
 
 { #category : 'running' }
 OPPetriNetTransitionSimulatorTest >> setUp [
+
 	super setUp.
 
-	inc := OPPetriNetPlaceSimulator
-		model:
-			(OPPetriNetPTPlace new
-				tokens: 4;
-				yourself).
+	inc := OPPetriNetPlaceSimulator model: (OPPetriNetPTPlace new
+			        tokens: 4;
+			        yourself).
 	(OPPetriNetNormalArcSimulator model: OPPetriNetNormalArc new)
 		source: inc;
-		target: simulator;
-		yourself.
+		target: simulator.
 
-	out := OPPetriNetPlaceSimulator
-		model:
-			(OPPetriNetPTPlace new
-				tokens: 4;
-				yourself).
+	out := OPPetriNetPlaceSimulator model: (OPPetriNetPTPlace new
+			        tokens: 4;
+			        yourself).
 	(OPPetriNetNormalArcSimulator model: OPPetriNetNormalArc new)
 		target: out;
-		source: simulator;
-		yourself
+		source: simulator
 ]
 
 { #category : 'tests' }

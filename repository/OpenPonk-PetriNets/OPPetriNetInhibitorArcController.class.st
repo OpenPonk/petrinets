@@ -1,3 +1,7 @@
+"
+Controller for Petri Net inhibitor arcs.
+Manages diagram lifecycle and interactions for inhibitory connections.
+"
 Class {
 	#name : 'OPPetriNetInhibitorArcController',
 	#superclass : 'OPPetriNetArcController',
@@ -7,12 +11,12 @@ Class {
 }
 
 { #category : 'construction' }
-OPPetriNetInhibitorArcController >> diagramElementClass [
+OPPetriNetInhibitorArcController class >> diagramElementClass [
 
 	^ OPPetriNetInhibitorArcShape
 ]
 
 { #category : 'accessing' }
-OPPetriNetInhibitorArcController >> modelClass [
-	^ OPPetriNetInhibitorArc
+OPPetriNetInhibitorArcController class >> viewModelClass [
+	^ OPPetriNetInhibitorArcViewModel
 ]

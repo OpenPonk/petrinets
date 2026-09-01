@@ -22,13 +22,13 @@ OPPetriNetArcControllerTest >> amountOfLabels [
 	^ 1
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetArcControllerTest >> diagramControllerClass [
 
 	^ OPPetriNetController
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetArcControllerTest >> diagramModelClass [
 	^ OPPetriNet
 ]

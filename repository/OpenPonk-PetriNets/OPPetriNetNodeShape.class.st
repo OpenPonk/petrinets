@@ -1,3 +1,6 @@
+"
+Abstract base class for diagram elements representing Petri Net nodes. Handles rendering logic, color properties via traits, and interactions for its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetNodeShape',
 	#superclass : 'OPBoundNode',
@@ -18,7 +21,7 @@ OPPetriNetNodeShape >> renderShapeDetails [
 	roassalShape addInteraction: label
 ]
 
-{ #category : 'hooks' }
+{ #category : 'interactions' }
 OPPetriNetNodeShape >> selectableInteraction [
 
 	^ OPRSSelectable highlightBorderColorBlue

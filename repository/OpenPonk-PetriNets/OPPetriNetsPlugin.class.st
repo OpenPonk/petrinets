@@ -1,9 +1,12 @@
+"
+Defines the plugin configuration for Petri Nets. Maps top-level controllers, models, view models, and serializers for the OpenPonk framework.
+"
 Class {
 	#name : 'OPPetriNetsPlugin',
 	#superclass : 'OPPlugin',
-	#category : 'OpenPonk-PetriNets-Adapters',
+	#category : 'OpenPonk-PetriNets-ViewModels',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Adapters'
+	#tag : 'ViewModels'
 }
 
 { #category : 'accessing' }

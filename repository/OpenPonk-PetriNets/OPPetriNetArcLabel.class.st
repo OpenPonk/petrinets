@@ -1,3 +1,7 @@
+"
+Abstract base class for labels attached to Petri Net arcs.
+Manages default minimum distance constraints along the arc's routing path.
+"
 Class {
 	#name : 'OPPetriNetArcLabel',
 	#superclass : 'OPEdgeLabel',
@@ -6,7 +10,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'adding' }
 OPPetriNetArcLabel >> defaultMinDistance [
 
 	^ 5

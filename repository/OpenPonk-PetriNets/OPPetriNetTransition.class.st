@@ -1,5 +1,6 @@
 "
-I represent Petri net transition
+Model representing a Petri Net transition.
+Denotes an active component that fires and moves tokens between places.
 "
 Class {
 	#name : 'OPPetriNetTransition',

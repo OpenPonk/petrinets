@@ -1,9 +1,12 @@
+"
+Stores and provides byte arrays for icons used in the Petri Nets plugin. Utilized by ViewModels and the UI layer to visually represent Petri Net elements.
+"
 Class {
 	#name : 'OPPetriNetsIcons',
 	#superclass : 'OPIcons',
-	#category : 'OpenPonk-PetriNets-Adapters',
+	#category : 'OpenPonk-PetriNets-ViewModels',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Adapters'
+	#tag : 'ViewModels'
 }
 
 { #category : 'accessing - icons' }

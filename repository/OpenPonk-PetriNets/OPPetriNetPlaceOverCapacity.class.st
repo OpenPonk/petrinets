@@ -1,3 +1,6 @@
+"
+Warning signaled when a Petri Net place exceeds its defined token capacity during simulation or modeling.
+"
 Class {
 	#name : 'OPPetriNetPlaceOverCapacity',
 	#superclass : 'Warning',

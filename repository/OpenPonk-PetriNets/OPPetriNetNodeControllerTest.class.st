@@ -17,13 +17,13 @@ OPPetriNetNodeControllerTest class >> isAbstract [
 	^ self name = #OPPetriNetNodeControllerTest
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetNodeControllerTest >> diagramControllerClass [
 
 	^ OPPetriNetController
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetNodeControllerTest >> diagramModelClass [
 	^ OPPetriNet
 ]

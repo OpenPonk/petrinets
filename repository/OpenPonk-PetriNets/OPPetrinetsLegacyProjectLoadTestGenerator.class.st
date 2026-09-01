@@ -1,3 +1,6 @@
+"
+Generates tests for loading legacy Petri Net projects to ensure backward compatibility.
+"
 Class {
 	#name : 'OPPetrinetsLegacyProjectLoadTestGenerator',
 	#superclass : 'OPLegacyProjectLoadTestGenerator',

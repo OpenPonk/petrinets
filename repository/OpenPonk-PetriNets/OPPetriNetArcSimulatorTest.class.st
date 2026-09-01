@@ -1,5 +1,5 @@
 "
-A DCPetriNetArcSimulatorTest is a test class for testing the behavior of DCPetriNetArcSimulator
+Abstract base class for unit tests verifying the behavior of Petri Net arc simulators.
 "
 Class {
 	#name : 'OPPetriNetArcSimulatorTest',
@@ -32,9 +32,12 @@ OPPetriNetArcSimulatorTest >> exampleModel [
 
 { #category : 'running' }
 OPPetriNetArcSimulatorTest >> setUp [
+
 	super setUp.
 	model := self exampleModel.
 	simulator := self controllerClass model: model.
-	place := OPPetriNetPlaceSimulator model: (OPPetriNetPTPlace new tokens: 10).
-	trans := OPPetriNetTransitionSimulator model: OPPetriNetTransition new
+	place := OPPetriNetPlaceSimulator model:
+		         (OPPetriNetPTPlace new tokens: 10).
+	trans := OPPetriNetTransitionSimulator model:
+		         OPPetriNetTransition new
 ]

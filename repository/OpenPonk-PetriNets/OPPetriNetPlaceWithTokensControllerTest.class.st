@@ -9,18 +9,18 @@ Class {
 	#tag : 'Tests'
 }
 
-{ #category : 'hooks' }
-OPPetriNetPlaceWithTokensControllerTest >> controllerClass [
-	^ OPPetriNetPTPlaceController
-]
-
-{ #category : 'construction' }
-OPPetriNetPlaceWithTokensControllerTest >> diagramElementClass [
+{ #category : 'constants' }
+OPPetriNetPlaceWithTokensControllerTest class >> diagramElementClass [
 
 	^ OPPetriNetPTPlaceShape
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
+OPPetriNetPlaceWithTokensControllerTest >> controllerClass [
+	^ OPPetriNetPTPlaceController
+]
+
+{ #category : 'constants' }
 OPPetriNetPlaceWithTokensControllerTest >> modelClass [
 	^ OPPetriNetPTPlace
 ]

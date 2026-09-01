@@ -1,3 +1,7 @@
+"
+Diagram element representing a Place/Transition (PT) place.
+Manages the rendering details of its underlying Roassal shape, including token text labels and token circle layouts.
+"
 Class {
 	#name : 'OPPetriNetPTPlaceShape',
 	#superclass : 'OPPetriNetPlaceShape',

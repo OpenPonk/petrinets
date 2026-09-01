@@ -1,3 +1,7 @@
+"
+Controller for Petri Net normal arcs.
+Manages diagram lifecycle and interactions for standard weighted input/output arcs.
+"
 Class {
 	#name : 'OPPetriNetNormalArcController',
 	#superclass : 'OPPetriNetWeightedArcController',
@@ -7,12 +11,12 @@ Class {
 }
 
 { #category : 'construction' }
-OPPetriNetNormalArcController >> diagramElementClass [
+OPPetriNetNormalArcController class >> diagramElementClass [
 
 	^ OPPetriNetNormalArcShape
 ]
 
 { #category : 'accessing' }
-OPPetriNetNormalArcController >> modelClass [
-	^ OPPetriNetNormalArc
+OPPetriNetNormalArcController class >> viewModelClass [
+	^ OPPetriNetNormalArcViewModel
 ]

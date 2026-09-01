@@ -1,5 +1,6 @@
 "
-I simulate Petri net place element
+Simulator component for Petri Net places.
+Manages runtime token state, capacity validation, and token consumption/production during net execution.
 "
 Class {
 	#name : 'OPPetriNetPlaceSimulator',

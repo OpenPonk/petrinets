@@ -1,9 +1,12 @@
+"
+Applies automated layout algorithms to Petri Net diagrams, positioning nodes and routing arcs.
+"
 Class {
 	#name : 'OPPetriNetLayouter',
-	#superclass : 'OPLayouter',
-	#category : 'OpenPonk-PetriNets-Adapters',
+	#superclass : 'OPNodesAndEdgesLayouter',
+	#category : 'OpenPonk-PetriNets-ViewModels',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Adapters'
+	#tag : 'ViewModels'
 }
 
 { #category : 'accessing' }

@@ -1,5 +1,5 @@
 "
-DCPetriNetArc represents arc between a place and a transition
+Model representing a directed arc connecting a place and a transition in a Petri Net.
 "
 Class {
 	#name : 'OPPetriNetArc',

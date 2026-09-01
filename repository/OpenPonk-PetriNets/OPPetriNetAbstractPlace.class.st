@@ -1,5 +1,5 @@
 "
-I represent Petri net place
+Abstract model representing a place in a Petri Net. Maintains the token count and manages token logic.
 "
 Class {
 	#name : 'OPPetriNetAbstractPlace',

@@ -1,3 +1,6 @@
+"
+Provides example models and diagram setups for Petri Nets.
+"
 Class {
 	#name : 'OPPetriNetsExamples',
 	#superclass : 'Object',
@@ -72,7 +75,7 @@ OPPetriNetsExamples class >> menuCommandOn: aBuilder [
 OPPetriNetsExamples class >> openExample: aModel [
 
 	| project |
-	project := OPProject named: 'FSM Example'.
+	project := OPProject named: 'Petri Net Example'.
 	project addModel: aModel.
 	^ (OPWorkbench openProject: project) showAllElementsInAllDiagrams
 ]

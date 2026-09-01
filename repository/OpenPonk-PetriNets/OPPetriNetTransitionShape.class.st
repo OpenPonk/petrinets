@@ -1,3 +1,7 @@
+"
+Diagram element representing a Petri Net transition.
+Manages the rendering details, click interactions, and play triggers of its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetTransitionShape',
 	#superclass : 'OPPetriNetNodeShape',
@@ -28,6 +32,11 @@ OPPetriNetTransitionShape >> playClicked [
 { #category : 'removing' }
 OPPetriNetTransitionShape >> removeRender [
 
+	roassalShape ifNotNil: [ :shape |
+			shape
+				propertyAt: OPRSSelectable
+				ifPresent: [ :selectableInteraction |
+					selectableInteraction announcer unsubscribe: self ] ].
 	super removeRender.
 	icon := nil.
 	transitionHelper := nil
@@ -42,7 +51,7 @@ OPPetriNetTransitionShape >> renderBasicShape [
 		  yourself
 ]
 
-{ #category : 'hooks' }
+{ #category : 'interactions' }
 OPPetriNetTransitionShape >> selectableInteraction [
 
 	| selectableInteraction removal |

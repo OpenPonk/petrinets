@@ -1,3 +1,7 @@
+"
+Diagram element representing an arc name label in a Petri Net.
+Manages anchoring position and textual rendering along the arc.
+"
 Class {
 	#name : 'OPPetriNetArcNameShape',
 	#superclass : 'OPPetriNetArcLabel',
@@ -6,7 +10,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'adding' }
 OPPetriNetArcNameShape >> defaultAnchorConstraintPosition [
 
 	^ OPRSAnchorConstraintBalanceReference balance: 0.4

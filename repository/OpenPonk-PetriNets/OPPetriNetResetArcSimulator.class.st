@@ -1,5 +1,6 @@
 "
-I simulate reset arc
+Simulator component for Petri Net reset arcs.
+Evaluates enabling conditions and empties all tokens from the source place when the transition fires.
 "
 Class {
 	#name : 'OPPetriNetResetArcSimulator',

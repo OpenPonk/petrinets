@@ -1,3 +1,6 @@
+"
+Controller for the top-level Petri Net diagram. Manages the diagram lifecycle, initializes the palette, and handles diagram interactions.
+"
 Class {
 	#name : 'OPPetriNetController',
 	#superclass : 'OPDiagramController',
@@ -6,15 +9,16 @@ Class {
 	#tag : 'Controllers'
 }
 
-{ #category : 'testing' }
+{ #category : 'accessing' }
+OPPetriNetController class >> viewModelClass [
+
+	^ OPPetriNetViewModel
+]
+
+{ #category : 'connecting' }
 OPPetriNetController >> canBeTargetFor: aController [
 	^ (super canBeTargetFor: aController)
 		or: [ aController isKindOf: OPPetriNetNodeController ]
-]
-
-{ #category : 'as yet unclassified' }
-OPPetriNetController >> commonModelClassPrefix [
-	^ 'OPPetriNet'
 ]
 
 { #category : 'accessing' }
@@ -30,13 +34,7 @@ OPPetriNetController >> controllerFactory [
 		register: OPPetriNetPTPlaceController forModel: OPPetriNetPTPlace
 ]
 
-{ #category : 'accessing' }
-OPPetriNetController >> elementsToShowInside [
-
-	^ self model elements
-]
-
-{ #category : 'initialization' }
+{ #category : 'ui interaction' }
 OPPetriNetController >> initializePalette: aPalette [
 	aPalette
 		newCreationTool: 'Place' factory: [ OPPetriNetPTPlaceController new ] icon: OPPetriNetsIcons placeIcon;

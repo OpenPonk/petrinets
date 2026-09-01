@@ -1,5 +1,6 @@
 "
-I simulate inhibitor arc
+Simulator component for Petri Net inhibitor arcs.
+Evaluates inhibition conditions and handles firing behavior where absence of tokens enables the transition.
 "
 Class {
 	#name : 'OPPetriNetInhibitorArcSimulator',

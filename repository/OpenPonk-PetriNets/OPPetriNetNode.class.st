@@ -1,5 +1,5 @@
 "
-I represent non-edge element in Petri net
+Abstract base model representing a non-edge element (place or transition) in a Petri Net.
 "
 Class {
 	#name : 'OPPetriNetNode',

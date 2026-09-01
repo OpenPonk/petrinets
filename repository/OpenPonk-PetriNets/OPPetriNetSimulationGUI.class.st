@@ -1,5 +1,6 @@
 "
-I'm DCSimulationGUI for Petri nets
+Simulation GUI presenter for Petri Net diagrams.
+Manages toolbar items, simulation control, and event display during net execution.
 "
 Class {
 	#name : 'OPPetriNetSimulationGUI',

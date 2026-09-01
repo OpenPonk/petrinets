@@ -33,6 +33,7 @@ OPPetriNetTest >> testAdd [
 
 { #category : 'tests' }
 OPPetriNetTest >> testComplexAddingRemoving [
+
 	| place1 place2 place3 place4 trans arc1 arc2 arc3 arc4 |
 	diagram := OPPetriNet new name: 'Diagram'.
 	place1 := OPPetriNetPTPlace new tokens: 2.
@@ -57,19 +58,19 @@ OPPetriNetTest >> testComplexAddingRemoving [
 		add: arc3;
 		add: arc4.
 
-	self assert: diagram elements size = 9.
+	self assert: diagram elements size equals: 9.
 	diagram remove: place1.
-	self assert: diagram elements size = 7.
+	self assert: diagram elements size equals: 7.
 	diagram remove: arc2.
-	self assert: diagram elements size = 6.
+	self assert: diagram elements size equals: 6.
 	diagram remove: trans.
-	self assert: diagram elements size = 3.
+	self assert: diagram elements size equals: 3.
 
 	trans := OPPetriNetTransition new.
 	diagram add: trans.
-	self assert: diagram elements size = 4.
+	self assert: diagram elements size equals: 4.
 	diagram add: (OPPetriNetNormalArc from: trans to: place4).
-	self assert: diagram elements size = 5.
+	self assert: diagram elements size equals: 5.
 	diagram removeAll.
-	self assert: diagram elements size = 0
+	self assert: diagram elements size equals: 0
 ]

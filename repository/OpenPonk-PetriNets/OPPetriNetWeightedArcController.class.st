@@ -1,3 +1,7 @@
+"
+Controller for Petri Net weighted arcs.
+Manages diagram lifecycle and valid connection constraints for weighted arcs.
+"
 Class {
 	#name : 'OPPetriNetWeightedArcController',
 	#superclass : 'OPPetriNetArcController',
@@ -5,15 +9,3 @@ Class {
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Controllers'
 }
-
-{ #category : 'forms' }
-OPPetriNetWeightedArcController >> buildEditorForm: aForm [
-
-	super buildEditorForm: aForm.
-	(aForm addNumberInput: 'Weight')
-		text: self model weight asString;
-		minimum: 1;
-		whenTextChangedDo: [ :newValue |
-				self model weight: ((newValue asInteger ifNil: [ 1 ]) max: 1).
-				self modelChanged ]
-]

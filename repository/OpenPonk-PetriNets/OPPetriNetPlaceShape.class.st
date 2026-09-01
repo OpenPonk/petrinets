@@ -1,3 +1,7 @@
+"
+Diagram element representing a Petri Net place.
+Manages the rendering details of its underlying Roassal shape, including the dynamic rendering of inner token indicators.
+"
 Class {
 	#name : 'OPPetriNetPlaceShape',
 	#superclass : 'OPPetriNetNodeShape',
@@ -9,7 +13,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'rendering' }
+{ #category : 'interactions' }
 OPPetriNetPlaceShape >> addInteractions [
 
 	super addInteractions.
@@ -40,7 +44,7 @@ OPPetriNetPlaceShape >> removeRender [
 	tokenGroup := nil
 ]
 
-{ #category : 'hooks' }
+{ #category : 'rendering' }
 OPPetriNetPlaceShape >> renderBasicShape [
 
 	^ RSCircle new
@@ -70,7 +74,7 @@ OPPetriNetPlaceShape >> tokenGroup [
 	^ tokenGroup
 ]
 
-{ #category : 'hooks' }
+{ #category : 'rendering' }
 OPPetriNetPlaceShape >> updateRenderFromModel [
 
 	self updateTokenAmount: self modelElement tokens.

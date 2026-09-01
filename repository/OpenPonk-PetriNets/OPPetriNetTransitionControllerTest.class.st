@@ -9,18 +9,18 @@ Class {
 	#tag : 'Tests'
 }
 
-{ #category : 'hooks' }
-OPPetriNetTransitionControllerTest >> controllerClass [
-	^ OPPetriNetTransitionController
-]
-
-{ #category : 'construction' }
-OPPetriNetTransitionControllerTest >> diagramElementClass [
+{ #category : 'constants' }
+OPPetriNetTransitionControllerTest class >> diagramElementClass [
 
 	^ OPPetriNetTransitionShape
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
+OPPetriNetTransitionControllerTest >> controllerClass [
+	^ OPPetriNetTransitionController
+]
+
+{ #category : 'constants' }
 OPPetriNetTransitionControllerTest >> modelClass [
 	^ OPPetriNetTransition
 ]
