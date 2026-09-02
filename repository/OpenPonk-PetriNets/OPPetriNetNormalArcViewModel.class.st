@@ -21,6 +21,12 @@ OPPetriNetNormalArcViewModel >> attachModelFrom: sourceViewModel to: targetViewM
 ]
 
 { #category : 'accessing' }
+OPPetriNetNormalArcViewModel >> modelType [
+
+	^ OPModelObjectType named: 'Weighted Arc'
+]
+
+{ #category : 'accessing' }
 OPPetriNetNormalArcViewModel >> nameOfType [
 
 	^ 'Arc'
