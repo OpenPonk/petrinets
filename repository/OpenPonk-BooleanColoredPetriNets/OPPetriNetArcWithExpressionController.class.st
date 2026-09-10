@@ -17,3 +17,9 @@ OPPetriNetArcWithExpressionController >> buildEditorForm: aForm [
 OPPetriNetArcWithExpressionController >> headShapeClass [
 	^ RTSimpleArrow
 ]
+
+{ #category : 'accessing' }
+OPPetriNetArcWithExpressionController >> modelClass [
+
+	^ OPPetriNetArcWithExpression
+]

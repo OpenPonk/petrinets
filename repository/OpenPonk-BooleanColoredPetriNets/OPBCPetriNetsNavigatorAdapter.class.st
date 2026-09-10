@@ -27,8 +27,10 @@ OPBCPetriNetsNavigatorAdapter >> displayMapping [
 
 { #category : 'widget API' }
 OPBCPetriNetsNavigatorAdapter >> iconMapping [
-	^ {(OPBCPetriNet -> OPPetriNetsIcons current petriNetIcon).
-	(OPPetriNetArcWithExpression -> OPPetriNetsIcons current arcIcon).
-	(OPPetriNetPlaceWithBooleanToken -> OPPetriNetsIcons current placeIcon).
-	(OPPetriNetTransition -> OPPetriNetsIcons current transitionIcon)}
+
+	^ {
+		  (OPBCPetriNet -> OPPetriNetsIcons petriNetIcon).
+		  (OPPetriNetArcWithExpression -> OPPetriNetsIcons arcIcon).
+		  (OPPetriNetPlaceWithBooleanToken -> OPPetriNetsIcons placeIcon).
+		  (OPPetriNetTransition -> OPPetriNetsIcons transitionIcon) }
 ]

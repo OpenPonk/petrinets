@@ -8,17 +8,18 @@ Class {
 
 { #category : 'initialization' }
 OPBCPetriNetController >> initializePalette: aPalette [
+
 	aPalette
 		newCreationTool: 'Place'
-			factory: [ OPPetriNetPlaceWithBooleanController new ]
-			icon: OPPetriNetsIcons current placeIcon;
+		factory: [ OPPetriNetPlaceWithBooleanController new ]
+		icon: OPPetriNetsIcons placeIcon;
 		newCreationTool: 'Transition'
-			factory: [ OPBCPetriNetTransitionController new ]
-			icon: OPPetriNetsIcons current transitionIcon;
+		factory: [ OPBCPetriNetTransitionController new ]
+		icon: OPPetriNetsIcons transitionIcon;
 		newSeparator;
 		newConnectionCreationTool: 'Arc'
-			factory: [ OPPetriNetArcWithExpressionController new ]
-			icon: OPPetriNetsIcons current arcIcon
+		factory: [ OPPetriNetArcWithExpressionController new ]
+		icon: OPPetriNetsIcons arcIcon
 ]
 
 { #category : 'accessing' }
