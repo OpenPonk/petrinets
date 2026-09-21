@@ -15,13 +15,9 @@ OPPetriNetNodeViewModel class >> isAbstract [
 	^ self = OPPetriNetNodeViewModel
 ]
 
-{ #category : 'forms' }
+{ #category : 'building' }
 OPPetriNetNodeViewModel >> buildEditorForm: aForm [
-	(aForm addTextInput: 'Name')
-		text: (self model name ifNil: [ '' ]);
-		whenTextChangedDo: [ :newValue |
-			self model name: newValue asString.
-			self modelChanged ]
+	aForm bindTextInput: 'Name' property: #name
 ]
 
 { #category : 'accessing' }

@@ -16,14 +16,9 @@ OPPetriNetWeightedArcViewModel class >> isAbstract [
 	^ self = OPPetriNetWeightedArcViewModel
 ]
 
-{ #category : 'forms' }
+{ #category : 'building' }
 OPPetriNetWeightedArcViewModel >> buildEditorForm: aForm [
-
 	super buildEditorForm: aForm.
-	(aForm addNumberInput: 'Weight')
-		text: self model weight asString;
-		minimum: 1;
-		whenTextChangedDo: [ :newValue |
-				self model weight: ((newValue asInteger ifNil: [ 1 ]) max: 1).
-				self modelChanged ]
+	(aForm bindNumberInput: 'Weight' property: #weight)
+		minimum: 1
 ]
