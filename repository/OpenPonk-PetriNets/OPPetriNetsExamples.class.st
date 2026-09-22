@@ -55,22 +55,6 @@ OPPetriNetsExamples class >> examplePetriNet [
 	^ model
 ]
 
-{ #category : 'menu' }
-OPPetriNetsExamples class >> menuCommandOn: aBuilder [
-
-	<worldMenu>
-	(aBuilder item: #'Petri Nets')
-		icon: OPPetriNetsIcons petriNetIcon;
-		action: [ self openExampleEmptyModel ];
-		order: 215;
-		with: [ 
-			(aBuilder item: #'Petri Nets Example')
-				parent: #'Petri Nets';
-				label: 'Petri Nets example';
-				icon: OPPetriNetsIcons petriNetIcon;
-				action: [ self openExamplePetriNet ] ]
-]
-
 { #category : 'examples' }
 OPPetriNetsExamples class >> openExample: aModel [
 

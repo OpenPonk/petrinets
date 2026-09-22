@@ -14,6 +14,18 @@ OPPetriNetsPlugin >> diagramControllerClass [
 	^ OPPetriNetController
 ]
 
+{ #category : 'templates' }
+OPPetriNetsPlugin >> exampleProjectTemplates [
+	"Answers example project templates for Petri Nets."
+
+	^ { 
+		(OPProjectTemplate
+			named: 'Petri Net Example'
+			icon: self icon
+			modelFactory: [ OPPetriNetsExamples examplePetriNet ]
+			isExample: true) }
+]
+
 { #category : 'accessing' }
 OPPetriNetsPlugin >> icon [
 	^ OPPetriNetsIcons petriNetIcon

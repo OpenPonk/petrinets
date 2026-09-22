@@ -16,7 +16,7 @@ Class {
 
 { #category : 'running' }
 OPPetriNetEdgeLabelDragUndoTest >> setUp [
-	| project diagram registry canvas |
+	| project diagram canvas projectController |
 	super setUp.
 	project := OPProject new.
 	netModel := OPPetriNet new.
@@ -34,24 +34,24 @@ OPPetriNetEdgeLabelDragUndoTest >> setUp [
 	netModel add: targetTransitionModel.
 	netModel add: arcModel.
 
-	registry := OPViewModelRegistry forProject: project.
 	diagram := OPOpenPonkDiagram forModelElement: netModel.
 	project addDiagram: diagram.
 
+	undoManager := OPUndoManager new.
+	projectController := OPProjectController forProject: project.
+	projectController instVarNamed: #undoManager put: undoManager.
+
 	canvas := RSCanvas new.
 	diagramController := OPPetriNetController new.
+	projectController addDiagramController: diagramController.
 	diagramController
 		canvasPresenter: (OPCanvasPresenter new canvas: canvas; yourself);
 		diagramElement: diagram;
-		viewModelRegistry: registry;
 		model: netModel.
 
 	(diagramController showInDiagramModel: sourcePlaceModel) roassalShape position: 0 @ 0.
 	(diagramController showInDiagramModel: targetTransitionModel) roassalShape position: 200 @ 0.
-	diagramController showInDiagramModel: arcModel.
-
-	undoManager := OPUndoManager new.
-	diagramController undoManager: undoManager
+	diagramController showInDiagramModel: arcModel
 ]
 
 { #category : 'running' }
