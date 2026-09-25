@@ -10,6 +10,11 @@ Class {
 }
 
 { #category : 'accessing' }
+OPPetriNetsPlugin class >> repositoryName [
+	^ #petrinets
+]
+
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> diagramControllerClass [
 	^ OPPetriNetController
 ]
