@@ -1,3 +1,6 @@
+"
+Tests backward-compatible loading and migration of version 3.0.4 .opp project files for Petri Nets.
+"
 Class {
 	#name : 'OPPetrinets304oppProjectLoadTest',
 	#superclass : 'OPLegacyProjectLoadTest',

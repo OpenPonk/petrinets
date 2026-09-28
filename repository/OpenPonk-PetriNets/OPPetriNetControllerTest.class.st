@@ -1,3 +1,6 @@
+"
+Tests diagram controller interactions, token semantics, and canvas events for Petri Net diagrams.
+"
 Class {
 	#name : 'OPPetriNetControllerTest',
 	#superclass : 'OPAbstractDiagramControllerTest',

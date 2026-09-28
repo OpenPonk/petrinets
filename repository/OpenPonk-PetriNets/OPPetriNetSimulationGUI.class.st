@@ -18,12 +18,6 @@ OPPetriNetSimulationGUI class >> simulableControllerClasses [
 	^ OrderedCollection with: OPPetriNetTransitionController
 ]
 
-{ #category : 'toolbar' }
-OPPetriNetSimulationGUI class >> toolbarMenu: aBuilder [
-	<opEditorToolbarMenu: #OPPetriNetsPlugin>
-	self toolbarMenuItemFor: aBuilder
-]
-
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> buttonItems [
 	^ super buttonItems

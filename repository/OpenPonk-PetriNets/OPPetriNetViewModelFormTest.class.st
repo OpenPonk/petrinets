@@ -1,3 +1,6 @@
+"
+Tests dynamic property form generation, field bindings, and validation for Petri Net view models.
+"
 Class {
 	#name : 'OPPetriNetViewModelFormTest',
 	#superclass : 'TestCase',

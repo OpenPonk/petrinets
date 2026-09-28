@@ -1,3 +1,6 @@
+"
+Verifies reversible drag gestures, label offset positioning, and transactional undo/redo for Petri Net edge labels.
+"
 Class {
 	#name : 'OPPetriNetEdgeLabelDragUndoTest',
 	#superclass : 'TestCase',

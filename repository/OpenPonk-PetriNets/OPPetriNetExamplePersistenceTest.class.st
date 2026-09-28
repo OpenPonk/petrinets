@@ -1,3 +1,6 @@
+"
+Verifies the persistence and serialization integrity of bundled Petri Net example models.
+"
 Class {
 	#name : 'OPPetriNetExamplePersistenceTest',
 	#superclass : 'OPExamplePersistenceTest',
