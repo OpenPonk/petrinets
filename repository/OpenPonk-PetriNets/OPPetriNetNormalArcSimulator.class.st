@@ -1,5 +1,6 @@
 "
-I simulate normal input arc
+Simulator component for Petri Net normal input arcs.
+Evaluates token availability and manages token transfer from place to transition upon firing.
 "
 Class {
 	#name : 'OPPetriNetNormalArcSimulator',

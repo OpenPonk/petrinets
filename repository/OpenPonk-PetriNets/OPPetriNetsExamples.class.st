@@ -1,3 +1,6 @@
+"
+Provides example models and diagram setups for Petri Nets.
+"
 Class {
 	#name : 'OPPetriNetsExamples',
 	#superclass : 'Object',
@@ -52,27 +55,11 @@ OPPetriNetsExamples class >> examplePetriNet [
 	^ model
 ]
 
-{ #category : 'menu' }
-OPPetriNetsExamples class >> menuCommandOn: aBuilder [
-
-	<worldMenu>
-	(aBuilder item: #'Petri Nets')
-		icon: OPPetriNetsIcons petriNetIcon;
-		action: [ self openExampleEmptyModel ];
-		order: 215;
-		with: [ 
-			(aBuilder item: #'Petri Nets Example')
-				parent: #'Petri Nets';
-				label: 'Petri Nets example';
-				icon: OPPetriNetsIcons petriNetIcon;
-				action: [ self openExamplePetriNet ] ]
-]
-
 { #category : 'examples' }
 OPPetriNetsExamples class >> openExample: aModel [
 
 	| project |
-	project := OPProject named: 'FSM Example'.
+	project := OPProject named: 'Petri Net Example'.
 	project addModel: aModel.
 	^ (OPWorkbench openProject: project) showAllElementsInAllDiagrams
 ]

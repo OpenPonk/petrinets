@@ -1,3 +1,7 @@
+"
+Diagram element representing a reset arc in a Petri Net.
+Defines specific head markers on its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetResetArcShape',
 	#superclass : 'OPPetriNetArcShape',

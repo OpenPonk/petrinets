@@ -1,3 +1,7 @@
+"
+Abstract diagram element representing a weighted arc in a Petri Net.
+Manages rendering logic for weight labels on its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetWeightedArcShape',
 	#superclass : 'OPPetriNetArcShape',
@@ -6,7 +10,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'creation' }
+{ #category : 'initialization' }
 OPPetriNetWeightedArcShape >> createOwnedElementsWithoutController [
 
 	self ownedElements ifNotEmpty: [ ^ self ].

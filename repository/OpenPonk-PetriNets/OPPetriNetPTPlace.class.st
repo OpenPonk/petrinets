@@ -1,3 +1,7 @@
+"
+Model representing a Place/Transition (PT) place in a Petri Net.
+Manages its current token count and maximum capacity constraints.
+"
 Class {
 	#name : 'OPPetriNetPTPlace',
 	#superclass : 'OPPetriNetAbstractPlace',
@@ -9,7 +13,7 @@ Class {
 	#tag : 'Models'
 }
 
-{ #category : 'accessing' }
+{ #category : 'adding' }
 OPPetriNetPTPlace >> addToken [
 	"adds one token"
 
@@ -40,19 +44,19 @@ OPPetriNetPTPlace >> initialize [
 	self removeTokens
 ]
 
-{ #category : 'accessing' }
+{ #category : 'actions' }
 OPPetriNetPTPlace >> noCapacity [
 	self capacity: SmallInteger maxVal "cannot use infinity, because it cannot be easily transformed to STON"
 ]
 
-{ #category : 'accessing' }
+{ #category : 'removing' }
 OPPetriNetPTPlace >> removeToken [
 	"removes one token"
 
 	self removeTokens: 1
 ]
 
-{ #category : 'accessing' }
+{ #category : 'removing' }
 OPPetriNetPTPlace >> removeTokens [
 	"removes all tokens"
 
@@ -81,5 +85,5 @@ OPPetriNetPTPlace >> tokens: aNumber [
 	aNumber > self capacity
 		ifTrue: [ OPPetriNetPlaceOverCapacity signalPlace: self ].
 	tokens := aNumber.
-	self announce: (OPPlaceTokensChanged element: self)
+	self announce: (OPPlaceTokensChanged model: self)
 ]

@@ -1,3 +1,7 @@
+"
+Diagram element representing a normal weighted arc in a Petri Net.
+Defines standard arrow head markers on its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetNormalArcShape',
 	#superclass : 'OPPetriNetWeightedArcShape',

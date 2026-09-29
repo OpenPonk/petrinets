@@ -1,5 +1,6 @@
 "
-I'm simulator for Petri net diagram
+Simulator for Petri net diagrams.
+Manages stepping, execution state, and coordinates token flow across the net.
 "
 Class {
 	#name : 'OPPetriNetSimulator',
@@ -20,7 +21,7 @@ OPPetriNetSimulator class >> initialClassMapping [
 		yourself
 ]
 
-{ #category : 'stepping' }
+{ #category : 'initialization' }
 OPPetriNetSimulator >> setDefaultStepping [
 	"sets default stepping settings"
 

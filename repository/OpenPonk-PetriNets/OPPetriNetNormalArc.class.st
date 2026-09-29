@@ -1,5 +1,5 @@
 "
-I represent normal arc from a place to a transition 
+Model representing a normal weighted arc from a place to a transition in a Petri Net.
 "
 Class {
 	#name : 'OPPetriNetNormalArc',

@@ -9,18 +9,18 @@ Class {
 	#tag : 'Tests'
 }
 
-{ #category : 'hooks' }
-OPPetriNetInhibitorArcControllerTest >> controllerClass [
-	^ OPPetriNetInhibitorArcController
-]
-
-{ #category : 'construction' }
-OPPetriNetInhibitorArcControllerTest >> diagramElementClass [
+{ #category : 'constants' }
+OPPetriNetInhibitorArcControllerTest class >> diagramElementClass [
 
 	^ OPPetriNetInhibitorArcShape
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
+OPPetriNetInhibitorArcControllerTest >> controllerClass [
+	^ OPPetriNetInhibitorArcController
+]
+
+{ #category : 'constants' }
 OPPetriNetInhibitorArcControllerTest >> modelClass [
 	^ OPPetriNetInhibitorArc
 ]

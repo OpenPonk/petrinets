@@ -9,18 +9,18 @@ Class {
 	#tag : 'Tests'
 }
 
-{ #category : 'hooks' }
-OPPetriNetResetArcControllerTest >> controllerClass [
-	^ OPPetriNetResetArcController
-]
-
-{ #category : 'construction' }
-OPPetriNetResetArcControllerTest >> diagramElementClass [
+{ #category : 'constants' }
+OPPetriNetResetArcControllerTest class >> diagramElementClass [
 
 	^ OPPetriNetResetArcShape
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
+OPPetriNetResetArcControllerTest >> controllerClass [
+	^ OPPetriNetResetArcController
+]
+
+{ #category : 'constants' }
 OPPetriNetResetArcControllerTest >> modelClass [
 	^ OPPetriNetResetArc
 ]

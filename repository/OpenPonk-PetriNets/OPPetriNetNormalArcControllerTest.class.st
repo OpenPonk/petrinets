@@ -9,23 +9,23 @@ Class {
 	#tag : 'Tests'
 }
 
-{ #category : 'hooks' }
-OPPetriNetNormalArcControllerTest >> amountOfLabels [
-	^ 2
-]
-
-{ #category : 'hooks' }
-OPPetriNetNormalArcControllerTest >> controllerClass [
-	^ OPPetriNetNormalArcController
-]
-
-{ #category : 'construction' }
-OPPetriNetNormalArcControllerTest >> diagramElementClass [
+{ #category : 'constants' }
+OPPetriNetNormalArcControllerTest class >> diagramElementClass [
 
 	^ OPPetriNetNormalArcShape
 ]
 
 { #category : 'hooks' }
+OPPetriNetNormalArcControllerTest >> amountOfLabels [
+	^ 2
+]
+
+{ #category : 'constants' }
+OPPetriNetNormalArcControllerTest >> controllerClass [
+	^ OPPetriNetNormalArcController
+]
+
+{ #category : 'constants' }
 OPPetriNetNormalArcControllerTest >> modelClass [
 	^ OPPetriNetNormalArc
 ]

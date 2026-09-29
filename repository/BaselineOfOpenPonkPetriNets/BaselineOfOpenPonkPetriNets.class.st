@@ -1,3 +1,6 @@
+"
+Metacello baseline for the OpenPonk Petri Nets plugin, defining its package dependencies and load configurations.
+"
 Class {
 	#name : 'BaselineOfOpenPonkPetriNets',
 	#superclass : 'BaselineOf',
@@ -5,7 +8,7 @@ Class {
 	#package : 'BaselineOfOpenPonkPetriNets'
 }
 
-{ #category : 'accessing' }
+{ #category : 'baselines' }
 BaselineOfOpenPonkPetriNets >> baseline: spec [
 
 	<baseline>
@@ -15,7 +18,7 @@ BaselineOfOpenPonkPetriNets >> baseline: spec [
 			with: [ spec repository: 'github://openponk/openponk:v4.1.x' ].
 		spec baseline: 'OpenPonkSimulation' with: [
 			spec
-				repository: 'github://JanBliznicenko/openponk-simulation:v4.1.x';
+				repository: 'github://openponk/simulation';
 				loads: 'plugin' ].
 		spec
 			package: 'OpenPonk-PetriNets'

@@ -1,5 +1,5 @@
 "
-A DCPetriNetNodeSimulatorTest is a test class for testing the behavior of DCPetriNetNodeSimulator
+Abstract base class for unit tests verifying the behavior of Petri Net node simulators.
 "
 Class {
 	#name : 'OPPetriNetNodeSimulatorTest',

@@ -1,3 +1,7 @@
+"
+Diagram element representing an arc weight label in a Petri Net.
+Manages anchoring position and weight value rendering along the arc.
+"
 Class {
 	#name : 'OPPetriNetArcWeightShape',
 	#superclass : 'OPPetriNetArcLabel',
@@ -6,7 +10,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'adding' }
 OPPetriNetArcWeightShape >> defaultAnchorConstraintPosition [
 
 	^ OPRSAnchorConstraintBalanceReference balance: 0.7

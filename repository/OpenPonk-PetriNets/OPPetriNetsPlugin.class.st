@@ -1,14 +1,34 @@
+"
+Defines the plugin configuration for Petri Nets. Maps top-level controllers, models, view models, and serializers for the OpenPonk framework.
+"
 Class {
 	#name : 'OPPetriNetsPlugin',
 	#superclass : 'OPPlugin',
-	#category : 'OpenPonk-PetriNets-Adapters',
+	#category : 'OpenPonk-PetriNets-ViewModels',
 	#package : 'OpenPonk-PetriNets',
-	#tag : 'Adapters'
+	#tag : 'ViewModels'
 }
+
+{ #category : 'accessing' }
+OPPetriNetsPlugin class >> repositoryName [
+	^ #petrinets
+]
 
 { #category : 'accessing' }
 OPPetriNetsPlugin >> diagramControllerClass [
 	^ OPPetriNetController
+]
+
+{ #category : 'templates' }
+OPPetriNetsPlugin >> exampleProjectTemplates [
+	"Answers example project templates for Petri Nets."
+
+	^ { 
+		(OPProjectTemplate
+			named: 'Petri Net Example'
+			icon: self icon
+			modelFactory: [ OPPetriNetsExamples examplePetriNet ]
+			isExample: true) }
 ]
 
 { #category : 'accessing' }
@@ -16,7 +36,7 @@ OPPetriNetsPlugin >> icon [
 	^ OPPetriNetsIcons petriNetIcon
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 OPPetriNetsPlugin >> layouterClass [
 	^ OPPetriNetLayouter
 ]
@@ -36,7 +56,7 @@ OPPetriNetsPlugin >> name [
 	^ 'Petri Net'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 OPPetriNetsPlugin >> supportsHidingElements [
 	^ true
 ]

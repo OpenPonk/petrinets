@@ -1,3 +1,6 @@
+"
+Controller for Petri Net arcs. Manages diagram lifecycle and interactions for directional edges.
+"
 Class {
 	#name : 'OPPetriNetArcController',
 	#superclass : 'OPDirectionalRelationshipController',
@@ -5,17 +8,3 @@ Class {
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Controllers'
 }
-
-{ #category : 'announcements' }
-OPPetriNetArcController >> internalSubscribeTo: aModel [
-
-	super internalSubscribeTo: aModel.
-	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
-]
-
-{ #category : 'destruction' }
-OPPetriNetArcController >> removeModel [
-
-	self diagramController model remove: self model.
-	super removeModel
-]

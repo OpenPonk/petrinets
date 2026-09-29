@@ -1,5 +1,5 @@
 "
-I'm simulator for arcs from place into transition
+Abstract simulator component for input arcs leading from a place into a transition.
 "
 Class {
 	#name : 'OPPetriNetInputArcSimulator',

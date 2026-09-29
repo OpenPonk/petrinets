@@ -1,5 +1,6 @@
 "
-I'm DCSimulationGUI for Petri nets
+Simulation GUI presenter for Petri Net diagrams.
+Manages toolbar items, simulation control, and event display during net execution.
 "
 Class {
 	#name : 'OPPetriNetSimulationGUI',
@@ -15,12 +16,6 @@ OPPetriNetSimulationGUI class >> simulableControllerClasses [
 	for example: in Petri nets, only transitions are simulable = one specific transition can be fired"
 
 	^ OrderedCollection with: OPPetriNetTransitionController
-]
-
-{ #category : 'toolbar' }
-OPPetriNetSimulationGUI class >> toolbarMenu: aBuilder [
-	<opEditorToolbarMenu: #OPPetriNetsPlugin>
-	self toolbarMenuItemFor: aBuilder
 ]
 
 { #category : 'private - hooks' }

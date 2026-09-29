@@ -1,3 +1,7 @@
+"
+Controller for Petri Net reset arcs.
+Manages diagram lifecycle and valid connection constraints for reset connections.
+"
 Class {
 	#name : 'OPPetriNetResetArcController',
 	#superclass : 'OPPetriNetArcController',
@@ -7,12 +11,12 @@ Class {
 }
 
 { #category : 'construction' }
-OPPetriNetResetArcController >> diagramElementClass [
+OPPetriNetResetArcController class >> diagramElementClass [
 
 	^ OPPetriNetResetArcShape
 ]
 
 { #category : 'accessing' }
-OPPetriNetResetArcController >> modelClass [
-	^ OPPetriNetResetArc
+OPPetriNetResetArcController class >> viewModelClass [
+	^ OPPetriNetResetArcViewModel
 ]

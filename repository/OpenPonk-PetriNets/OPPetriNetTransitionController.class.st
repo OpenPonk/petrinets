@@ -1,3 +1,7 @@
+"
+Controller for Petri Net transitions.
+Manages diagram interactions, execution triggers (e.g., play clicks), and connection constraints.
+"
 Class {
 	#name : 'OPPetriNetTransitionController',
 	#superclass : 'OPPetriNetNodeController',
@@ -6,18 +10,23 @@ Class {
 	#tag : 'Controllers'
 }
 
+{ #category : 'construction' }
+OPPetriNetTransitionController class >> diagramElementClass [
+
+	^ OPPetriNetTransitionShape
+]
+
 { #category : 'class initialization' }
 OPPetriNetTransitionController class >> initializePossibleConnected [
 	PossibleOutgoing := Set with: OPPetriNetNormalArcController
 ]
 
-{ #category : 'construction' }
-OPPetriNetTransitionController >> diagramElementClass [
-
-	^ OPPetriNetTransitionShape
+{ #category : 'accessing' }
+OPPetriNetTransitionController class >> viewModelClass [
+	^ OPPetriNetTransitionViewModel
 ]
 
-{ #category : 'rendering' }
+{ #category : 'construction' }
 OPPetriNetTransitionController >> hookDiagramElement [
 
 	super hookDiagramElement.
@@ -26,17 +35,12 @@ OPPetriNetTransitionController >> hookDiagramElement [
 ]
 
 { #category : 'hooks' }
-OPPetriNetTransitionController >> modelClass [
-	^ OPPetriNetTransition
-]
-
-{ #category : 'rendering' }
 OPPetriNetTransitionController >> playClicked [
 
 	OPPetriNetSimulationGUI stepSimulatorOfController: self
 ]
 
-{ #category : 'rendering' }
+{ #category : 'diagram elements' }
 OPPetriNetTransitionController >> unhookDiagramElement [
 
 	super unhookDiagramElement.

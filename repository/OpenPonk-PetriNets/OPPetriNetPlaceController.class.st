@@ -1,9 +1,10 @@
+"
+Controller for Petri Net places.
+Manages diagram lifecycle and interactions for place nodes.
+"
 Class {
 	#name : 'OPPetriNetPlaceController',
 	#superclass : 'OPPetriNetNodeController',
-	#instVars : [
-		'tokenGroup'
-	],
 	#category : 'OpenPonk-PetriNets-Controllers',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Controllers'

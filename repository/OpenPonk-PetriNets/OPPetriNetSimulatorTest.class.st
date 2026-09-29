@@ -1,5 +1,6 @@
 "
-A DCPetriNetSimulatorTest is a test class for testing the behavior of DCPetriNetSimulator
+Unit tests for OPPetriNetSimulator.
+Verifies stepping, execution flow, and overall simulation behavior for Petri Net diagrams.
 "
 Class {
 	#name : 'OPPetriNetSimulatorTest',
@@ -64,6 +65,9 @@ OPPetriNetSimulatorTest >> exampleModel [
 
 { #category : 'running' }
 OPPetriNetSimulatorTest >> setUp [
+
+	super setUp.
+
 	simulator := self controllerClass model: self exampleModel
 ]
 

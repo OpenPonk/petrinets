@@ -30,7 +30,13 @@ OPPetriNetPlaceWithBooleanController >> buildEditorForm: aForm [
 			existenceBox state: true ]
 ]
 
-{ #category : #hooks }
+{ #category : 'accessing' }
+OPPetriNetPlaceWithBooleanController >> modelClass [
+
+	^ OPPetriNetPlaceWithBooleanToken
+]
+
+{ #category : 'hooks' }
 OPPetriNetPlaceWithBooleanController >> refreshFigure [
 	self tokenGroupFrom: self model token.
 	super refreshFigure

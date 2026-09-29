@@ -1,3 +1,6 @@
+"
+Diagram element representing a standard directed arc in a Petri Net. Manages the rendering details, routing, and head markers of its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetArcShape',
 	#superclass : 'OPEdge',
@@ -6,7 +9,7 @@ Class {
 	#tag : 'DiagramElements'
 }
 
-{ #category : 'creation' }
+{ #category : 'initialization' }
 OPPetriNetArcShape >> createOwnedElementsWithoutController [
 
 	self ownedElements ifNotEmpty: [ ^ self ].

@@ -1,3 +1,6 @@
+"
+Abstract base controller for Petri Net nodes (places and transitions). Manages diagram interactions and validates valid source and target connections.
+"
 Class {
 	#name : 'OPPetriNetNodeController',
 	#superclass : 'OPElementController',
@@ -8,6 +11,12 @@ Class {
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Controllers'
 }
+
+{ #category : 'construction' }
+OPPetriNetNodeController class >> diagramElementClass [
+
+	^ OPPetriNetNodeShape
+]
 
 { #category : 'class initialization' }
 OPPetriNetNodeController class >> initializePossibleConnected [
@@ -20,48 +29,12 @@ OPPetriNetNodeController class >> isPossibleOutgoing: aController [
 	^ PossibleOutgoing includes: aController
 ]
 
-{ #category : 'forms' }
-OPPetriNetNodeController >> buildEditorForm: aForm [
-
-	(aForm addText: 'Name')
-		text: self model name;
-		whenTextChangedDo: [ :newValue |
-			self model name: newValue asString.
-			self modelChanged ]
-]
-
-{ #category : 'testing' }
+{ #category : 'connecting' }
 OPPetriNetNodeController >> canBeSourceFor: aController [
 	^ self class isPossibleOutgoing: aController class
 ]
 
-{ #category : 'testing' }
+{ #category : 'connecting' }
 OPPetriNetNodeController >> canBeTargetFor: aController [
 	^ (aController isKindOf: OPPetriNetArcController) and: [ self class ~= aController source class ]
-]
-
-{ #category : 'accessing' }
-OPPetriNetNodeController >> dependentElements [
-
-	^ (self model incoming , self model outgoing) asSet
-]
-
-{ #category : 'rendering' }
-OPPetriNetNodeController >> diagramElementClass [
-
-	^ OPPetriNetNodeShape
-]
-
-{ #category : 'announcements' }
-OPPetriNetNodeController >> internalSubscribeTo: aModel [
-
-	super internalSubscribeTo: aModel.
-	aModel weakWhen: OPElementRemoved send: #removeControllerAndDiagramElement to: self
-]
-
-{ #category : 'destruction' }
-OPPetriNetNodeController >> removeModel [
-
-	self diagramController model remove: self model.
-	super removeModel
 ]

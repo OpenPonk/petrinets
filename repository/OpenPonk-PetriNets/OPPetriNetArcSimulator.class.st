@@ -1,5 +1,6 @@
 "
-I'm simulator for edges
+Simulator for Petri Net arcs (edges).
+Evaluates whether the connected transition is enabled and handles token flow logic during firing.
 "
 Class {
 	#name : 'OPPetriNetArcSimulator',

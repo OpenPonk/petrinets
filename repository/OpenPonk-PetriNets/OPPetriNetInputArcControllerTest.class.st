@@ -17,25 +17,25 @@ OPPetriNetInputArcControllerTest class >> isAbstract [
 	^ self name = #OPPetriNetInputArcControllerTest
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
 OPPetriNetInputArcControllerTest >> sourceControllerClass [
 
 	^ OPPetriNetPTPlaceController
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
 OPPetriNetInputArcControllerTest >> sourceModelClass [
 
 	^ OPPetriNetPTPlace
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
 OPPetriNetInputArcControllerTest >> targetControllerClass [
 
 	^ OPPetriNetTransitionController
 ]
 
-{ #category : 'hooks' }
+{ #category : 'constants' }
 OPPetriNetInputArcControllerTest >> targetModelClass [
 
 	^ OPPetriNetTransition

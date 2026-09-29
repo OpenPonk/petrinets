@@ -1,5 +1,5 @@
 "
-I'm simulator for non-edge elements.
+Simulator component for non-edge Petri Net elements. Evaluates whether a node can receive or send tokens during net execution.
 "
 Class {
 	#name : 'OPPetriNetNodeSimulator',

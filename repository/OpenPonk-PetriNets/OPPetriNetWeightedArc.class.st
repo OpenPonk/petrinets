@@ -1,5 +1,6 @@
 "
-I represent an arc with weight
+Model representing a weighted arc in a Petri Net.
+Stores weight properties for the connection between a place and a transition.
 "
 Class {
 	#name : 'OPPetriNetWeightedArc',
@@ -14,6 +15,7 @@ Class {
 
 { #category : 'initialization' }
 OPPetriNetWeightedArc >> initialize [
+
 	super initialize.
 	weight := 1
 ]

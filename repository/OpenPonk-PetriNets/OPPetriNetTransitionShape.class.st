@@ -1,8 +1,11 @@
+"
+Diagram element representing a Petri Net transition.
+Manages the rendering details, click interactions, and play triggers of its underlying Roassal shape.
+"
 Class {
 	#name : 'OPPetriNetTransitionShape',
 	#superclass : 'OPPetriNetNodeShape',
 	#instVars : [
-		'announcer',
 		'transitionHelper',
 		'icon'
 	],
@@ -10,12 +13,6 @@ Class {
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'DiagramElements'
 }
-
-{ #category : 'accessing' }
-OPPetriNetTransitionShape >> announcer [
-
-	^ announcer ifNil: [ announcer := Announcer new ]
-]
 
 { #category : 'accessing' }
 OPPetriNetTransitionShape >> attachedShapes [
@@ -28,18 +25,24 @@ OPPetriNetTransitionShape >> attachedShapes [
 { #category : 'hooks' }
 OPPetriNetTransitionShape >> playClicked [
 
-	self announcer announce: OPPetriNetPlayClicked
+	self announcer announce:
+		(OPPetriNetPlayClicked forDiagramElement: self)
 ]
 
 { #category : 'removing' }
 OPPetriNetTransitionShape >> removeRender [
 
+	roassalShape ifNotNil: [ :shape |
+			shape
+				propertyAt: OPRSSelectable
+				ifPresent: [ :selectableInteraction |
+					selectableInteraction announcer unsubscribe: self ] ].
 	super removeRender.
 	icon := nil.
 	transitionHelper := nil
 ]
 
-{ #category : 'hooks' }
+{ #category : 'rendering' }
 OPPetriNetTransitionShape >> renderBasicShape [
 
 	^ RSBox new
@@ -48,7 +51,7 @@ OPPetriNetTransitionShape >> renderBasicShape [
 		  yourself
 ]
 
-{ #category : 'hooks' }
+{ #category : 'interactions' }
 OPPetriNetTransitionShape >> selectableInteraction [
 
 	| selectableInteraction removal |
@@ -86,17 +89,11 @@ OPPetriNetTransitionShape >> selectableInteraction [
 	^ selectableInteraction
 ]
 
-{ #category : 'subscription' }
-OPPetriNetTransitionShape >> unsubscribe: aReceiver [
-
-	^ self announcer unsubscribe: aReceiver
-]
-
 { #category : 'hooks' }
-OPPetriNetTransitionShape >> whenPlayClickedSend: aSelector to: anObject [
+OPPetriNetTransitionShape >> whenPlayClickedSend: aSelector to: aReceiver [
 
 	^ self announcer
 		  when: OPPetriNetPlayClicked
 		  send: aSelector
-		  to: anObject
+		  to: aReceiver
 ]

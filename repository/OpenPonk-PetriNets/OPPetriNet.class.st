@@ -1,5 +1,5 @@
 "
-DCPetriNet represents Petri net diagram
+Model representing a Petri Net diagram. Acts as the root container for places, transitions, and arcs.
 "
 Class {
 	#name : 'OPPetriNet',
