@@ -1,23 +1,1 @@
-SmalltalkCISpec {
-	#loading : [
-		SCIMetacelloLoadSpec {
-			#platforms : [
-				#pharo
-			],
-			#baseline : 'OpenPonkPetriNets',
-			#directory : 'repository'
-		}
-	],
-	#preLoading : 'ci-scripts/.github/scripts/preLoad.st',
-	#postLoading : 'ci-scripts/.github/scripts/postLoad.st',
-	#testing : {
-		#packages : [
-			'OpenPonk*'
-		],
-		#coverage : {
-			#packages : [
-				'OpenPonk-PetriNets*'
-			]
-		}
-	}
-}
+SmalltalkCISpec {	#loading : [		SCIMetacelloLoadSpec {			#platforms : [				#pharo			],			#baseline : 'OpenPonkPetriNets',			#directory : 'repository'		}	],	#preLoading : 'ci-scripts/.github/scripts/preLoad.st',	#postLoading : 'ci-scripts/.github/scripts/postLoad.st',	#testing : {		#packages : [			'OpenPonk*'		],		#coverage : {			#packages : [				'OpenPonk-PetriNets'			]		}	}}
