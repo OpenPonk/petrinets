@@ -4,9 +4,9 @@ Tests backward-compatible loading and migration of version 2.1.0 .opp project fi
 Class {
 	#name : 'OPPetrinets210oppProjectLoadTest',
 	#superclass : 'OPLegacyProjectLoadTest',
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-Examples',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'Examples'
 }
 
 { #category : 'files' }

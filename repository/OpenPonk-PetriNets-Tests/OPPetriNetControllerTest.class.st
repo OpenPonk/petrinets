@@ -4,8 +4,8 @@ Tests diagram controller interactions, token semantics, and canvas events for Pe
 Class {
 	#name : 'OPPetriNetControllerTest',
 	#superclass : 'OPAbstractDiagramControllerTest',
-	#category : 'OpenPonk-PetriNets-Controllers',
-	#package : 'OpenPonk-PetriNets',
+	#category : 'OpenPonk-PetriNets-Tests-Controllers',
+	#package : 'OpenPonk-PetriNets-Tests',
 	#tag : 'Controllers'
 }
 

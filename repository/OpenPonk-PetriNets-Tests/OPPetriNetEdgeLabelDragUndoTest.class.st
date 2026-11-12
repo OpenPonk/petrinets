@@ -12,9 +12,9 @@ Class {
 		'diagramController',
 		'undoManager'
 	],
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-DiagramElements',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'DiagramElements'
 }
 
 { #category : 'running' }

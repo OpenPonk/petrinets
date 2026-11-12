@@ -4,9 +4,9 @@ Verifies the initialization, registration, and shutdown lifecycle of the Petri N
 Class {
 	#name : 'OPPetriNetsPluginLifecycleTest',
 	#superclass : 'OPAbstractPluginExampleLifecycleTest',
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-Controllers',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'Controllers'
 }
 
 { #category : 'accessing' }

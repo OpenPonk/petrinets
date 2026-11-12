@@ -4,9 +4,9 @@ Verifies the persistence and serialization integrity of bundled Petri Net exampl
 Class {
 	#name : 'OPPetriNetExamplePersistenceTest',
 	#superclass : 'OPExamplePersistenceTest',
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-Examples',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'Examples'
 }
 
 { #category : 'hooks' }

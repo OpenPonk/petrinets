@@ -24,10 +24,13 @@ BaselineOfOpenPonkPetriNets >> baseline: spec [
 			package: 'OpenPonk-PetriNets'
 			with: [ spec requires: #( 'OpenPonkSimulation' ) ].
 		spec
+			package: 'OpenPonk-PetriNets-Tests'
+			with: [ spec requires: #( 'OpenPonk-PetriNets' ) ].
+		spec
 			package: 'OpenPonk-BooleanColoredPetriNets'
 			with: [ spec requires: #( 'OpenPonk-PetriNets' ) ].
 		spec
-			group: 'plugin' with: #( 'OpenPonk-PetriNets' );
+			group: 'plugin' with: #( 'OpenPonk-PetriNets' 'OpenPonk-PetriNets-Tests' );
 			group: 'default' with: #( 'OpenPonk' 'plugin' );
 			group: 'bcpn' with: #( 'OpenPonk-BooleanColoredPetriNets' ) ]
 ]

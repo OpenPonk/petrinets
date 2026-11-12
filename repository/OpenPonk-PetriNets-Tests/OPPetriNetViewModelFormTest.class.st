@@ -4,9 +4,9 @@ Tests dynamic property form generation, field bindings, and validation for Petri
 Class {
 	#name : 'OPPetriNetViewModelFormTest',
 	#superclass : 'TestCase',
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-ViewModels',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'ViewModels'
 }
 
 { #category : 'tests' }

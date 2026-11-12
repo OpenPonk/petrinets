@@ -4,9 +4,9 @@ Verifies the serialization and deserialization roundtrip persistence for Petri N
 Class {
 	#name : 'OPPetriNetsPluginRoundtripTest',
 	#superclass : 'OPAbstractPluginExampleRoundtripTest',
-	#category : 'OpenPonk-PetriNets-Tests',
-	#package : 'OpenPonk-PetriNets',
-	#tag : 'Tests'
+	#category : 'OpenPonk-PetriNets-Tests-Controllers',
+	#package : 'OpenPonk-PetriNets-Tests',
+	#tag : 'Controllers'
 }
 
 { #category : 'accessing' }
