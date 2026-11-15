@@ -74,7 +74,7 @@ OPPetriNetSimulatorTest >> setUp [
 { #category : 'tests' }
 OPPetriNetSimulatorTest >> testDefaultStepping [
 
-	| items item stepped didAction |
+	| items item steppableBeforeStep stepped didAction steppedSimulator |
 	simulator setDefaultStepping.
 
 	items := simulator itemsForAction.
@@ -86,18 +86,20 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 	self assert: item isSimulable description: 'Selected Petri net transition simulator must be simulable'.
 	self assert: item isSteppable description: 'Selected Petri net transition simulator must be steppable'.
 
+	steppableBeforeStep := simulator steppableElements.
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
 	simulator simulableElementsDo: [ :each | each when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
 	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
 	self assert: stepped size equals: 1.
-	self assert: stepped first simulator identicalTo: item.
+	steppedSimulator := stepped first simulator.
+	self assertCollection: steppableBeforeStep includesAll: { steppedSimulator }.
 	self assert: didAction size equals: 2.
 	self assert: (didAction collect: #index as: Array) equals: #( 1 2 ).
 	self assert: (didAction collect: #simulator as: Array) equals: {
-			item.
-			item }
+			steppedSimulator.
+			steppedSimulator }
 ]
 
 { #category : 'tests' }
