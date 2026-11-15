@@ -31,18 +31,13 @@ OPPetriNetNodeControllerTest >> diagramModelClass [
 { #category : 'tests' }
 OPPetriNetNodeControllerTest >> testFigureRefresh [
 
-	| text |
 	controller createModelIn: diagramController model.
 	diagramController addController: controller.
 	controller
 		createDiagramElement;
 		renderDiagramElement.
-	self
-		assert: (controller roassalShape propertyAt: #RSLabeled) text
-		equals: ''.
+	self assert: (controller roassalShape propertyAt: #RSLabeled) text equals: ''.
 	controller model name: 'new name'.
 	controller modelChanged.
-	text := (controller roassalShape propertyAt: #RSLabeled) text.
-	self assert:
-		((text last: 8) = 'new name' or: [ (text first: 8) = 'new name' ])
+	self assert: (controller roassalShape propertyAt: #RSLabeled) text equals: 'new name'
 ]

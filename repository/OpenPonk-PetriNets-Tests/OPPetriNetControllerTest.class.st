@@ -9,31 +9,54 @@ Class {
 	#tag : 'Controllers'
 }
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetControllerTest >> controllerClass [
+
 	^ OPPetriNetController
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetControllerTest >> diagramModelClass [
+
 	^ OPPetriNet
 ]
 
-{ #category : 'accessing' }
+{ #category : 'constants' }
 OPPetriNetControllerTest >> modelClass [
+
 	^ OPPetriNet
 ]
 
 { #category : 'tests' }
 OPPetriNetControllerTest >> testControllerFactory [
-	self assert: controller controllerFactory isNotNil.
-	self assert: (controller controllerFactory isKindOf: OPControllerFactory)
+
+	| factory |
+	factory := controller controllerFactory.
+	self assert: factory class identicalTo: OPControllerFactory.
+	{
+		(OPPetriNetInhibitorArc -> OPPetriNetInhibitorArcController).
+		(OPPetriNetResetArc -> OPPetriNetResetArcController).
+		(OPPetriNetNormalArc -> OPPetriNetNormalArcController).
+		(OPPetriNetTransition -> OPPetriNetTransitionController).
+		(OPPetriNetPTPlace -> OPPetriNetPTPlaceController) } do: [ :eachPair |
+			| instance |
+			instance := eachPair key new.
+			self
+				assert: (factory hasControllerFor: instance)
+				description: ('Controller factory must register {1}' format: { eachPair key name }).
+			self assert: (factory newControllerFor: instance) class identicalTo: eachPair value ].
+	self
+		deny: (factory hasControllerFor: OPPetriNet new)
+		description: 'Controller factory must not register diagram model OPPetriNet'
 ]
 
 { #category : 'tests' }
 OPPetriNetControllerTest >> testInitializePalette [
-	| palette |
+
+	| palette entryLabels |
 	palette := OPPalette new.
 	controller initializePalette: palette.
-	self denyCollection: palette items hasSameElements: #()
+	self assert: palette items size equals: 8.
+	entryLabels := palette items select: [ :eachItem | eachItem class == OPPaletteEntry ] thenCollect: #label.
+	self assert: entryLabels asArray equals: #( 'Select' 'Place' 'Transition' 'Arc' 'Inhibitor Arc' 'Reset Arc' )
 ]

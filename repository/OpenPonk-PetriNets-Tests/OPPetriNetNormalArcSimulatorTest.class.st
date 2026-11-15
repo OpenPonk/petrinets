@@ -35,9 +35,10 @@ OPPetriNetNormalArcSimulatorTest >> testHandleFire [
 
 { #category : 'tests' }
 OPPetriNetNormalArcSimulatorTest >> testIsEnabled [
-	self assert: simulator isEnabled.
+
+	self assert: simulator isEnabled description: 'Normal arc with weight 2 must be enabled when source place has 10 tokens'.
 	place petriNetTokens: 0.
-	self assert: simulator isEnabled not.
+	self deny: simulator isEnabled description: 'Normal arc with weight 2 must be disabled when source place has 0 tokens'.
 	place petriNetTokens: 1000.
-	self assert: simulator isEnabled
+	self assert: simulator isEnabled description: 'Normal arc with weight 2 must be enabled when source place has 1000 tokens'
 ]

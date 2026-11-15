@@ -70,52 +70,59 @@ OPPetriNetEdgeLabelDragUndoTest >> tearDown [
 
 { #category : 'tests' }
 OPPetriNetEdgeLabelDragUndoTest >> testDragEdgeLabelCreatesUndoableChangeAnchoredBoundsCommand [
-	| arcController labelElement labelShape canvas initialAnchor initialBalance initialDistance compositeCommand targetCommand |
+
+	| arcController labelElement labelShape canvas initialAnchor initialBalance initialDistance compositeCommand targetCommand currentAnchor |
 	arcController := diagramController controllerForModel: arcModel.
 	labelElement := arcController diagramElement ownedElements
-		detect: [ :eachOwnedElement | eachOwnedElement isKindOf: OPEdgeLabel ]
-		ifNone: [ self fail: 'OPEdgeLabel was not found among owned elements of arc diagram element' ].
+		                detect: [ :eachOwnedElement | eachOwnedElement isKindOf: OPEdgeLabel ]
+		                ifNone: [ self fail: 'OPEdgeLabel was not found among owned elements of arc diagram element' ].
 	labelShape := labelElement roassalShape.
 	canvas := diagramController canvas.
 
 	initialAnchor := labelShape propertyAt: OPRSAnchorConstraint ifAbsent: [ nil ].
-	self assert: initialAnchor isNotNil.
+	self assert: initialAnchor class identicalTo: OPRSAnchorConstraint.
 	initialBalance := initialAnchor balance.
 	initialDistance := initialAnchor distanceToLine.
 
 	labelShape announce: (RSMouseDragStart new
-		position: labelShape position;
-		shape: labelShape;
-		canvas: canvas;
-		yourself).
+			 position: labelShape position;
+			 shape: labelShape;
+			 canvas: canvas;
+			 yourself).
 	labelShape announce: (RSMouseDragging new
-		step: 30 @ 40;
-		position: labelShape position + (30 @ 40);
-		shape: labelShape;
-		canvas: canvas;
-		yourself).
+			 step: 30 @ 40;
+			 position: labelShape position + (30 @ 40);
+			 shape: labelShape;
+			 canvas: canvas;
+			 yourself).
 	labelShape announce: (RSMouseDragEnd new
-		position: labelShape position + (30 @ 40);
-		shape: labelShape;
-		canvas: canvas;
-		yourself).
+			 position: labelShape position + (30 @ 40);
+			 shape: labelShape;
+			 canvas: canvas;
+			 yourself).
 
-	self assert: undoManager canUndo.
+	self assert: undoManager canUndo description: 'Dragging an edge label must record an undoable command'.
 	self assert: undoManager undoStack size equals: 1.
 	compositeCommand := undoManager undoStack first.
-	self assert: compositeCommand class equals: OPCompositeCommand.
+	self assert: compositeCommand class identicalTo: OPCompositeCommand.
 	self assert: compositeCommand commands size equals: 1.
 
 	targetCommand := compositeCommand commands first.
-	self assert: targetCommand class equals: OPChangeAnchoredBoundsCommand.
+	self assert: targetCommand class identicalTo: OPChangeAnchoredBoundsCommand.
 	self assert: targetCommand oldBalance equals: initialBalance.
 	self assert: targetCommand oldDistanceToLine equals: initialDistance.
+	self deny: targetCommand newBalance equals: initialBalance.
+	self deny: targetCommand newDistanceToLine equals: initialDistance.
 
 	undoManager undo.
-	self assert: (labelShape propertyAt: OPRSAnchorConstraint) balance equals: initialBalance.
-	self assert: (labelShape propertyAt: OPRSAnchorConstraint) distanceToLine equals: initialDistance.
+	currentAnchor := labelShape propertyAt: OPRSAnchorConstraint.
+	self assert: currentAnchor balance equals: initialBalance.
+	self assert: currentAnchor distanceToLine equals: initialDistance.
 
 	undoManager redo.
-	self deny: (labelShape propertyAt: OPRSAnchorConstraint) balance equals: initialBalance.
-	self deny: (labelShape propertyAt: OPRSAnchorConstraint) distanceToLine equals: initialDistance
+	currentAnchor := labelShape propertyAt: OPRSAnchorConstraint.
+	self assert: currentAnchor balance equals: targetCommand newBalance.
+	self assert: currentAnchor distanceToLine equals: targetCommand newDistanceToLine.
+	self deny: currentAnchor balance equals: initialBalance.
+	self deny: currentAnchor distanceToLine equals: initialDistance
 ]

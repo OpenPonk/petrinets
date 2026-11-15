@@ -45,8 +45,9 @@ OPPetriNetPlaceSimulatorTest >> testLoadingState [
 
 { #category : 'tests' }
 OPPetriNetPlaceSimulatorTest >> testSteppable [
-	self assert: simulator isSteppable not.
-	self assert: simulator isSimulable not
+
+	self deny: simulator isSteppable description: 'Place simulator must not be steppable'.
+	self deny: simulator isSimulable description: 'Place simulator must not be simulable'
 ]
 
 { #category : 'tests' }

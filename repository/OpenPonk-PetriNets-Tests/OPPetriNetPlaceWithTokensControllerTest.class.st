@@ -34,48 +34,28 @@ OPPetriNetPlaceWithTokensControllerTest >> testTokenGroupFrom [
 		createDiagramElement;
 		renderDiagramElement.
 	controller model tokens: 0.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color transparent.
-	self assert:
-		controller diagramElement tokenLabel color = Color transparent
-		| (controller diagramElement tokenLabel text = '').
+	self assert: controller diagramElement tokenCircle color equals: Color transparent.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: ''.
 	controller model tokens: 1.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color black.
-	self assert:
-		controller diagramElement tokenLabel color = Color transparent
-		| (controller diagramElement tokenLabel text = '').
+	self assert: controller diagramElement tokenCircle color equals: Color black.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: ''.
 	controller model tokens: 111.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color black.
-	self
-		assert: controller diagramElement tokenLabel color
-		equals: Color black.
+	self assert: controller diagramElement tokenCircle color equals: Color black.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
 	self assert: controller diagramElement tokenLabel text equals: '111'.
 	controller model tokens: 9.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color black.
-	self
-		assert: controller diagramElement tokenLabel color
-		equals: Color black.
+	self assert: controller diagramElement tokenCircle color equals: Color black.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
 	self assert: controller diagramElement tokenLabel text equals: '9'.
 	controller model tokens: 1.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color black.
-	self assert:
-		controller diagramElement tokenLabel color = Color transparent
-		| (controller diagramElement tokenLabel text = '').
+	self assert: controller diagramElement tokenCircle color equals: Color black.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: ''.
 	controller model tokens: 1.
 	controller model tokens: 0.
-	self
-		assert: controller diagramElement tokenCircle color
-		equals: Color transparent.
-	self assert:
-		controller diagramElement tokenLabel color = Color transparent
-		| (controller diagramElement tokenLabel text = '')
+	self assert: controller diagramElement tokenCircle color equals: Color transparent.
+	self assert: controller diagramElement tokenLabel color equals: Color black.
+	self assert: controller diagramElement tokenLabel text equals: ''
 ]

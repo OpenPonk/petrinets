@@ -73,5 +73,5 @@ OPPetriNetTest >> testComplexAddingRemoving [
 	diagram add: (OPPetriNetNormalArc from: trans to: place4).
 	self assert: diagram elements size equals: 5.
 	diagram removeAll.
-	self assert: diagram elements size equals: 0
+	self assertEmpty: diagram elements
 ]

@@ -69,7 +69,8 @@ OPPetriNetTransitionSimulatorTest >> testFiring [
 
 { #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testSteppable [
-	self assert: simulator isSimulable.
-	self assert: simulator isSteppable.
-	self assert: simulator isEnabled
+
+	self assert: simulator isSimulable description: 'Transition simulator must be simulable'.
+	self assert: simulator isSteppable description: 'Transition simulator with sufficient incoming tokens must be steppable'.
+	self assert: simulator isEnabled description: 'Transition simulator with sufficient incoming tokens must be enabled'
 ]

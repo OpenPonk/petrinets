@@ -73,15 +73,18 @@ OPPetriNetSimulatorTest >> setUp [
 
 { #category : 'tests' }
 OPPetriNetSimulatorTest >> testDefaultStepping [
+
 	| items item stepped didAction |
 	simulator setDefaultStepping.
 
 	items := simulator itemsForAction.
 	self assert: items size equals: 1.
 	item := items first.
-	self assert: item isSimulable.
-	self assert: item isSteppable.
-	self assert: (item isKindOf: OPPetriNetTransitionSimulator).
+	self assert: item class identicalTo: OPPetriNetTransitionSimulator.
+	self assert: item model class identicalTo: OPPetriNetTransition.
+	self assertCollection: #( 'T1' 'T2' ) includesAll: { item model name }.
+	self assert: item isSimulable description: 'Selected Petri net transition simulator must be simulable'.
+	self assert: item isSteppable description: 'Selected Petri net transition simulator must be steppable'.
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
@@ -89,25 +92,41 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 	simulator simulableElementsDo: [ :each | each when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
 	self assert: stepped size equals: 1.
-	self assert: didAction size equals: 2
+	self assert: stepped first simulator identicalTo: item.
+	self assert: didAction size equals: 2.
+	self assert: (didAction collect: #index as: Array) equals: #( 1 2 ).
+	self assert: (didAction collect: #simulator as: Array) equals: {
+			item.
+			item }
 ]
 
 { #category : 'tests' }
 OPPetriNetSimulatorTest >> testSteppingAll [
+
 	| items stepped didAction |
 	simulator setSteppingAll.
-	
+
 	items := simulator itemsForAction.
 	self assert: items size equals: 2.
-	self assert: (items allSatisfy: [ :item | item isSimulable ]).
-	self assert: (items allSatisfy: [ :item | item isSteppable ]).
-	self assert: (items allSatisfy: [ :item | item isKindOf: OPPetriNetTransitionSimulator ]).
+	self assert: (items collect: #class as: Array) equals: {
+			OPPetriNetTransitionSimulator.
+			OPPetriNetTransitionSimulator }.
+	self assertCollection: (items collect: [ :eachItem | eachItem model name ]) hasSameElements: #( 'T1' 'T2' ).
+	items do: [ :eachItem |
+			self assert: eachItem isSimulable description: 'Every transition simulator must be simulable'.
+			self assert: eachItem isSteppable description: 'Every transition simulator must be steppable' ].
 
 	stepped := OrderedCollection new.
 	didAction := OrderedCollection new.
-	items do: [ :item | item when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
-	items do: [ :item | item when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
+	items do: [ :eachItem | eachItem when: OPSimulatorStepped do: [ :event | stepped add: event ] for: self ].
+	items do: [ :eachItem | eachItem when: OPSimulatorDidAction do: [ :event | didAction add: event ] for: self ].
 	simulator step.
 	self assert: stepped size equals: 2.
-	self assert: didAction size equals: 4
+	self assertCollection: (stepped collect: #simulator) hasSameElements: items.
+	self assert: didAction size equals: 4.
+	self assertCollection: (didAction collect: [ :eachEvent | eachEvent simulator -> eachEvent index ]) hasSameElements: {
+			(items first -> 1).
+			(items first -> 2).
+			(items second -> 1).
+			(items second -> 2) }
 ]

@@ -29,9 +29,10 @@ OPPetriNetResetArcSimulatorTest >> testHandleFire [
 
 { #category : 'tests' }
 OPPetriNetResetArcSimulatorTest >> testIsEnabled [
-	self assert: simulator isEnabled.
+
+	self assert: simulator isEnabled description: 'Reset arc must remain enabled when source place has 10 tokens'.
 	place petriNetTokens: 0.
-	self assert: simulator isEnabled.
+	self assert: simulator isEnabled description: 'Reset arc must remain enabled when source place has 0 tokens'.
 	place petriNetTokens: 1000.
-	self assert: simulator isEnabled
+	self assert: simulator isEnabled description: 'Reset arc must remain enabled when source place has 1000 tokens'
 ]
