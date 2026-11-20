@@ -12,12 +12,6 @@ Class {
 	#tag : 'Controllers'
 }
 
-{ #category : 'construction' }
-OPPetriNetNodeController class >> diagramElementClass [
-
-	^ OPPetriNetNodeShape
-]
-
 { #category : 'class initialization' }
 OPPetriNetNodeController class >> initializePossibleConnected [
 	self subclassResponsibility

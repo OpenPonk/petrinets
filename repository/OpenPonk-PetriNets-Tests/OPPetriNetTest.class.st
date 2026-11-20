@@ -12,24 +12,23 @@ Class {
 { #category : 'tests' }
 OPPetriNetTest >> testAdd [
 
-	| d first second t |
+	| petriNet firstTransition secondPlace arc |
 	super testAdd.
-	self setUp.
 
-	d := OPPetriNet new.
-	self assertEmpty: d elements.
+	petriNet := OPPetriNet new.
+	self assertEmpty: petriNet elements.
 
-	first := OPPetriNetTransition new name: '1'.
-	d add: first.
-	second := OPPetriNetPTPlace new name: '2'.
-	d add: second.
-	self assert: d elements size equals: 2.
-	self assert: d elements first owner equals: d.
+	firstTransition := OPPetriNetTransition new name: '1'.
+	petriNet add: firstTransition.
+	secondPlace := OPPetriNetPTPlace new name: '2'.
+	petriNet add: secondPlace.
+	self assert: petriNet elements size equals: 2.
+	self assert: petriNet elements first owner equals: petriNet.
 
-	t := OPPetriNetNormalArc from: d elements first to: d elements second.
-	d add: t.
-	self assert: d elements size equals: 3.
-	self assert: d elements third owner equals: d
+	arc := OPPetriNetNormalArc from: petriNet elements first to: petriNet elements second.
+	petriNet add: arc.
+	self assert: petriNet elements size equals: 3.
+	self assert: petriNet elements third owner equals: petriNet
 ]
 
 { #category : 'tests' }
@@ -74,4 +73,109 @@ OPPetriNetTest >> testComplexAddingRemoving [
 	self assert: diagram elements size equals: 5.
 	diagram removeAll.
 	self assertEmpty: diagram elements
+]
+
+{ #category : 'tests' }
+OPPetriNetTest >> testEmptyExampleModel [
+
+	| emptyPetriNet |
+	emptyPetriNet := OPPetriNetsExamples emptyModel.
+	self assert: emptyPetriNet class identicalTo: OPPetriNet.
+	self assert: emptyPetriNet name equals: 'New Petri Net'.
+	self assertEmpty: emptyPetriNet elements
+]
+
+{ #category : 'tests' }
+OPPetriNetTest >> testNodeTopologyWithoutOwnerAndRemovedFrom [
+
+	| petriNet place transition incomingArc outgoingArc |
+	place := OPPetriNetPTPlace named: 'P1'.
+	self assertEmpty: place connected.
+	self assertEmpty: place incoming.
+	self assertEmpty: place outgoing.
+
+	petriNet := OPPetriNet named: 'Net'.
+	transition := OPPetriNetTransition named: 'T1'.
+	incomingArc := OPPetriNetNormalArc from: transition to: place.
+	outgoingArc := OPPetriNetNormalArc from: place to: transition.
+	petriNet
+		add: place;
+		add: transition;
+		add: incomingArc;
+		add: outgoingArc.
+
+	self should: [ place removedFrom: transition ] raise: AssertionFailure.
+
+	place removedFrom: petriNet.
+	self assert: place owner identicalTo: nil.
+	self assert: incomingArc owner identicalTo: nil.
+	self assert: outgoingArc owner identicalTo: nil.
+	self assertEmpty: petriNet arcs.
+	self assertEmpty: transition connected
+]
+
+{ #category : 'tests' }
+OPPetriNetTest >> testPlaceTokensCapacityAndOverCapacityWarning [
+
+	| place signaledPlace |
+	place := OPPetriNetPTPlace named: 'P1'.
+	self assert: place tokens equals: 0.
+
+	place addToken.
+	self assert: place tokens equals: 1.
+	place addTokens: 4.
+	self assert: place tokens equals: 5.
+	place removeToken.
+	self assert: place tokens equals: 4.
+	place removeTokens: 2.
+	self assert: place tokens equals: 2.
+
+	self should: [ place removeTokens: 3 ] raise: AssertionFailure.
+	self assert: place tokens equals: 2.
+
+	place capacity: 3.
+	signaledPlace := nil.
+	[ place addTokens: 2 ]
+		on: OPPetriNetPlaceOverCapacity
+		do: [ :warning |
+				signaledPlace := warning place.
+				warning resume ].
+	self assert: signaledPlace identicalTo: place.
+	self assert: place tokens equals: 4.
+
+	place noCapacity.
+	self assert: place capacity equals: SmallInteger maxVal.
+	place addTokens: 100.
+	self assert: place tokens equals: 104
+]
+
+{ #category : 'tests' }
+OPPetriNetTest >> testPlacesTransitionsAndTypePredicates [
+
+	| petriNet place transition arc abstractNode |
+	petriNet := OPPetriNet named: 'Net'.
+	place := OPPetriNetPTPlace named: 'P1'.
+	transition := OPPetriNetTransition named: 'T1'.
+	arc := OPPetriNetNormalArc from: place to: transition.
+	abstractNode := OPPetriNetNode new.
+	petriNet
+		add: place;
+		add: transition;
+		add: arc.
+
+	self assertCollection: petriNet places hasSameElements: { place }.
+	self assertCollection: petriNet transitions hasSameElements: { transition }.
+	self assertCollection: petriNet nodes hasSameElements: {
+			place.
+			transition }.
+	self assertCollection: petriNet arcs hasSameElements: { arc }.
+
+	self assert: place isPlace description: 'Place must answer true to #isPlace'.
+	self deny: place isTransition description: 'Place must answer false to #isTransition'.
+	self deny: transition isPlace description: 'Transition must answer false to #isPlace'.
+	self assert: transition isTransition description: 'Transition must answer true to #isTransition'.
+	self deny: arc isPlace description: 'Arc must answer false to #isPlace'.
+	self deny: arc isTransition description: 'Arc must answer false to #isTransition'.
+	self deny: abstractNode isPlace description: 'Base node must answer false to #isPlace'.
+	self deny: abstractNode isTransition description: 'Base node must answer false to #isTransition'
 ]

@@ -17,11 +17,6 @@ OPPetriNetArcControllerTest class >> isAbstract [
 	^ self = OPPetriNetArcControllerTest
 ]
 
-{ #category : 'hooks' }
-OPPetriNetArcControllerTest >> amountOfLabels [
-	^ 1
-]
-
 { #category : 'constants' }
 OPPetriNetArcControllerTest >> diagramControllerClass [
 

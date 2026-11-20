@@ -26,9 +26,7 @@ OPPetriNetArcShape >> headMarker [
 { #category : 'rendering' }
 OPPetriNetArcShape >> renderBasicShape [
 
-	^ (self source = self target
-		   ifTrue: [ OPRSBezier ]
-		   ifFalse: [ OPRSPolyline ]) new
+	^ OPRSPolyline new
 		  markerEnd: self headMarker;
 		  withBorderAttachPoint;
 		  controlPointsController: OPRSDraggableCPController new;

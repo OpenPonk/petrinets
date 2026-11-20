@@ -10,14 +10,6 @@ Class {
 	#tag : 'Simulation'
 }
 
-{ #category : 'hooks' }
-OPPetriNetSimulationGUI class >> simulableControllerClasses [
-	"collection of element controllers whose single simulators can be fired independently
-	for example: in Petri nets, only transitions are simulable = one specific transition can be fired"
-
-	^ OrderedCollection with: OPPetriNetTransitionController
-]
-
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> buttonItems [
 	^ super buttonItems
@@ -54,18 +46,22 @@ OPPetriNetSimulationGUI >> buttonItems [
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> displayEvent: anActionEvent [
 
-	| controller prevColor |
+	| controller shape previousColor |
 	anActionEvent index = 2 ifFalse: [ ^ self ].
-	controller := self diagramController controllerForModel:
-		              anActionEvent simulator model.
-	prevColor := controller roassalShape color.
-	controller roassalShape color: Color lightOrange lighter.
-	controller roassalShape signalUpdate.
+	controller := self diagramController controllerForModel: anActionEvent simulator model ifNone: [ ^ self ].
+	controller diagramElement exists ifFalse: [ ^ self ].
+	shape := controller roassalShape.
+	shape ifNil: [ ^ self ].
+	previousColor := shape color.
+	shape color: Color lightOrange lighter.
+	shape signalUpdate.
 	[
-	(Delay forMilliseconds: 200) wait.
-	controller roassalShape color = prevColor ifFalse: [
-		controller roassalShape color: prevColor.
-		controller roassalShape signalUpdate ] ] fork
+		(Delay forMilliseconds: 200) wait.
+		controller diagramElement exists ifTrue: [
+				controller roassalShape ifNotNil: [ :currentShape |
+						currentShape color = previousColor ifFalse: [
+								currentShape color: previousColor.
+								currentShape signalUpdate ] ] ] ] fork
 ]
 
 { #category : 'private - hooks' }

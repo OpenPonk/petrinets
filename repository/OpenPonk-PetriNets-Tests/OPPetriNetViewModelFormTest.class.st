@@ -47,6 +47,51 @@ OPPetriNetViewModelFormTest >> testPlaceViewModelBindsTokensAndCapacity [
 ]
 
 { #category : 'tests' }
+OPPetriNetViewModelFormTest >> testViewModelMetadataIconsAndAbstractFlags [
+
+	| petriNet place transition normalArc inhibitorArc resetArc petriNetViewModel normalArcViewModel inhibitorArcViewModel resetArcViewModel |
+	petriNet := OPPetriNet named: 'Net'.
+	place := OPPetriNetPTPlace named: 'P1'.
+	transition := OPPetriNetTransition named: 'T1'.
+	normalArc := OPPetriNetNormalArc from: place to: transition.
+	inhibitorArc := OPPetriNetInhibitorArc from: place to: transition.
+	resetArc := OPPetriNetResetArc from: place to: transition.
+	petriNet
+		add: place;
+		add: transition;
+		add: normalArc;
+		add: inhibitorArc;
+		add: resetArc.
+
+	petriNetViewModel := OPPetriNetViewModel new model: petriNet.
+	self assertCollection: petriNetViewModel essentialChildrenModels hasSameElements: {
+			place.
+			transition.
+			normalArc.
+			inhibitorArc.
+			resetArc }.
+
+	self assert: OPPetriNetNodeViewModel isAbstract description: 'Base node view model must be abstract'.
+	self deny: OPPetriNetPlaceViewModel isAbstract description: 'Place view model must be concrete'.
+	self assert: OPPetriNetArcViewModel isAbstract description: 'Base arc view model must be abstract'.
+	self assert: OPPetriNetWeightedArcViewModel isAbstract description: 'Base weighted arc view model must be abstract'.
+	self deny: OPPetriNetNormalArcViewModel isAbstract description: 'Normal arc view model must be concrete'.
+	self deny: OPPetriNetInhibitorArcViewModel isAbstract description: 'Inhibitor arc view model must be concrete'.
+	self deny: OPPetriNetResetArcViewModel isAbstract description: 'Reset arc view model must be concrete'.
+
+	normalArcViewModel := OPPetriNetNormalArcViewModel new model: normalArc.
+	inhibitorArcViewModel := OPPetriNetInhibitorArcViewModel new model: inhibitorArc.
+	resetArcViewModel := OPPetriNetResetArcViewModel new model: resetArc.
+
+	self assert: normalArcViewModel icon class identicalTo: Form.
+	self assert: inhibitorArcViewModel icon class identicalTo: Form.
+	self assert: resetArcViewModel icon class identicalTo: Form.
+	self assert: normalArcViewModel modelType equals: (OPModelObjectType named: 'Weighted Arc').
+	self assert: normalArcViewModel nameOfType equals: 'Arc'.
+	self assert: OPPetriNetsPlugin repositoryName equals: #petrinets
+]
+
+{ #category : 'tests' }
 OPPetriNetViewModelFormTest >> testWeightedArcViewModelBindsWeight [
 
 	| form viewModel model |

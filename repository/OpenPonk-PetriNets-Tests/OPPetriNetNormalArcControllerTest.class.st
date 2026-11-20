@@ -15,11 +15,6 @@ OPPetriNetNormalArcControllerTest class >> diagramElementClass [
 	^ OPPetriNetNormalArcShape
 ]
 
-{ #category : 'hooks' }
-OPPetriNetNormalArcControllerTest >> amountOfLabels [
-	^ 2
-]
-
 { #category : 'constants' }
 OPPetriNetNormalArcControllerTest >> controllerClass [
 	^ OPPetriNetNormalArcController

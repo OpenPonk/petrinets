@@ -103,6 +103,18 @@ OPPetriNetSimulatorTest >> testDefaultStepping [
 ]
 
 { #category : 'tests' }
+OPPetriNetSimulatorTest >> testInitialClassMapping [
+
+	| mapping |
+	mapping := OPPetriNetSimulator initialClassMapping.
+	self assert: (mapping at: OPPetriNetNormalArc) identicalTo: OPPetriNetNormalArcSimulator.
+	self assert: (mapping at: OPPetriNetInhibitorArc) identicalTo: OPPetriNetInhibitorArcSimulator.
+	self assert: (mapping at: OPPetriNetResetArc) identicalTo: OPPetriNetResetArcSimulator.
+	self assert: (mapping at: OPPetriNetPTPlace) identicalTo: OPPetriNetPlaceSimulator.
+	self assert: (mapping at: OPPetriNetTransition) identicalTo: OPPetriNetTransitionSimulator
+]
+
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testSteppingAll [
 
 	| items stepped didAction |

@@ -41,3 +41,10 @@ OPPetriNetArcSimulatorTest >> setUp [
 	trans := OPPetriNetTransitionSimulator model:
 		         OPPetriNetTransition new
 ]
+
+{ #category : 'tests' }
+OPPetriNetArcSimulatorTest >> testIsNotSteppableAndNotSimulable [
+
+	self deny: simulator isSteppable description: 'Arc simulator must not be steppable'.
+	self deny: simulator isSimulable description: 'Arc simulator must not be simulable'
+]

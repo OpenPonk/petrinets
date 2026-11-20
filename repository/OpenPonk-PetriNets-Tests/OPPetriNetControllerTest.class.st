@@ -53,10 +53,64 @@ OPPetriNetControllerTest >> testControllerFactory [
 { #category : 'tests' }
 OPPetriNetControllerTest >> testInitializePalette [
 
-	| palette entryLabels |
+	| palette entries expectedToolClasses |
 	palette := OPPalette new.
 	controller initializePalette: palette.
 	self assert: palette items size equals: 8.
-	entryLabels := palette items select: [ :eachItem | eachItem class == OPPaletteEntry ] thenCollect: #label.
-	self assert: entryLabels asArray equals: #( 'Select' 'Place' 'Transition' 'Arc' 'Inhibitor Arc' 'Reset Arc' )
+	entries := palette items select: [ :eachItem | eachItem class == OPPaletteEntry ].
+	expectedToolClasses := {
+		                       ('Place' -> OPPetriNetPTPlaceController).
+		                       ('Transition' -> OPPetriNetTransitionController).
+		                       ('Arc' -> OPPetriNetNormalArcController).
+		                       ('Inhibitor Arc' -> OPPetriNetInhibitorArcController).
+		                       ('Reset Arc' -> OPPetriNetResetArcController) }.
+	self assert: (entries collect: #label as: Array) equals: { 'Select' } , (expectedToolClasses collect: #key).
+	expectedToolClasses do: [ :eachPair |
+			| entry createdController |
+			entry := entries detect: [ :eachEntry | eachEntry label = eachPair key ].
+			entry performAction.
+			createdController := palette selectedTool instVarNamed: #controller.
+			self assert: createdController class identicalTo: eachPair value ]
+]
+
+{ #category : 'tests' }
+OPPetriNetControllerTest >> testNodeConnectionRulesAndPossibleOutgoingInitialization [
+
+	| placeController transitionController normalArcController inhibitorArcController resetArcController savedPlaceOutgoing savedTransitionOutgoing |
+	placeController := OPPetriNetPTPlaceController new.
+	transitionController := OPPetriNetTransitionController new.
+	normalArcController := OPPetriNetNormalArcController new.
+	inhibitorArcController := OPPetriNetInhibitorArcController new.
+	resetArcController := OPPetriNetResetArcController new.
+
+	savedPlaceOutgoing := OPPetriNetPTPlaceController instVarNamed: #PossibleOutgoing.
+	savedTransitionOutgoing := OPPetriNetTransitionController instVarNamed: #PossibleOutgoing.
+	[
+		OPPetriNetPTPlaceController instVarNamed: #PossibleOutgoing put: nil.
+		OPPetriNetTransitionController instVarNamed: #PossibleOutgoing put: nil.
+
+		self assert: (placeController canBeSourceFor: normalArcController) description: 'Place must allow normal outgoing arc'.
+		self assert: (placeController canBeSourceFor: inhibitorArcController) description: 'Place must allow inhibitor outgoing arc'.
+		self assert: (placeController canBeSourceFor: resetArcController) description: 'Place must allow reset outgoing arc'.
+		self deny: (placeController canBeSourceFor: transitionController) description: 'Place must not be source for a node controller'.
+
+		self assert: (transitionController canBeSourceFor: normalArcController) description: 'Transition must allow normal outgoing arc'.
+		self
+			deny: (transitionController canBeSourceFor: inhibitorArcController)
+			description: 'Transition must not allow inhibitor outgoing arc'.
+		self deny: (transitionController canBeSourceFor: resetArcController) description: 'Transition must not allow reset outgoing arc'.
+
+		normalArcController source: placeController.
+		self assert: (transitionController canBeTargetFor: normalArcController) description: 'Transition must accept arc from place'.
+		self deny: (placeController canBeTargetFor: normalArcController) description: 'Place must reject arc from another place'.
+
+		normalArcController source: transitionController.
+		self assert: (placeController canBeTargetFor: normalArcController) description: 'Place must accept arc from transition'.
+		self
+			deny: (transitionController canBeTargetFor: normalArcController)
+			description: 'Transition must reject arc from another transition'.
+		self deny: (placeController canBeTargetFor: transitionController) description: 'Node must reject non-arc controller as target' ]
+		ensure: [
+				OPPetriNetPTPlaceController instVarNamed: #PossibleOutgoing put: savedPlaceOutgoing.
+				OPPetriNetTransitionController instVarNamed: #PossibleOutgoing put: savedTransitionOutgoing ]
 ]

@@ -46,6 +46,24 @@ OPPetriNetTransitionSimulatorTest >> setUp [
 ]
 
 { #category : 'tests' }
+OPPetriNetTransitionSimulatorTest >> testFireAndDisabledOrNonFiringGuards [
+
+	simulator fire.
+	self assert: inc petriNetTokens equals: 3.
+	self assert: out petriNetTokens equals: 5.
+
+	simulator fireOutgoing.
+	self assert: out petriNetTokens equals: 5.
+
+	inc petriNetTokens: 0.
+	self deny: simulator isEnabled description: 'Transition with empty input place must not be enabled'.
+	simulator fireIncoming.
+	self assert: inc petriNetTokens equals: 0.
+	simulator fireOutgoing.
+	self assert: out petriNetTokens equals: 5
+]
+
+{ #category : 'tests' }
 OPPetriNetTransitionSimulatorTest >> testFiring [
 
 	self assert: inc petriNetTokens equals: 4.
