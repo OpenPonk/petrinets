@@ -4,7 +4,7 @@ Verifies deterministic simulation controls, event display guards for hidden or u
 "
 Class {
 	#name : 'OPPetriNetSimulationGUITest',
-	#superclass : 'TestCase',
+	#superclass : 'OPAbstractUITest',
 	#instVars : [
 		'openWindowsBefore',
 		'petriNet',
