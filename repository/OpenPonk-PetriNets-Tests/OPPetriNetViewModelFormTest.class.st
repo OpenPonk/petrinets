@@ -49,7 +49,7 @@ OPPetriNetViewModelFormTest >> testPlaceViewModelBindsTokensAndCapacity [
 { #category : 'tests' }
 OPPetriNetViewModelFormTest >> testViewModelMetadataIconsAndAbstractFlags [
 
-	| petriNet place transition normalArc inhibitorArc resetArc petriNetViewModel normalArcViewModel inhibitorArcViewModel resetArcViewModel |
+	| project projectController petriNet place transition normalArc inhibitorArc resetArc petriNetViewModel normalArcViewModel inhibitorArcViewModel resetArcViewModel |
 	petriNet := OPPetriNet named: 'Net'.
 	place := OPPetriNetPTPlace named: 'P1'.
 	transition := OPPetriNetTransition named: 'T1'.
@@ -63,8 +63,14 @@ OPPetriNetViewModelFormTest >> testViewModelMetadataIconsAndAbstractFlags [
 		add: inhibitorArc;
 		add: resetArc.
 
-	petriNetViewModel := OPPetriNetViewModel new model: petriNet.
-	self assertCollection: petriNetViewModel essentialChildrenModels hasSameElements: {
+	project := OPProject named: 'PetriNetViewModelTest'.
+	project addModel: petriNet.
+	projectController := OPProjectController forProject: project.
+	petriNetViewModel := projectController viewModelRegistry viewModelFor: petriNet.
+	self assertCollection: petriNetViewModel childrenModels hasSameElements: {
+			place.
+			transition }.
+	self assertCollection: petriNetViewModel allChildrenModels hasSameElements: {
 			place.
 			transition.
 			normalArc.

@@ -1,5 +1,5 @@
 "
-View model for the top-level Petri Net model. Provides essential child models and icon definitions for the workbench tree and UI integration.
+View model for the top-level Petri Net model. Provides child models and icon definitions for the workbench tree and UI integration.
 "
 Class {
 	#name : 'OPPetriNetViewModel',
@@ -21,11 +21,6 @@ OPPetriNetViewModel class >> modelClass [ ^ OPPetriNet
 
 { #category : 'accessing' }
 OPPetriNetViewModel >> childrenModels [ ^ self model nodes
-]
-
-{ #category : 'accessing' }
-OPPetriNetViewModel >> essentialChildrenModels [
-			^ self model elements asArray
 ]
 
 { #category : 'accessing' }
