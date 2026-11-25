@@ -128,54 +128,39 @@ OPPetriNetSimulationGUITest >> testButtonItemsAndDeterministicActions [
 ]
 
 { #category : 'tests' }
-OPPetriNetSimulationGUITest >> testHandleSimulatorActionFlashesVisibleTransitionAndIgnoresOtherIndices [
+OPPetriNetSimulationGUITest >> testEnabledTransitionHighlightAndTwoPhaseStepAnimation [
 
-	| transitionController transitionShape originalColor originalFillStyle transitionSimulator firstActionEvent secondActionEvent |
-	diagramController showInDiagramModel: sourcePlace.
-	diagramController showInDiagramModel: targetPlace.
-	transitionController := diagramController showInDiagramModel: transition.
+	| transitionController transitionShape originalBorderColor originalBorderWidth originalFill |
+	petriNet elements do: [ :eachElement | diagramController showInDiagramModel: eachElement ].
+	transitionController := diagramController controllerForModel: transition.
 	transitionShape := transitionController roassalShape.
-	originalColor := transitionShape color.
-	originalFillStyle := transitionController diagramElement fillColor.
+	originalBorderColor := transitionShape borderColor.
+	originalBorderWidth := transitionShape border width.
+	originalFill := transitionShape color.
 
 	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
-	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
+	self assert: transitionShape borderColor equals: Color green darker.
+	self assert: transitionShape border width equals: 2.
+	self assert: transitionShape color equals: originalFill.
 
-	firstActionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 1.
-	simulationGui handleSimulatorAction: firstActionEvent.
-	self assert: transitionShape color equals: originalColor.
-
-	secondActionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
-	simulationGui handleSimulatorAction: secondActionEvent.
+	simulationGui animator liveAnimationChecker: [ :canvas | canvas isNotNil ].
+	simulationGui session step.
+	self assert: simulationGui animator activeAnimation class identicalTo: RSSequentialAnimation.
+	self assert: simulationGui animator activeAnimation animations size equals: 2.
 	self assert: transitionShape color equals: Color lightOrange lighter.
-	self assert: transitionController diagramElement fillColor equals: originalFillStyle.
-
-	simulationGui close.
-	self assert: transitionShape color equals: originalColor.
-
-	simulationGui handleSimulatorAction: secondActionEvent.
-	self assert: transitionShape color equals: originalColor
-]
-
-{ #category : 'tests' }
-OPPetriNetSimulationGUITest >> testHandleSimulatorActionIgnoresHiddenAndUnrenderedTransition [
-
-	| transitionSimulator actionEvent transitionController |
-	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
-	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
-	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
 
 	simulationGui session step.
-	self assert: sourcePlace tokens equals: 2.
-	self assert: targetPlace tokens equals: 1.
+	simulationGui session step.
+	self assert: sourcePlace tokens equals: 0.
+	self assert: transitionShape borderColor equals: Color green darker.
+	simulationGui animator completeImmediately.
+	self assert: transitionShape borderColor equals: originalBorderColor.
+	self assert: transitionShape border width equals: originalBorderWidth.
+	self assert: transitionShape color equals: originalFill.
 
-	diagramController showInDiagramModel: sourcePlace.
-	diagramController showInDiagramModel: targetPlace.
-	transitionController := diagramController showInDiagramModel: transition.
-	transitionController removeRender.
-
-	simulationGui handleSimulatorAction: actionEvent.
-	self assert: transitionController roassalShape identicalTo: nil
+	simulationGui close.
+	self assert: transitionShape borderColor equals: originalBorderColor.
+	self assert: transitionShape border width equals: originalBorderWidth
 ]
 
 { #category : 'tests' }
@@ -242,9 +227,32 @@ OPPetriNetSimulationGUITest >> testStepAllFiresAllEnabledTransitionsAndRestoresD
 ]
 
 { #category : 'tests' }
+OPPetriNetSimulationGUITest >> testStepIgnoresHiddenAndUnrenderedElementsSafely [
+
+	| transitionController |
+	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
+	simulationGui animator liveAnimationChecker: [ :canvas | canvas isNotNil ].
+
+	simulationGui session step.
+	self assert: sourcePlace tokens equals: 2.
+	self assert: targetPlace tokens equals: 1.
+	self assert: simulationGui animator activeAnimation identicalTo: nil.
+
+	diagramController showInDiagramModel: sourcePlace.
+	diagramController showInDiagramModel: targetPlace.
+	transitionController := diagramController showInDiagramModel: transition.
+	transitionController removeRender.
+
+	simulationGui session step.
+	self assert: sourcePlace tokens equals: 1.
+	self assert: targetPlace tokens equals: 2.
+	self assert: transitionController roassalShape identicalTo: nil
+]
+
+{ #category : 'tests' }
 OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlight [
 
-	| secondSourcePlace secondTargetPlace secondTransition transitionController transitionDiagramElement transitionShape originalColor selectableInteraction transitionHelper playIcon canvasShapes windowsCountAfterFirstClick |
+	| secondSourcePlace secondTargetPlace secondTransition transitionController transitionDiagramElement transitionShape originalColor originalBorderWidth selectableInteraction transitionHelper playIcon canvasShapes windowsCountAfterFirstClick |
 	secondSourcePlace := (OPPetriNetPTPlace named: 'P3')
 		                     tokens: 2;
 		                     yourself.
@@ -262,6 +270,7 @@ OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlig
 	transitionDiagramElement := transitionController diagramElement.
 	transitionShape := transitionDiagramElement roassalShape.
 	originalColor := transitionShape color.
+	originalBorderWidth := transitionShape border width.
 	selectableInteraction := transitionShape propertyAt: OPRSSelectable.
 	transitionHelper := transitionDiagramElement instVarNamed: #transitionHelper.
 	playIcon := transitionDiagramElement instVarNamed: #icon.
@@ -280,13 +289,15 @@ OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlig
 	self assert: targetPlace tokens equals: 1.
 	self assert: secondSourcePlace tokens equals: 2.
 	self assert: secondTargetPlace tokens equals: 0.
-	self assert: transitionShape color equals: Color lightOrange lighter.
+	self assert: transitionShape borderColor equals: Color green darker.
 
+	simulationGui animator liveAnimationChecker: [ :canvas | canvas isNotNil ].
 	windowsCountAfterFirstClick := self currentWorld submorphs count: [ :eachMorph | eachMorph isSystemWindow ].
 	transitionHelper announce: RSMouseLeftClick new.
 	self assert: (self currentWorld submorphs count: [ :eachMorph | eachMorph isSystemWindow ]) equals: windowsCountAfterFirstClick.
 	self assert: sourcePlace tokens equals: 1.
 	self assert: targetPlace tokens equals: 2.
+	self assert: transitionShape color equals: Color lightOrange lighter.
 
 	sourcePlace tokens: 0.
 	transitionHelper announce: RSMouseLeftClick new.
@@ -300,5 +311,6 @@ OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlig
 			playIcon }.
 
 	simulationGui close.
-	self assert: transitionShape color equals: originalColor
+	self assert: transitionShape color equals: originalColor.
+	self assert: transitionShape border width equals: originalBorderWidth
 ]

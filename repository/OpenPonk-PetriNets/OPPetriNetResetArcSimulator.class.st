@@ -12,7 +12,17 @@ Class {
 
 { #category : 'actions' }
 OPPetriNetResetArcSimulator >> handleFire [
-	self source petriNetTokens: 0
+
+	| removedTokens |
+	removedTokens := self source petriNetTokens.
+	self source petriNetTokens: 0.
+	(removedTokens > 0 and: [ diagramSimulator isNotNil ]) ifTrue: [
+			diagramSimulator recordTransfer: ((OPSimulationTransfer source: self source model edge: self model target: self target model)
+					 actorModel: self target model;
+					 amount: removedTokens;
+					 phase: 1;
+					 kind: #reset;
+					 yourself) ]
 ]
 
 { #category : 'testing' }

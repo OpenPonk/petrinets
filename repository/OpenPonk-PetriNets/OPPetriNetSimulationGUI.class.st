@@ -30,14 +30,6 @@ OPPetriNetSimulationGUI >> buttonItems [
 ]
 
 { #category : 'private - hooks' }
-OPPetriNetSimulationGUI >> handleSimulatorAction: anActionEvent [
-
-	anActionEvent index = 2 ifFalse: [ ^ self ].
-	self highlighter ifNotNil: [ :activeHighlighter |
-		activeHighlighter flashFillOfModel: anActionEvent simulator model color: Color lightOrange lighter duration: 200 milliSeconds ]
-]
-
-{ #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> simulatorClass [
 	^ OPPetriNetSimulator
 ]
@@ -56,4 +48,13 @@ OPPetriNetSimulationGUI >> stepAll [
 OPPetriNetSimulationGUI >> supportsSavingState [
 
 	^ true
+]
+
+{ #category : 'private - hooks' }
+OPPetriNetSimulationGUI >> updateSimulationVisuals [
+
+	(diagramSimulator isNil or: [ highlighter isNil ]) ifTrue: [ ^ self ].
+	highlighter replaceHighlightsDuring: [
+			diagramSimulator simulableElementsDo: [ :eachElement |
+				eachElement isSteppable ifTrue: [ highlighter highlightStrokeOfModel: eachElement model color: Color green darker width: 2 ] ] ]
 ]

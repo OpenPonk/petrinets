@@ -116,6 +116,83 @@ OPPetriNetSimulatorTest >> testInitialClassMapping [
 ]
 
 { #category : 'tests' }
+OPPetriNetSimulatorTest >> testStepRecordsTwoPhaseNormalAndResetTransfersExcludingInhibitor [
+
+	| net inputPlace resetPlace inhibitorPlace outputPlace transition normalIn resetIn inhibitorIn normalOut netSimulator steppedEvents expectedTransfers |
+	net := OPPetriNet named: 'Transfer Net'.
+	inputPlace := (OPPetriNetPTPlace named: 'PIn')
+		              tokens: 4;
+		              yourself.
+	resetPlace := (OPPetriNetPTPlace named: 'PReset')
+		              tokens: 3;
+		              yourself.
+	inhibitorPlace := OPPetriNetPTPlace named: 'PInhib'.
+	outputPlace := OPPetriNetPTPlace named: 'POut'.
+	transition := OPPetriNetTransition named: 'T1'.
+	normalIn := (OPPetriNetNormalArc from: inputPlace to: transition)
+		            weight: 2;
+		            yourself.
+	resetIn := OPPetriNetResetArc from: resetPlace to: transition.
+	inhibitorIn := OPPetriNetInhibitorArc from: inhibitorPlace to: transition.
+	normalOut := (OPPetriNetNormalArc from: transition to: outputPlace)
+		             weight: 1;
+		             yourself.
+	{
+		inputPlace.
+		resetPlace.
+		inhibitorPlace.
+		outputPlace.
+		transition.
+		normalIn.
+		resetIn.
+		inhibitorIn.
+		normalOut } do: [ :each | net add: each ].
+
+	netSimulator := OPPetriNetSimulator model: net.
+	steppedEvents := OrderedCollection new.
+	netSimulator when: OPSimulatorStepped do: [ :event | steppedEvents add: event ] for: self.
+
+	netSimulator step.
+	self assert: steppedEvents size equals: 1.
+	expectedTransfers := {
+		                     ((OPSimulationTransfer source: inputPlace edge: normalIn target: transition)
+			                      actorModel: transition;
+			                      amount: 2;
+			                      phase: 1;
+			                      kind: #token;
+			                      yourself).
+		                     ((OPSimulationTransfer source: resetPlace edge: resetIn target: transition)
+			                      actorModel: transition;
+			                      amount: 3;
+			                      phase: 1;
+			                      kind: #reset;
+			                      yourself).
+		                     ((OPSimulationTransfer source: transition edge: normalOut target: outputPlace)
+			                      actorModel: transition;
+			                      amount: 1;
+			                      phase: 2;
+			                      kind: #token;
+			                      yourself) }.
+	self assertCollection: steppedEvents first transfers hasSameElements: expectedTransfers.
+
+	netSimulator stepElement: (netSimulator simulatorOf: transition).
+	self assert: steppedEvents size equals: 2.
+	self assertCollection: steppedEvents second transfers hasSameElements: {
+			((OPSimulationTransfer source: inputPlace edge: normalIn target: transition)
+				 actorModel: transition;
+				 amount: 2;
+				 phase: 1;
+				 kind: #token;
+				 yourself).
+			((OPSimulationTransfer source: transition edge: normalOut target: outputPlace)
+				 actorModel: transition;
+				 amount: 1;
+				 phase: 2;
+				 kind: #token;
+				 yourself) }
+]
+
+{ #category : 'tests' }
 OPPetriNetSimulatorTest >> testSteppingAll [
 
 	| items stepped didAction |
