@@ -159,6 +159,7 @@ OPPetriNetSimulationGUITest >> testEnabledTransitionHighlightAndTwoPhaseStepAnim
 	self assert: transitionShape color equals: originalFill.
 
 	simulationGui close.
+	simulationGui updateSimulationVisuals.
 	self assert: transitionShape borderColor equals: originalBorderColor.
 	self assert: transitionShape border width equals: originalBorderWidth
 ]
