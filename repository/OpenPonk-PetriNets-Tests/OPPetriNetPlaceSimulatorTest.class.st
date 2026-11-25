@@ -10,16 +10,16 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetPlaceSimulatorTest >> controllerClass [
-	^ OPPetriNetPlaceSimulator
-]
-
-{ #category : 'hooks' }
 OPPetriNetPlaceSimulatorTest >> exampleModel [
 	^ OPPetriNetPTPlace new
 		name: 'P1';
 		tokens: 20;
 		yourself
+]
+
+{ #category : 'hooks' }
+OPPetriNetPlaceSimulatorTest >> simulatorClass [
+	^ OPPetriNetPlaceSimulator
 ]
 
 { #category : 'tests' }

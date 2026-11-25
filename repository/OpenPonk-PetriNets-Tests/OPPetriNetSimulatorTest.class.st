@@ -14,11 +14,6 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetSimulatorTest >> controllerClass [
-	^ OPPetriNetSimulator
-]
-
-{ #category : 'hooks' }
 OPPetriNetSimulatorTest >> exampleModel [
 	| model place1 arc1 arc2 arc3 arc4 place2 place3 place4 trans1 trans2 arc5 |
 	model := OPPetriNet new name: 'Petri Net Diagram'.
@@ -68,7 +63,13 @@ OPPetriNetSimulatorTest >> setUp [
 
 	super setUp.
 
-	simulator := self controllerClass model: self exampleModel
+	simulator := self simulatorClass model: self exampleModel
+]
+
+{ #category : 'hooks' }
+OPPetriNetSimulatorTest >> simulatorClass [
+
+	^ OPPetriNetSimulator
 ]
 
 { #category : 'tests' }

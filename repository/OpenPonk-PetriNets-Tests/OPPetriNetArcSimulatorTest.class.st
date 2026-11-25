@@ -21,11 +21,6 @@ OPPetriNetArcSimulatorTest class >> isAbstract [
 ]
 
 { #category : 'hooks' }
-OPPetriNetArcSimulatorTest >> controllerClass [
-	^ self subclassResponsibility
-]
-
-{ #category : 'hooks' }
 OPPetriNetArcSimulatorTest >> exampleModel [
 	^ self subclassResponsibility
 ]
@@ -35,11 +30,16 @@ OPPetriNetArcSimulatorTest >> setUp [
 
 	super setUp.
 	model := self exampleModel.
-	simulator := self controllerClass model: model.
+	simulator := self simulatorClass model: model.
 	place := OPPetriNetPlaceSimulator model:
 		         (OPPetriNetPTPlace new tokens: 10).
 	trans := OPPetriNetTransitionSimulator model:
 		         OPPetriNetTransition new
+]
+
+{ #category : 'hooks' }
+OPPetriNetArcSimulatorTest >> simulatorClass [
+	^ self subclassResponsibility
 ]
 
 { #category : 'tests' }

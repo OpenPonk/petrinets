@@ -10,13 +10,13 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetResetArcSimulatorTest >> controllerClass [
-	^ OPPetriNetResetArcSimulator
+OPPetriNetResetArcSimulatorTest >> exampleModel [
+	^ OPPetriNetResetArc new
 ]
 
 { #category : 'hooks' }
-OPPetriNetResetArcSimulatorTest >> exampleModel [
-	^ OPPetriNetResetArc new
+OPPetriNetResetArcSimulatorTest >> simulatorClass [
+	^ OPPetriNetResetArcSimulator
 ]
 
 { #category : 'tests' }

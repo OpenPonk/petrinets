@@ -14,11 +14,6 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetTransitionSimulatorTest >> controllerClass [
-	^ OPPetriNetTransitionSimulator
-]
-
-{ #category : 'hooks' }
 OPPetriNetTransitionSimulatorTest >> exampleModel [
 	^ OPPetriNetTransition new
 		name: 'T1';
@@ -43,6 +38,11 @@ OPPetriNetTransitionSimulatorTest >> setUp [
 	(OPPetriNetNormalArcSimulator model: OPPetriNetNormalArc new)
 		target: out;
 		source: simulator
+]
+
+{ #category : 'hooks' }
+OPPetriNetTransitionSimulatorTest >> simulatorClass [
+	^ OPPetriNetTransitionSimulator
 ]
 
 { #category : 'tests' }

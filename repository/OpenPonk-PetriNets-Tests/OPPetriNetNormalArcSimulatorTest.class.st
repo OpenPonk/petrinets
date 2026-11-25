@@ -10,16 +10,16 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetNormalArcSimulatorTest >> controllerClass [
-
-	^ OPPetriNetNormalArcSimulator
-]
-
-{ #category : 'hooks' }
 OPPetriNetNormalArcSimulatorTest >> exampleModel [
 	^ OPPetriNetNormalArc new
 		weight: 2;
 		yourself
+]
+
+{ #category : 'hooks' }
+OPPetriNetNormalArcSimulatorTest >> simulatorClass [
+
+	^ OPPetriNetNormalArcSimulator
 ]
 
 { #category : 'tests' }

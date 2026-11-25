@@ -10,13 +10,13 @@ Class {
 }
 
 { #category : 'hooks' }
-OPPetriNetInhibitorArcSimulatorTest >> controllerClass [
-	^ OPPetriNetInhibitorArcSimulator
+OPPetriNetInhibitorArcSimulatorTest >> exampleModel [
+	^ OPPetriNetInhibitorArc new
 ]
 
 { #category : 'hooks' }
-OPPetriNetInhibitorArcSimulatorTest >> exampleModel [
-	^ OPPetriNetInhibitorArc new
+OPPetriNetInhibitorArcSimulatorTest >> simulatorClass [
+	^ OPPetriNetInhibitorArcSimulator
 ]
 
 { #category : 'tests' }

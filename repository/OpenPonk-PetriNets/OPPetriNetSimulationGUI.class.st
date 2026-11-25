@@ -5,6 +5,10 @@ Manages toolbar items, simulation control, and event display during net executio
 Class {
 	#name : 'OPPetriNetSimulationGUI',
 	#superclass : 'OPSimulationGUI',
+	#instVars : [
+		'highlightProcesses',
+		'highlightOriginalColors'
+	],
 	#category : 'OpenPonk-PetriNets-Simulation',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Simulation'
@@ -43,25 +47,55 @@ OPPetriNetSimulationGUI >> buttonItems [
 		yourself
 ]
 
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> clearHighlights [
+
+	highlightOriginalColors keys copy do: [ :eachController | self restoreHighlightFor: eachController ]
+]
+
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> closed [
+
+	self clearHighlights.
+	super closed
+]
+
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> displayEvent: anActionEvent [
 
-	| controller shape previousColor |
+	| controller shape |
 	anActionEvent index = 2 ifFalse: [ ^ self ].
+	self diagramController ifNil: [ ^ self ].
 	controller := self diagramController controllerForModel: anActionEvent simulator model ifNone: [ ^ self ].
 	controller diagramElement exists ifFalse: [ ^ self ].
 	shape := controller roassalShape.
 	shape ifNil: [ ^ self ].
-	previousColor := shape color.
-	shape color: Color lightOrange lighter.
-	shape signalUpdate.
-	[
-		(Delay forMilliseconds: 200) wait.
-		controller diagramElement exists ifTrue: [
-				controller roassalShape ifNotNil: [ :currentShape |
-						currentShape color = previousColor ifFalse: [
-								currentShape color: previousColor.
-								currentShape signalUpdate ] ] ] ] fork
+	self highlightController: controller shape: shape
+]
+
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> finishHighlightRestoreFor: aController process: aProcess [
+
+	(highlightProcesses at: aController ifAbsent: [ nil ]) == aProcess ifFalse: [ ^ self ].
+	self restoreHighlightFor: aController
+]
+
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> highlightController: aController shape: aShape [
+
+	highlightOriginalColors at: aController ifAbsentPut: [ aShape color ].
+	highlightProcesses at: aController ifPresent: [ :existingProcess | existingProcess terminate ].
+	aShape color: Color lightOrange lighter.
+	aShape signalUpdate.
+	self scheduleHighlightRestoreFor: aController
+]
+
+{ #category : 'initialization' }
+OPPetriNetSimulationGUI >> initialize [
+
+	super initialize.
+	highlightProcesses := IdentityDictionary new.
+	highlightOriginalColors := IdentityDictionary new
 ]
 
 { #category : 'private - hooks' }
@@ -74,6 +108,32 @@ OPPetriNetSimulationGUI >> loadSimulation [
 			when: OPSimulatorDidAction
 			do: [ :event | self displayEvent: event ]
 			for: self ]
+]
+
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> restoreHighlightFor: aController [
+
+	| originalColor |
+	(highlightProcesses removeKey: aController ifAbsent: [ nil ]) ifNotNil: [ :existingProcess | existingProcess terminate ].
+	originalColor := highlightOriginalColors removeKey: aController ifAbsent: [ ^ self ].
+	aController diagramElement exists ifFalse: [ ^ self ].
+	aController roassalShape ifNotNil: [ :currentShape |
+			currentShape color = originalColor ifFalse: [
+					currentShape color: originalColor.
+					currentShape signalUpdate ] ]
+]
+
+{ #category : 'private - updating' }
+OPPetriNetSimulationGUI >> scheduleHighlightRestoreFor: aController [
+
+	| timerProcess |
+	timerProcess := [
+		                | currentProcess |
+		                currentProcess := Processor activeProcess.
+		                (Delay forMilliseconds: 200) wait.
+		                UIManager default defer: [ self finishHighlightRestoreFor: aController process: currentProcess ] ] newProcess.
+	highlightProcesses at: aController put: timerProcess.
+	timerProcess resume
 ]
 
 { #category : 'private - hooks' }

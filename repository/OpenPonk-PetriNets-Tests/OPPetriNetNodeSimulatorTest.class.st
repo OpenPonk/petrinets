@@ -19,11 +19,6 @@ OPPetriNetNodeSimulatorTest class >> isAbstract [
 ]
 
 { #category : 'hooks' }
-OPPetriNetNodeSimulatorTest >> controllerClass [
-	^ self subclassResponsibility
-]
-
-{ #category : 'hooks' }
 OPPetriNetNodeSimulatorTest >> exampleModel [
 	^ self subclassResponsibility
 ]
@@ -32,5 +27,10 @@ OPPetriNetNodeSimulatorTest >> exampleModel [
 OPPetriNetNodeSimulatorTest >> setUp [
 	super setUp.
 	model := self exampleModel.
-	simulator := self controllerClass model: model
+	simulator := self simulatorClass model: model
+]
+
+{ #category : 'hooks' }
+OPPetriNetNodeSimulatorTest >> simulatorClass [
+	^ self subclassResponsibility
 ]

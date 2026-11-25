@@ -116,6 +116,36 @@ OPPetriNetSimulationGUITest >> testButtonItemsAndDeterministicActions [
 ]
 
 { #category : 'tests' }
+OPPetriNetSimulationGUITest >> testClosingGuiRestoresHighlightedTransitionAndIgnoresDisplayEventsAfterClose [
+
+	| transitionController transitionShape originalColor transitionSimulator actionEvent timerProcess |
+	diagramController showInDiagramModel: sourcePlace.
+	diagramController showInDiagramModel: targetPlace.
+	transitionController := diagramController showInDiagramModel: transition.
+	transitionShape := transitionController roassalShape.
+	originalColor := transitionShape color.
+
+	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
+	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
+	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
+
+	simulationGui displayEvent: actionEvent.
+	timerProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
+	self assert: transitionShape color equals: Color lightOrange lighter.
+	self deny: timerProcess isTerminated description: 'Highlight timer process must be running while GUI is open'.
+
+	simulationGui close.
+	self assert: timerProcess isTerminated description: 'Closing simulation GUI must terminate pending highlight timer process'.
+	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
+	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors).
+	self assert: transitionShape color equals: originalColor.
+
+	simulationGui displayEvent: actionEvent.
+	self assert: transitionShape color equals: originalColor.
+	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses)
+]
+
+{ #category : 'tests' }
 OPPetriNetSimulationGUITest >> testDisplayEventHighlightsVisibleTransitionAndIgnoresOtherActionIndices [
 
 	| transitionController transitionShape originalColor transitionSimulator firstActionEvent secondActionEvent |
@@ -156,6 +186,69 @@ OPPetriNetSimulationGUITest >> testDisplayEventIgnoresHiddenTransitionAndUnrende
 
 	simulationGui displayEvent: actionEvent.
 	self assert: transitionController roassalShape identicalTo: nil
+]
+
+{ #category : 'tests' }
+OPPetriNetSimulationGUITest >> testRepeatedDisplayEventPreservesOriginalColorAndIgnoresStaleRestore [
+
+	| transitionController transitionShape originalColor transitionSimulator actionEvent firstProcess secondProcess |
+	diagramController showInDiagramModel: sourcePlace.
+	diagramController showInDiagramModel: targetPlace.
+	transitionController := diagramController showInDiagramModel: transition.
+	transitionShape := transitionController roassalShape.
+	originalColor := transitionShape color.
+
+	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
+	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
+	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
+
+	simulationGui displayEvent: actionEvent.
+	firstProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
+	self assert: transitionShape color equals: Color lightOrange lighter.
+
+	simulationGui displayEvent: actionEvent.
+	secondProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
+	self assert: firstProcess isTerminated description: 'Re-highlighting the same transition must cancel the previous timer process'.
+	self deny: secondProcess identicalTo: firstProcess.
+	self assert: ((simulationGui instVarNamed: #highlightOriginalColors) at: transitionController) equals: originalColor.
+
+	simulationGui finishHighlightRestoreFor: transitionController process: firstProcess.
+	self assert: transitionShape color equals: Color lightOrange lighter.
+	self assert: ((simulationGui instVarNamed: #highlightProcesses) at: transitionController) identicalTo: secondProcess.
+
+	simulationGui finishHighlightRestoreFor: transitionController process: secondProcess.
+	self assert: secondProcess isTerminated description: 'Completing highlight restore must terminate the timer process'.
+	self assert: transitionShape color equals: originalColor.
+	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
+	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors)
+]
+
+{ #category : 'tests' }
+OPPetriNetSimulationGUITest >> testRestoreHighlightIgnoresUnrenderedShapeAndMissingEntry [
+
+	| transitionController transitionSimulator actionEvent timerProcess |
+	diagramController showInDiagramModel: sourcePlace.
+	diagramController showInDiagramModel: targetPlace.
+	transitionController := diagramController showInDiagramModel: transition.
+
+	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
+	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
+	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
+
+	simulationGui displayEvent: actionEvent.
+	timerProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
+	transitionController removeRender.
+
+	simulationGui finishHighlightRestoreFor: transitionController process: timerProcess.
+	self
+		assert: timerProcess isTerminated
+		description: 'Restoring highlight for an unrendered shape must still terminate the timer process'.
+	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
+	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors).
+	self assert: transitionController roassalShape identicalTo: nil.
+
+	simulationGui restoreHighlightFor: transitionController.
+	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses)
 ]
 
 { #category : 'tests' }
