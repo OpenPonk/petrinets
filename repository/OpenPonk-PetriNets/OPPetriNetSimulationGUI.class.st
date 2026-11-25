@@ -1,14 +1,9 @@
 "
-Simulation GUI presenter for Petri Net diagrams.
-Manages toolbar items, simulation control, and event display during net execution.
+Simulation GUI presenter for Petri Net diagrams. Composes modular random-playback, single-step, step-all, reset, and save-state controls on top of the shared simulation session and flashes fired transitions via the diagram highlighter without mutating persistent styles.
 "
 Class {
 	#name : 'OPPetriNetSimulationGUI',
 	#superclass : 'OPSimulationGUI',
-	#instVars : [
-		'highlightProcesses',
-		'highlightOriginalColors'
-	],
 	#category : 'OpenPonk-PetriNets-Simulation',
 	#package : 'OpenPonk-PetriNets',
 	#tag : 'Simulation'
@@ -16,127 +11,49 @@ Class {
 
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> buttonItems [
-	^ super buttonItems
-		add:
-			((self newButton)
-				label: 'Pause';
-				iconName: #testYellow;
-				help: 'Pause stepping';
-				action: [ self diagramSimulator stop ]);
-		add:
-			((self newButton)
-				label: 'Play (random)';
-				iconName: #smallPrintItIcon;
-				help: 'Step random element every second';
-				action: [ self diagramSimulator repeat ]);
-		add:
-			((self newButton)
-				label: 'Step (random)';
-				iconName: #forwardIcon;
-				help: 'Step random element once';
-				action: [ self diagramSimulator step ]);
-		add:
-			((self newButton)
-				label: 'Step (all)';
-				iconName: #glamorousThrough;
-				help: 'Step all enabled elements once';
-				action: [ self diagramSimulator
-						setSteppingAll;
-						step;
-						setDefaultStepping ]);
-		yourself
-]
 
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> clearHighlights [
-
-	highlightOriginalColors keys copy do: [ :eachController | self restoreHighlightFor: eachController ]
-]
-
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> closed [
-
-	self clearHighlights.
-	super closed
+	^ {
+		  (self
+			   newPlayPauseButtonLabeled: 'Play (random)'
+			   pauseLabel: 'Pause'
+			   playHelp: 'Play random steps continuously'
+			   pauseHelp: 'Pause stepping').
+		  (self
+			   newStepButtonLabeled: 'Step (random)'
+			   help: 'Step random element once'
+			   action: [ self session ifNotNil: [ :activeSession | activeSession step ] ]).
+		  ((self newStepButtonLabeled: 'Step (all)' help: 'Step all enabled elements once' action: [ self stepAll ])
+			   iconName: #glamorousThrough;
+			   yourself).
+		  self newResetButton.
+		  self newSaveStateButton }
 ]
 
 { #category : 'private - hooks' }
-OPPetriNetSimulationGUI >> displayEvent: anActionEvent [
+OPPetriNetSimulationGUI >> handleSimulatorAction: anActionEvent [
 
-	| controller shape |
 	anActionEvent index = 2 ifFalse: [ ^ self ].
-	self diagramController ifNil: [ ^ self ].
-	controller := self diagramController controllerForModel: anActionEvent simulator model ifNone: [ ^ self ].
-	controller diagramElement exists ifFalse: [ ^ self ].
-	shape := controller roassalShape.
-	shape ifNil: [ ^ self ].
-	self highlightController: controller shape: shape
-]
-
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> finishHighlightRestoreFor: aController process: aProcess [
-
-	(highlightProcesses at: aController ifAbsent: [ nil ]) == aProcess ifFalse: [ ^ self ].
-	self restoreHighlightFor: aController
-]
-
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> highlightController: aController shape: aShape [
-
-	highlightOriginalColors at: aController ifAbsentPut: [ aShape color ].
-	highlightProcesses at: aController ifPresent: [ :existingProcess | existingProcess terminate ].
-	aShape color: Color lightOrange lighter.
-	aShape signalUpdate.
-	self scheduleHighlightRestoreFor: aController
-]
-
-{ #category : 'initialization' }
-OPPetriNetSimulationGUI >> initialize [
-
-	super initialize.
-	highlightProcesses := IdentityDictionary new.
-	highlightOriginalColors := IdentityDictionary new
-]
-
-{ #category : 'private - hooks' }
-OPPetriNetSimulationGUI >> loadSimulation [
-	"prepares simulation - called with every reload"
-
-	super loadSimulation.
-	diagramSimulator simulableElementsDo: [ :element |
-		element
-			when: OPSimulatorDidAction
-			do: [ :event | self displayEvent: event ]
-			for: self ]
-]
-
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> restoreHighlightFor: aController [
-
-	| originalColor |
-	(highlightProcesses removeKey: aController ifAbsent: [ nil ]) ifNotNil: [ :existingProcess | existingProcess terminate ].
-	originalColor := highlightOriginalColors removeKey: aController ifAbsent: [ ^ self ].
-	aController diagramElement exists ifFalse: [ ^ self ].
-	aController roassalShape ifNotNil: [ :currentShape |
-			currentShape color = originalColor ifFalse: [
-					currentShape color: originalColor.
-					currentShape signalUpdate ] ]
-]
-
-{ #category : 'private - updating' }
-OPPetriNetSimulationGUI >> scheduleHighlightRestoreFor: aController [
-
-	| timerProcess |
-	timerProcess := [
-		                | currentProcess |
-		                currentProcess := Processor activeProcess.
-		                (Delay forMilliseconds: 200) wait.
-		                UIManager default defer: [ self finishHighlightRestoreFor: aController process: currentProcess ] ] newProcess.
-	highlightProcesses at: aController put: timerProcess.
-	timerProcess resume
+	self highlighter ifNotNil: [ :activeHighlighter |
+		activeHighlighter flashFillOfModel: anActionEvent simulator model color: Color lightOrange lighter duration: 200 milliSeconds ]
 ]
 
 { #category : 'private - hooks' }
 OPPetriNetSimulationGUI >> simulatorClass [
 	^ OPPetriNetSimulator
+]
+
+{ #category : 'actions' }
+OPPetriNetSimulationGUI >> stepAll [
+
+	self session ifNotNil: [ :activeSession |
+			| simulator |
+			simulator := activeSession diagramSimulator.
+			simulator setSteppingAll.
+			[ activeSession step ] ensure: [ simulator setDefaultStepping ] ]
+]
+
+{ #category : 'testing' }
+OPPetriNetSimulationGUI >> supportsSavingState [
+
+	^ true
 ]

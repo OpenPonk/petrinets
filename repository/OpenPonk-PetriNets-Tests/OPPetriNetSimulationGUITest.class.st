@@ -1,6 +1,5 @@
 "
-Tests for the Petri Net simulation GUI presenter, simulation model command, and transition play-click integration.
-Verifies deterministic simulation controls, event display guards for hidden or unrendered transitions, and window lifecycle cleanup.
+Headless UI tests for the Petri Net simulation GUI presenter, simulation model command, and transition play-click integration. Verifies modular playback controls, save/reset and step-all behavior, highlighter flash delegation for transition actions, and window lifecycle cleanup.
 "
 Class {
 	#name : 'OPPetriNetSimulationGUITest',
@@ -83,99 +82,90 @@ OPPetriNetSimulationGUITest >> tearDown [
 { #category : 'tests' }
 OPPetriNetSimulationGUITest >> testButtonItemsAndDeterministicActions [
 
-	| buttonItems buttonsByLabel |
+	| buttons buttonsByLabel playPauseButton stepRandomButton stepAllButton |
 	petriNet elements do: [ :eachElement | diagramController showInDiagramModel: eachElement ].
 
 	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
 	self assert: simulationGui simulatorClass identicalTo: OPPetriNetSimulator.
+	self assert: simulationGui supportsSavingState description: 'Petri net simulation GUI must advertise saving state'.
+	self assert: simulationGui controlsPresenter showsDelayControl description: 'Step delay control must be shown'.
 
-	buttonItems := simulationGui buttonItems.
-	self
-		assert: (buttonItems collect: #label as: Array)
-		equals: #( 'Save state' 'Stop + Load state' 'Pause' 'Play (random)' 'Step (random)' 'Step (all)' ).
+	buttons := simulationGui buttons.
+	self assert: (buttons collect: #label as: Array) equals: #( 'Play (random)' 'Step (random)' 'Step (all)' 'Reset' 'Save state' ).
 
-	buttonsByLabel := (buttonItems collect: [ :eachButton | eachButton label -> eachButton ]) asDictionary.
+	buttonsByLabel := (buttons collect: [ :eachButton | eachButton label -> eachButton ]) asDictionary.
+	playPauseButton := buttonsByLabel at: 'Play (random)'.
+	stepRandomButton := buttonsByLabel at: 'Step (random)'.
+	stepAllButton := buttonsByLabel at: 'Step (all)'.
+	self assert: stepAllButton icon equals: (simulationGui iconNamed: #glamorousThrough).
 
-	(buttonsByLabel at: 'Step (random)') performAction.
+	stepRandomButton performAction.
 	self assert: sourcePlace tokens equals: 2.
 	self assert: targetPlace tokens equals: 1.
 
 	(buttonsByLabel at: 'Save state') performAction.
-	(buttonsByLabel at: 'Step (all)') performAction.
+	stepAllButton performAction.
 	self assert: sourcePlace tokens equals: 1.
 	self assert: targetPlace tokens equals: 2.
 
-	(buttonsByLabel at: 'Stop + Load state') performAction.
+	(buttonsByLabel at: 'Reset') performAction.
 	self assert: sourcePlace tokens equals: 2.
 	self assert: targetPlace tokens equals: 1.
 
-	(buttonsByLabel at: 'Pause') performAction.
-	self
-		deny: (simulationGui diagramSimulator instVarNamed: #shouldRun)
-		description: 'Pause button must stop simulation running flag'
+	simulationGui session uiDispatcher: [ :aBlock | aBlock value ].
+	simulationGui diagramSimulator delay: 5000.
+	playPauseButton performAction.
+	self assert: simulationGui session isRunning description: 'Clicking Play (random) must start simulation playback'.
+	self assert: playPauseButton label equals: 'Pause'.
+	self deny: stepRandomButton isEnabled description: 'Step (random) button must disable while simulation is running'.
+	self deny: stepAllButton isEnabled description: 'Step (all) button must disable while simulation is running'.
+
+	playPauseButton performAction.
+	self deny: simulationGui session isRunning description: 'Clicking Pause must stop simulation playback'.
+	self assert: playPauseButton label equals: 'Play (random)'.
+	self assert: stepRandomButton isEnabled description: 'Step (random) button must re-enable after pausing'.
+	self assert: stepAllButton isEnabled description: 'Step (all) button must re-enable after pausing'
 ]
 
 { #category : 'tests' }
-OPPetriNetSimulationGUITest >> testClosingGuiRestoresHighlightedTransitionAndIgnoresDisplayEventsAfterClose [
+OPPetriNetSimulationGUITest >> testHandleSimulatorActionFlashesVisibleTransitionAndIgnoresOtherIndices [
 
-	| transitionController transitionShape originalColor transitionSimulator actionEvent timerProcess |
+	| transitionController transitionShape originalColor originalFillStyle transitionSimulator firstActionEvent secondActionEvent |
 	diagramController showInDiagramModel: sourcePlace.
 	diagramController showInDiagramModel: targetPlace.
 	transitionController := diagramController showInDiagramModel: transition.
 	transitionShape := transitionController roassalShape.
 	originalColor := transitionShape color.
-
-	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
-	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
-	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
-
-	simulationGui displayEvent: actionEvent.
-	timerProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
-	self assert: transitionShape color equals: Color lightOrange lighter.
-	self deny: timerProcess isTerminated description: 'Highlight timer process must be running while GUI is open'.
-
-	simulationGui close.
-	self assert: timerProcess isTerminated description: 'Closing simulation GUI must terminate pending highlight timer process'.
-	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
-	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors).
-	self assert: transitionShape color equals: originalColor.
-
-	simulationGui displayEvent: actionEvent.
-	self assert: transitionShape color equals: originalColor.
-	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses)
-]
-
-{ #category : 'tests' }
-OPPetriNetSimulationGUITest >> testDisplayEventHighlightsVisibleTransitionAndIgnoresOtherActionIndices [
-
-	| transitionController transitionShape originalColor transitionSimulator firstActionEvent secondActionEvent |
-	diagramController showInDiagramModel: sourcePlace.
-	diagramController showInDiagramModel: targetPlace.
-	transitionController := diagramController showInDiagramModel: transition.
-	transitionShape := transitionController roassalShape.
-	originalColor := transitionShape color.
+	originalFillStyle := transitionController diagramElement fillColor.
 
 	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
 	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
 
 	firstActionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 1.
-	simulationGui displayEvent: firstActionEvent.
+	simulationGui handleSimulatorAction: firstActionEvent.
 	self assert: transitionShape color equals: originalColor.
 
 	secondActionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
-	simulationGui displayEvent: secondActionEvent.
-	self assert: transitionShape color equals: Color lightOrange lighter
+	simulationGui handleSimulatorAction: secondActionEvent.
+	self assert: transitionShape color equals: Color lightOrange lighter.
+	self assert: transitionController diagramElement fillColor equals: originalFillStyle.
+
+	simulationGui close.
+	self assert: transitionShape color equals: originalColor.
+
+	simulationGui handleSimulatorAction: secondActionEvent.
+	self assert: transitionShape color equals: originalColor
 ]
 
 { #category : 'tests' }
-OPPetriNetSimulationGUITest >> testDisplayEventIgnoresHiddenTransitionAndUnrenderedShape [
+OPPetriNetSimulationGUITest >> testHandleSimulatorActionIgnoresHiddenAndUnrenderedTransition [
 
 	| transitionSimulator actionEvent transitionController |
 	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
 	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
 	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
 
-	simulationGui diagramSimulator step.
+	simulationGui session step.
 	self assert: sourcePlace tokens equals: 2.
 	self assert: targetPlace tokens equals: 1.
 
@@ -184,71 +174,8 @@ OPPetriNetSimulationGUITest >> testDisplayEventIgnoresHiddenTransitionAndUnrende
 	transitionController := diagramController showInDiagramModel: transition.
 	transitionController removeRender.
 
-	simulationGui displayEvent: actionEvent.
+	simulationGui handleSimulatorAction: actionEvent.
 	self assert: transitionController roassalShape identicalTo: nil
-]
-
-{ #category : 'tests' }
-OPPetriNetSimulationGUITest >> testRepeatedDisplayEventPreservesOriginalColorAndIgnoresStaleRestore [
-
-	| transitionController transitionShape originalColor transitionSimulator actionEvent firstProcess secondProcess |
-	diagramController showInDiagramModel: sourcePlace.
-	diagramController showInDiagramModel: targetPlace.
-	transitionController := diagramController showInDiagramModel: transition.
-	transitionShape := transitionController roassalShape.
-	originalColor := transitionShape color.
-
-	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
-	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
-	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
-
-	simulationGui displayEvent: actionEvent.
-	firstProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
-	self assert: transitionShape color equals: Color lightOrange lighter.
-
-	simulationGui displayEvent: actionEvent.
-	secondProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
-	self assert: firstProcess isTerminated description: 'Re-highlighting the same transition must cancel the previous timer process'.
-	self deny: secondProcess identicalTo: firstProcess.
-	self assert: ((simulationGui instVarNamed: #highlightOriginalColors) at: transitionController) equals: originalColor.
-
-	simulationGui finishHighlightRestoreFor: transitionController process: firstProcess.
-	self assert: transitionShape color equals: Color lightOrange lighter.
-	self assert: ((simulationGui instVarNamed: #highlightProcesses) at: transitionController) identicalTo: secondProcess.
-
-	simulationGui finishHighlightRestoreFor: transitionController process: secondProcess.
-	self assert: secondProcess isTerminated description: 'Completing highlight restore must terminate the timer process'.
-	self assert: transitionShape color equals: originalColor.
-	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
-	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors)
-]
-
-{ #category : 'tests' }
-OPPetriNetSimulationGUITest >> testRestoreHighlightIgnoresUnrenderedShapeAndMissingEntry [
-
-	| transitionController transitionSimulator actionEvent timerProcess |
-	diagramController showInDiagramModel: sourcePlace.
-	diagramController showInDiagramModel: targetPlace.
-	transitionController := diagramController showInDiagramModel: transition.
-
-	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
-	transitionSimulator := simulationGui diagramSimulator simulatorOf: transition.
-	actionEvent := OPSimulatorDidAction simulator: transitionSimulator action: [ :each | each ] index: 2.
-
-	simulationGui displayEvent: actionEvent.
-	timerProcess := (simulationGui instVarNamed: #highlightProcesses) at: transitionController.
-	transitionController removeRender.
-
-	simulationGui finishHighlightRestoreFor: transitionController process: timerProcess.
-	self
-		assert: timerProcess isTerminated
-		description: 'Restoring highlight for an unrendered shape must still terminate the timer process'.
-	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses).
-	self assertEmpty: (simulationGui instVarNamed: #highlightOriginalColors).
-	self assert: transitionController roassalShape identicalTo: nil.
-
-	simulationGui restoreHighlightFor: transitionController.
-	self assertEmpty: (simulationGui instVarNamed: #highlightProcesses)
 ]
 
 { #category : 'tests' }
@@ -261,6 +188,9 @@ OPPetriNetSimulationGUITest >> testSimulationCommandActivationAndExecution [
 	editor instVarNamed: #diagramController put: diagramController.
 	toolContext := CmdSimpleToolContext for: editor.
 	command := OPPetriNetSimulationCommand new.
+	self assert: command defaultMenuItemName equals: 'Simulation'.
+	self assert: command defaultMenuIconName equals: #glamorousSpawn.
+
 	command
 		readParametersFromContext: toolContext;
 		prepareFullExecutionInContext: toolContext;
@@ -273,14 +203,65 @@ OPPetriNetSimulationGUITest >> testSimulationCommandActivationAndExecution [
 ]
 
 { #category : 'tests' }
+OPPetriNetSimulationGUITest >> testStepAllFiresAllEnabledTransitionsAndRestoresDefaultStepping [
+
+	| secondSourcePlace secondTargetPlace secondTransition buttonsByLabel stepAllButton stepRandomButton |
+	secondSourcePlace := (OPPetriNetPTPlace named: 'P3')
+		                     tokens: 3;
+		                     yourself.
+	secondTargetPlace := OPPetriNetPTPlace named: 'P4'.
+	secondTransition := OPPetriNetTransition named: 'T2'.
+	petriNet
+		add: secondSourcePlace;
+		add: secondTargetPlace;
+		add: secondTransition;
+		add: (OPPetriNetNormalArc from: secondSourcePlace to: secondTransition);
+		add: (OPPetriNetNormalArc from: secondTransition to: secondTargetPlace).
+	petriNet elements do: [ :eachElement | diagramController showInDiagramModel: eachElement ].
+
+	simulationGui := OPPetriNetSimulationGUI diagramController: diagramController.
+	buttonsByLabel := (simulationGui buttons collect: [ :eachButton | eachButton label -> eachButton ]) asDictionary.
+	stepAllButton := buttonsByLabel at: 'Step (all)'.
+	stepRandomButton := buttonsByLabel at: 'Step (random)'.
+
+	stepAllButton performAction.
+	self assert: sourcePlace tokens equals: 2.
+	self assert: targetPlace tokens equals: 1.
+	self assert: secondSourcePlace tokens equals: 2.
+	self assert: secondTargetPlace tokens equals: 1.
+
+	stepRandomButton performAction.
+	self assert: targetPlace tokens + secondTargetPlace tokens equals: 3.
+	self assert: sourcePlace tokens + secondSourcePlace tokens equals: 3.
+
+	simulationGui close.
+	self assert: targetPlace tokens + secondTargetPlace tokens equals: 0.
+	simulationGui stepAll.
+	self assert: targetPlace tokens + secondTargetPlace tokens equals: 0.
+	self assert: sourcePlace tokens + secondSourcePlace tokens equals: 6
+]
+
+{ #category : 'tests' }
 OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlight [
 
-	| transitionController transitionDiagramElement transitionShape selectableInteraction transitionHelper playIcon canvasShapes |
+	| secondSourcePlace secondTargetPlace secondTransition transitionController transitionDiagramElement transitionShape originalColor selectableInteraction transitionHelper playIcon canvasShapes windowsCountAfterFirstClick |
+	secondSourcePlace := (OPPetriNetPTPlace named: 'P3')
+		                     tokens: 2;
+		                     yourself.
+	secondTargetPlace := OPPetriNetPTPlace named: 'P4'.
+	secondTransition := OPPetriNetTransition named: 'T2'.
+	petriNet
+		add: secondSourcePlace;
+		add: secondTargetPlace;
+		add: secondTransition;
+		add: (OPPetriNetNormalArc from: secondSourcePlace to: secondTransition);
+		add: (OPPetriNetNormalArc from: secondTransition to: secondTargetPlace).
 	petriNet elements do: [ :eachElement | diagramController showInDiagramModel: eachElement ].
 
 	transitionController := diagramController controllerForModel: transition.
 	transitionDiagramElement := transitionController diagramElement.
 	transitionShape := transitionDiagramElement roassalShape.
+	originalColor := transitionShape color.
 	selectableInteraction := transitionShape propertyAt: OPRSSelectable.
 	transitionHelper := transitionDiagramElement instVarNamed: #transitionHelper.
 	playIcon := transitionDiagramElement instVarNamed: #icon.
@@ -297,10 +278,27 @@ OPPetriNetSimulationGUITest >> testTransitionShapeHighlightPlayClickAndUnhighlig
 		                 ifNone: [ self fail: 'Clicking play icon on transition shape must open OPPetriNetSimulationGUI' ].
 	self assert: sourcePlace tokens equals: 2.
 	self assert: targetPlace tokens equals: 1.
+	self assert: secondSourcePlace tokens equals: 2.
+	self assert: secondTargetPlace tokens equals: 0.
+	self assert: transitionShape color equals: Color lightOrange lighter.
+
+	windowsCountAfterFirstClick := self currentWorld submorphs count: [ :eachMorph | eachMorph isSystemWindow ].
+	transitionHelper announce: RSMouseLeftClick new.
+	self assert: (self currentWorld submorphs count: [ :eachMorph | eachMorph isSystemWindow ]) equals: windowsCountAfterFirstClick.
+	self assert: sourcePlace tokens equals: 1.
+	self assert: targetPlace tokens equals: 2.
+
+	sourcePlace tokens: 0.
+	transitionHelper announce: RSMouseLeftClick new.
+	self assert: sourcePlace tokens equals: 0.
+	self assert: targetPlace tokens equals: 2.
 
 	selectableInteraction doUnhighlight: transitionShape.
 	canvasShapes := diagramController canvas shapes.
 	self denyCollection: canvasShapes includesAny: {
 			transitionHelper.
-			playIcon }
+			playIcon }.
+
+	simulationGui close.
+	self assert: transitionShape color equals: originalColor
 ]
