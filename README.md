@@ -1,21 +1,24 @@
-# OpenPonk: Petri nets
+# OpenPonk: Petri Nets
 
-[![Nightly](https://github.com/OpenPonk/petrinets/actions/workflows/nightly.yml/badge.svg)](https://github.com/OpenPonk/petrinets/actions/workflows/nightly.yml) 
+[![Nightly](https://github.com/OpenPonk/petrinets/actions/workflows/nightly.yml/badge.svg)](https://github.com/OpenPonk/petrinets/actions/workflows/nightly.yml) [![Coverage Status](https://coveralls.io/repos/github/OpenPonk/petrinets/badge.svg?branch=master)](https://coveralls.io/github/OpenPonk/petrinets?branch=master)
 
-This is an extension of [OpenPonk tool](https://openponk.org) that adds Petri net diagrams. 
+Place/Transition Petri Nets metamodel, diagram editor, and token-firing simulator for the [OpenPonk](https://openponk.org) modeling platform.
 
-It allows crating places with tokens, transitions and arcs. Created Petri nets could be simulated in a random or user-picked order. Petri nets metamodel is included in the repository.
+## Download
 
-![example](http://www.mediafire.com/convkey/6324/fed28qgushayde6zg.jpg)
+Download pre-built portable archives from [Releases](https://github.com/OpenPonk/petrinets/releases), or get the all-in-one build at [openponk.org/#download](https://openponk.org/#download).
 
 ## Installation
 
-Requires Pharo 12 image - clean or with loaded OpenPonk.
+See [openponk.org/#direct-installation](https://openponk.org/#direct-installation) for the supported Pharo version.
 
-In Playground, execute following script:
-```
+```smalltalk
 Metacello new
-    baseline: 'OpenPonkPetriNets';
-    repository: 'github://OpenPonk/petrinets/repository';
-    load
+	baseline: 'OpenPonkPetriNets';
+	repository: 'github://OpenPonk/petrinets';
+	load.
 ```
+
+## Documentation
+
+Part of the [OpenPonk](https://openponk.org) platform. For architecture, the repository catalog, and contributing guidelines, see [`OpenPonk/.github`](https://github.com/OpenPonk/.github/blob/main/profile/README.md).
